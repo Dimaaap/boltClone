@@ -1,0 +1,6 @@
+src/
+*.webp
+*.env
+.*jpg
+manage.py
+env/

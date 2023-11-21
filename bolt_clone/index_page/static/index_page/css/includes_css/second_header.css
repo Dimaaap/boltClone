@@ -1,0 +1,51 @@
+.second-header {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F5F5F5;
+    display: none;
+}
+
+.second-header a {
+    text-decoration: none;
+    color: #B9B9B9;
+}
+
+.second-header .title {
+    display: flex;
+    align-items: center;
+}
+
+.second-header .additional_info {
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+    margin-left: -45px;
+}
+
+.second-header .additional_info .menu-btn {
+    margin-right: 20px;
+}
+
+.second-header .additional_info #view_btn {
+    color: #C7C7C7;
+}
+
+.second-header .additional_info .give_app {
+    background: #20983C;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 8px 13px;
+    font-size: 0.9rem;
+}
+
+.second-header .additional_info .menu-btn:hover:not(:last-child),
+.second-header .additional_info #view_btn:hover{
+    color: #8D8D8D;
+}
+#give_app:hover {
+    background #207D36:
+}

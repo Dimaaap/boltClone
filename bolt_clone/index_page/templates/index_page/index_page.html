@@ -1,0 +1,59 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'index_page/css/index_page.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/main_header.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/second_header.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    {% include './_includes/main_header.html' %}
+    {% include './_includes/second_header.html' %}
+    <div class="main-content">
+        <div class="page-title">
+            <h1 class="page-advert">
+                Швидка доставка твоїх улюблених страв
+            </h1>
+            <a href="" class="add-add">
+                Завантажити додаток
+            </a>
+        </div>
+        <img src="{% static 'index_page/src/index_page.webp' %}" alt="image" class="main_page_image">
+    </div>
+    <div class="second-section">
+        <div class="info-content">
+            <h1>Заробляйте гроші, доставляючи їжу</h1>
+            <ol class="info-ul">
+                <li class="info-li">
+                    <h4>Отримуй дохід без зайвих турбот!</h4>
+                    <p>Реєструйтесь безплатно та отримйте щотижневі виплати без прихованих комісій</p>
+                </li>
+                <li class="info-li">
+                    <h4>Доставляйте, коли хочете</h4>
+                    <p>
+                        Вирішуйте самі, коли і як часто доставляти: у будні або вихідні, зранку або ввечері -
+                        все залежить тільки від вашого бажання
+                    </p>
+                </li>
+                <li class="info-li">
+                    <h4>Доставяй як завгодно</h4>
+                    <p>
+                        На велосипеді, самокаті чи автомобілі - тільки ви обираєте, як здійснювати доставку!
+                    </p>
+                </li>
+            </ol>
+            <a href="#" class="learn-more">
+                Дізнатись більше
+            </a>
+        </div>
+        <div class="image-content">
+            <img class="courier-image" alt="Courier" src="{% static 'index_page/src/courier.webp' %}">
+        </div>
+    </div>
+{% endblock %}
