@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{% static 'index_page/css/index_page.css' %}">
     <link rel="stylesheet" href="{% static 'index_page/css/includes_css/main_header.css' %}">
     <link rel="stylesheet" href="{% static 'index_page/css/includes_css/second_header.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/second_section.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,34 +27,10 @@
         </div>
         <img src="{% static 'index_page/src/index_page.webp' %}" alt="image" class="main_page_image">
     </div>
-    <div class="second-section">
-        <div class="info-content">
-            <h1>Заробляйте гроші, доставляючи їжу</h1>
-            <ol class="info-ul">
-                <li class="info-li">
-                    <h4>Отримуй дохід без зайвих турбот!</h4>
-                    <p>Реєструйтесь безплатно та отримйте щотижневі виплати без прихованих комісій</p>
-                </li>
-                <li class="info-li">
-                    <h4>Доставляйте, коли хочете</h4>
-                    <p>
-                        Вирішуйте самі, коли і як часто доставляти: у будні або вихідні, зранку або ввечері -
-                        все залежить тільки від вашого бажання
-                    </p>
-                </li>
-                <li class="info-li">
-                    <h4>Доставяй як завгодно</h4>
-                    <p>
-                        На велосипеді, самокаті чи автомобілі - тільки ви обираєте, як здійснювати доставку!
-                    </p>
-                </li>
-            </ol>
-            <a href="#" class="learn-more">
-                Дізнатись більше
-            </a>
-        </div>
-        <div class="image-content">
-            <img class="courier-image" alt="Courier" src="{% static 'index_page/src/courier.webp' %}">
+    {% include './_includes/second_section.html' %}
+    <div class="third-section">
+        <div class="image-container" id="third-image-container">
+            <img class="bolt-food-bag" src="{% static 'index_page/src/bolt-food-bag.webp' %}">
         </div>
     </div>
 {% endblock %}

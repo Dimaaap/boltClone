@@ -1,0 +1,113 @@
+.second-section {
+    margin-top: 100px;
+    padding-top: 60px;
+    display: flex;
+    position: relative;
+}
+
+.second-section .info-content {
+    font-family: "Montserrat", sans-serif;
+    flex: 1;
+    padding-right: 20px;
+    margin-left: 30px;
+    width: 70%;
+}
+
+.second-section .info-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: -70px;
+}
+
+.second-section .info-content ol {
+    list-style: none;
+    counter-reset: item;
+    margin-left: -40px;
+}
+
+.second-section .info-content ol li {
+    position: relative;
+    margin-bottom: -120px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.second-section .info-content ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #2eb565;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.second-section .info-content .info-li h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.second-section .info-content .info-li p {
+    display: block;
+    margin-top: 120px;
+    margin-left: -200px;
+    width: 70%;
+    color: #B2B2B2;
+    font-size: 1.1rem;
+}
+
+.second-section .info-content .info-li #first-p{
+    margin-left: -350px;
+    margin-top: 130px;
+    margin-bottom: 20px;
+}
+
+.second-section .info-content .info-li #second-p {
+    margin-left: -270px;
+    margin-top: 170px;
+    margin-bottom: 60px;
+}
+
+.second-section .info-content .info-li #third-p {
+    margin-top: 110px;
+    margin-left: -240px;
+}
+
+.second-section .info-content .info-li:last-child {
+    margin-top: 20px;
+}
+
+.second-section .image-content {
+    flex: 1;
+    margin-left: 130px;
+}
+
+.second-section .image-content img {
+    height: 145%;
+    width: 90%;
+    margin-left: -10%;
+}
+
+.second-section .learn-more {
+    position: absolute;
+    top: 130%;
+    left: 3%;
+    text-decoration: none;
+    background: #E9E9E9;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+
+.second-section .learn-more:hover {
+    background: #E2E2E2;
+}
+
