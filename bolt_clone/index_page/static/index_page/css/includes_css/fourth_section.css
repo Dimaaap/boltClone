@@ -1,0 +1,96 @@
+.fourth-section {
+    margin-top: 300px;
+    display: flex;
+    position: relative;
+    padding: 10px;
+}
+
+.fourth-section-info-container {
+    flex: 1;
+    width: 20%;
+}
+
+.fourth-section-info-container .container-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: -70px;
+    margin-left: 40px;
+}
+
+.fourth-section-info-container ol {
+    list-style: none;
+    counter-reset: item;
+    margin-left: 0px;
+}
+
+.fourth-section-info-container ol li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: -80px;
+}
+
+.fourth-section-info-container ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #2eb565;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.fourth-section-info-container ol li h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.fourth-section-info-container ol li p {
+    display: block;
+    margin-top: 120px;
+    margin-left: -375px;
+    width: 70%;
+    color: #B2B2B2;
+    font-size: 1.1rem;
+}
+
+.fourth-section-info-container ol li #second-p {
+    margin-left: -330px;
+}
+
+.fourth-section-info-container ol li #third-p {
+    margin-left: -290px;
+}
+
+.fourth-section-image-container {
+    flex: 1;
+    width: 50%;
+}
+
+.fourth-section-image-container img {
+    width: 90%;
+}
+
+.order-food-btn {
+    position: absolute;
+    top: 85%;
+    left: 4%;
+    text-decoration: none;
+    background: #2eb565;
+    font-weight: 500;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.order-food-btn:hover {
+    background: #2A9C58;
+}

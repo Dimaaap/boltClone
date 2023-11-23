@@ -6,11 +6,20 @@
     <link rel="stylesheet" href="{% static 'index_page/css/includes_css/main_header.css' %}">
     <link rel="stylesheet" href="{% static 'index_page/css/includes_css/second_header.css' %}">
     <link rel="stylesheet" href="{% static 'index_page/css/includes_css/second_section.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/third_section.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/fourth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'index_page/css/includes_css/fag_section.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
+{% endblock %}
+
+{% block js_additional %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -28,42 +37,7 @@
         <img src="{% static 'index_page/src/index_page.webp' %}" alt="image" class="main_page_image">
     </div>
     {% include './_includes/second_section.html' %}
-    <div class="third-section">
-        <div class="image-container" id="third-image-container">
-            <img class="bolt-food-bag" src="{% static 'index_page/src/bolt-food-bag.webp' %}">
-        </div>
-        <div class="info-container" id="third-info-container">
-            <h4 class="title-ul">Збільште свої продажі</h4>
-            <ol class="increase your sells">
-                <li id="first-li">
-                    <h4>Збільшіть ваші доходи</h4>
-                    <p>
-                        Мільйони користувачів платформи замовляють
-                        їжу в один клік у наших партнерів -
-                        станьте одним із них! Bolt Food гарантує
-                        зростання клієнтської бази та продажів
-                    </p>
-                </li>
-                <li id="second-li">
-                    <h4>Отримайте цінні бізнес-інсайти</h4>
-                    <p>
-                        Дослідіть дані про продажі, рейтинги та
-                        замовлення на платформі. Динаміка ефективності
-                        вашого профілю допоможе зробити корисні висновки
-                        для розвитку бізнесу
-                    </p>
-                </li>
-                <li id="third-li">
-                    <h4>Ми подбаємо про доставку</h4>
-                    <p>
-                        Ми подбаємо про логістику, а зосередьтесь на
-                        управлінні своїм бізнесом
-                    </p>
-                </li>
-            </ol>
-            <a href="#" class="btn third-learn-more">
-                Дізнатись більше
-            </a>
-        </div>
-    </div>
+    {% include './_includes/third_section.html' %}
+    {% include './_includes/fourth_section.html' %}
+    {% include './_includes/fag_section.html' %}
 {% endblock %}

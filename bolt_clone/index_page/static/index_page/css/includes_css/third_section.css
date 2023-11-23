@@ -1,0 +1,121 @@
+.third-section {
+    margin-top: 300px;
+    display: flex;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.third-section #third-image-container {
+    flex: 1;
+    width: 50%;
+    padding: 10px;
+}
+
+.third-section #third-info-container {
+    flex: 1;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+
+.third-section #third-image-container img {
+    height: 132%;
+    width: 90%;
+}
+
+.third-section #third-info-container .title-ul {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.third-section #third-info-container ol {
+    list-style: none;
+    counter-reset: item;
+    margin-left: 0px;
+}
+
+.third-section #third-info-container ol li {
+    position: relative;
+    margin-bottom: -120px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.third-section #third-info-container ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #2eb565;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.third-section #third-info-container ol li h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.third-section #third-info-container ol li p {
+    display: block;
+    margin-top: 120px;
+    margin-left: -200px;
+    width: 70%;
+    color: #B2B2B2;
+    font-size: 1.1rem;
+}
+
+.third-section #third-info-container #first-li {
+    margin-bottom: 20px;
+    margin-top: -130px;
+}
+
+.third-section #third-info-container #first-li p {
+    margin-left: -220px;
+    margin-top: 150px;
+}
+
+.third-section #third-info-container #second-li {
+    margin-bottom: 20px;
+    margin-top: -120px;
+}
+
+.third-section #third-info-container #second-li p {
+    margin-left: -310px;
+    margin-top: 150px;
+}
+
+.third-section #third-info-container #third-li {
+    margin-top: -90px;
+}
+
+.third-section #third-info-container #third-li p {
+    margin-left: -264px;
+    margin-top: 100px;
+}
+
+.third-learn-more {
+    position: absolute;
+    top: 130%;
+    left: 57%;
+    margin-bottom: 50px;
+    text-decoration: none;
+    background: #E9E9E9;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+
+.third-learn-more:hover {
+    background: #E2E2E2;
+}

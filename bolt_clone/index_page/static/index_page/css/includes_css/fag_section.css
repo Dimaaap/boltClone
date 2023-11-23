@@ -1,0 +1,25 @@
+.fag-section {
+    margin-top: 50px;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 50px;
+}
+
+.fag-section .section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.fag-section .accordion-button {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.fag-section .accordion-body {
+    font-size: 1.1rem;
+    color: gray;
+}
+
