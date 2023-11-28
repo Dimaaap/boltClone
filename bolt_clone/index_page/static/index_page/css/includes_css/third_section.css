@@ -26,7 +26,8 @@
 .third-section #third-info-container .title-ul {
     font-size: 2.2rem;
     font-weight: 500;
-    margin-top: 25px;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 .third-section #third-info-container ol {
