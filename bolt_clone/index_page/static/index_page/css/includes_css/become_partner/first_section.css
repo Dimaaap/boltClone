@@ -1,0 +1,43 @@
+#first-section {
+    margin-top: -67px;
+    width: 100%;
+    min-height: 680px;
+    background-image: url("../../../src/hero.webp");
+    background-size: 1400px 680px;
+    background-repeat: no-repeat;
+}
+
+#first-section .text-content {
+    color: white;
+    width: 40%;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+
+#first-section .text-content h1 {
+    font-weight: bold;
+    font-size: 3.2rem;
+}
+
+#first-section .text-content p {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+#first-section .text-content a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #2eb565;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+#first-section .text-content a:hover {
+    background: #269151;
+}

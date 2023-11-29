@@ -1,0 +1,88 @@
+#second-section .text-content .info-container .ul-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#second-section .text-content .info-container .ul-desc {
+    font-size: 1.2rem;
+    color: #9C9C9C;
+}
+
+#second-section .text-content .info-container ol {
+    list-style: none;
+    counter-reset: item;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+
+#second-section .text-content ol li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: -100px;
+    color: #9C9C9C;
+}
+
+#second-section .text-content ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #2eb565;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+#second-section .text-content ol li h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+}
+
+#second-section .text-content ol li p {
+    display: block;
+    margin-top: 120px;
+    width: 60%;
+}
+
+
+#second-section .text-content ol #first-li {
+    margin-top: 95px;
+    margin-left: -145px;
+    margin-bottom: 0px;
+}
+
+#second-section .text-content ol #second-li {
+    margin-top: 190px;
+    margin-bottom: 40px;
+    margin-left: -150px;
+}
+
+#second-section .text-content ol #third-li {
+    margin-top: 150px;
+    margin-left: -115px;
+}
+
+#second-section .text-content ol #fourth-li {
+    margin-top: 170px;
+    margin-left: -165px;
+}
+
+#second-section .text-content ol #more-customers-li {
+    margin-bottom: -120px;
+}
+
+#second-section .text-content ol #more-ideas-li {
+    margin-bottom: -120px;
+}
+
+#second-section .text-content ol #more-income-li {
+    margin-bottom: -120px;
+}

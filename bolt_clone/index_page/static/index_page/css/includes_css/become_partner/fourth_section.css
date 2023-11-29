@@ -1,0 +1,21 @@
+#fourth-section .info-container .page-desc {
+    font-size: 1.3rem;
+    color: #9F9F9F;
+    width: 80%;
+}
+
+#fourth-section .info-container .page-point .point-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#fourth-section .info-container .page-point .point-info {
+    color: #9F9F9F;
+    width: 80%;
+    font-size: 1.1rem;
+}
+
+#fourth-section .image-container img {
+    border-radius: 10px;
+}
