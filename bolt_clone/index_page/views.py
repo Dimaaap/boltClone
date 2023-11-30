@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .forms import AddPartnerForm
 
 
 def index_page_view(request):
@@ -11,5 +12,11 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
-    return render(request, "index_page/partner_signup_page.html")
+    form = AddPartnerForm()
+    if request.method == 'POST':
+        form = AddPartnerForm(request.POST)
+        if form.is_valid():
+            pass
+    context = {"form": form}
+    return render(request, "index_page/partner_signup_page.html", context=context)
 

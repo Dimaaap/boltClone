@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid #C0C0C0;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .rest-content {
+    display: flex;
+    align-items: center;
+    margin-left: 250px;
+    margin-right: 10px;
+}
+
+header .rest-content a {
+    display: flex;
+    align-items: center;
+}
+
+header .rest-content img {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+header .rest-content p {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+header .country-title {
+    margin-right: 5px;
+}

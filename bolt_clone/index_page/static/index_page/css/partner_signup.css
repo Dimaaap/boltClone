@@ -1,0 +1,114 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.main-content {
+    padding: 50px 480px;
+}
+
+.main-content .form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-content p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.main-content p a {
+    text-decoration: none;
+    color: #2eb565;
+}
+
+.main-content p a:hover {
+    text-decoration: underline;
+    color: #238A4C;
+}
+
+.main-content form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.main-content form input,
+.main-content form select {
+    margin-bottom: 20px;
+}
+
+.main-content form input:hover {
+    outline-color: #2eb565 !important;
+}
+
+.main-content form input:focus {
+    outline: none !important;
+    border: 2px solid #2eb565;
+}
+
+.main-content form select:focus {
+    border: 2px solid #2eb565;
+}
+
+.main-content .form-control,
+.main-content form #id_partner_phone {
+    background: #EBEBEB;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.main-content form #id_partner_phone {
+    display: block;
+    border: none;
+    width: 100%;
+    padding-left: 6px;
+}
+
+.main-content form #id_partner_phone:focus {
+    outline: none !important;
+    border: 3px solid #2eb565;
+    background: white;
+}
+
+.main-content form .last-point-container {
+    display: flex;
+}
+
+.main-content form .last-point-container p {
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 70%;
+}
+
+.main-content form .last-point-container button {
+    margin-top: 30px;
+    background: #2eb565;
+    border: none;
+    color: white;
+    min-height: 30px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.main-content form .last-point-container button:hover {
+    background: #279E57;
+}
+
+.main-content form .check-field {
+    margin-top: 15px;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+}
+
+.main-content form .check-field:checked {
+    color: red;
+}
