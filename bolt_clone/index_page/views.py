@@ -16,7 +16,10 @@ def partner_signup_view(request):
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
         if form.is_valid():
-            pass
+            print(form.cleaned_data)
+            form.save()
+        else:
+            print(form.errors)
     context = {"form": form}
     return render(request, "index_page/partner_signup_page.html", context=context)
 

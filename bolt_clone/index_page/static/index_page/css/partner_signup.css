@@ -39,6 +39,10 @@
     margin-bottom: 20px;
 }
 
+.main-content form select {
+    cursor: pointer;
+}
+
 .main-content form input:hover {
     outline-color: #2eb565 !important;
 }
@@ -59,11 +63,26 @@
     height: 50px;
 }
 
+.main-content form .field-notice {
+    font-size: 0.9rem;
+    margin-top: -10px;
+    color: #BABABA;
+}
+
 .main-content form #id_partner_phone {
     display: block;
     border: none;
     width: 100%;
     padding-left: 6px;
+}
+
+.main-content form i {
+    position: absolute;
+    top: 57%;
+    left: 63%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: transform 0.5s ease;
 }
 
 .main-content form #id_partner_phone:focus {
@@ -107,8 +126,12 @@
     height: 25px;
     width: 25px;
     display: inline-block;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .main-content form .check-field:checked {
-    color: red;
+    background: #2eb565;
 }
