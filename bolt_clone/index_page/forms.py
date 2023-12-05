@@ -31,6 +31,13 @@ class AddPartnerForm(forms.ModelForm):
                                           "class": "form-control",
                                       }))
 
+    partner_cuisine = forms.ChoiceField(label="Напрям кухні", required=False, choices=data_storage.CUISINES_CHOICE,
+                                        widget=forms.Select(attrs={
+                                            "class": "form-control",
+                                            "placeholder": "Оберіть напрям кухні",
+                                            "id": "cuisine-choice"
+                                        }))
+
     partner_address = forms.CharField(label="Адреса", widget=forms.TextInput(attrs={
         "placeholder": "Введіть адресу закладу",
         "class": "form-control",
@@ -47,6 +54,10 @@ class AddPartnerForm(forms.ModelForm):
         "placeholder": "Введіть електронну адресу",
         "class": "form-control",
         "id": "partner-email-field",
+    }))
+
+    country_phone_code = forms.CharField(label="", initial="+380", widget=forms.TextInput(attrs={
+        "class": "form-control"
     }))
 
     partner_phone = PhoneNumberField(region="UA", label="Номер телефону", initial="+380", widget=forms.TextInput(

@@ -29,11 +29,15 @@
         <form class="add-partner-form" method="post">
             {% csrf_token %}
             {% for field in form %}
-                {% if forloop.counter == 3 %}
-                {% elif forloop.counter == 1 %}
+
+                {% if forloop.counter == 2 %}
                     <label>{{ field.label }}</label>
                     {{ field }}
                     <i class="fa-solid fa-angle-down"></i>
+                {% elif forloop.counter == 3 %}
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                    <i class="fa-solid fa-angle-down" id="bottom-arrow"></i>
                 {% elif forloop.counter == 6 %}
                     <label>{{ field.label }}</label>
                     {{ field }}

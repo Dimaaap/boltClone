@@ -85,6 +85,10 @@
     transition: transform 0.5s ease;
 }
 
+.main-content form #bottom-arrow {
+    top: 71.5%;
+}
+
 .main-content form #id_partner_phone:focus {
     outline: none !important;
     border: 3px solid #2eb565;
@@ -130,8 +134,25 @@
     -webkit-appearance: none;
     border: 1px solid gray;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content form .check-field:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    color: white;
+    display: none;
 }
 
 .main-content form .check-field:checked {
     background: #2eb565;
+}
+
+.main-content form .check-field:checked:after {
+    display: block;
 }
