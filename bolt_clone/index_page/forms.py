@@ -56,9 +56,10 @@ class AddPartnerForm(forms.ModelForm):
         "id": "partner-email-field",
     }))
 
-    country_phone_code = forms.CharField(label="", initial="+380", widget=forms.TextInput(attrs={
-        "class": "form-control"
-    }))
+    country_phone_code = forms.ChoiceField(label="", required=False,
+                                           widget=forms.Select(attrs={
+                                               "class": "form-control"
+                                           }))
 
     partner_phone = PhoneNumberField(region="UA", label="Номер телефону", initial="+380", widget=forms.TextInput(
         attrs={"placeholder": "Номер мобільного телефону"}

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 import emoji
 
-from .sort_countries_list import sorted_countries_list
+from .sort_countries_list import get_select_window_list
 
 
 @dataclass
@@ -57,5 +57,3 @@ class DataStorage:
         (emoji.emojize(":flag_italia: Італійська кухня"), "Італійська кухня"),
         (emoji.emojize(":hot_beverage: Кава"), "Кава")
     )
-
-    COUNTRIES_CODES = []

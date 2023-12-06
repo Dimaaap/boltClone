@@ -37,7 +37,7 @@ def get_country_codes():
 
 
 def write_codes_to_file():
-    file_name = "countries_codes.json"
+    file_name = "../bolt_clone/countries_codes.json"
     country_codes = get_country_codes()
     with open(file_name, "w", encoding="utf-8") as f:
         json.dump(country_codes, f, ensure_ascii=False, indent=4)

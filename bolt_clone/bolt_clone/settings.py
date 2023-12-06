@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,7 +90,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / '../' / 'static'
 ]
 
 MEDIA_URL = '/media/'
@@ -97,3 +98,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+COUNTRIES_JSON_FILE = os.path.join(BASE_DIR / 'bolt_clone' / 'countries_codes.json')

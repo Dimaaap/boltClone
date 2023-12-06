@@ -8,6 +8,17 @@ from .data_storage import DataStorage
 data_storage = DataStorage()
 
 
+class CountryCode(models.Model):
+    country_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    country_flag = models.URLField(max_length=200, blank=True)
+    country_official_name = models.CharField(max_length=150)
+    country_phone_code = models.CharField(max_length=20)
+    country_native_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.country_official_name} {self.country_phone_code}"
+
+
 class BoltPartner(models.Model):
     partner_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     partner_name = models.CharField(max_length=255, null=False)

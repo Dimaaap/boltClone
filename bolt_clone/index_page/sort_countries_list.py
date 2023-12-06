@@ -1,8 +1,11 @@
 import json
 
+from django.conf import settings
+
 
 def read_file():
-    with open("countries_codes.json", encoding="utf-8") as json_data:
+    # with open("countries_codes.json", encoding="utf-8") as json_data:
+    with open(settings.COUNTRIES_JSON_FILE, encoding="utf-8") as json_data:
         countries_dict = json.load(json_data)
     return countries_dict
 
@@ -19,5 +22,10 @@ def sorted_countries_list():
     return countries_list
 
 
-
-print(sorted_countries_list())
+def get_select_window_list():
+    countries_list = sorted_countries_list()
+    select_list = []
+    for country in countries_list:
+        country_tuple = (country["flag"], country["title"], country["native_name"], country["phone_code"])
+        select_list.append(country_tuple)
+    return select_list
