@@ -1,7 +1,7 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 
-from .models import BoltPartner
+from .models import BoltPartner, CountryCode
 from .data_storage import DataStorage
 
 data_storage = DataStorage()
@@ -12,6 +12,15 @@ class AddPartnerForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("label_suffix", "")
         super(AddPartnerForm, self).__init__(*args, **kwargs)
+        self.fields["country_phone_code"].empty_label = None
+        self.fields["country_phone_code"].widget.attrs.update({
+            "class": "form-control custom-select"
+        })
+
+    def add_prefix(self, field_name):
+        if field_name == "country_phone_code":
+            return super().add_prefix(field_name[::-5])
+        return super().add_prefix(field_name)
 
     class Meta:
         model = BoltPartner
@@ -56,10 +65,12 @@ class AddPartnerForm(forms.ModelForm):
         "id": "partner-email-field",
     }))
 
-    country_phone_code = forms.ChoiceField(label="", required=False,
-                                           widget=forms.Select(attrs={
-                                               "class": "form-control"
-                                           }))
+    country_phone_code = forms.ModelChoiceField(
+        queryset=CountryCode.objects.all(),
+        label="", required=False,
+        widget=forms.Select(attrs={
+            "class": "form-control"
+        }))
 
     partner_phone = PhoneNumberField(region="UA", label="Номер телефону", initial="+380", widget=forms.TextInput(
         attrs={"placeholder": "Номер мобільного телефону"}

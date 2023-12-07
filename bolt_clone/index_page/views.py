@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import AddPartnerForm
+from .models import CountryCode
 
 
 def index_page_view(request):
@@ -12,7 +13,8 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
-    form = AddPartnerForm()
+    ukraine_code = CountryCode.objects.get(country_official_name="Ukraine")
+    form = AddPartnerForm(initial={"country_phone_code": ukraine_code.pk})
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
         if form.is_valid():
