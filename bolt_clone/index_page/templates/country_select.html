@@ -1,0 +1,7 @@
+{% for country in widget.country_flags %}
+    <option value="{{ country.value }}" data-flag-url="{{ country.flag_url }}" {% if widget.value == country.value %}
+            selected
+            {% endif %}>
+        {{ country.name }}
+    </option>
+{% endfor %}

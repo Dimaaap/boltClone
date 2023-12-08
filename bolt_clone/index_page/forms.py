@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.html import format_html
 from phonenumber_field.formfields import PhoneNumberField
 
 from .models import BoltPartner, CountryCode
@@ -7,20 +8,33 @@ from .data_storage import DataStorage
 data_storage = DataStorage()
 
 
+class CountryFlagSelect(forms.widgets.Select):
+    def create_option(
+            self, name, value, label, selected, index, subindex=None, attrs=None
+    ):
+        option = super().create_option(name, value, label, selected, index, subindex, attrs)
+        if "data-flag-url" in attrs:
+            option["attrs"]["data-flag-url"] = attrs.get('data-flag-url', '')
+        return option
+
+    def format_value(self, value):
+        country = next((c for c in self.choices if str(c[0]) == value), None)
+        if country:
+            country = country[1]
+            return format_html("<img src='{}' width='20' height='20'>{}",
+                               country.country_flag.url, country.country_native_name)
+        return super().format_value(value)
+
+
 class AddPartnerForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("label_suffix", "")
         super(AddPartnerForm, self).__init__(*args, **kwargs)
         self.fields["country_phone_code"].empty_label = None
-        self.fields["country_phone_code"].widget.attrs.update({
-            "class": "form-control custom-select"
+        self.fields["country_phone_code"].widget = CountryFlagSelect(attrs={
+            "class": "form-control select-country-flag"
         })
-
-    def add_prefix(self, field_name):
-        if field_name == "country_phone_code":
-            return super().add_prefix(field_name[::-5])
-        return super().add_prefix(field_name)
 
     class Meta:
         model = BoltPartner
@@ -68,8 +82,8 @@ class AddPartnerForm(forms.ModelForm):
     country_phone_code = forms.ModelChoiceField(
         queryset=CountryCode.objects.all(),
         label="", required=False,
-        widget=forms.Select(attrs={
-            "class": "form-control"
+        widget=CountryFlagSelect(attrs={
+            "class": "form-control select-country-flag"
         }))
 
     partner_phone = PhoneNumberField(region="UA", label="Номер телефону", initial="+380", widget=forms.TextInput(

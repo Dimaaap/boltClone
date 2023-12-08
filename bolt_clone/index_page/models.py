@@ -11,7 +11,7 @@ data_storage = DataStorage()
 
 
 class CountryCode(models.Model):
-    country_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    country_id = models.AutoField(primary_key=True, default=1)
     country_flag = models.ImageField(upload_to="flags/", blank=True, null=True)
     country_flag_image_url = models.URLField(blank=True, null=True)
     country_official_name = models.CharField(max_length=150)

@@ -2,8 +2,6 @@ from dataclasses import dataclass
 
 import emoji
 
-from .sort_countries_list import get_select_window_list
-
 
 @dataclass
 class DataStorage:

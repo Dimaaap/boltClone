@@ -2,6 +2,8 @@ import json
 
 from django.conf import settings
 
+from .models import CountryCode
+
 
 def read_file():
     # with open("countries_codes.json", encoding="utf-8") as json_data:
@@ -29,3 +31,15 @@ def get_select_window_list():
         country_tuple = (country["flag"], country["title"], country["native_name"], country["phone_code"])
         select_list.append(country_tuple)
     return select_list
+
+
+def insert_countries_in_db():
+    counter = 1
+    countries = get_select_window_list()
+    for country in countries:
+        CountryCode.objects.create(country_id=counter, country_flag_image_url=country[0],
+                                   country_official_name=country[1],
+                                   country_phone_code=country[-1], country_native_name=country[-2])
+        counter += 1
+
+

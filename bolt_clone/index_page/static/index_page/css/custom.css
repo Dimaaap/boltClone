@@ -1,0 +1,26 @@
+/* Add styles for the select field */
+.select-country-flag {
+    /* Your existing select styles */
+}
+
+/* Add styles for the country flag in the select options */
+.select-country-flag option {
+    background-repeat: no-repeat;
+    padding-left: 30px; /* Adjust as needed */
+}
+
+/* Add styles for the country flag image */
+.select-country-flag option::before {
+    content: "";
+    display: inline-block;
+    width: 20px; /* Adjust as needed */
+    height: 15px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Set the background image for the country flag */
+.select-country-flag option[data-flag-url]:checked::before {
+    background-image: url('{{ widget.value.attrs.data-flag-url }}');
+}
