@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'index_page',
 
     'phonenumber_field',
+    'django_select2',
 ]
 
 MIDDLEWARE = [
@@ -32,6 +33,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'bolt_clone.urls'
 

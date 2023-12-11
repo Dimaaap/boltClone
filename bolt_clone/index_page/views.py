@@ -13,8 +13,6 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
-    ukraine_code = CountryCode.objects.get(country_official_name="Ukraine")
-    form = AddPartnerForm(initial={"country_phone_code": ukraine_code.pk})
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
         if form.is_valid():
@@ -22,6 +20,8 @@ def partner_signup_view(request):
             form.save()
         else:
             print(form.errors)
+    else:
+        form = AddPartnerForm()
     context = {"form": form}
     return render(request, "index_page/partner_signup_page.html", context=context)
 

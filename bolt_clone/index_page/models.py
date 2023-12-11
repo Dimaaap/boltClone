@@ -19,7 +19,8 @@ class CountryCode(models.Model):
     country_native_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.country_flag} {self.country_native_name} ({self.country_phone_code})"
+        return f"<img src='{self.country_flag.url}' width='20' height='20'> {self.country_native_name} " \
+               f"({self.country_phone_code})"
 
     def save_flag_image_from_url(self, url):
         try:

@@ -13,6 +13,7 @@ def get_country_codes():
             common_title = country.get("name").get("common")
             flag = country.get("flags").get("svg")
             common_lang = country.get('languages')
+            emoji_flag = country.get("flag", None)
             if common_lang:
                 common_language = list(country.get('languages').keys())[0]
             else:
@@ -28,7 +29,8 @@ def get_country_codes():
                 country_phone_codes[common_title] = {"title": common_title,
                                                      "flag": flag,
                                                      "phone_code": phone_code,
-                                                     "native_name": native_common}
+                                                     "native_name": native_common,
+                                                     "emoji_flag": emoji_flag}
 
     except requests.exceptions.RequestException as e:
         print(e)
@@ -42,5 +44,3 @@ def write_codes_to_file():
     with open(file_name, "w", encoding="utf-8") as f:
         json.dump(country_codes, f, ensure_ascii=False, indent=4)
 
-
-write_codes_to_file()
