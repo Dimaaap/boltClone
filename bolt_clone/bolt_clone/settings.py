@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'index_page',
 
     'phonenumber_field',
-    'django_select2',
+    'ipware',
 ]
 
 MIDDLEWARE = [

@@ -17,9 +17,11 @@ class CountryCode(models.Model):
     country_official_name = models.CharField(max_length=150)
     country_phone_code = models.CharField(max_length=20)
     country_native_name = models.CharField(max_length=100)
+    country_emoji_flag = models.CharField(max_length=15, blank=True, default='')
+    country_code = models.CharField(max_length=3, blank=True, default='')
 
     def __str__(self):
-        return f"<img src='{self.country_flag.url}' width='20' height='20'> {self.country_native_name} " \
+        return f"{self.country_emoji_flag} {self.country_native_name} " \
                f"({self.country_phone_code})"
 
     def save_flag_image_from_url(self, url):

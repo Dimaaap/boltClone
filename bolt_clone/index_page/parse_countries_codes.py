@@ -13,6 +13,7 @@ def get_country_codes():
             common_title = country.get("name").get("common")
             flag = country.get("flags").get("svg")
             common_lang = country.get('languages')
+            country_code = country.get('cca2', None)
             emoji_flag = country.get("flag", None)
             if common_lang:
                 common_language = list(country.get('languages').keys())[0]
@@ -30,7 +31,8 @@ def get_country_codes():
                                                      "flag": flag,
                                                      "phone_code": phone_code,
                                                      "native_name": native_common,
-                                                     "emoji_flag": emoji_flag}
+                                                     "emoji_flag": emoji_flag,
+                                                     "country_code": country_code}
 
     except requests.exceptions.RequestException as e:
         print(e)

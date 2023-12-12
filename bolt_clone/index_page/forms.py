@@ -1,11 +1,30 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import BoltPartner, CountryCode
 from .data_storage import DataStorage
-from django_select2.forms import ModelSelect2Widget
 
 data_storage = DataStorage()
+
+
+def get_form_select_initial_values_service():
+    try:
+        default_value = CountryCode.objects.get(country_official_name="Ukraine")
+    except ObjectDoesNotExist:
+        default_value = None
+    return default_value
+
+
+# class EmojiSelect(forms.Select):
+
+#    def format_value(self, value):
+#        try:
+#            model_instance = self.choices.queryset.get(pk=value)
+#            emoji_flag = model_instance.country_emoji_flag
+#            return format_html('<span>{}</span> {}', emoji_flag, super().format_value(value))
+#        except ObjectDoesNotExist:
+#            return super().format_value(value)
 
 
 class AddPartnerForm(forms.ModelForm):
@@ -60,7 +79,9 @@ class AddPartnerForm(forms.ModelForm):
 
     country_phone_code = forms.ModelChoiceField(
         queryset=CountryCode.objects.all(),
-        label="", required=False,
+        initial=230,
+        label="Номер телефону", required=False,
+        to_field_name="country_id",
         widget=forms.Select(attrs={
             "class": "form-control select-country-flag"
         }))

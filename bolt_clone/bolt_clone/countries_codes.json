@@ -3,1488 +3,1984 @@
         "title": "Christmas Island",
         "flag": "https://flagcdn.com/cx.svg",
         "phone_code": "+61",
-        "native_name": "Christmas Island"
+        "native_name": "Christmas Island",
+        "emoji_flag": "🇨🇽",
+        "country_code": "CX"
     },
     "Eritrea": {
         "title": "Eritrea",
         "flag": "https://flagcdn.com/er.svg",
         "phone_code": "+291",
-        "native_name": "إرتريا‎"
+        "native_name": "إرتريا‎",
+        "emoji_flag": "🇪🇷",
+        "country_code": "ER"
     },
     "Samoa": {
         "title": "Samoa",
         "flag": "https://flagcdn.com/ws.svg",
         "phone_code": "+685",
-        "native_name": "Samoa"
+        "native_name": "Samoa",
+        "emoji_flag": "🇼🇸",
+        "country_code": "WS"
     },
     "North Macedonia": {
         "title": "North Macedonia",
         "flag": "https://flagcdn.com/mk.svg",
         "phone_code": "+389",
-        "native_name": "Македонија"
+        "native_name": "Македонија",
+        "emoji_flag": "🇲🇰",
+        "country_code": "MK"
     },
     "Djibouti": {
         "title": "Djibouti",
         "flag": "https://flagcdn.com/dj.svg",
         "phone_code": "+253",
-        "native_name": "جيبوتي‎"
+        "native_name": "جيبوتي‎",
+        "emoji_flag": "🇩🇯",
+        "country_code": "DJ"
     },
     "Jordan": {
         "title": "Jordan",
         "flag": "https://flagcdn.com/jo.svg",
         "phone_code": "+962",
-        "native_name": "الأردن"
+        "native_name": "الأردن",
+        "emoji_flag": "🇯🇴",
+        "country_code": "JO"
     },
     "Pakistan": {
         "title": "Pakistan",
         "flag": "https://flagcdn.com/pk.svg",
         "phone_code": "+92",
-        "native_name": "Pakistan"
+        "native_name": "Pakistan",
+        "emoji_flag": "🇵🇰",
+        "country_code": "PK"
     },
     "French Polynesia": {
         "title": "French Polynesia",
         "flag": "https://flagcdn.com/pf.svg",
         "phone_code": "+689",
-        "native_name": "Polynésie française"
+        "native_name": "Polynésie française",
+        "emoji_flag": "🇵🇫",
+        "country_code": "PF"
     },
     "Ireland": {
         "title": "Ireland",
         "flag": "https://flagcdn.com/ie.svg",
         "phone_code": "+353",
-        "native_name": "Ireland"
+        "native_name": "Ireland",
+        "emoji_flag": "🇮🇪",
+        "country_code": "IE"
     },
     "Mauritania": {
         "title": "Mauritania",
         "flag": "https://flagcdn.com/mr.svg",
         "phone_code": "+222",
-        "native_name": "موريتانيا"
+        "native_name": "موريتانيا",
+        "emoji_flag": "🇲🇷",
+        "country_code": "MR"
     },
     "Denmark": {
         "title": "Denmark",
         "flag": "https://flagcdn.com/dk.svg",
         "phone_code": "+45",
-        "native_name": "Danmark"
+        "native_name": "Danmark",
+        "emoji_flag": "🇩🇰",
+        "country_code": "DK"
     },
     "Namibia": {
         "title": "Namibia",
         "flag": "https://flagcdn.com/na.svg",
         "phone_code": "+264",
-        "native_name": "Namibië"
+        "native_name": "Namibië",
+        "emoji_flag": "🇳🇦",
+        "country_code": "NA"
     },
     "Ghana": {
         "title": "Ghana",
         "flag": "https://flagcdn.com/gh.svg",
         "phone_code": "+233",
-        "native_name": "Ghana"
+        "native_name": "Ghana",
+        "emoji_flag": "🇬🇭",
+        "country_code": "GH"
     },
     "South Sudan": {
         "title": "South Sudan",
         "flag": "https://flagcdn.com/ss.svg",
         "phone_code": "+211",
-        "native_name": "South Sudan"
+        "native_name": "South Sudan",
+        "emoji_flag": "🇸🇸",
+        "country_code": "SS"
     },
     "Slovakia": {
         "title": "Slovakia",
         "flag": "https://flagcdn.com/sk.svg",
         "phone_code": "+421",
-        "native_name": "Slovensko"
+        "native_name": "Slovensko",
+        "emoji_flag": "🇸🇰",
+        "country_code": "SK"
     },
     "American Samoa": {
         "title": "American Samoa",
         "flag": "https://flagcdn.com/as.svg",
         "phone_code": "+1684",
-        "native_name": "American Samoa"
+        "native_name": "American Samoa",
+        "emoji_flag": "🇦🇸",
+        "country_code": "AS"
     },
     "Moldova": {
         "title": "Moldova",
         "flag": "https://flagcdn.com/md.svg",
         "phone_code": "+373",
-        "native_name": "Moldova"
+        "native_name": "Moldova",
+        "emoji_flag": "🇲🇩",
+        "country_code": "MD"
     },
     "North Korea": {
         "title": "North Korea",
         "flag": "https://flagcdn.com/kp.svg",
         "phone_code": "+850",
-        "native_name": "조선"
+        "native_name": "조선",
+        "emoji_flag": "🇰🇵",
+        "country_code": "KP"
     },
     "Macau": {
         "title": "Macau",
         "flag": "https://flagcdn.com/mo.svg",
         "phone_code": "+853",
-        "native_name": "Macau"
+        "native_name": "Macau",
+        "emoji_flag": "🇲🇴",
+        "country_code": "MO"
     },
     "Turks and Caicos Islands": {
         "title": "Turks and Caicos Islands",
         "flag": "https://flagcdn.com/tc.svg",
         "phone_code": "+1649",
-        "native_name": "Turks and Caicos Islands"
+        "native_name": "Turks and Caicos Islands",
+        "emoji_flag": "🇹🇨",
+        "country_code": "TC"
     },
     "Seychelles": {
         "title": "Seychelles",
         "flag": "https://flagcdn.com/sc.svg",
         "phone_code": "+248",
-        "native_name": "Sesel"
+        "native_name": "Sesel",
+        "emoji_flag": "🇸🇨",
+        "country_code": "SC"
     },
     "Armenia": {
         "title": "Armenia",
         "flag": "https://flagcdn.com/am.svg",
         "phone_code": "+374",
-        "native_name": "Հայաստան"
+        "native_name": "Հայաստան",
+        "emoji_flag": "🇦🇲",
+        "country_code": "AM"
     },
     "Curaçao": {
         "title": "Curaçao",
         "flag": "https://flagcdn.com/cw.svg",
         "phone_code": "+599",
-        "native_name": "Curaçao"
+        "native_name": "Curaçao",
+        "emoji_flag": "🇨🇼",
+        "country_code": "CW"
     },
     "Guadeloupe": {
         "title": "Guadeloupe",
         "flag": "https://flagcdn.com/gp.svg",
         "phone_code": "+590",
-        "native_name": "Guadeloupe"
+        "native_name": "Guadeloupe",
+        "emoji_flag": "🇬🇵",
+        "country_code": "GP"
     },
     "British Indian Ocean Territory": {
         "title": "British Indian Ocean Territory",
         "flag": "https://flagcdn.com/io.svg",
         "phone_code": "+246",
-        "native_name": "British Indian Ocean Territory"
+        "native_name": "British Indian Ocean Territory",
+        "emoji_flag": "🇮🇴",
+        "country_code": "IO"
     },
     "Equatorial Guinea": {
         "title": "Equatorial Guinea",
         "flag": "https://flagcdn.com/gq.svg",
         "phone_code": "+240",
-        "native_name": "Guinée équatoriale"
+        "native_name": "Guinée équatoriale",
+        "emoji_flag": "🇬🇶",
+        "country_code": "GQ"
     },
     "Syria": {
         "title": "Syria",
         "flag": "https://flagcdn.com/sy.svg",
         "phone_code": "+963",
-        "native_name": "سوريا"
+        "native_name": "سوريا",
+        "emoji_flag": "🇸🇾",
+        "country_code": "SY"
     },
     "Angola": {
         "title": "Angola",
         "flag": "https://flagcdn.com/ao.svg",
         "phone_code": "+244",
-        "native_name": "Angola"
+        "native_name": "Angola",
+        "emoji_flag": "🇦🇴",
+        "country_code": "AO"
     },
     "Tajikistan": {
         "title": "Tajikistan",
         "flag": "https://flagcdn.com/tj.svg",
         "phone_code": "+992",
-        "native_name": "Таджикистан"
+        "native_name": "Таджикистан",
+        "emoji_flag": "🇹🇯",
+        "country_code": "TJ"
     },
     "Venezuela": {
         "title": "Venezuela",
         "flag": "https://flagcdn.com/ve.svg",
         "phone_code": "+58",
-        "native_name": "Venezuela"
+        "native_name": "Venezuela",
+        "emoji_flag": "🇻🇪",
+        "country_code": "VE"
     },
     "United States Minor Outlying Islands": {
         "title": "United States Minor Outlying Islands",
         "flag": "https://flagcdn.com/um.svg",
         "phone_code": "+268",
-        "native_name": "United States Minor Outlying Islands"
+        "native_name": "United States Minor Outlying Islands",
+        "emoji_flag": "🇺🇲",
+        "country_code": "UM"
     },
     "Åland Islands": {
         "title": "Åland Islands",
         "flag": "https://flagcdn.com/ax.svg",
         "phone_code": "+35818",
-        "native_name": "Åland"
+        "native_name": "Åland",
+        "emoji_flag": "🇦🇽",
+        "country_code": "AX"
     },
     "Poland": {
         "title": "Poland",
         "flag": "https://flagcdn.com/pl.svg",
         "phone_code": "+48",
-        "native_name": "Polska"
+        "native_name": "Polska",
+        "emoji_flag": "🇵🇱",
+        "country_code": "PL"
     },
     "Saudi Arabia": {
         "title": "Saudi Arabia",
         "flag": "https://flagcdn.com/sa.svg",
         "phone_code": "+966",
-        "native_name": "العربية السعودية"
+        "native_name": "العربية السعودية",
+        "emoji_flag": "🇸🇦",
+        "country_code": "SA"
     },
     "Republic of the Congo": {
         "title": "Republic of the Congo",
         "flag": "https://flagcdn.com/cg.svg",
         "phone_code": "+242",
-        "native_name": "République du Congo"
+        "native_name": "République du Congo",
+        "emoji_flag": "🇨🇬",
+        "country_code": "CG"
     },
     "Bosnia and Herzegovina": {
         "title": "Bosnia and Herzegovina",
         "flag": "https://flagcdn.com/ba.svg",
         "phone_code": "+387",
-        "native_name": "Bosna i Hercegovina"
+        "native_name": "Bosna i Hercegovina",
+        "emoji_flag": "🇧🇦",
+        "country_code": "BA"
     },
     "United States Virgin Islands": {
         "title": "United States Virgin Islands",
         "flag": "https://flagcdn.com/vi.svg",
         "phone_code": "+1340",
-        "native_name": "United States Virgin Islands"
+        "native_name": "United States Virgin Islands",
+        "emoji_flag": "🇻🇮",
+        "country_code": "VI"
     },
     "New Caledonia": {
         "title": "New Caledonia",
         "flag": "https://flagcdn.com/nc.svg",
         "phone_code": "+687",
-        "native_name": "Nouvelle-Calédonie"
+        "native_name": "Nouvelle-Calédonie",
+        "emoji_flag": "🇳🇨",
+        "country_code": "NC"
     },
     "San Marino": {
         "title": "San Marino",
         "flag": "https://flagcdn.com/sm.svg",
         "phone_code": "+378",
-        "native_name": "San Marino"
+        "native_name": "San Marino",
+        "emoji_flag": "🇸🇲",
+        "country_code": "SM"
     },
     "Czechia": {
         "title": "Czechia",
         "flag": "https://flagcdn.com/cz.svg",
         "phone_code": "+420",
-        "native_name": "Česko"
+        "native_name": "Česko",
+        "emoji_flag": "🇨🇿",
+        "country_code": "CZ"
     },
     "Guatemala": {
         "title": "Guatemala",
         "flag": "https://flagcdn.com/gt.svg",
         "phone_code": "+502",
-        "native_name": "Guatemala"
+        "native_name": "Guatemala",
+        "emoji_flag": "🇬🇹",
+        "country_code": "GT"
     },
     "South Korea": {
         "title": "South Korea",
         "flag": "https://flagcdn.com/kr.svg",
         "phone_code": "+82",
-        "native_name": "한국"
+        "native_name": "한국",
+        "emoji_flag": "🇰🇷",
+        "country_code": "KR"
     },
     "Estonia": {
         "title": "Estonia",
         "flag": "https://flagcdn.com/ee.svg",
         "phone_code": "+372",
-        "native_name": "Eesti"
+        "native_name": "Eesti",
+        "emoji_flag": "🇪🇪",
+        "country_code": "EE"
     },
     "Nepal": {
         "title": "Nepal",
         "flag": "https://flagcdn.com/np.svg",
         "phone_code": "+977",
-        "native_name": "नेपाल"
+        "native_name": "नेपाल",
+        "emoji_flag": "🇳🇵",
+        "country_code": "NP"
     },
     "Kosovo": {
         "title": "Kosovo",
         "flag": "https://flagcdn.com/xk.svg",
         "phone_code": "+383",
-        "native_name": "Kosova"
+        "native_name": "Kosova",
+        "emoji_flag": "🇽🇰",
+        "country_code": "XK"
     },
     "Botswana": {
         "title": "Botswana",
         "flag": "https://flagcdn.com/bw.svg",
         "phone_code": "+267",
-        "native_name": "Botswana"
+        "native_name": "Botswana",
+        "emoji_flag": "🇧🇼",
+        "country_code": "BW"
     },
     "Philippines": {
         "title": "Philippines",
         "flag": "https://flagcdn.com/ph.svg",
         "phone_code": "+63",
-        "native_name": "Philippines"
+        "native_name": "Philippines",
+        "emoji_flag": "🇵🇭",
+        "country_code": "PH"
     },
     "Saint Pierre and Miquelon": {
         "title": "Saint Pierre and Miquelon",
         "flag": "https://flagcdn.com/pm.svg",
         "phone_code": "+508",
-        "native_name": "Saint-Pierre-et-Miquelon"
+        "native_name": "Saint-Pierre-et-Miquelon",
+        "emoji_flag": "🇵🇲",
+        "country_code": "PM"
     },
     "Iraq": {
         "title": "Iraq",
         "flag": "https://flagcdn.com/iq.svg",
         "phone_code": "+964",
-        "native_name": "العراق"
+        "native_name": "العراق",
+        "emoji_flag": "🇮🇶",
+        "country_code": "IQ"
     },
     "Lebanon": {
         "title": "Lebanon",
         "flag": "https://flagcdn.com/lb.svg",
         "phone_code": "+961",
-        "native_name": "لبنان"
+        "native_name": "لبنان",
+        "emoji_flag": "🇱🇧",
+        "country_code": "LB"
     },
     "Burundi": {
         "title": "Burundi",
         "flag": "https://flagcdn.com/bi.svg",
         "phone_code": "+257",
-        "native_name": "Burundi"
+        "native_name": "Burundi",
+        "emoji_flag": "🇧🇮",
+        "country_code": "BI"
     },
     "Mongolia": {
         "title": "Mongolia",
         "flag": "https://flagcdn.com/mn.svg",
         "phone_code": "+976",
-        "native_name": "Монгол улс"
+        "native_name": "Монгол улс",
+        "emoji_flag": "🇲🇳",
+        "country_code": "MN"
     },
     "Faroe Islands": {
         "title": "Faroe Islands",
         "flag": "https://flagcdn.com/fo.svg",
         "phone_code": "+298",
-        "native_name": "Færøerne"
+        "native_name": "Færøerne",
+        "emoji_flag": "🇫🇴",
+        "country_code": "FO"
     },
     "Paraguay": {
         "title": "Paraguay",
         "flag": "https://flagcdn.com/py.svg",
         "phone_code": "+595",
-        "native_name": "Paraguái"
+        "native_name": "Paraguái",
+        "emoji_flag": "🇵🇾",
+        "country_code": "PY"
     },
     "Svalbard and Jan Mayen": {
         "title": "Svalbard and Jan Mayen",
         "flag": "https://flagcdn.com/sj.svg",
         "phone_code": "+4779",
-        "native_name": "Svalbard og Jan Mayen"
+        "native_name": "Svalbard og Jan Mayen",
+        "emoji_flag": "🇸🇯",
+        "country_code": "SJ"
     },
     "Tokelau": {
         "title": "Tokelau",
         "flag": "https://flagcdn.com/tk.svg",
         "phone_code": "+690",
-        "native_name": "Tokelau"
+        "native_name": "Tokelau",
+        "emoji_flag": "🇹🇰",
+        "country_code": "TK"
     },
     "Guernsey": {
         "title": "Guernsey",
         "flag": "https://flagcdn.com/gg.svg",
         "phone_code": "+44",
-        "native_name": "Guernsey"
+        "native_name": "Guernsey",
+        "emoji_flag": "🇬🇬",
+        "country_code": "GG"
     },
     "Caribbean Netherlands": {
         "title": "Caribbean Netherlands",
         "flag": "https://flagcdn.com/bq.svg",
         "phone_code": "+599",
-        "native_name": ""
+        "native_name": "",
+        "emoji_flag": "🇧🇶",
+        "country_code": "BQ"
     },
     "Algeria": {
         "title": "Algeria",
         "flag": "https://flagcdn.com/dz.svg",
         "phone_code": "+213",
-        "native_name": "الجزائر"
+        "native_name": "الجزائر",
+        "emoji_flag": "🇩🇿",
+        "country_code": "DZ"
     },
     "France": {
         "title": "France",
         "flag": "https://flagcdn.com/fr.svg",
         "phone_code": "+33",
-        "native_name": "France"
+        "native_name": "France",
+        "emoji_flag": "🇫🇷",
+        "country_code": "FR"
     },
     "Netherlands": {
         "title": "Netherlands",
         "flag": "https://flagcdn.com/nl.svg",
         "phone_code": "+31",
-        "native_name": "Nederland"
+        "native_name": "Nederland",
+        "emoji_flag": "🇳🇱",
+        "country_code": "NL"
     },
     "Greenland": {
         "title": "Greenland",
         "flag": "https://flagcdn.com/gl.svg",
         "phone_code": "+299",
-        "native_name": "Kalaallit Nunaat"
+        "native_name": "Kalaallit Nunaat",
+        "emoji_flag": "🇬🇱",
+        "country_code": "GL"
     },
     "Sint Maarten": {
         "title": "Sint Maarten",
         "flag": "https://flagcdn.com/sx.svg",
         "phone_code": "+1721",
-        "native_name": "Sint Maarten"
+        "native_name": "Sint Maarten",
+        "emoji_flag": "🇸🇽",
+        "country_code": "SX"
     },
     "Chad": {
         "title": "Chad",
         "flag": "https://flagcdn.com/td.svg",
         "phone_code": "+235",
-        "native_name": "تشاد‎"
+        "native_name": "تشاد‎",
+        "emoji_flag": "🇹🇩",
+        "country_code": "TD"
     },
     "Finland": {
         "title": "Finland",
         "flag": "https://flagcdn.com/fi.svg",
         "phone_code": "+358",
-        "native_name": "Suomi"
+        "native_name": "Suomi",
+        "emoji_flag": "🇫🇮",
+        "country_code": "FI"
     },
     "Panama": {
         "title": "Panama",
         "flag": "https://flagcdn.com/pa.svg",
         "phone_code": "+507",
-        "native_name": "Panamá"
+        "native_name": "Panamá",
+        "emoji_flag": "🇵🇦",
+        "country_code": "PA"
     },
     "Palestine": {
         "title": "Palestine",
         "flag": "https://flagcdn.com/ps.svg",
         "phone_code": "+970",
-        "native_name": "فلسطين"
+        "native_name": "فلسطين",
+        "emoji_flag": "🇵🇸",
+        "country_code": "PS"
     },
     "Yemen": {
         "title": "Yemen",
         "flag": "https://flagcdn.com/ye.svg",
         "phone_code": "+967",
-        "native_name": "اليَمَن"
+        "native_name": "اليَمَن",
+        "emoji_flag": "🇾🇪",
+        "country_code": "YE"
     },
     "Brazil": {
         "title": "Brazil",
         "flag": "https://flagcdn.com/br.svg",
         "phone_code": "+55",
-        "native_name": "Brasil"
+        "native_name": "Brasil",
+        "emoji_flag": "🇧🇷",
+        "country_code": "BR"
     },
     "Nigeria": {
         "title": "Nigeria",
         "flag": "https://flagcdn.com/ng.svg",
         "phone_code": "+234",
-        "native_name": "Nigeria"
+        "native_name": "Nigeria",
+        "emoji_flag": "🇳🇬",
+        "country_code": "NG"
     },
     "Palau": {
         "title": "Palau",
         "flag": "https://flagcdn.com/pw.svg",
         "phone_code": "+680",
-        "native_name": "Palau"
+        "native_name": "Palau",
+        "emoji_flag": "🇵🇼",
+        "country_code": "PW"
     },
     "Japan": {
         "title": "Japan",
         "flag": "https://flagcdn.com/jp.svg",
         "phone_code": "+81",
-        "native_name": "日本"
+        "native_name": "日本",
+        "emoji_flag": "🇯🇵",
+        "country_code": "JP"
     },
     "Tanzania": {
         "title": "Tanzania",
         "flag": "https://flagcdn.com/tz.svg",
         "phone_code": "+255",
-        "native_name": "Tanzania"
+        "native_name": "Tanzania",
+        "emoji_flag": "🇹🇿",
+        "country_code": "TZ"
     },
     "Kazakhstan": {
         "title": "Kazakhstan",
         "flag": "https://flagcdn.com/kz.svg",
         "phone_code": "+76",
-        "native_name": "Қазақстан"
+        "native_name": "Қазақстан",
+        "emoji_flag": "🇰🇿",
+        "country_code": "KZ"
     },
     "Portugal": {
         "title": "Portugal",
         "flag": "https://flagcdn.com/pt.svg",
         "phone_code": "+351",
-        "native_name": "Portugal"
+        "native_name": "Portugal",
+        "emoji_flag": "🇵🇹",
+        "country_code": "PT"
     },
     "South Georgia": {
         "title": "South Georgia",
         "flag": "https://flagcdn.com/gs.svg",
         "phone_code": "+500",
-        "native_name": "South Georgia"
+        "native_name": "South Georgia",
+        "emoji_flag": "🇬🇸",
+        "country_code": "GS"
     },
     "Sri Lanka": {
         "title": "Sri Lanka",
         "flag": "https://flagcdn.com/lk.svg",
         "phone_code": "+94",
-        "native_name": "ශ්‍රී ලංකාව"
+        "native_name": "ශ්‍රී ලංකාව",
+        "emoji_flag": "🇱🇰",
+        "country_code": "LK"
     },
     "Germany": {
         "title": "Germany",
         "flag": "https://flagcdn.com/de.svg",
         "phone_code": "+49",
-        "native_name": "Deutschland"
+        "native_name": "Deutschland",
+        "emoji_flag": "🇩🇪",
+        "country_code": "DE"
     },
     "Western Sahara": {
         "title": "Western Sahara",
         "flag": "https://flagcdn.com/eh.svg",
         "phone_code": "+2125288",
-        "native_name": "Western Sahara"
+        "native_name": "Western Sahara",
+        "emoji_flag": "🇪🇭",
+        "country_code": "EH"
     },
     "Myanmar": {
         "title": "Myanmar",
         "flag": "https://flagcdn.com/mm.svg",
         "phone_code": "+95",
-        "native_name": "မြန်မာ"
+        "native_name": "မြန်မာ",
+        "emoji_flag": "🇲🇲",
+        "country_code": "MM"
     },
     "Colombia": {
         "title": "Colombia",
         "flag": "https://flagcdn.com/co.svg",
         "phone_code": "+57",
-        "native_name": "Colombia"
+        "native_name": "Colombia",
+        "emoji_flag": "🇨🇴",
+        "country_code": "CO"
     },
     "Peru": {
         "title": "Peru",
         "flag": "https://flagcdn.com/pe.svg",
         "phone_code": "+51",
-        "native_name": "Piruw"
+        "native_name": "Piruw",
+        "emoji_flag": "🇵🇪",
+        "country_code": "PE"
     },
     "Senegal": {
         "title": "Senegal",
         "flag": "https://flagcdn.com/sn.svg",
         "phone_code": "+221",
-        "native_name": "Sénégal"
+        "native_name": "Sénégal",
+        "emoji_flag": "🇸🇳",
+        "country_code": "SN"
     },
     "Kyrgyzstan": {
         "title": "Kyrgyzstan",
         "flag": "https://flagcdn.com/kg.svg",
         "phone_code": "+996",
-        "native_name": "Кыргызстан"
+        "native_name": "Кыргызстан",
+        "emoji_flag": "🇰🇬",
+        "country_code": "KG"
     },
     "China": {
         "title": "China",
         "flag": "https://flagcdn.com/cn.svg",
         "phone_code": "+86",
-        "native_name": "中国"
+        "native_name": "中国",
+        "emoji_flag": "🇨🇳",
+        "country_code": "CN"
     },
     "Afghanistan": {
         "title": "Afghanistan",
         "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
         "phone_code": "+93",
-        "native_name": "افغانستان"
+        "native_name": "افغانستان",
+        "emoji_flag": "🇦🇫",
+        "country_code": "AF"
     },
     "Turkey": {
         "title": "Turkey",
         "flag": "https://flagcdn.com/tr.svg",
         "phone_code": "+90",
-        "native_name": "Türkiye"
+        "native_name": "Türkiye",
+        "emoji_flag": "🇹🇷",
+        "country_code": "TR"
     },
     "Liberia": {
         "title": "Liberia",
         "flag": "https://flagcdn.com/lr.svg",
         "phone_code": "+231",
-        "native_name": "Liberia"
+        "native_name": "Liberia",
+        "emoji_flag": "🇱🇷",
+        "country_code": "LR"
     },
     "South Africa": {
         "title": "South Africa",
         "flag": "https://flagcdn.com/za.svg",
         "phone_code": "+27",
-        "native_name": "South Africa"
+        "native_name": "South Africa",
+        "emoji_flag": "🇿🇦",
+        "country_code": "ZA"
     },
     "Chile": {
         "title": "Chile",
         "flag": "https://flagcdn.com/cl.svg",
         "phone_code": "+56",
-        "native_name": "Chile"
+        "native_name": "Chile",
+        "emoji_flag": "🇨🇱",
+        "country_code": "CL"
     },
     "Malta": {
         "title": "Malta",
         "flag": "https://flagcdn.com/mt.svg",
         "phone_code": "+356",
-        "native_name": "Malta"
+        "native_name": "Malta",
+        "emoji_flag": "🇲🇹",
+        "country_code": "MT"
     },
     "Kiribati": {
         "title": "Kiribati",
         "flag": "https://flagcdn.com/ki.svg",
         "phone_code": "+686",
-        "native_name": "Kiribati"
+        "native_name": "Kiribati",
+        "emoji_flag": "🇰🇮",
+        "country_code": "KI"
     },
     "Cape Verde": {
         "title": "Cape Verde",
         "flag": "https://flagcdn.com/cv.svg",
         "phone_code": "+238",
-        "native_name": "Cabo Verde"
+        "native_name": "Cabo Verde",
+        "emoji_flag": "🇨🇻",
+        "country_code": "CV"
     },
     "Jersey": {
         "title": "Jersey",
         "flag": "https://flagcdn.com/je.svg",
         "phone_code": "+44",
-        "native_name": "Jersey"
+        "native_name": "Jersey",
+        "emoji_flag": "🇯🇪",
+        "country_code": "JE"
     },
     "Iceland": {
         "title": "Iceland",
         "flag": "https://flagcdn.com/is.svg",
         "phone_code": "+354",
-        "native_name": "Ísland"
+        "native_name": "Ísland",
+        "emoji_flag": "🇮🇸",
+        "country_code": "IS"
     },
     "Gambia": {
         "title": "Gambia",
         "flag": "https://flagcdn.com/gm.svg",
         "phone_code": "+220",
-        "native_name": "Gambia"
+        "native_name": "Gambia",
+        "emoji_flag": "🇬🇲",
+        "country_code": "GM"
     },
     "Vanuatu": {
         "title": "Vanuatu",
         "flag": "https://flagcdn.com/vu.svg",
         "phone_code": "+678",
-        "native_name": "Vanuatu"
+        "native_name": "Vanuatu",
+        "emoji_flag": "🇻🇺",
+        "country_code": "VU"
     },
     "Uruguay": {
         "title": "Uruguay",
         "flag": "https://flagcdn.com/uy.svg",
         "phone_code": "+598",
-        "native_name": "Uruguay"
+        "native_name": "Uruguay",
+        "emoji_flag": "🇺🇾",
+        "country_code": "UY"
     },
     "Oman": {
         "title": "Oman",
         "flag": "https://flagcdn.com/om.svg",
         "phone_code": "+968",
-        "native_name": "عمان"
+        "native_name": "عمان",
+        "emoji_flag": "🇴🇲",
+        "country_code": "OM"
     },
     "Sudan": {
         "title": "Sudan",
         "flag": "https://flagcdn.com/sd.svg",
         "phone_code": "+249",
-        "native_name": "السودان"
+        "native_name": "السودان",
+        "emoji_flag": "🇸🇩",
+        "country_code": "SD"
     },
     "India": {
         "title": "India",
         "flag": "https://flagcdn.com/in.svg",
         "phone_code": "+91",
-        "native_name": "India"
+        "native_name": "India",
+        "emoji_flag": "🇮🇳",
+        "country_code": "IN"
     },
     "Laos": {
         "title": "Laos",
         "flag": "https://flagcdn.com/la.svg",
         "phone_code": "+856",
-        "native_name": "ສປປລາວ"
+        "native_name": "ສປປລາວ",
+        "emoji_flag": "🇱🇦",
+        "country_code": "LA"
     },
     "Aruba": {
         "title": "Aruba",
         "flag": "https://flagcdn.com/aw.svg",
         "phone_code": "+297",
-        "native_name": "Aruba"
+        "native_name": "Aruba",
+        "emoji_flag": "🇦🇼",
+        "country_code": "AW"
     },
     "Martinique": {
         "title": "Martinique",
         "flag": "https://flagcdn.com/mq.svg",
         "phone_code": "+596",
-        "native_name": "Martinique"
+        "native_name": "Martinique",
+        "emoji_flag": "🇲🇶",
+        "country_code": "MQ"
     },
     "Comoros": {
         "title": "Comoros",
         "flag": "https://flagcdn.com/km.svg",
         "phone_code": "+269",
-        "native_name": "القمر‎"
+        "native_name": "القمر‎",
+        "emoji_flag": "🇰🇲",
+        "country_code": "KM"
     },
     "Spain": {
         "title": "Spain",
         "flag": "https://flagcdn.com/es.svg",
         "phone_code": "+34",
-        "native_name": "España"
+        "native_name": "España",
+        "emoji_flag": "🇪🇸",
+        "country_code": "ES"
     },
     "Antigua and Barbuda": {
         "title": "Antigua and Barbuda",
         "flag": "https://flagcdn.com/ag.svg",
         "phone_code": "+1268",
-        "native_name": "Antigua and Barbuda"
+        "native_name": "Antigua and Barbuda",
+        "emoji_flag": "🇦🇬",
+        "country_code": "AG"
     },
     "Uzbekistan": {
         "title": "Uzbekistan",
         "flag": "https://flagcdn.com/uz.svg",
         "phone_code": "+998",
-        "native_name": "Узбекистан"
+        "native_name": "Узбекистан",
+        "emoji_flag": "🇺🇿",
+        "country_code": "UZ"
     },
     "Maldives": {
         "title": "Maldives",
         "flag": "https://flagcdn.com/mv.svg",
         "phone_code": "+960",
-        "native_name": "ދިވެހިރާއްޖޭގެ"
+        "native_name": "ދިވެހިރާއްޖޭގެ",
+        "emoji_flag": "🇲🇻",
+        "country_code": "MV"
     },
     "Gibraltar": {
         "title": "Gibraltar",
         "flag": "https://flagcdn.com/gi.svg",
         "phone_code": "+350",
-        "native_name": "Gibraltar"
+        "native_name": "Gibraltar",
+        "emoji_flag": "🇬🇮",
+        "country_code": "GI"
     },
     "Indonesia": {
         "title": "Indonesia",
         "flag": "https://flagcdn.com/id.svg",
         "phone_code": "+62",
-        "native_name": "Indonesia"
+        "native_name": "Indonesia",
+        "emoji_flag": "🇮🇩",
+        "country_code": "ID"
     },
     "Pitcairn Islands": {
         "title": "Pitcairn Islands",
         "flag": "https://flagcdn.com/pn.svg",
         "phone_code": "+64",
-        "native_name": "Pitcairn Islands"
+        "native_name": "Pitcairn Islands",
+        "emoji_flag": "🇵🇳",
+        "country_code": "PN"
     },
     "Vietnam": {
         "title": "Vietnam",
         "flag": "https://flagcdn.com/vn.svg",
         "phone_code": "+84",
-        "native_name": "Việt Nam"
+        "native_name": "Việt Nam",
+        "emoji_flag": "🇻🇳",
+        "country_code": "VN"
     },
     "Malaysia": {
         "title": "Malaysia",
         "flag": "https://flagcdn.com/my.svg",
         "phone_code": "+60",
-        "native_name": "Malaysia"
+        "native_name": "Malaysia",
+        "emoji_flag": "🇲🇾",
+        "country_code": "MY"
     },
     "Cook Islands": {
         "title": "Cook Islands",
         "flag": "https://flagcdn.com/ck.svg",
         "phone_code": "+682",
-        "native_name": "Cook Islands"
+        "native_name": "Cook Islands",
+        "emoji_flag": "🇨🇰",
+        "country_code": "CK"
     },
     "Eswatini": {
         "title": "Eswatini",
         "flag": "https://flagcdn.com/sz.svg",
         "phone_code": "+268",
-        "native_name": "Eswatini"
+        "native_name": "Eswatini",
+        "emoji_flag": "🇸🇿",
+        "country_code": "SZ"
     },
     "Uganda": {
         "title": "Uganda",
         "flag": "https://flagcdn.com/ug.svg",
         "phone_code": "+256",
-        "native_name": "Uganda"
+        "native_name": "Uganda",
+        "emoji_flag": "🇺🇬",
+        "country_code": "UG"
     },
     "Madagascar": {
         "title": "Madagascar",
         "flag": "https://flagcdn.com/mg.svg",
         "phone_code": "+261",
-        "native_name": "Madagascar"
+        "native_name": "Madagascar",
+        "emoji_flag": "🇲🇬",
+        "country_code": "MG"
     },
     "Fiji": {
         "title": "Fiji",
         "flag": "https://flagcdn.com/fj.svg",
         "phone_code": "+679",
-        "native_name": "Fiji"
+        "native_name": "Fiji",
+        "emoji_flag": "🇫🇯",
+        "country_code": "FJ"
     },
     "Norway": {
         "title": "Norway",
         "flag": "https://flagcdn.com/no.svg",
         "phone_code": "+47",
-        "native_name": "Noreg"
+        "native_name": "Noreg",
+        "emoji_flag": "🇳🇴",
+        "country_code": "NO"
     },
     "Bouvet Island": {
         "title": "Bouvet Island",
         "flag": "https://flagcdn.com/bv.svg",
         "phone_code": "+47",
-        "native_name": "Bouvetøya"
+        "native_name": "Bouvetøya",
+        "emoji_flag": "🇧🇻",
+        "country_code": "BV"
     },
     "Cyprus": {
         "title": "Cyprus",
         "flag": "https://flagcdn.com/cy.svg",
         "phone_code": "+357",
-        "native_name": "Κύπρος"
+        "native_name": "Κύπρος",
+        "emoji_flag": "🇨🇾",
+        "country_code": "CY"
     },
     "Taiwan": {
         "title": "Taiwan",
         "flag": "https://flagcdn.com/tw.svg",
         "phone_code": "+886",
-        "native_name": "台灣"
+        "native_name": "台灣",
+        "emoji_flag": "🇹🇼",
+        "country_code": "TW"
     },
     "Papua New Guinea": {
         "title": "Papua New Guinea",
         "flag": "https://flagcdn.com/pg.svg",
         "phone_code": "+675",
-        "native_name": "Papua New Guinea"
+        "native_name": "Papua New Guinea",
+        "emoji_flag": "🇵🇬",
+        "country_code": "PG"
     },
     "Rwanda": {
         "title": "Rwanda",
         "flag": "https://flagcdn.com/rw.svg",
         "phone_code": "+250",
-        "native_name": "Rwanda"
+        "native_name": "Rwanda",
+        "emoji_flag": "🇷🇼",
+        "country_code": "RW"
     },
     "DR Congo": {
         "title": "DR Congo",
         "flag": "https://flagcdn.com/cd.svg",
         "phone_code": "+243",
-        "native_name": "RD Congo"
+        "native_name": "RD Congo",
+        "emoji_flag": "🇨🇩",
+        "country_code": "CD"
     },
     "Cameroon": {
         "title": "Cameroon",
         "flag": "https://flagcdn.com/cm.svg",
         "phone_code": "+237",
-        "native_name": "Cameroon"
+        "native_name": "Cameroon",
+        "emoji_flag": "🇨🇲",
+        "country_code": "CM"
     },
     "Serbia": {
         "title": "Serbia",
         "flag": "https://flagcdn.com/rs.svg",
         "phone_code": "+381",
-        "native_name": "Србија"
+        "native_name": "Србија",
+        "emoji_flag": "🇷🇸",
+        "country_code": "RS"
     },
     "Lithuania": {
         "title": "Lithuania",
         "flag": "https://flagcdn.com/lt.svg",
         "phone_code": "+370",
-        "native_name": "Lietuva"
+        "native_name": "Lietuva",
+        "emoji_flag": "🇱🇹",
+        "country_code": "LT"
     },
     "French Southern and Antarctic Lands": {
         "title": "French Southern and Antarctic Lands",
         "flag": "https://flagcdn.com/tf.svg",
         "phone_code": "+262",
-        "native_name": "Terres australes et antarctiques françaises"
+        "native_name": "Terres australes et antarctiques françaises",
+        "emoji_flag": "🇹🇫",
+        "country_code": "TF"
     },
     "Cambodia": {
         "title": "Cambodia",
         "flag": "https://flagcdn.com/kh.svg",
         "phone_code": "+855",
-        "native_name": "Kâmpŭchéa"
+        "native_name": "Kâmpŭchéa",
+        "emoji_flag": "🇰🇭",
+        "country_code": "KH"
     },
     "Saint Helena, Ascension and Tristan da Cunha": {
         "title": "Saint Helena, Ascension and Tristan da Cunha",
         "flag": "https://flagcdn.com/sh.svg",
         "phone_code": "+290",
-        "native_name": "Saint Helena, Ascension and Tristan da Cunha"
+        "native_name": "Saint Helena, Ascension and Tristan da Cunha",
+        "emoji_flag": "🇸🇭",
+        "country_code": "SH"
     },
     "United Arab Emirates": {
         "title": "United Arab Emirates",
         "flag": "https://flagcdn.com/ae.svg",
         "phone_code": "+971",
-        "native_name": "دولة الإمارات العربية المتحدة"
+        "native_name": "دولة الإمارات العربية المتحدة",
+        "emoji_flag": "🇦🇪",
+        "country_code": "AE"
     },
     "Bermuda": {
         "title": "Bermuda",
         "flag": "https://flagcdn.com/bm.svg",
         "phone_code": "+1441",
-        "native_name": "Bermuda"
+        "native_name": "Bermuda",
+        "emoji_flag": "🇧🇲",
+        "country_code": "BM"
     },
     "Monaco": {
         "title": "Monaco",
         "flag": "https://flagcdn.com/mc.svg",
         "phone_code": "+377",
-        "native_name": "Monaco"
+        "native_name": "Monaco",
+        "emoji_flag": "🇲🇨",
+        "country_code": "MC"
     },
     "Cuba": {
         "title": "Cuba",
         "flag": "https://flagcdn.com/cu.svg",
         "phone_code": "+53",
-        "native_name": "Cuba"
+        "native_name": "Cuba",
+        "emoji_flag": "🇨🇺",
+        "country_code": "CU"
     },
     "Hong Kong": {
         "title": "Hong Kong",
         "flag": "https://flagcdn.com/hk.svg",
         "phone_code": "+852",
-        "native_name": "Hong Kong"
+        "native_name": "Hong Kong",
+        "emoji_flag": "🇭🇰",
+        "country_code": "HK"
     },
     "Northern Mariana Islands": {
         "title": "Northern Mariana Islands",
         "flag": "https://flagcdn.com/mp.svg",
         "phone_code": "+1670",
-        "native_name": "Northern Mariana Islands"
+        "native_name": "Northern Mariana Islands",
+        "emoji_flag": "🇲🇵",
+        "country_code": "MP"
     },
     "Togo": {
         "title": "Togo",
         "flag": "https://flagcdn.com/tg.svg",
         "phone_code": "+228",
-        "native_name": "Togo"
+        "native_name": "Togo",
+        "emoji_flag": "🇹🇬",
+        "country_code": "TG"
     },
     "Luxembourg": {
         "title": "Luxembourg",
         "flag": "https://flagcdn.com/lu.svg",
         "phone_code": "+352",
-        "native_name": "Luxemburg"
+        "native_name": "Luxemburg",
+        "emoji_flag": "🇱🇺",
+        "country_code": "LU"
     },
     "Mauritius": {
         "title": "Mauritius",
         "flag": "https://flagcdn.com/mu.svg",
         "phone_code": "+230",
-        "native_name": "Mauritius"
+        "native_name": "Mauritius",
+        "emoji_flag": "🇲🇺",
+        "country_code": "MU"
     },
     "Argentina": {
         "title": "Argentina",
         "flag": "https://flagcdn.com/ar.svg",
         "phone_code": "+54",
-        "native_name": "Argentina"
+        "native_name": "Argentina",
+        "emoji_flag": "🇦🇷",
+        "country_code": "AR"
     },
     "Grenada": {
         "title": "Grenada",
         "flag": "https://flagcdn.com/gd.svg",
         "phone_code": "+1473",
-        "native_name": "Grenada"
+        "native_name": "Grenada",
+        "emoji_flag": "🇬🇩",
+        "country_code": "GD"
     },
     "Nicaragua": {
         "title": "Nicaragua",
         "flag": "https://flagcdn.com/ni.svg",
         "phone_code": "+505",
-        "native_name": "Nicaragua"
+        "native_name": "Nicaragua",
+        "emoji_flag": "🇳🇮",
+        "country_code": "NI"
     },
     "Niue": {
         "title": "Niue",
         "flag": "https://flagcdn.com/nu.svg",
         "phone_code": "+683",
-        "native_name": "Niue"
+        "native_name": "Niue",
+        "emoji_flag": "🇳🇺",
+        "country_code": "NU"
     },
     "Ukraine": {
         "title": "Ukraine",
         "flag": "https://flagcdn.com/ua.svg",
         "phone_code": "+380",
-        "native_name": "Україна"
+        "native_name": "Україна",
+        "emoji_flag": "🇺🇦",
+        "country_code": "UA"
     },
     "Guyana": {
         "title": "Guyana",
         "flag": "https://flagcdn.com/gy.svg",
         "phone_code": "+592",
-        "native_name": "Guyana"
+        "native_name": "Guyana",
+        "emoji_flag": "🇬🇾",
+        "country_code": "GY"
     },
     "Niger": {
         "title": "Niger",
         "flag": "https://flagcdn.com/ne.svg",
         "phone_code": "+227",
-        "native_name": "Niger"
+        "native_name": "Niger",
+        "emoji_flag": "🇳🇪",
+        "country_code": "NE"
     },
     "Benin": {
         "title": "Benin",
         "flag": "https://flagcdn.com/bj.svg",
         "phone_code": "+229",
-        "native_name": "Bénin"
+        "native_name": "Bénin",
+        "emoji_flag": "🇧🇯",
+        "country_code": "BJ"
     },
     "Saint Lucia": {
         "title": "Saint Lucia",
         "flag": "https://flagcdn.com/lc.svg",
         "phone_code": "+1758",
-        "native_name": "Saint Lucia"
+        "native_name": "Saint Lucia",
+        "emoji_flag": "🇱🇨",
+        "country_code": "LC"
     },
     "Tuvalu": {
         "title": "Tuvalu",
         "flag": "https://flagcdn.com/tv.svg",
         "phone_code": "+688",
-        "native_name": "Tuvalu"
+        "native_name": "Tuvalu",
+        "emoji_flag": "🇹🇻",
+        "country_code": "TV"
     },
     "Norfolk Island": {
         "title": "Norfolk Island",
         "flag": "https://flagcdn.com/nf.svg",
         "phone_code": "+672",
-        "native_name": "Norfolk Island"
+        "native_name": "Norfolk Island",
+        "emoji_flag": "🇳🇫",
+        "country_code": "NF"
     },
     "Egypt": {
         "title": "Egypt",
         "flag": "https://flagcdn.com/eg.svg",
         "phone_code": "+20",
-        "native_name": "مصر"
+        "native_name": "مصر",
+        "emoji_flag": "🇪🇬",
+        "country_code": "EG"
     },
     "Saint Kitts and Nevis": {
         "title": "Saint Kitts and Nevis",
         "flag": "https://flagcdn.com/kn.svg",
         "phone_code": "+1869",
-        "native_name": "Saint Kitts and Nevis"
+        "native_name": "Saint Kitts and Nevis",
+        "emoji_flag": "🇰🇳",
+        "country_code": "KN"
     },
     "Lesotho": {
         "title": "Lesotho",
         "flag": "https://flagcdn.com/ls.svg",
         "phone_code": "+266",
-        "native_name": "Lesotho"
+        "native_name": "Lesotho",
+        "emoji_flag": "🇱🇸",
+        "country_code": "LS"
     },
     "Tonga": {
         "title": "Tonga",
         "flag": "https://flagcdn.com/to.svg",
         "phone_code": "+676",
-        "native_name": "Tonga"
+        "native_name": "Tonga",
+        "emoji_flag": "🇹🇴",
+        "country_code": "TO"
     },
     "Georgia": {
         "title": "Georgia",
         "flag": "https://flagcdn.com/ge.svg",
         "phone_code": "+995",
-        "native_name": "საქართველო"
+        "native_name": "საქართველო",
+        "emoji_flag": "🇬🇪",
+        "country_code": "GE"
     },
     "Ethiopia": {
         "title": "Ethiopia",
         "flag": "https://flagcdn.com/et.svg",
         "phone_code": "+251",
-        "native_name": "ኢትዮጵያ"
+        "native_name": "ኢትዮጵያ",
+        "emoji_flag": "🇪🇹",
+        "country_code": "ET"
     },
     "Dominican Republic": {
         "title": "Dominican Republic",
         "flag": "https://flagcdn.com/do.svg",
         "phone_code": "+1809",
-        "native_name": "República Dominicana"
+        "native_name": "República Dominicana",
+        "emoji_flag": "🇩🇴",
+        "country_code": "DO"
     },
     "Saint Vincent and the Grenadines": {
         "title": "Saint Vincent and the Grenadines",
         "flag": "https://flagcdn.com/vc.svg",
         "phone_code": "+1784",
-        "native_name": "Saint Vincent and the Grenadines"
+        "native_name": "Saint Vincent and the Grenadines",
+        "emoji_flag": "🇻🇨",
+        "country_code": "VC"
     },
     "Belize": {
         "title": "Belize",
         "flag": "https://flagcdn.com/bz.svg",
         "phone_code": "+501",
-        "native_name": "Belize"
+        "native_name": "Belize",
+        "emoji_flag": "🇧🇿",
+        "country_code": "BZ"
     },
     "Isle of Man": {
         "title": "Isle of Man",
         "flag": "https://flagcdn.com/im.svg",
         "phone_code": "+44",
-        "native_name": "Isle of Man"
+        "native_name": "Isle of Man",
+        "emoji_flag": "🇮🇲",
+        "country_code": "IM"
     },
     "Morocco": {
         "title": "Morocco",
         "flag": "https://flagcdn.com/ma.svg",
         "phone_code": "+212",
-        "native_name": "المغرب"
+        "native_name": "المغرب",
+        "emoji_flag": "🇲🇦",
+        "country_code": "MA"
     },
     "Haiti": {
         "title": "Haiti",
         "flag": "https://flagcdn.com/ht.svg",
         "phone_code": "+509",
-        "native_name": "Haïti"
+        "native_name": "Haïti",
+        "emoji_flag": "🇭🇹",
+        "country_code": "HT"
     },
     "Mayotte": {
         "title": "Mayotte",
         "flag": "https://flagcdn.com/yt.svg",
         "phone_code": "+262",
-        "native_name": "Mayotte"
+        "native_name": "Mayotte",
+        "emoji_flag": "🇾🇹",
+        "country_code": "YT"
     },
     "Burkina Faso": {
         "title": "Burkina Faso",
         "flag": "https://flagcdn.com/bf.svg",
         "phone_code": "+226",
-        "native_name": "Burkina Faso"
+        "native_name": "Burkina Faso",
+        "emoji_flag": "🇧🇫",
+        "country_code": "BF"
     },
     "Bangladesh": {
         "title": "Bangladesh",
         "flag": "https://flagcdn.com/bd.svg",
         "phone_code": "+880",
-        "native_name": "বাংলাদেশ"
+        "native_name": "বাংলাদেশ",
+        "emoji_flag": "🇧🇩",
+        "country_code": "BD"
     },
     "Kuwait": {
         "title": "Kuwait",
         "flag": "https://flagcdn.com/kw.svg",
         "phone_code": "+965",
-        "native_name": "الكويت"
+        "native_name": "الكويت",
+        "emoji_flag": "🇰🇼",
+        "country_code": "KW"
     },
     "Réunion": {
         "title": "Réunion",
         "flag": "https://flagcdn.com/re.svg",
         "phone_code": "+262",
-        "native_name": "La Réunion"
+        "native_name": "La Réunion",
+        "emoji_flag": "🇷🇪",
+        "country_code": "RE"
     },
     "Jamaica": {
         "title": "Jamaica",
         "flag": "https://flagcdn.com/jm.svg",
         "phone_code": "+1876",
-        "native_name": "Jamaica"
+        "native_name": "Jamaica",
+        "emoji_flag": "🇯🇲",
+        "country_code": "JM"
     },
     "Romania": {
         "title": "Romania",
         "flag": "https://flagcdn.com/ro.svg",
         "phone_code": "+40",
-        "native_name": "România"
+        "native_name": "România",
+        "emoji_flag": "🇷🇴",
+        "country_code": "RO"
     },
     "São Tomé and Príncipe": {
         "title": "São Tomé and Príncipe",
         "flag": "https://flagcdn.com/st.svg",
         "phone_code": "+239",
-        "native_name": "São Tomé e Príncipe"
+        "native_name": "São Tomé e Príncipe",
+        "emoji_flag": "🇸🇹",
+        "country_code": "ST"
     },
     "Bahamas": {
         "title": "Bahamas",
         "flag": "https://flagcdn.com/bs.svg",
         "phone_code": "+1242",
-        "native_name": "Bahamas"
+        "native_name": "Bahamas",
+        "emoji_flag": "🇧🇸",
+        "country_code": "BS"
     },
     "Mexico": {
         "title": "Mexico",
         "flag": "https://flagcdn.com/mx.svg",
         "phone_code": "+52",
-        "native_name": "México"
+        "native_name": "México",
+        "emoji_flag": "🇲🇽",
+        "country_code": "MX"
     },
     "Saint Martin": {
         "title": "Saint Martin",
         "flag": "https://flagcdn.com/mf.svg",
         "phone_code": "+590",
-        "native_name": "Saint-Martin"
+        "native_name": "Saint-Martin",
+        "emoji_flag": "🇲🇫",
+        "country_code": "MF"
     },
     "El Salvador": {
         "title": "El Salvador",
         "flag": "https://flagcdn.com/sv.svg",
         "phone_code": "+503",
-        "native_name": "El Salvador"
+        "native_name": "El Salvador",
+        "emoji_flag": "🇸🇻",
+        "country_code": "SV"
     },
     "Saint Barthélemy": {
         "title": "Saint Barthélemy",
         "flag": "https://flagcdn.com/bl.svg",
         "phone_code": "+590",
-        "native_name": "Saint-Barthélemy"
+        "native_name": "Saint-Barthélemy",
+        "emoji_flag": "🇧🇱",
+        "country_code": "BL"
     },
     "Micronesia": {
         "title": "Micronesia",
         "flag": "https://flagcdn.com/fm.svg",
         "phone_code": "+691",
-        "native_name": "Micronesia"
+        "native_name": "Micronesia",
+        "emoji_flag": "🇫🇲",
+        "country_code": "FM"
     },
     "Turkmenistan": {
         "title": "Turkmenistan",
         "flag": "https://flagcdn.com/tm.svg",
         "phone_code": "+993",
-        "native_name": "Туркмения"
+        "native_name": "Туркмения",
+        "emoji_flag": "🇹🇲",
+        "country_code": "TM"
     },
     "Anguilla": {
         "title": "Anguilla",
         "flag": "https://flagcdn.com/ai.svg",
         "phone_code": "+1264",
-        "native_name": "Anguilla"
+        "native_name": "Anguilla",
+        "emoji_flag": "🇦🇮",
+        "country_code": "AI"
     },
     "Central African Republic": {
         "title": "Central African Republic",
         "flag": "https://flagcdn.com/cf.svg",
         "phone_code": "+236",
-        "native_name": "République centrafricaine"
+        "native_name": "République centrafricaine",
+        "emoji_flag": "🇨🇫",
+        "country_code": "CF"
     },
     "Suriname": {
         "title": "Suriname",
         "flag": "https://flagcdn.com/sr.svg",
         "phone_code": "+597",
-        "native_name": "Suriname"
+        "native_name": "Suriname",
+        "emoji_flag": "🇸🇷",
+        "country_code": "SR"
     },
     "Belgium": {
         "title": "Belgium",
         "flag": "https://flagcdn.com/be.svg",
         "phone_code": "+32",
-        "native_name": "Belgien"
+        "native_name": "Belgien",
+        "emoji_flag": "🇧🇪",
+        "country_code": "BE"
     },
     "Sweden": {
         "title": "Sweden",
         "flag": "https://flagcdn.com/se.svg",
         "phone_code": "+46",
-        "native_name": "Sverige"
+        "native_name": "Sverige",
+        "emoji_flag": "🇸🇪",
+        "country_code": "SE"
     },
     "Bolivia": {
         "title": "Bolivia",
         "flag": "https://flagcdn.com/bo.svg",
         "phone_code": "+591",
-        "native_name": "Wuliwya"
+        "native_name": "Wuliwya",
+        "emoji_flag": "🇧🇴",
+        "country_code": "BO"
     },
     "Montenegro": {
         "title": "Montenegro",
         "flag": "https://flagcdn.com/me.svg",
         "phone_code": "+382",
-        "native_name": "Црна Гора"
+        "native_name": "Црна Гора",
+        "emoji_flag": "🇲🇪",
+        "country_code": "ME"
     },
     "Mozambique": {
         "title": "Mozambique",
         "flag": "https://flagcdn.com/mz.svg",
         "phone_code": "+258",
-        "native_name": "Moçambique"
+        "native_name": "Moçambique",
+        "emoji_flag": "🇲🇿",
+        "country_code": "MZ"
     },
     "Latvia": {
         "title": "Latvia",
         "flag": "https://flagcdn.com/lv.svg",
         "phone_code": "+371",
-        "native_name": "Latvija"
+        "native_name": "Latvija",
+        "emoji_flag": "🇱🇻",
+        "country_code": "LV"
     },
     "Malawi": {
         "title": "Malawi",
         "flag": "https://flagcdn.com/mw.svg",
         "phone_code": "+265",
-        "native_name": "Malawi"
+        "native_name": "Malawi",
+        "emoji_flag": "🇲🇼",
+        "country_code": "MW"
     },
     "Mali": {
         "title": "Mali",
         "flag": "https://flagcdn.com/ml.svg",
         "phone_code": "+223",
-        "native_name": "Mali"
+        "native_name": "Mali",
+        "emoji_flag": "🇲🇱",
+        "country_code": "ML"
     },
     "Vatican City": {
         "title": "Vatican City",
         "flag": "https://flagcdn.com/va.svg",
         "phone_code": "+3906698",
-        "native_name": "Vaticano"
+        "native_name": "Vaticano",
+        "emoji_flag": "🇻🇦",
+        "country_code": "VA"
     },
     "Montserrat": {
         "title": "Montserrat",
         "flag": "https://flagcdn.com/ms.svg",
         "phone_code": "+1664",
-        "native_name": "Montserrat"
+        "native_name": "Montserrat",
+        "emoji_flag": "🇲🇸",
+        "country_code": "MS"
     },
     "Austria": {
         "title": "Austria",
         "flag": "https://flagcdn.com/at.svg",
         "phone_code": "+43",
-        "native_name": ""
+        "native_name": "",
+        "emoji_flag": "🇦🇹",
+        "country_code": "AT"
     },
     "Albania": {
         "title": "Albania",
         "flag": "https://flagcdn.com/al.svg",
         "phone_code": "+355",
-        "native_name": "Shqipëria"
+        "native_name": "Shqipëria",
+        "emoji_flag": "🇦🇱",
+        "country_code": "AL"
     },
     "British Virgin Islands": {
         "title": "British Virgin Islands",
         "flag": "https://flagcdn.com/vg.svg",
         "phone_code": "+1284",
-        "native_name": "British Virgin Islands"
+        "native_name": "British Virgin Islands",
+        "emoji_flag": "🇻🇬",
+        "country_code": "VG"
     },
     "Zambia": {
         "title": "Zambia",
         "flag": "https://flagcdn.com/zm.svg",
         "phone_code": "+260",
-        "native_name": "Zambia"
+        "native_name": "Zambia",
+        "emoji_flag": "🇿🇲",
+        "country_code": "ZM"
     },
     "French Guiana": {
         "title": "French Guiana",
         "flag": "https://flagcdn.com/gf.svg",
         "phone_code": "+594",
-        "native_name": "Guyane française"
+        "native_name": "Guyane française",
+        "emoji_flag": "🇬🇫",
+        "country_code": "GF"
     },
     "Liechtenstein": {
         "title": "Liechtenstein",
         "flag": "https://flagcdn.com/li.svg",
         "phone_code": "+423",
-        "native_name": "Liechtenstein"
+        "native_name": "Liechtenstein",
+        "emoji_flag": "🇱🇮",
+        "country_code": "LI"
     },
     "Qatar": {
         "title": "Qatar",
         "flag": "https://flagcdn.com/qa.svg",
         "phone_code": "+974",
-        "native_name": "قطر"
+        "native_name": "قطر",
+        "emoji_flag": "🇶🇦",
+        "country_code": "QA"
     },
     "Solomon Islands": {
         "title": "Solomon Islands",
         "flag": "https://flagcdn.com/sb.svg",
         "phone_code": "+677",
-        "native_name": "Solomon Islands"
+        "native_name": "Solomon Islands",
+        "emoji_flag": "🇸🇧",
+        "country_code": "SB"
     },
     "Nauru": {
         "title": "Nauru",
         "flag": "https://flagcdn.com/nr.svg",
         "phone_code": "+674",
-        "native_name": "Nauru"
+        "native_name": "Nauru",
+        "emoji_flag": "🇳🇷",
+        "country_code": "NR"
     },
     "Greece": {
         "title": "Greece",
         "flag": "https://flagcdn.com/gr.svg",
         "phone_code": "+30",
-        "native_name": "Ελλάδα"
+        "native_name": "Ελλάδα",
+        "emoji_flag": "🇬🇷",
+        "country_code": "GR"
     },
     "Libya": {
         "title": "Libya",
         "flag": "https://flagcdn.com/ly.svg",
         "phone_code": "+218",
-        "native_name": "‏ليبيا"
+        "native_name": "‏ليبيا",
+        "emoji_flag": "🇱🇾",
+        "country_code": "LY"
     },
     "Guinea-Bissau": {
         "title": "Guinea-Bissau",
         "flag": "https://flagcdn.com/gw.svg",
         "phone_code": "+245",
-        "native_name": "Guiné-Bissau"
+        "native_name": "Guiné-Bissau",
+        "emoji_flag": "🇬🇼",
+        "country_code": "GW"
     },
     "Barbados": {
         "title": "Barbados",
         "flag": "https://flagcdn.com/bb.svg",
         "phone_code": "+1246",
-        "native_name": "Barbados"
+        "native_name": "Barbados",
+        "emoji_flag": "🇧🇧",
+        "country_code": "BB"
     },
     "Honduras": {
         "title": "Honduras",
         "flag": "https://flagcdn.com/hn.svg",
         "phone_code": "+504",
-        "native_name": "Honduras"
+        "native_name": "Honduras",
+        "emoji_flag": "🇭🇳",
+        "country_code": "HN"
     },
     "Somalia": {
         "title": "Somalia",
         "flag": "https://flagcdn.com/so.svg",
         "phone_code": "+252",
-        "native_name": "الصومال‎‎"
+        "native_name": "الصومال‎‎",
+        "emoji_flag": "🇸🇴",
+        "country_code": "SO"
     },
     "Cayman Islands": {
         "title": "Cayman Islands",
         "flag": "https://flagcdn.com/ky.svg",
         "phone_code": "+1345",
-        "native_name": "Cayman Islands"
+        "native_name": "Cayman Islands",
+        "emoji_flag": "🇰🇾",
+        "country_code": "KY"
     },
     "Italy": {
         "title": "Italy",
         "flag": "https://flagcdn.com/it.svg",
         "phone_code": "+39",
-        "native_name": "Italia"
+        "native_name": "Italia",
+        "emoji_flag": "🇮🇹",
+        "country_code": "IT"
     },
     "Wallis and Futuna": {
         "title": "Wallis and Futuna",
         "flag": "https://flagcdn.com/wf.svg",
         "phone_code": "+681",
-        "native_name": "Wallis et Futuna"
+        "native_name": "Wallis et Futuna",
+        "emoji_flag": "🇼🇫",
+        "country_code": "WF"
     },
     "Andorra": {
         "title": "Andorra",
         "flag": "https://flagcdn.com/ad.svg",
         "phone_code": "+376",
-        "native_name": "Andorra"
+        "native_name": "Andorra",
+        "emoji_flag": "🇦🇩",
+        "country_code": "AD"
     },
     "Ecuador": {
         "title": "Ecuador",
         "flag": "https://flagcdn.com/ec.svg",
         "phone_code": "+593",
-        "native_name": "Ecuador"
+        "native_name": "Ecuador",
+        "emoji_flag": "🇪🇨",
+        "country_code": "EC"
     },
     "Kenya": {
         "title": "Kenya",
         "flag": "https://flagcdn.com/ke.svg",
         "phone_code": "+254",
-        "native_name": "Kenya"
+        "native_name": "Kenya",
+        "emoji_flag": "🇰🇪",
+        "country_code": "KE"
     },
     "Bahrain": {
         "title": "Bahrain",
         "flag": "https://flagcdn.com/bh.svg",
         "phone_code": "+973",
-        "native_name": "‏البحرين"
+        "native_name": "‏البحرين",
+        "emoji_flag": "🇧🇭",
+        "country_code": "BH"
     },
     "United Kingdom": {
         "title": "United Kingdom",
         "flag": "https://flagcdn.com/gb.svg",
         "phone_code": "+44",
-        "native_name": "United Kingdom"
+        "native_name": "United Kingdom",
+        "emoji_flag": "🇬🇧",
+        "country_code": "GB"
     },
     "Guinea": {
         "title": "Guinea",
         "flag": "https://flagcdn.com/gn.svg",
         "phone_code": "+224",
-        "native_name": "Guinée"
+        "native_name": "Guinée",
+        "emoji_flag": "🇬🇳",
+        "country_code": "GN"
     },
     "Russia": {
         "title": "Russia",
         "flag": "https://flagcdn.com/ru.svg",
         "phone_code": "+73",
-        "native_name": "Россия"
+        "native_name": "Россия",
+        "emoji_flag": "🇷🇺",
+        "country_code": "RU"
     },
     "Brunei": {
         "title": "Brunei",
         "flag": "https://flagcdn.com/bn.svg",
         "phone_code": "+673",
-        "native_name": "Negara Brunei Darussalam"
+        "native_name": "Negara Brunei Darussalam",
+        "emoji_flag": "🇧🇳",
+        "country_code": "BN"
     },
     "Zimbabwe": {
         "title": "Zimbabwe",
         "flag": "https://flagcdn.com/zw.svg",
         "phone_code": "+263",
-        "native_name": "Zimbabwe"
+        "native_name": "Zimbabwe",
+        "emoji_flag": "🇿🇼",
+        "country_code": "ZW"
     },
     "Guam": {
         "title": "Guam",
         "flag": "https://flagcdn.com/gu.svg",
         "phone_code": "+1671",
-        "native_name": "Guåhån"
+        "native_name": "Guåhån",
+        "emoji_flag": "🇬🇺",
+        "country_code": "GU"
     },
     "Australia": {
         "title": "Australia",
         "flag": "https://flagcdn.com/au.svg",
         "phone_code": "+61",
-        "native_name": "Australia"
+        "native_name": "Australia",
+        "emoji_flag": "🇦🇺",
+        "country_code": "AU"
     },
     "Slovenia": {
         "title": "Slovenia",
         "flag": "https://flagcdn.com/si.svg",
         "phone_code": "+386",
-        "native_name": "Slovenija"
+        "native_name": "Slovenija",
+        "emoji_flag": "🇸🇮",
+        "country_code": "SI"
     },
     "Belarus": {
         "title": "Belarus",
         "flag": "https://flagcdn.com/by.svg",
         "phone_code": "+375",
-        "native_name": "Белару́сь"
+        "native_name": "Белару́сь",
+        "emoji_flag": "🇧🇾",
+        "country_code": "BY"
     },
     "Thailand": {
         "title": "Thailand",
         "flag": "https://flagcdn.com/th.svg",
         "phone_code": "+66",
-        "native_name": "ประเทศไทย"
+        "native_name": "ประเทศไทย",
+        "emoji_flag": "🇹🇭",
+        "country_code": "TH"
     },
     "New Zealand": {
         "title": "New Zealand",
         "flag": "https://flagcdn.com/nz.svg",
         "phone_code": "+64",
-        "native_name": "New Zealand"
+        "native_name": "New Zealand",
+        "emoji_flag": "🇳🇿",
+        "country_code": "NZ"
     },
     "Tunisia": {
         "title": "Tunisia",
         "flag": "https://flagcdn.com/tn.svg",
         "phone_code": "+216",
-        "native_name": "تونس"
+        "native_name": "تونس",
+        "emoji_flag": "🇹🇳",
+        "country_code": "TN"
     },
     "Marshall Islands": {
         "title": "Marshall Islands",
         "flag": "https://flagcdn.com/mh.svg",
         "phone_code": "+692",
-        "native_name": "Marshall Islands"
+        "native_name": "Marshall Islands",
+        "emoji_flag": "🇲🇭",
+        "country_code": "MH"
     },
     "Sierra Leone": {
         "title": "Sierra Leone",
         "flag": "https://flagcdn.com/sl.svg",
         "phone_code": "+232",
-        "native_name": "Sierra Leone"
+        "native_name": "Sierra Leone",
+        "emoji_flag": "🇸🇱",
+        "country_code": "SL"
     },
     "Bhutan": {
         "title": "Bhutan",
         "flag": "https://flagcdn.com/bt.svg",
         "phone_code": "+975",
-        "native_name": "འབྲུག་ཡུལ་"
+        "native_name": "འབྲུག་ཡུལ་",
+        "emoji_flag": "🇧🇹",
+        "country_code": "BT"
     },
     "United States": {
         "title": "United States",
         "flag": "https://flagcdn.com/us.svg",
         "phone_code": "+1201",
-        "native_name": "United States"
+        "native_name": "United States",
+        "emoji_flag": "🇺🇸",
+        "country_code": "US"
     },
     "Switzerland": {
         "title": "Switzerland",
         "flag": "https://flagcdn.com/ch.svg",
         "phone_code": "+41",
-        "native_name": "Suisse"
+        "native_name": "Suisse",
+        "emoji_flag": "🇨🇭",
+        "country_code": "CH"
     },
     "Falkland Islands": {
         "title": "Falkland Islands",
         "flag": "https://flagcdn.com/fk.svg",
         "phone_code": "+500",
-        "native_name": "Falkland Islands"
+        "native_name": "Falkland Islands",
+        "emoji_flag": "🇫🇰",
+        "country_code": "FK"
     },
     "Cocos (Keeling) Islands": {
         "title": "Cocos (Keeling) Islands",
         "flag": "https://flagcdn.com/cc.svg",
         "phone_code": "+61",
-        "native_name": "Cocos (Keeling) Islands"
+        "native_name": "Cocos (Keeling) Islands",
+        "emoji_flag": "🇨🇨",
+        "country_code": "CC"
     },
     "Gabon": {
         "title": "Gabon",
         "flag": "https://flagcdn.com/ga.svg",
         "phone_code": "+241",
-        "native_name": "Gabon"
+        "native_name": "Gabon",
+        "emoji_flag": "🇬🇦",
+        "country_code": "GA"
     },
     "Dominica": {
         "title": "Dominica",
         "flag": "https://flagcdn.com/dm.svg",
         "phone_code": "+1767",
-        "native_name": "Dominica"
+        "native_name": "Dominica",
+        "emoji_flag": "🇩🇲",
+        "country_code": "DM"
     },
     "Canada": {
         "title": "Canada",
         "flag": "https://flagcdn.com/ca.svg",
         "phone_code": "+1",
-        "native_name": "Canada"
+        "native_name": "Canada",
+        "emoji_flag": "🇨🇦",
+        "country_code": "CA"
     },
     "Trinidad and Tobago": {
         "title": "Trinidad and Tobago",
         "flag": "https://flagcdn.com/tt.svg",
         "phone_code": "+1868",
-        "native_name": "Trinidad and Tobago"
+        "native_name": "Trinidad and Tobago",
+        "emoji_flag": "🇹🇹",
+        "country_code": "TT"
     },
     "Puerto Rico": {
         "title": "Puerto Rico",
         "flag": "https://flagcdn.com/pr.svg",
         "phone_code": "+1787",
-        "native_name": "Puerto Rico"
+        "native_name": "Puerto Rico",
+        "emoji_flag": "🇵🇷",
+        "country_code": "PR"
     },
     "Singapore": {
         "title": "Singapore",
         "flag": "https://flagcdn.com/sg.svg",
         "phone_code": "+65",
-        "native_name": "Singapore"
+        "native_name": "Singapore",
+        "emoji_flag": "🇸🇬",
+        "country_code": "SG"
     },
     "Hungary": {
         "title": "Hungary",
         "flag": "https://flagcdn.com/hu.svg",
         "phone_code": "+36",
-        "native_name": "Magyarország"
+        "native_name": "Magyarország",
+        "emoji_flag": "🇭🇺",
+        "country_code": "HU"
     },
     "Costa Rica": {
         "title": "Costa Rica",
         "flag": "https://flagcdn.com/cr.svg",
         "phone_code": "+506",
-        "native_name": "Costa Rica"
+        "native_name": "Costa Rica",
+        "emoji_flag": "🇨🇷",
+        "country_code": "CR"
     },
     "Israel": {
         "title": "Israel",
         "flag": "https://flagcdn.com/il.svg",
         "phone_code": "+972",
-        "native_name": "إسرائيل"
+        "native_name": "إسرائيل",
+        "emoji_flag": "🇮🇱",
+        "country_code": "IL"
     },
     "Bulgaria": {
         "title": "Bulgaria",
         "flag": "https://flagcdn.com/bg.svg",
         "phone_code": "+359",
-        "native_name": "България"
+        "native_name": "България",
+        "emoji_flag": "🇧🇬",
+        "country_code": "BG"
     },
     "Azerbaijan": {
         "title": "Azerbaijan",
         "flag": "https://flagcdn.com/az.svg",
         "phone_code": "+994",
-        "native_name": "Azərbaycan"
+        "native_name": "Azərbaycan",
+        "emoji_flag": "🇦🇿",
+        "country_code": "AZ"
     },
     "Timor-Leste": {
         "title": "Timor-Leste",
         "flag": "https://flagcdn.com/tl.svg",
         "phone_code": "+670",
-        "native_name": "Timor-Leste"
+        "native_name": "Timor-Leste",
+        "emoji_flag": "🇹🇱",
+        "country_code": "TL"
     },
     "Iran": {
         "title": "Iran",
         "flag": "https://flagcdn.com/ir.svg",
         "phone_code": "+98",
-        "native_name": "ایران"
+        "native_name": "ایران",
+        "emoji_flag": "🇮🇷",
+        "country_code": "IR"
     },
     "Croatia": {
         "title": "Croatia",
         "flag": "https://flagcdn.com/hr.svg",
         "phone_code": "+385",
-        "native_name": "Hrvatska"
+        "native_name": "Hrvatska",
+        "emoji_flag": "🇭🇷",
+        "country_code": "HR"
     },
     "Ivory Coast": {
         "title": "Ivory Coast",
         "flag": "https://flagcdn.com/ci.svg",
         "phone_code": "+225",
-        "native_name": "Côte d'Ivoire"
+        "native_name": "Côte d'Ivoire",
+        "emoji_flag": "🇨🇮",
+        "country_code": "CI"
     }
 }
