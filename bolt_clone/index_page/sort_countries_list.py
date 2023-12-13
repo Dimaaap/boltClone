@@ -32,19 +32,3 @@ def get_select_window_list():
                          country["country_code"])
         select_list.append(country_tuple)
     return select_list
-
-
-def insert_countries_in_db():
-    counter = 1
-    countries = get_select_window_list()
-    for country in countries:
-        CountryCode.objects.create(
-            country_id=counter,
-            country_flag_image_url=country[0],
-            country_official_name=country[1],
-            country_emoji_flag=country[-2],
-            country_phone_code=country[-3],
-            country_native_name=country[-4],
-            country_code=country[-1]
-        )
-        counter += 1

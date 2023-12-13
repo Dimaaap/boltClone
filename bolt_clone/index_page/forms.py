@@ -16,6 +16,11 @@ def get_form_select_initial_values_service():
     return default_value
 
 
+def get_user_country_by_ip():
+    pass
+
+
+
 # class EmojiSelect(forms.Select):
 
 #    def format_value(self, value):
@@ -79,7 +84,6 @@ class AddPartnerForm(forms.ModelForm):
 
     country_phone_code = forms.ModelChoiceField(
         queryset=CountryCode.objects.all(),
-        initial=230,
         label="Номер телефону", required=False,
         to_field_name="country_id",
         widget=forms.Select(attrs={
