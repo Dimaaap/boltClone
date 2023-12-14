@@ -16,20 +16,12 @@ def get_form_select_initial_values_service():
     return default_value
 
 
-def get_user_country_by_ip():
-    pass
-
-
-
-# class EmojiSelect(forms.Select):
-
-#    def format_value(self, value):
-#        try:
-#            model_instance = self.choices.queryset.get(pk=value)
-#            emoji_flag = model_instance.country_emoji_flag
-#            return format_html('<span>{}</span> {}', emoji_flag, super().format_value(value))
-#        except ObjectDoesNotExist:
-#            return super().format_value(value)
+def get_phone_code_empty_label_service():
+    try:
+        ukraine_emoji = CountryCode.objects.get(country_official_name="Ukraine").country_emoji_flag
+    except ObjectDoesNotExist:
+        ukraine_emoji = ""
+    return f'{ukraine_emoji} (+380)'
 
 
 class AddPartnerForm(forms.ModelForm):
@@ -37,7 +29,7 @@ class AddPartnerForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("label_suffix", "")
         super(AddPartnerForm, self).__init__(*args, **kwargs)
-        self.fields["country_phone_code"].empty_label = None
+        self.fields["country_phone_code"].empty_label = get_phone_code_empty_label_service()
 
     class Meta:
         model = BoltPartner
@@ -84,17 +76,17 @@ class AddPartnerForm(forms.ModelForm):
 
     country_phone_code = forms.ModelChoiceField(
         queryset=CountryCode.objects.all(),
-        label="Номер телефону", required=False,
+        label="", required=False,
         to_field_name="country_id",
         widget=forms.Select(attrs={
             "class": "form-control select-country-flag"
         }))
 
-    partner_phone = PhoneNumberField(region="UA", label="Номер телефону", initial="+380", widget=forms.TextInput(
+    partner_phone = PhoneNumberField(region="UA", label="Номер телефону", widget=forms.TextInput(
         attrs={"placeholder": "Номер мобільного телефону"}
     ))
 
-    is_agree_with_confidence = forms.BooleanField(label="", widget=forms.CheckboxInput(attrs={
+    is_agree_with_confidence = forms.BooleanField(label=" ", widget=forms.CheckboxInput(attrs={
         "class": "check-field",
         "id": "is_agree_field",
     }))

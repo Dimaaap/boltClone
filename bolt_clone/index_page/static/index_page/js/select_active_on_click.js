@@ -1,10 +1,19 @@
 const selectInput = document.querySelector(".main-content form select");
 const icon = document.querySelector(".main-content form i");
 const selectCuisineInput = document.getElementById("cuisine-choice")
-const selectCuisineArrow = document.getElementById("bottom-arrow")
+const selectCuisineArrow = document.getElementById("bottom-arrow");
+const selectCountryCodeInput = document.getElementById("id_country_phone_code");
+const selectCountryCodeArrow = document.getElementById("bottom-arrow-down");
 
 let isIconRotated = false;
 let isBottomRotated = false;
+let isDownArrowRotated = false;
+
+selectCountryCodeInput.addEventListener("click", () => {
+    isDownArrowRotated = !isDownArrowRotated;
+    selectCountryCodeArrow.style.transform = isDownArrowRotated ? "rotate(180deg)" : "";
+    selectCountryCodeArrow.style.transformOrigin = isDownArrowRotated ? "50% 20%" : "";
+})
 
 selectCuisineInput.addEventListener("click", () => {
     isBottomRotated = !isBottomRotated;

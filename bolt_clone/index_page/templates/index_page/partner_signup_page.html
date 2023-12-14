@@ -49,7 +49,11 @@
                     <p class="field-notice">
                         Головна пошта для зв'язку з вами
                     </p>
-                {% elif not field.label %}
+                {% elif forloop.counter == 7 %}
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                    <i class="fa-solid fa-angle-down" id="bottom-arrow-down"></i>
+                {% elif field.label == " " %}
                     <div class="last-point-container">
                         {{ field }}
                         <p>

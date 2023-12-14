@@ -83,11 +83,20 @@
     cursor: pointer;
     transform: translateY(-50%);
     transition: transform 0.5s ease;
+    pointer-event: none;
 }
 
 .main-content form #bottom-arrow {
     top: 71.5%;
 }
+
+.main-content form #bottom-arrow-down{
+    top: 135.5%;
+    left: 41%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
 
 .main-content form #id_partner_phone:focus {
     outline: none !important;
@@ -149,10 +158,27 @@
     display: none;
 }
 
+.main-content form #id_country_phone_code {
+    width: 8%;
+    position: absolute;
+    top: 131.5%;
+    left: 34.5%;
+}
+
+.main-content form #id_partner_phone {
+    margin-left: 36%;
+    margin-top: 0.5%;
+    width: 65%;
+}
+
 .main-content form .check-field:checked {
     background: #2eb565;
 }
 
 .main-content form .check-field:checked:after {
     display: block;
+}
+
+.main-content form select option:hover {
+    background: yellow;
 }

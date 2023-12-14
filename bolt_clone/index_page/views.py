@@ -22,6 +22,6 @@ def partner_signup_view(request):
         else:
             pass
     else:
-        form = AddPartnerForm(initial={'country_phone_code': get_user_country_by_ip_service(client_ip)})
+        form = AddPartnerForm()
     context = {"form": form}
     return render(request, "index_page/partner_signup_page.html", context=context)

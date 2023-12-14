@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     countrySelect.addEventListener("change", () => {
         let selectedOption = countrySelect.options[countrySelect.selectedIndex];
         let optionContent = String(selectedOption.textContent);
-        let countryEmoji = optionContent.slice(0, 3);
+        let countryEmoji = optionContent.slice(0, 4);
         let countryCode = optionContent.slice(optionContent.indexOf("(") + 1, optionContent.indexOf(")"));
-        let newFieldValue = `${countryEmoji} ${countryCode}`
-
+        let newFieldValue = `${countryEmoji} (${countryCode})`
+        selectedOption.textContent = newFieldValue;
     })
 })
