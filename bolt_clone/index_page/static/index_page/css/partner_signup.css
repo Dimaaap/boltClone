@@ -134,7 +134,8 @@
     background: #279E57;
 }
 
-.main-content form .check-field {
+.main-content form .check-field,
+.main-content form #modal-cuisine-choice .modal-content input{
     margin-top: 15px;
     height: 25px;
     width: 25px;
@@ -148,7 +149,8 @@
     justify-content: center;
 }
 
-.main-content form .check-field:after {
+.main-content form .check-field:after,
+.main-content form #modal-cuisine-choice .modal-content input:after{
     font-family: "Font Awesome 5 Free";
     content: "\f00c";
     font-weight: 600;
@@ -171,14 +173,40 @@
     width: 65%;
 }
 
-.main-content form .check-field:checked {
+.main-content form .check-field:checked,
+.main-content form #modal-cuisine-choice .modal-content input:checked{
     background: #2eb565;
 }
 
-.main-content form .check-field:checked:after {
+.main-content form .check-field:checked:after,
+.main-content form #modal-cuisine-choice .modal-content input:checked:after{
     display: block;
 }
 
 .main-content form select option:hover {
     background: yellow;
+}
+
+.main-content form #modal-cuisine-choice {
+    display: block;
+    position: absolute;
+    top: 8%;
+    max-height: 400px;
+}
+
+.main-content form #modal-cuisine-choice .modal-content {
+    width: 88%;
+    margin-left: 7%;
+    overflow-y: auto;
+}
+
+.main-content form #modal-cuisine-choice .modal-content label {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.main-content form #modal-cuisine-choice .modal-content input {
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
 }

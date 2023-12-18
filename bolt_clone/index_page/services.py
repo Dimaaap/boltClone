@@ -1,7 +1,10 @@
 from django.core.exceptions import ObjectDoesNotExist
 from ip2geotools.databases.noncommercial import DbIpCity
 
-from .models import CountryCode
+from .models import CountryCode, CuisineCategory
+from .data_storage import DataStorage
+
+data_storage = DataStorage()
 
 
 def get_form_select_initial_values_service(country_code):
@@ -18,3 +21,17 @@ def get_user_country_by_ip_service(user_ip: str):
         return get_form_select_initial_values_service("UA").pk
     else:
         return get_form_select_initial_values_service(response.country).pk
+
+
+def insert_data_in_cuisines_model():
+    cuisines = DataStorage.CUISINES_CHOICE
+    counter = 1
+    try:
+        for _, i in cuisines:
+            category = CuisineCategory()
+            category.category_id = counter
+            category.category_title = i
+            category.save()
+            counter += 1
+    except Exception as e:
+        print(e)

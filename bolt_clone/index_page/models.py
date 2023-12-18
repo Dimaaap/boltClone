@@ -43,14 +43,21 @@ class CountryCode(models.Model):
             self.save_flag_image_from_url(self.country_flag_image_url)
 
 
+class CuisineCategory(models.Model):
+    category_id = models.AutoField(primary_key=True, default=1)
+    category_title = models.CharField(max_length=60, default="")
+
+    def __str__(self):
+        return f"{self.category_id} <{self.category_title}>"
+
+
 class BoltPartner(models.Model):
     partner_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     partner_name = models.CharField(max_length=255, null=False)
     partner_niche = models.CharField(max_length=65, choices=data_storage.NICHE_CHOICE,
                                      default='')
     is_restaurant = models.BooleanField(default=False)
-    partner_cuisine = models.CharField(max_length=65,
-                                       choices=data_storage.CUISINES_CHOICE, default='')
+    partner_cuisine = models.ManyToManyField(CuisineCategory, related_name="category")
     partner_address = models.CharField(max_length=255, null=False),
     partner_postal_code = models.IntegerField(null=False),
     partner_email = models.EmailField(max_length=155, null=False)

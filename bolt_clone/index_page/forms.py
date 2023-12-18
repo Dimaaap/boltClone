@@ -30,6 +30,7 @@ class AddPartnerForm(forms.ModelForm):
         kwargs.setdefault("label_suffix", "")
         super(AddPartnerForm, self).__init__(*args, **kwargs)
         self.fields["country_phone_code"].empty_label = get_phone_code_empty_label_service()
+        self.fields["partner_cuisine"].empty_label = ""
 
     class Meta:
         model = BoltPartner
@@ -49,12 +50,14 @@ class AddPartnerForm(forms.ModelForm):
                                           "class": "form-control",
                                       }))
 
-    partner_cuisine = forms.ChoiceField(label="Напрям кухні", required=False, choices=data_storage.CUISINES_CHOICE,
-                                        widget=forms.Select(attrs={
-                                            "class": "form-control",
-                                            "placeholder": "Оберіть напрям кухні",
-                                            "id": "cuisine-choice"
-                                        }))
+    partner_cuisine = forms.MultipleChoiceField(label="Напрям кухні", required=False,
+                                                choices=data_storage.CUISINES_CHOICE,
+                                                initial="",
+                                                widget=forms.Select(attrs={
+                                                    "class": "form-control",
+                                                    "placeholder": "Оберіть напрям кухні",
+                                                    "id": "cuisine-choice"
+                                                }))
 
     partner_address = forms.CharField(label="Адреса", widget=forms.TextInput(attrs={
         "placeholder": "Введіть адресу закладу",

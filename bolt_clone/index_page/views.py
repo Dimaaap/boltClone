@@ -2,7 +2,7 @@ from django.shortcuts import render
 from ipware import get_client_ip
 
 from .forms import AddPartnerForm
-from .services import *
+from .models import CuisineCategory
 
 
 def index_page_view(request):
@@ -15,6 +15,7 @@ def become_partner_view(request):
 
 def partner_signup_view(request):
     client_ip, is_routable = get_client_ip(request)
+    all_cuisine_categories = list(CuisineCategory.objects.all())
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
         if form.is_valid():
@@ -23,5 +24,5 @@ def partner_signup_view(request):
             pass
     else:
         form = AddPartnerForm()
-    context = {"form": form}
+    context = {"form": form, "cuisines": all_cuisine_categories}
     return render(request, "index_page/partner_signup_page.html", context=context)
