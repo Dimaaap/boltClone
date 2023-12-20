@@ -1,0 +1,46 @@
+<form class="add-partner-form" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {% if forloop.counter == 2 %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+            <i class="fa-solid fa-angle-down"></i>
+        {% elif forloop.counter == 3 %}
+            {% include './choose_cuisine_modal.html' %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+            <i class="fa-solid fa-angle-down" id="bottom-arrow"></i>
+            <div class="badge-container" id="badge-container">
+                <div class="badge" id="cuisine_badge">
+                </div>
+            </div>
+        {% elif forloop.counter == 4 %}
+            <label id="address-label">{{ field.label }}</label>
+            {{ field }}
+        {% elif forloop.counter == 6 %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+            <p class="field-notice">
+                Головна пошта для зв'язку з вами
+            </p>
+        {% elif forloop.counter == 7 %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+            <i class="fa-solid fa-angle-down" id="bottom-arrow-down"></i>
+        {% elif field.label == " " %}
+            <div class="last-point-container">
+                {{ field }}
+                <p>
+                    Я ознайомився(-лась) та погджуюсь з
+                    <a href="#">Політикою конфіденційності</a>
+                </p>
+                <button type="submit">
+                    Продовжити
+                </button>
+            </div>
+        {% else %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+        {% endif %}
+    {% endfor %}
+</form>

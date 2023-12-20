@@ -1,0 +1,20 @@
+<div class="modal" id="modal-cuisine-choice">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                {% for cuisine in cuisines %}
+                <div class="category-container">
+                    <input type="checkbox" id="{{cuisine.category_title}}{{ cuisine.category_id }}"
+                           name="{{ cuisine.category_title }}{{ cuisine.category_id }}"
+                           value="{{cuisine.category_title}}"
+                    />
+                    <label for="{{ cuisine.category_title }}{{ cuisine.category_id }}">
+                        {{ cuisine.category_title }}
+                    </label>
+                    <br>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

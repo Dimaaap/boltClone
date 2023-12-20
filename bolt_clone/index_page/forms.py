@@ -50,14 +50,13 @@ class AddPartnerForm(forms.ModelForm):
                                           "class": "form-control",
                                       }))
 
-    partner_cuisine = forms.MultipleChoiceField(label="Напрям кухні", required=False,
-                                                choices=data_storage.CUISINES_CHOICE,
-                                                initial="",
-                                                widget=forms.Select(attrs={
-                                                    "class": "form-control",
-                                                    "placeholder": "Оберіть напрям кухні",
-                                                    "id": "cuisine-choice"
-                                                }))
+    partner_cuisine = forms.CharField(label="Напрям кухні", required=False,
+                                      initial="",
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control",
+                                          "placeholder": "Оберіть напрям кухні",
+                                          "id": "cuisine-choice"
+                                      }))
 
     partner_address = forms.CharField(label="Адреса", widget=forms.TextInput(attrs={
         "placeholder": "Введіть адресу закладу",
