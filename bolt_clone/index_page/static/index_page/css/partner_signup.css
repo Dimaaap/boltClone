@@ -192,6 +192,7 @@
     position: absolute;
     top: 8%;
     max-height: 400px;
+    pointer-events: none;
 }
 
 .main-content form #modal-cuisine-choice .modal-content {
@@ -222,7 +223,7 @@
 }
 
 .main-content form #cuisine_badge,
-.main-content #badge {
+.main-content .category-badge {
     color: black;
     display: none;
     font-weight: 400;
@@ -237,15 +238,46 @@
     border-radius: 20px;
 }
 
-.main-content #badge {
+.main-content .category-badge {
     display: inline-block;
     white-space: nowrap;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 10px;
     margin-left: 7px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.main-content .category-badge:active {
+    transform: scale(0.95);
+}
+
+.main-content form .category-badge:hover button,
+.main-content form .category-badge button,
+.main-content form .category-badge:hover{
+    background: #E4E4E4;
+}
+
+.main-content form .category-badge button {
+    border: none;
+    background: white;
+    font-size: 1.2rem;
 }
 
 .main-content form #address-label {
+    display: block;
+}
+
+.main-content form .error-message {
+    font-size: 1rem;
+    color: red;
+    font-weight: 500;
+    margin-left: 7px;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+.main-content form .conditional-field {
     display: block;
 }

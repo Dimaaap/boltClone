@@ -7,11 +7,13 @@
             <i class="fa-solid fa-angle-down"></i>
         {% elif forloop.counter == 3 %}
             {% include './choose_cuisine_modal.html' %}
-            <label>{{ field.label }}</label>
-            {{ field }}
-            <i class="fa-solid fa-angle-down" id="bottom-arrow"></i>
-            <div class="badge-container" id="badge-container">
-                <div class="badge" id="cuisine_badge">
+            <div class="conditional-field">
+                <label>{{ field.label }}</label>
+                {{ field }}
+                <i class="fa-solid fa-angle-down" id="bottom-arrow"></i>
+                <div class="badge-container" id="badge-container">
+                    <div class="badge" id="cuisine_badge"></div>
+                    <div class="error-container" id="error-message-container"></div>
                 </div>
             </div>
         {% elif forloop.counter == 4 %}
