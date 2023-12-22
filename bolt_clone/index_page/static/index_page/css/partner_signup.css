@@ -78,8 +78,8 @@
 
 .main-content form i {
     position: absolute;
-    top: 57%;
-    left: 63%;
+    top: 18%;
+    left: 90%;
     cursor: pointer;
     transform: translateY(-50%);
     transition: transform 0.5s ease;
@@ -87,12 +87,13 @@
 }
 
 .main-content form #bottom-arrow {
-    top: 71.5%;
+    top: 29.5%;
+    left: 90%;
 }
 
 .main-content form #bottom-arrow-down{
-    top: 135.5%;
-    left: 41%;
+    top: 79%;
+    left: 25%;
     z-index: 1000;
     pointer-events: none;
 }
@@ -130,6 +131,11 @@
     text-align: center;
 }
 
+.main-content form #modal-cuisine-choice .modal-content {
+    position: absolute;
+    top: -50%;
+}
+
 .main-content form .last-point-container button:hover {
     background: #279E57;
 }
@@ -161,10 +167,10 @@
 }
 
 .main-content form #id_country_phone_code {
-    width: 8%;
+    width: 27%;
     position: absolute;
-    top: 131.5%;
-    left: 34.5%;
+    top: 76%;
+    left: 3%;
 }
 
 .main-content form #id_partner_phone {
@@ -190,9 +196,10 @@
 .main-content form #modal-cuisine-choice {
     display: block;
     position: absolute;
-    top: 8%;
+    top: -21%;
     max-height: 400px;
     pointer-events: none;
+    overflow-y: auto;
 }
 
 .main-content form #modal-cuisine-choice .modal-content {
@@ -281,3 +288,8 @@
 .main-content form .conditional-field {
     display: block;
 }
+
+.main-content .container {
+    position: relative;
+}
+
