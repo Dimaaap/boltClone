@@ -5,7 +5,7 @@
             {% if forloop.counter == 2 %}
                 <label>{{ field.label }}</label>
                 {{ field }}
-                <i class="fa-solid fa-angle-down"></i>
+                <i class="fa-solid fa-angle-down" id="select-niche-arrow"></i>
             {% elif forloop.counter == 3 %}
                 {% include './choose_cuisine_modal.html' %}
                 <div class="conditional-field">

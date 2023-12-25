@@ -2,9 +2,10 @@ const nicheField = document.getElementById("id_partner_niche");
 const cuisineField = document.querySelector(".conditional-field");
 const countryPhoneCodeField = document.getElementById("id_country_phone_code");
 const countryPhoneCodeArrow = document.getElementById("bottom-arrow-down");
-const selectNicheArrow = document.querySelector()
+const selectNicheArrow = document.getElementById("select-niche-arrow");
 
 let currentCountryPhonePos = parseInt(getComputedStyle(countryPhoneCodeField).top, 10)
+let currentSelectNichePos = parseInt(getComputedStyle(selectNicheArrow).top, 10);
 
 
 nicheField.addEventListener("change", () => {
@@ -14,6 +15,8 @@ nicheField.addEventListener("change", () => {
         countryPhoneCodeField.style.top = newPos + "px";
         let newPosArr = currentCountryPhonePos - 75;
         countryPhoneCodeArrow.style.top = newPosArr + "px";
+        let newNicheArr = currentSelectNichePos + 2;
+        selectNicheArrow.style.top = newNicheArr + "px";
     } else {
         cuisineField.style.display = 'block';
         let newPos = currentCountryPhonePos + 0;

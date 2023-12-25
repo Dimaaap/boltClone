@@ -7,6 +7,8 @@ const errorMessageContainer = document.getElementById("error-message-container")
 
 let selectedOptions = 0;
 
+console.log(badge.innerHTML);
+
 
 const createNewBadge = (checkboxId, badgeId) => {
     let newBadge = document.createElement("div");
@@ -49,6 +51,7 @@ const checkboxNotChecked = (existingBadge, checkbox) => {
     }
     selectedOptions --;
     checkbox.checked = false;
+    removeErrorMessage()
 }
 
 const generateErrorMessage = () => {
