@@ -78,22 +78,17 @@
 
 .main-content form i {
     position: absolute;
-    top: 18%;
-    left: 90%;
+    margin-top: -10%;
+    margin-left: 87%;
     cursor: pointer;
     transform: translateY(-50%);
     transition: transform 0.5s ease;
     pointer-event: none;
 }
 
-.main-content form #bottom-arrow {
-    top: 29.5%;
-    left: 90%;
-}
-
 .main-content form #bottom-arrow-down{
-    top: 79%;
-    left: 25%;
+    margin-top: -9.5%;
+    margin-left: 22%;
     z-index: 1000;
     pointer-events: none;
 }
@@ -169,8 +164,9 @@
 .main-content form #id_country_phone_code {
     width: 27%;
     position: absolute;
-    top: 76%;
-    left: 3%;
+    margin-top: -47.5%;
+    /*top: 76%;
+    left: 3%;*/
 }
 
 .main-content form #id_partner_phone {

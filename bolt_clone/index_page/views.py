@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from ipware import get_client_ip
 
+from .db_services import get_all_objects_from_db
 from .forms import AddPartnerForm
 from .models import CuisineCategory
 
@@ -14,10 +14,10 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
-    client_ip, is_routable = get_client_ip(request)
-    all_cuisine_categories = list(CuisineCategory.objects.all())
+    all_cuisine_categories = list(get_all_objects_from_db(CuisineCategory))
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
+        print(request.POST)
         if form.is_valid():
             form.save()
         else:

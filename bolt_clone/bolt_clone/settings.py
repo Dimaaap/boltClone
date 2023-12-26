@@ -34,8 +34,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
 
-ROOT_URLCONF = 'bolt_clone.urls'
+    'formatters': {
+        'main_formatter': '[{asctime} - {levelname} - {module} - {filename}] {message}',
+        'style': '{',
+    }
+}
+
+ROOT_URLCONF = 'bolt_clne.urls'
 
 TEMPLATES = [
     {

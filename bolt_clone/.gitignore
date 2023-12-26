@@ -4,3 +4,4 @@ src/
 .*jpg
 manage.py
 env/
+*.log
