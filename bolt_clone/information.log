@@ -1,0 +1,19 @@
+2023-12-27 11:17:44,946 - WARNING - views - views.py - User on the page
+{"message": "User on the page", "timestamp": "2023-12-27T08:43:12.382382Z"}
+{"message": "User on the page", "timestamp": "2023-12-27T08:51:01.578910Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:40:06.093341Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:40:47.241409Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:41:08.530800Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:41:19.349726Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:41:32.922891Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:41:44.316323Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:41:56.503477Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:42:12.811550Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:43:08.569650Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T09:43:08.738197Z", "level": "INFO"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:44:11.000280Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T09:44:11.180895Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T09:44:11.190633Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T09:44:13.968980Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T09:44:14.235239Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T09:44:14.241226Z", "level": "WARNING"}

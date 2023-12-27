@@ -1,8 +1,11 @@
 from django.shortcuts import render
+import logging
 
 from .db_services import get_all_objects_from_db
 from .forms import AddPartnerForm
 from .models import CuisineCategory
+
+logger = logging.getLogger("main")
 
 
 def index_page_view(request):
@@ -14,14 +17,15 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
+    logger.warning("User on the page")
     all_cuisine_categories = list(get_all_objects_from_db(CuisineCategory))
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)
-        print(request.POST)
+        logger.info(f"User {request.user} send a data in partner signup form ")
         if form.is_valid():
             form.save()
         else:
-            pass
+            logger.warning(f"User signup form returns an error - {form.errors}")
     else:
         form = AddPartnerForm()
     context = {"form": form, "cuisines": all_cuisine_categories}

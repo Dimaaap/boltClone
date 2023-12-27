@@ -2,6 +2,9 @@ from pathlib import Path
 from decouple import config
 import os
 
+from pythonjsonlogger.jsonlogger import JsonFormatter
+from .logging_formatters import CustomJsonFormatter
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
@@ -34,17 +37,37 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ROOT_URLCONF = 'bolt_clone.urls'
+
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
+    "version": 1,
+    "disable_existing_loggers": False,
 
-    'formatters': {
-        'main_formatter': '[{asctime} - {levelname} - {module} - {filename}] {message}',
-        'style': '{',
+    "formatters": {
+        "main_format": {
+            "format": "{asctime} - {levelname} - {module} - {filename} - {message}",
+            "style": "{",
+        },
+        "json_format": {
+            "()": CustomJsonFormatter
+        }
+    },
+    "handlers": {
+        "file": {
+            "class": "logging.FileHandler",
+            "formatter": "json_format",
+            "filename": "information.log"
+        }
+    },
+    "loggers": {
+        "main": {
+            "handlers": ["file"],
+            "level": "INFO",
+            "propagate": True
+        }
     }
-}
 
-ROOT_URLCONF = 'bolt_clne.urls'
+}
 
 TEMPLATES = [
     {

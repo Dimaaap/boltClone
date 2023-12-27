@@ -87,7 +87,6 @@
 }
 
 .main-content form #bottom-arrow-down{
-    margin-top: -9.5%;
     margin-left: 22%;
     z-index: 1000;
     pointer-events: none;
