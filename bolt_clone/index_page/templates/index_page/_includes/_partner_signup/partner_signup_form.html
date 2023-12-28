@@ -4,8 +4,13 @@
         {% for field in form %}
             {% if forloop.counter == 2 %}
                 <label>{{ field.label }}</label>
-                {{ field }}
+                {% if field.errors %}
+                    <input class="form-control error-field">{{ field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
                 <i class="fa-solid fa-angle-down" id="select-niche-arrow"></i>
+                {{ field.errors }}
             {% elif forloop.counter == 3 %}
                 {% include './choose_cuisine_modal.html' %}
                 <div class="conditional-field">
@@ -19,24 +24,39 @@
                 </div>
             {% elif forloop.counter == 4 %}
                 <label id="address-label">{{ field.label }}</label>
-                {{ field }}
+                {% if field.errors %}
+                    <input class="form-control error-field">{{ field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+                {{ field.errors }}
             {% elif forloop.counter == 6 %}
                 <label>{{ field.label }}</label>
-                {{ field }}
+                {% if field.errors %}
+                    <input class="form-control error-field">{{ field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+                {{ field.errors }}
                 <p class="field-notice">
                     Головна пошта для зв'язку з вами
                 </p>
             {% elif forloop.counter == 7 %}
                 <div class="dynamic-field">
                     <label>{{ field.label }}</label>
-                    {{ field }}
+                    {% if field.errors %}
+                        <input class="form-control error-input">{{ field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                    {{ field.errors }}
                     <i class="fa-solid fa-angle-down" id="bottom-arrow-down"></i>
                 </div>
             {% elif field.label == " " %}
                 <div class="last-point-container">
                     {{ field }}
                     <p>
-                        Я ознайомився(-лась) та погджуюсь з
+                        Я ознайомився(-лась) та погоджуюсь з
                         <a href="#">Політикою конфіденційності</a>
                     </p>
                     <button type="submit">
@@ -45,7 +65,12 @@
                 </div>
             {% else %}
                 <label>{{ field.label }}</label>
-                {{ field }}
+                {% if field.errors %}
+                    <input class="form-control error-input">{{ field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+                {{ field.errors }}
             {% endif %}
         {% endfor %}
     </form>

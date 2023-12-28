@@ -17,3 +17,41 @@
 {"message": "User on the page", "timestamp": "2023-12-27T09:44:13.968980Z", "level": "WARNING"}
 {"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T09:44:14.235239Z", "level": "INFO"}
 {"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T09:44:14.241226Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:16:11.686012Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:17:57.687222Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:18:39.495323Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:18:39.627968Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:18:39.637941Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:19:12.161197Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:19:12.273896Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:19:12.275893Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:19:58.849050Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:19:58.963744Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:19:58.965740Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:20:12.841550Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:20:12.992149Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:20:12.995140Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:20:22.755887Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:20:22.861639Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:20:22.863601Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:20:33.006831Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:20:33.115574Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:20:33.119529Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:20:41.050056Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:20:41.267570Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:20:41.270597Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:20:46.609998Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:20:46.725694Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:20:46.728682Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:21:19.104849Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:21:19.247719Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:21:19.252703Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:21:30.616532Z", "level": "WARNING"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:21:30.741198Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:21:30.743192Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:27:07.125607Z", "level": "INFO"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:27:07.235348Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:27:07.253263Z", "level": "WARNING"}
+{"message": "User on the page", "timestamp": "2023-12-27T21:36:27.243597Z", "level": "INFO"}
+{"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2023-12-27T21:36:27.362277Z", "level": "INFO"}
+{"message": "User signup form returns an error - <ul class=\"errorlist\"><li>partner_email<ul class=\"errorlist\"><li>\u0412\u0432\u0435\u0434\u0456\u0442\u044c \u043a\u043e\u0440\u0435\u043a\u0442\u043d\u0443 email \u0430\u0434\u0440\u0435\u0441\u0443.</li></ul></li></ul>", "timestamp": "2023-12-27T21:36:27.366278Z", "level": "WARNING"}

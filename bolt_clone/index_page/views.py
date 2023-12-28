@@ -17,7 +17,7 @@ def become_partner_view(request):
 
 
 def partner_signup_view(request):
-    logger.warning("User on the page")
+    logger.info("User on the page")
     all_cuisine_categories = list(get_all_objects_from_db(CuisineCategory))
     if request.method == 'POST':
         form = AddPartnerForm(request.POST)

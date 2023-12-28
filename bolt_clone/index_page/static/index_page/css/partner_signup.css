@@ -288,3 +288,11 @@
     position: relative;
 }
 
+
+.main-content form .errorlist {
+    list-style-type: none;
+    margin-top: -8px;
+    margin-left: -30px;
+    color: #E23E3E;
+    font-weight: 500;
+}
