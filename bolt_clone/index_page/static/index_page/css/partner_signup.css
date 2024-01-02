@@ -164,8 +164,6 @@
     width: 27%;
     position: absolute;
     margin-top: -47.5%;
-    /*top: 76%;
-    left: 3%;*/
 }
 
 .main-content form #id_partner_phone {
@@ -296,3 +294,27 @@
     color: #E23E3E;
     font-weight: 500;
 }
+
+.main-content form .errorlist {
+    background: black;
+}
+
+.main-content form #error-sign {
+    margin-left: 160px;
+    margin-top: 54px;
+}
+
+.main-content form #error-sign5 {
+    margin-left: 245px;
+    margin-top: 56px;
+}
+
+.main-content form .error input,
+.main-content form .error #id_partner_phone {
+    border: 1.5px solid #D20000;
+}
+
+.pac-container:after {
+    content: none !important;
+}
+

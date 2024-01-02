@@ -1,5 +1,6 @@
 import uuid
 import requests
+from datetime import datetime
 
 from django.db import models
 from django.core.files.base import ContentFile
@@ -56,13 +57,13 @@ class BoltPartner(models.Model):
     partner_name = models.CharField(max_length=255, null=False)
     partner_niche = models.CharField(max_length=65, choices=data_storage.NICHE_CHOICE,
                                      default='')
-    is_restaurant = models.BooleanField(default=False)
     partner_cuisine = models.ManyToManyField(CuisineCategory, related_name="category")
     partner_address = models.CharField(max_length=255, null=False),
     partner_postal_code = models.IntegerField(null=False),
     partner_email = models.EmailField(max_length=155, null=False)
     partner_phone = PhoneNumberField(blank=False, region="UA")
     is_agree_with_confidence = models.BooleanField(default=False)
+    registration_data = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return f'<{self.partner_name}> - {self.partner_id}'

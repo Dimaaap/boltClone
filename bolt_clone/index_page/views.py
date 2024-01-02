@@ -23,6 +23,7 @@ def partner_signup_view(request):
         form = AddPartnerForm(request.POST)
         logger.info(f"User {request.user} send a data in partner signup form ")
         if form.is_valid():
+            print(form.get_country_code())
             form.save()
         else:
             logger.warning(f"User signup form returns an error - {form.errors}")

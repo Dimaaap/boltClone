@@ -3,18 +3,22 @@
         {% csrf_token %}
         {% for field in form %}
             {% if forloop.counter == 2 %}
-                <label>{{ field.label }}</label>
-                {% if field.errors %}
-                    <input class="form-control error-field">{{ field }}
-                {% else %}
+                <div class="conditional-field {% if field.errors %}error {% endif %}">
+                    <label>{{ field.label }}</label>
+                    {% if field.errors %}
+                        <i class="fa-solid fa-triangle-exclamation" id="error-sign2" style="color: #a80000;"></i>
+                    {% endif %}
                     {{ field }}
-                {% endif %}
-                <i class="fa-solid fa-angle-down" id="select-niche-arrow"></i>
-                {{ field.errors }}
+                    <i class="fa-solid fa-angle-down" id="select-niche-arrow"></i>
+                    {{ field.errors }}
+                </div>
             {% elif forloop.counter == 3 %}
                 {% include './choose_cuisine_modal.html' %}
-                <div class="conditional-field">
+                <div class="conditional-field {% if field.errors %}error {% endif %}">
                     <label>{{ field.label }}</label>
+                    {% if field.errors %}
+                        <i class="fa-solid fa-triangle-exclamation" id="error-sign3" style="color: #a8000"></i>
+                    {% endif %}
                     {{ field }}
                     <i class="fa-solid fa-angle-down" id="bottom-arrow"></i>
                     <div class="badge-container" id="badge-container">
@@ -23,32 +27,33 @@
                     </div>
                 </div>
             {% elif forloop.counter == 4 %}
-                <label id="address-label">{{ field.label }}</label>
-                {% if field.errors %}
-                    <input class="form-control error-field">{{ field }}
-                {% else %}
+                <div class="conditional-field {% if field.errors %}error {% endif %}">
+                    <label id="address-label">{{ field.label }}</label>
+                    {% if field.errors %}
+                        <i class="fa-solid fa-triangle-exclamation" id="error-sign4" style="color: #a8000"></i>
+                    {% endif %}
                     {{ field }}
-                {% endif %}
-                {{ field.errors }}
+                    {{ field.errors }}
+                </div>
             {% elif forloop.counter == 6 %}
-                <label>{{ field.label }}</label>
-                {% if field.errors %}
-                    <input class="form-control error-field">{{ field }}
-                {% else %}
-                    {{ field }}
-                {% endif %}
-                {{ field.errors }}
-                <p class="field-notice">
-                    Головна пошта для зв'язку з вами
-                </p>
-            {% elif forloop.counter == 7 %}
-                <div class="dynamic-field">
+                <div class="conditional-field {% if field.errors %}error {% endif %}">
                     <label>{{ field.label }}</label>
                     {% if field.errors %}
-                        <input class="form-control error-input">{{ field }}
-                    {% else %}
-                        {{ field }}
+                        <i class="fa-solid fa-triangle-exclamation" id="error-sign" style="color: #a80000;"></i>
                     {% endif %}
+                    {{ field }}
+                    {{ field.errors }}
+                    <p class="field-notice">
+                        Головна пошта для зв'язку з вами
+                    </p>
+                </div>
+            {% elif forloop.counter == 7 %}
+                <div class="dynamic-field conditional-field {% if field.errors %}error {% endif %}">
+                    <label>{{ field.label }}</label>
+                    {% if field.errors %}
+                        <i class="fa-solid fa-triangle-exclamation" id="error-sign5" style="color: #a80000;"></i>
+                    {% endif %}
+                    {{ field }}
                     {{ field.errors }}
                     <i class="fa-solid fa-angle-down" id="bottom-arrow-down"></i>
                 </div>
@@ -65,11 +70,7 @@
                 </div>
             {% else %}
                 <label>{{ field.label }}</label>
-                {% if field.errors %}
-                    <input class="form-control error-input">{{ field }}
-                {% else %}
-                    {{ field }}
-                {% endif %}
+                {{ field }}
                 {{ field.errors }}
             {% endif %}
         {% endfor %}

@@ -19,9 +19,11 @@
             integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
             crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMXROs1mzicaqEOFDVwA6sXkLu4JSnHV8&libraries=places&callback=Function.prototype"></script>
+    <script src="{% static 'index_page/js/maps_init.js' %}"></script>
+    <script src="{% static 'index_page/js/field_height_handle.js' %}"></script>
     <script src="{% static 'index_page/js/select_active_on_click.js' %}"></script>
     <script src="{% static 'index_page/js/change_select_window_content.js' %}"></script>
-    <script src="{% static 'index_page/js/change_select_cuisine_style.js' %}"></script>
     <script src="{% static 'index_page/js/update_badge.js' %}"></script>
     <script src="{% static 'index_page/js/open_choice_window.js'%}"></script>
     <script src="{% static 'index_page/js/toggle_cuisine_field.js' %}"></script>
@@ -39,4 +41,5 @@
         </p>
         {% include './_includes/_partner_signup/partner_signup_form.html' %}
     </div>
+
 {% endblock %}

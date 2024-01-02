@@ -1,9 +1,11 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 from django.core.exceptions import ObjectDoesNotExist
+import phonenumbers
 
 from .models import BoltPartner, CountryCode
 from .data_storage import DataStorage
+from .db_services import is_field_exists
 
 data_storage = DataStorage()
 
@@ -87,8 +89,16 @@ class AddPartnerForm(forms.ModelForm):
     partner_phone = PhoneNumberField(region="UA", label="Номер телефону", widget=forms.TextInput(
         attrs={"placeholder": "Номер мобільного телефону"}
     ))
+    partner_phone.error_messages["invalid"] = "Неправильний номер телефону"
 
     is_agree_with_confidence = forms.BooleanField(label=" ", widget=forms.CheckboxInput(attrs={
         "class": "check-field",
         "id": "is_agree_field",
     }))
+
+    def clean_partner_email(self):
+        email = self.cleaned_data["partner_email"]
+        if is_field_exists(BoltPartner, "partner_email", email):
+            raise forms.ValidationError("Користувач із такою email-адресою уже існує")
+        return email
+
