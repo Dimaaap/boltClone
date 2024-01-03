@@ -1,7 +1,6 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 from django.core.exceptions import ObjectDoesNotExist
-import phonenumbers
 
 from .models import BoltPartner, CountryCode
 from .data_storage import DataStorage
@@ -95,6 +94,12 @@ class AddPartnerForm(forms.ModelForm):
         "class": "check-field",
         "id": "is_agree_field",
     }))
+
+    def clean_partner_name(self):
+        partner_name = self.cleaned_data["partner_name"]
+        if not partner_name:
+            raise forms.ValidationError("Це поле обов'язкове")
+        return partner_name
 
     def clean_partner_email(self):
         email = self.cleaned_data["partner_email"]

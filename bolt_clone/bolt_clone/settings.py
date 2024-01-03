@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'index_page',
+    'courier',
 
     'phonenumber_field',
     'ipware',

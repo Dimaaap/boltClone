@@ -1,0 +1,56 @@
+section {
+    position: relative;
+    width: 100%;
+    z-index:0;
+}
+
+header {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+header p {
+    color: white;
+}
+
+section img {
+    display: block;
+    position: relative;
+    max-height: 10%;
+    width: 100%;
+    z-index: 0;
+    max-height: 700px;
+    margin-top: -70px;
+    filter: brightness(70%);
+}
+
+section .section-info {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+}
+
+.section-info h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 600;
+    width: 50%;
+}
+
+.section-info a {
+    text-decoration: none;
+    background: #2eb565;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.section-info a:hover {
+    background: #269151;
+}

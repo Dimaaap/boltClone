@@ -3,10 +3,6 @@ const modalWindow = document.querySelector("#modal-cuisine-choice .modal-content
 let badgesContainer = document.getElementById("badge-container");
 const badges = document.getElementById("cuisine_badge");
 
-console.log(badges);
-
-
-
 let modalOpen = false;
 
 cuisineChoiceField.addEventListener("click", () => {

@@ -1,0 +1,41 @@
+.why-bolt {
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.why-bolt .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.why-bolt .advantages-section {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.why-bolt .advantages-section .advantage {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.why-bolt .advantages-section .advantage svg {
+    color: #2eb565;
+    height: 35px;
+    width: 35px;
+    margin-bottom: 10px;
+}
+
+.why-bolt .advantages-section .advantage .advantage-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.why-bolt .advantages-section .advantage p {
+    width: 70%;
+    margin-left: 15%;
+    color: gray;
+    font-weight: 500;
+}

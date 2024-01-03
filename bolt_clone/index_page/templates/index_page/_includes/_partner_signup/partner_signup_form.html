@@ -48,13 +48,13 @@
                     </p>
                 </div>
             {% elif forloop.counter == 7 %}
-                <div class="dynamic-field conditional-field {% if field.errors %}error {% endif %}">
+                <div class="dynamic-field conditional-field {% if field.errors %}error {% endif %}"
+                     id="phone-number-container">
                     <label>{{ field.label }}</label>
                     {% if field.errors %}
                         <i class="fa-solid fa-triangle-exclamation" id="error-sign5" style="color: #a80000;"></i>
                     {% endif %}
                     {{ field }}
-                    {{ field.errors }}
                     <i class="fa-solid fa-angle-down" id="bottom-arrow-down"></i>
                 </div>
             {% elif field.label == " " %}

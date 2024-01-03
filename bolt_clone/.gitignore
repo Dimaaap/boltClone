@@ -5,3 +5,6 @@ src/
 manage.py
 env/
 *.log
+venv/
+information.log
+media/

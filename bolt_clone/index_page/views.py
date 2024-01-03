@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import logging
 
 from .db_services import get_all_objects_from_db
@@ -23,11 +23,15 @@ def partner_signup_view(request):
         form = AddPartnerForm(request.POST)
         logger.info(f"User {request.user} send a data in partner signup form ")
         if form.is_valid():
-            print(form.get_country_code())
             form.save()
+            return redirect(account_information_view)
         else:
             logger.warning(f"User signup form returns an error - {form.errors}")
     else:
         form = AddPartnerForm()
     context = {"form": form, "cuisines": all_cuisine_categories}
     return render(request, "index_page/partner_signup_page.html", context=context)
+
+
+def account_information_view(request):
+    return render(request, "index_page/account_information_page.html")

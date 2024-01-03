@@ -162,8 +162,9 @@
 
 .main-content form #id_country_phone_code {
     width: 27%;
-    position: absolute;
-    margin-top: -47.5%;
+    /*position: absolute;*/
+    margin-top: -50%;
+    padding-right: 20px;
 }
 
 .main-content form #id_partner_phone {
@@ -293,10 +294,6 @@
     margin-left: -30px;
     color: #E23E3E;
     font-weight: 500;
-}
-
-.main-content form .errorlist {
-    background: black;
 }
 
 .main-content form #error-sign {
