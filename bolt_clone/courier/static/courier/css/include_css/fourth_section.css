@@ -1,0 +1,108 @@
+#what-you-need {
+    text-align: center;
+    justify-content: center;
+}
+
+#what-you-need h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+#what-you-need .needs {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#what-you-need .needs .need {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#what-you-need .needs .need .need-title  {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#what-you-need .needs .need p {
+    width: 70%;
+    color: gray;
+    margin-left: 15%;
+    font-weight: 500;
+}
+
+#what-you-need .needs .need svg {
+    color: #2eb565;
+    height: 35px;
+    width: 35px;
+    margin-bottom: 10px;
+}
+
+.right-part ol {
+    list-style: none;
+    counter-reset: item;
+    margin-left: -30px;
+    margin-top: -70px;
+}
+
+.right-part ol li {
+    position: relative;
+    margin-bottom: -110px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.right-part ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #2eb565;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.right-part ol li h6 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.right-part ol li p {
+    display: block;
+    margin-top: 140px;
+    margin-left: -200px;
+    width: 90%;
+    color: #B2B2B2;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.right-part ol #first-li p {
+    margin-left: -215px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+.right-part ol #second-li p {
+    margin-left: -225px;
+    margin-top: 110px;
+    margin-bottom: 30px;
+}
+
+.right-part ol #third-li p {
+    margin-left: -90px;
+    margin-top: 120px;
+    margin-bottom: 35px;
+}
+
+.right-part ol #fourth-li p {
+    margin-left: -325px;
+    margin-top: 110px;
+}

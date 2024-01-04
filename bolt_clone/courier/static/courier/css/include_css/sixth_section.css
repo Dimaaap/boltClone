@@ -1,0 +1,33 @@
+#how-it-works {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+#how-it-works .left-part img {
+    width: 100%;
+    filter: brightness(100%);
+}
+
+#how-it-works .left-part,
+#how-it-works .right-part {
+    flex: 1;
+}
+
+#how-it-works .right-part {
+    padding-left: 30px;
+}
+
+#how-it-works .right-part .section-title {
+    margin-top: -60px;
+    font-weight: 700;
+    font-size: 3rem;
+    width: 80%;
+}
+
+#how-it-works .right-part .section-description {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 85%;
+}

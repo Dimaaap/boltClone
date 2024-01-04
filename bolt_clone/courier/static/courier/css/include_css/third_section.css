@@ -10,6 +10,7 @@
     border-radius: 5%;
     filter: brightness(110%);
     min-height: 110%;
+    min-height: 520px;
 }
 
 .left-section,

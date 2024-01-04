@@ -1,0 +1,48 @@
+#how-become-courier {
+    padding-top: 10%;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    background: #2eb565;
+    color: white;
+    padding-bottom: 5%;
+}
+
+#how-become-courier .section-title {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+
+#how-become-courier .steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#how-become-courier .steps .step {
+    width: 50%;
+    text-align: center;
+}
+
+#how-become-courier .steps .step span {
+    background: white;
+    color: #2eb565;
+    font-weight: 700;
+    font-size: 1.7rem;
+    padding: 0px 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#how-become-courier .steps .step .step-title {
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+#how-become-courier .steps .step .section-description {
+    font-weight: 600;
+    width: 60%;
+    margin-left: 20%;
+}
