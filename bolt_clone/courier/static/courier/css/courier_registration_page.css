@@ -1,0 +1,154 @@
+.content {
+    padding: 20px;
+    font-family: "Montserrat";
+    background: #F5F5F5;
+    width: 100%;
+    height: 100%;
+}
+
+.content .image-container,
+.content .text-container {
+    text-align: center;
+    justify-content: center;
+}
+
+.content .image-container img {
+    width: 65%;
+}
+
+.content .text-container {
+    margin-top: 20px;
+}
+
+.content .text-container .page-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.content .text-container .description {
+    text-align: left;
+    width: 60%;
+    margin-left: 18%;
+    font-size: 1.1rem;
+}
+
+.content form .form-control,
+.content form #id_courier_phone_number {
+    width: 60%;
+    background: #D5D5D5;
+    height: 50px;
+    border-radius: 0;
+}
+
+.content form #id_courier_phone_number {
+    border: none;
+    margin-left: 210px;
+}
+
+.content form .form-row {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.content form .form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.content form label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.content form .first-label {
+    margin-left: -145px;
+    margin-bottom: -5px;
+}
+
+.content form .second-label {
+    margin-left: -580px;
+    margin-bottom: -5px;
+}
+
+.content form .third-label {
+    margin-left: -40px;
+    margin-bottom: -5px;
+}
+
+.content form .fourth-label {
+    margin-left: -550px;
+    margin-bottom: -5px;
+}
+
+.content form .first-small,
+.content form .second-small{
+    font-size: 0.8rem;
+    margin-left: -65px;
+    margin-bottom: 5px;
+    color: gray;
+    font-weight: 500;
+}
+
+.content form .third-small {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    margin-left: -15px;
+    color: gray;
+    font-weight: 500;
+}
+
+.content form .fourth-small {
+    margin-left: -390px;
+    font-size: 0.8rem;
+    color: gray;
+    font-weight: 500;
+}
+
+.content form .second-small {
+    margin-left: -520px;
+    margin-top: -10px;
+}
+
+.content form .first-input {
+    margin-top: 5px;
+}
+
+.content form input {
+    box-sizing: border-box;
+}
+
+.content form #first_name_field{
+    margin-left: 36%;
+}
+
+.content form .form-row:nth-child(4) {
+    margin-left: 17.5%;
+    width: 62%;
+    text-align: left;
+    justify-content: left;
+    background: #D5D5D5;
+    font-weight: 400;
+}
+
+#id_courier_city {
+    max-height: 200px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#id_courier_city label {
+    font-weight: 500;
+    padding: 20px auto;
+}
+
+.content form .form-row:nth-child(4) .radio-label{
+    background: #F5F5F5;
+    width: 110%;
+    padding-bottom: 20px;
+}
+
+content form .radio-label {
+    margin-left: -500px;
+}
