@@ -11,6 +11,10 @@
       rel="stylesheet">
 {% endblock %}
 
+{% block js_additional %}
+    <script src="{% static 'courier/js/toggle_field.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 <div class="content">
     <div class="image-container">
@@ -20,6 +24,13 @@
                 class="form-components-style_main-logo__U2TpD formaloo__form-logo">
     </div>
     <div class="text-container">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
         <h1 class="page-title">
             Станьте кур'єром Bolt Food в Україні
         </h1>
@@ -48,53 +59,7 @@
                 для створення запису кур'єра.
             </p>
         </div>
-        <form class="courier_signup_form" method="post">
-            {% csrf_token %}
-            {% for field in form %}
-                {% if forloop.counter0|divisibleby:2 %}
-                    <div class="form-row">
-                {% endif %}
-                <div class="form-column">
-                    {% if forloop.first %}
-                        <label class="form-label first-label">
-                            {{ field.label }}
-                        </label>
-                        <small class="first-small">Наприклад: Тарас</small>
-                    {% elif forloop.counter == 2 %}
-                        <label class="form-label second-label">
-                            {{ field.label }}
-                        </label>
-                        <small class="second-small">Наприклад: Шевченко</small>
-                    {% elif forloop.counter == 3 %}
-                        <label class="form-label third-label">
-                            {{ field.label }}
-                        </label>
-                        <small class="third-small">Наприклад:+380951231234</small>
-                    {% elif forloop.counter == 4 %}
-                        <label class="form-label fourth-label">
-                            {{ field.label }}
-                        </label>
-                        <small class="fourth-small">Наприклад: taras.shevchenko@gmail.com</small>
-                    {% elif forloop.counter == 5 %}
-                        <div class="radio-field">
-                            <label class="radio-label">
-                                {{ field.label }}
-                            </label>
-                        </div>
-                    {% else %}
-                        <label class="form-label">
-                            {{ field.label }}
-                        </label>
-                    {% endif %}
-                    <div class="first-input">
-                        {{ field }}
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:2 or forloop.counter == 5 %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </form>
+        {% include './_includes/courier_registration_page/courier_registration_form.html' %}
     </div>
 </div>
 {% endblock %}

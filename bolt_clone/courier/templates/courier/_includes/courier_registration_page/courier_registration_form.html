@@ -1,0 +1,86 @@
+<form class="courier_signup_form" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    {% if forloop.counter0|divisibleby:2 %}
+    <div class="form-row">
+        {% endif %}
+        <div class="form-column">
+            {% if forloop.first %}
+            <label class="form-label first-label">
+                {{ field.label }}
+            </label>
+            <small class="first-small">Наприклад: Тарас</small>
+            {% elif forloop.counter == 2 %}
+            <label class="form-label second-label">
+                {{ field.label }}
+            </label>
+            <small class="second-small">Наприклад: Шевченко</small>
+            {% elif forloop.counter == 3 %}
+            <label class="form-label third-label">
+                {{ field.label }}
+            </label>
+            <small class="third-small">Наприклад:+380951231234</small>
+            {% elif forloop.counter == 4 %}
+            <label class="form-label fourth-label">
+                {{ field.label }}
+            </label>
+            <small class="fourth-small">Наприклад: taras.shevchenko@gmail.com</small>
+            {% elif forloop.counter == 5 %}
+            <div class="radio-field">
+                <label class="radio-label">
+                    {{ field.label }}
+                </label>
+            </div>
+            {% elif forloop.counter == 6 %}
+            <label class="is-adult-field">
+                {{ field.label }}
+            </label>
+            {% elif forloop.last %}
+                <label id="fleet-label">
+                    {{ field.label }}
+                </label>
+                <small id="fleet-small">
+                    Там можна буде отримати сумку для доставок і звернутись з будь-яких питань щодо реєстрації
+                    та роботи з Bolt Food
+                </small>
+                <p class="fleet-desc">
+                    Kyiv Fleet 01 - str.Krasylivska, 11
+                </p>
+                <p class="fleet-desc">
+                    Kyiv Fleet 02 - str.Bastionna, 2/1
+                </p>
+            {% else %}
+            <label id="last-label">
+                {{ field.label }}
+            </label>
+            {% endif %}
+            <div class="first-input">
+                {{ field }}
+                {% if field.label == 'Email адреса*' %}
+                    <div class="error-message" id="email-field-error">
+                        {{ field.errors }}
+                    </div>
+                {% else %}
+                    <div class="error-message">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:2 or forloop.counter == 5 %}
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="advert-block">
+        <p class="advert-p">
+            Заповнюючи цю форму, ви підтверджуєте, що ознайомилися з <a href="#">Умовами</a> і
+            <a href="#">Політикою конфіденційності</a> і погоджуєтесь з ними.
+        </p>
+        <p class="advert-p">
+            Зауважте, що ми можемо передавати ваші персональні дані, надані через цю форму,
+            компаніям-партнерам, які можуть зв'язуватись з вами, щоб розпочати співпрацю
+            у якості кур'єра Bolt Food.
+        </p>
+    </div>
+    <button type="submit" class="btn-submit-form">Продовжити</button>
+</form>

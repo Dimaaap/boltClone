@@ -588,3 +588,4 @@
 {"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2024-01-03T13:48:21.470688Z", "level": "INFO"}
 {"message": "User on the page", "timestamp": "2024-01-03T13:57:32.121401Z", "level": "INFO"}
 {"message": "User AnonymousUser send a data in partner signup form ", "timestamp": "2024-01-03T13:57:32.267050Z", "level": "INFO"}
+{"message": "New courier with email taras.shevchenko@gmail.com signed up", "timestamp": "2024-01-08T10:46:33.632895Z", "level": "INFO"}
