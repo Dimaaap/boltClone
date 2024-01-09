@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block css_additional %}
-    <link rel="stylesheet" href="{% static 'courier/css/second_step_page.html' %}">
+    <link rel="stylesheet" href="{% static 'courier/css/second_step_page.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -12,5 +12,114 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Second Step Page</h1>
+    <div class="content">
+        <div class="image-container">
+            <img
+                src="https://s3.amazonaws.com/formaloo-en/f/uploads/ur/df69abcf61767f21/fm/VmAVThkV/BoltFood.png"
+                alt=""
+                class="form-components-style_main-logo__U2TpD formaloo__form-logo">
+        </div>
+        <div class="text-container">
+            <h1 class="page-title">
+                Обліковий запис кур'єра
+            </h1>
+            <div class="border-container">
+                <div class="indicator-image">
+                    <img
+                            src="https://s3.amazonaws.com/formaloo-en/s/2023/2/8/ZbLKaCzf66f80221-109a-4584-9aca-4803b90696f4.png"
+                            width="300" height="43">
+                </div>
+                <div class="border-desc">
+                    <p id="first-p">
+                        Для створення облікового запису Bolt Courier, будь ласка,
+                        заповніть наступну форму. Ця форма дозволить вам:
+                    </p>
+                    <ol id="first-ol">
+                        <li class="desc-li">
+                            Надати основну особисту інформацію, необхідну для створення облікового запису.
+                        </li>
+                        <li class="desc-li">
+                            Отримайте всі необхідні ноу-хау, щоб стати кур'єром
+                        </li>
+                    </ol>
+                    <p id="second-p">
+                        Не забудьте приєднатись до цих каналів Telegram, щоб бути в курсі новин:
+                    </p>
+                    <p id="third-p">
+                        Київ - <a href="https://t.me/boltfood_kyiv">https://t.me/boltfood_kyiv</a><br>
+                        Дніпро - <a href="https://t.me/boltfood_dnipro">https://t.me/boltfood_dnipro</a><br>
+                        Львів - <a href="https://t.me/boltfood_lviv">https://t.me/boltfood_lviv</a><br>
+                        Одеса - <a href="https://t.me/boltfood_odessa">https://t.me/boltfood_odessa</a><br>
+                        Вінниця - <a href="https://t.me/boltfood_vinnytsia">https://t.me/boltfood_vinnytsia</a><br>
+                        Харків - <a href="https://t.me/boltfood_kharkiv">https://t.me/boltfood_kharkiv</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <form method="post" id="second-step-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field">
+                        <label class="form-label">
+                            {{ field.label }}
+                        </label>
+                        {% if forloop.counter == 2 %}
+                            <small class="form-small" id="first-small">
+                                Наприклад: Taras Shevchenko
+                            </small>
+                        {% elif forloop.counter == 3 %}
+                            <small class="form-small" id="second-small">
+                                Наприклад: UA21323130000026201234567890(без пробілів)⚠️ Зверніть увагу
+                                , для отримання виплати потрібен саме номер рахунку, а не картки.
+                            </small>
+                        {% elif forloop.counter  == 5 %}
+                            <small class="form-small" id="third-small">
+                                Як це зробити у додатках найпопулярніших банків(ПриватБанк та Монобанк)
+                                можете переглянути <a href="{% url 'contacts' %}">за посиланням</a>
+                            </small>
+                            <img height="209" width="400"
+                                 src="https://s3.amazonaws.com/formaloo-en/s/2023/3/14/R9TSCmULcc734274-d078-4666-be54-a85cc81e224f.png">
+                            <small class="form-small" id="file-size">
+                                Maximum file size: 16384kb
+                            </small>
+                        {% elif forloop.counter == 6 %}
+                            <small class="form-small" id="fourth-small">
+                                Maximum file size: 16384kb
+                            </small>
+                        {% elif forloop.counter == 7 %}
+                            <small class="form-small" id="fifth-small">
+                                Медична книжка обов'язкова для усіх, хто має контакт
+                                з їжею, тому, будь ласка, надішліть її фотографію до
+                                початку виконання доставок на платформі.
+                            </small>
+                            <small class="form-small" id="file-size2">
+                                Maximum file size: 16384kb
+                            </small>
+                        {% elif forloop.counter == 8 %}
+                            <small class="form-small">
+                                Maximum file size: 16384kb
+                            </small>
+                        {% elif forloop.last %}
+                            <small class="form-small" id="last-small">
+                                Придбати термосумку Bolt Food для виконання доставок на платформі
+                                можна через інормаційно-консультаційні центри для кур'єрів. Перед
+                                покупкою зв'яжіться із відповідним центром у вашому місті для
+                                узгодження всіх деталей. Контаки ІКЦ Bolt Food можете знайти
+                                <a href="#">за посиланням</a>
+                            </small>
+                        {% endif %}
+                        {% if field.errors %}
+                            <div class="field-error">
+                                {{ field }}
+                            </div>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn send-form">Надіслати</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}

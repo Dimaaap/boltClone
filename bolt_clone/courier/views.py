@@ -2,7 +2,7 @@ import logging
 
 from django.shortcuts import render, redirect
 
-from .forms import CourierMainInfoForm
+from .forms import CourierMainInfoForm, CourierDocumentsInfoForm
 from .services import save_main_courier_form
 
 logger = logging.getLogger("main")
@@ -28,4 +28,17 @@ def courier_registration_view(request):
 
 
 def courier_second_step_registration_view(request):
-    return render(request, "courier/second_step_page.html")
+    if request.method == "POST":
+        form = CourierDocumentsInfoForm(request.POST)
+        if form.is_valid():
+            pass
+        else:
+            pass
+    else:
+        form = CourierDocumentsInfoForm()
+    context = {"form": form}
+    return render(request, "courier/second_step_page.html", context=context)
+
+
+def courier_contacts_view(request):
+    return render(request, "courier/contact_page.html")

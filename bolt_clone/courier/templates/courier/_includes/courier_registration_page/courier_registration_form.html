@@ -60,6 +60,18 @@
                     <div class="error-message" id="email-field-error">
                         {{ field.errors }}
                     </div>
+                {% elif field.label == "Ім'я*" %}
+                    <div class="error-message" id="first_name_field_error">
+                        {{ field.errors }}
+                    </div>
+                {% elif field.label == "Прізвище*" %}
+                    <div class="error-message" id="last_name_field_error">
+                        {{ field.errors }}
+                    </div>
+                {% elif field.label == "Номер телефону*" %}
+                    <div class="error-message" id="phone_number_field_error">
+                        {{ field.errors }}
+                    </div>
                 {% else %}
                     <div class="error-message">
                         {{ field.errors }}
