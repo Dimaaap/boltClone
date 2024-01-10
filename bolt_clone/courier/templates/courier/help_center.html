@@ -1,0 +1,74 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'courier/css/help_center.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+{% endblock %}
+
+{% block js_additional %}
+    <script src="{% static 'courier/js/modal_toggle.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <header class="section-header">
+        <div class="left-container">
+            <div class="logo">
+                <img class="logo-img"
+                src="https://lh6.googleusercontent.com/WrIwo0I3i8WQKGEg905dL42HcuzT7PkGGAnPecz99aAJTqMBC3T1GsWJl1wQXM5zht-k_VTzbiZZxvrS-0vNFKM=w16383"
+                width="120">
+            </div>
+            <a class="logo-title" href="#">
+                Сайт для кур'єрів Bolt Food в Україні
+            </a>
+        </div>
+        <div class="right-container">
+            <a class="logo-title" href="#">
+                Головна
+            </a>
+            <div class="dropdown-container" id="delivery-trigger">
+                <p class="logo-title dropdown">Доставка з Bolt Food</p>
+                <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i>
+            </div>
+            <div class="delivery-dropdown" id="delivery-modal">
+                <div class="dropdown-content">
+                    <ul>
+                        <li>Реєстрація</li>
+                        <li>Користування платфор...</li>
+                        <li>Групування доставок</li>
+                         <i class="fa-regular fa-square-caret-down" id="open-inner-content"></i>
+                        <li>Зони та години роботи
+                        </li>
+                        <li>Термосумка</li>
+                        <li>Програма лояльності</li>
+                        <li>Страхування</li>
+                    </ul>
+                </div>
+                <div class="inner-content">
+                    <ul>
+                        <li class="disable-li" id="hide-inner">Зони та години роботи</li>
+                        <li><a href="#">Київ</a></li>
+                        <li><a href="#">Львів</a></li>
+                        <li><a href="#">Дніпро</a></li>
+                        <li><a href="#">Харків</a></li>
+                        <li><a href="#">Одеса</a></li>
+                        <li><a href="#">Вінниця</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <p class="logo-title dropdown">Дохід</p>
+                <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i>
+            </div>
+            <a class="logo-title" href="#">
+                Контакти
+            </a>
+            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        </div>
+    </header>
+{% endblock %}

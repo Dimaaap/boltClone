@@ -1,0 +1,63 @@
+<form method="post" id="second-step-form">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-field">
+        <label class="form-label">
+            {{ field.label }}
+        </label>
+        {% if forloop.counter == 2 %}
+        <small class="form-small" id="first-small">
+            Наприклад: Taras Shevchenko
+        </small>
+        {% elif forloop.counter == 3 %}
+        <small class="form-small" id="second-small">
+            Наприклад: UA21323130000026201234567890(без пробілів)⚠️ Зверніть увагу
+            , для отримання виплати потрібен саме номер рахунку, а не картки.
+        </small>
+        {% elif forloop.counter == 5 %}
+        <small class="form-small" id="third-small">
+            Як це зробити у додатках найпопулярніших банків(ПриватБанк та Монобанк)
+            можете переглянути <a href="{% url 'contacts' %}">за посиланням</a>
+        </small>
+        <img height="209" width="400"
+             src="https://s3.amazonaws.com/formaloo-en/s/2023/3/14/R9TSCmULcc734274-d078-4666-be54-a85cc81e224f.png">
+        <small class="form-small" id="file-size">
+            Maximum file size: 16384kb
+        </small>
+        {% elif forloop.counter == 6 %}
+        <small class="form-small" id="fourth-small">
+            Maximum file size: 16384kb
+        </small>
+        {% elif forloop.counter == 7 %}
+        <small class="form-small" id="fifth-small">
+            Медична книжка обов'язкова для усіх, хто має контакт
+            з їжею, тому, будь ласка, надішліть її фотографію до
+            початку виконання доставок на платформі.
+        </small>
+        <small class="form-small" id="file-size2">
+            Maximum file size: 16384kb
+        </small>
+        {% elif forloop.counter == 8 %}
+        <small class="form-small">
+            Maximum file size: 16384kb
+        </small>
+        {% elif forloop.last %}
+        <small class="form-small" id="last-small">
+            Придбати термосумку Bolt Food для виконання доставок на платформі
+            можна через інормаційно-консультаційні центри для кур'єрів. Перед
+            покупкою зв'яжіться із відповідним центром у вашому місті для
+            узгодження всіх деталей. Контаки ІКЦ Bolt Food можете знайти
+            <a href="{% url 'help_center' %}">за посиланням</a>
+        </small>
+        {% endif %}
+        {% if field.errors %}
+        <div class="field-error">
+            {{ field }}
+        </div>
+        {% else %}
+        {{ field }}
+        {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn send-form">Надіслати</button>
+</form>

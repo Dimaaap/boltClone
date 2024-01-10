@@ -1,0 +1,101 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: black;
+    color: white;
+    font-weight: 500;
+}
+
+header .logo-img {
+    cursor: pointer;
+}
+
+header .left-container,
+header .right-container {
+    display: flex;
+    align-items: center;
+}
+
+header .delivery-dropdown {
+    position: absolute;
+    top: 10%;
+    background: black;
+    left: 67%;
+    width: 18%;
+    display: none;
+}
+
+header .delivery-dropdown .inner-content {
+    display: none;
+}
+
+header .delivery-dropdown .inner-content ul li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+header .delivery-dropdown .inner-content ul li a:hover {
+    color: green;
+}
+
+header .delivery-dropdown .inner-content .disable-li {
+    font-weight: 600;
+    color: gray;
+    margin-left: -3%;
+}
+
+header .delivery-dropdown ul {
+    list-style-type: none;
+}
+
+header .delivery-dropdown ul li {
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+header .delivery-dropdown ul i {
+    float: left;
+    display: inline-block;
+    margin-left: -10%;
+    margin-top: 5%;
+}
+
+header .delivery-dropdown ul i:hover {
+    color: green;
+}
+
+header .delivery-dropdown ul li:hover {
+    color: green;
+}
+
+header .logo-title{
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+}
+
+header .logo-title:hover {
+    color: green;
+}
+
+header .right-container .dropdown-container {
+    position: relative;
+}
+
+header .right-container .dropdown-container p {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.fa-magnifying-glass {
+    margin-right: 10px;
+    margin-left: 10px;
+}

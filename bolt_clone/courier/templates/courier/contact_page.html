@@ -3,6 +3,10 @@
 {% load static %}
 {% block css_additional %}
     <link rel="stylesheet" href="{% static 'courier/css/contact_page.css' %}">
+    <link rel="stylesheet" href="{% static 'courier/css/include_css/contact_page/header.css' %}">
+    <link rel="stylesheet" href="{% static 'courier/css/include_css/contact_page/main_section.css' %}">
+    <link rel="stylesheet" href="{% static 'courier/css/include_css/contact_page/mono_section.css' %}">
+    <link rel="stylesheet" href="{% static 'courier/css/include_css/contact_page/privat_section.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -12,9 +16,12 @@
 {% endblock %}
 
 {% block js_additional %}
-
+    <script src="{% static 'courier/js/scroll_header.js' %}"></script>
 {% endblock %}
 
 {% block body %}
-    <h1>Help page</h1>
+    {% include './_includes/contact_page/contact_header.html' %}
+    {% include './_includes/contact_page/main_section.html' %}
+    {% include './_includes/contact_page/mono_section.html' %}
+    {% include './_includes/contact_page/privat_section.html' %}
 {% endblock %}

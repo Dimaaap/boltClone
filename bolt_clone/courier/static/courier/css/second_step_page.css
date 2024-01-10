@@ -130,19 +130,21 @@
 #second-step-form #id_delivery_method {
     background: #D5D5D5;
     display: flex;
-    padding: 15px 7px;
+    padding: 15px 20px;
     justify-content: space-between;
 }
 
 #second-step-form #id_delivery_method label {
     font-weight: 500;
-    margin-left: 80px;
+    margin-left: 10px;
+    display: flex;
 }
 
 #second-step-form #id_delivery_method div input {
     width: 18px;
     height: 18px;
     width: 45%;
+    margin-right: 3%;
 }
 
 #second-step-form #id_has_bag {

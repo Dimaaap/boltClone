@@ -42,3 +42,7 @@ def courier_second_step_registration_view(request):
 
 def courier_contacts_view(request):
     return render(request, "courier/contact_page.html")
+
+
+def courier_help_center_view(request):
+    return render(request, "courier/help_center.html")

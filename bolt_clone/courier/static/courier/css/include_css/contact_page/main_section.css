@@ -1,0 +1,14 @@
+#main-section {
+    text-align: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+#main-section h1 {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    color: #389C42;
+    font-weight: 700;
+    font-size: 3.1rem;
+}
