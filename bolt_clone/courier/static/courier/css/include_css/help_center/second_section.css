@@ -1,0 +1,12 @@
+#second-section,
+#fourth-section{
+    background: rgba(50,187,120,1);
+}
+
+#second-section .section-title,
+#fourth-section .section-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 3% 10%;
+}

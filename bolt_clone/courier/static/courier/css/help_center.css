@@ -6,23 +6,29 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 22px;
     background: black;
     color: white;
     font-weight: 500;
+    padding: 10px;
+    max-height: 200px;
+    z-index: 1000;
 }
 
 header .logo-img {
     cursor: pointer;
+    z-index: 1000;
 }
 
 header .left-container,
 header .right-container {
     display: flex;
     align-items: center;
+    z-index: 1000;
 }
 
-header .delivery-dropdown {
+header .delivery-dropdown,
+header .income-dropdown {
     position: absolute;
     top: 10%;
     background: black;
@@ -31,47 +37,78 @@ header .delivery-dropdown {
     display: none;
 }
 
-header .delivery-dropdown .inner-content {
+header .income-dropdown {
+    left: 78%;
+}
+
+header .delivery-dropdown .inner-content{
+    display: none;
+    transform: transition 0.9s ease;
+}
+
+header .income-dropdown .income-inner-content {
     display: none;
 }
 
-header .delivery-dropdown .inner-content ul li a {
+header .delivery-dropdown .inner-content ul li a,
+header .income-dropdown .income-inner-content ul li a{
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 
-header .delivery-dropdown .inner-content ul li a:hover {
+header .income-dropdown ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header .delivery-dropdown .inner-content ul li a:hover,
+header .income-dropdown .income-inner-content ul li a:hover{
     color: green;
 }
 
-header .delivery-dropdown .inner-content .disable-li {
+
+.income-dropdown ul li a:hover {
+    color: green;
+}
+
+header .delivery-dropdown .inner-content .disable-li,
+header .income-dropdown .income-inner-content .disable-li{
     font-weight: 600;
     color: gray;
     margin-left: -3%;
 }
 
-header .delivery-dropdown ul {
+header .delivery-dropdown ul,
+header .income-dropdown ul {
     list-style-type: none;
 }
 
-header .delivery-dropdown ul li {
+header .delivery-dropdown ul li,
+header .income-dropdown ul li{
     margin-top: 3%;
     cursor: pointer;
 }
 
-header .delivery-dropdown ul i {
+header .delivery-dropdown ul i,
+header .income-dropdown ul i{
     float: left;
     display: inline-block;
     margin-left: -10%;
     margin-top: 5%;
 }
 
-header .delivery-dropdown ul i:hover {
+header .delivery-dropdown ul i:hover,
+header .income-dropdown ul i:hover{
     color: green;
 }
 
-header .delivery-dropdown ul li:hover {
+header .delivery-dropdown ul li:hover,
+header .income-dropdown ul li:hover{
+    color: green;
+}
+
+header .income-dropdown i:hover {
     color: green;
 }
 
@@ -98,4 +135,5 @@ header .right-container .dropdown-container p {
 .fa-magnifying-glass {
     margin-right: 10px;
     margin-left: 10px;
+    cursor: pointer;
 }

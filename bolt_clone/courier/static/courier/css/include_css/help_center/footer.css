@@ -1,0 +1,8 @@
+footer {
+    background: rgba(50,187,120,1);
+    padding: 2% 10%;
+}
+
+footer small a {
+    color: black;
+}

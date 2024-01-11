@@ -4,6 +4,7 @@ const openInnerBtn = document.getElementById("open-inner-content");
 const dropdownContent = document.querySelector(".dropdown-content");
 const innerContent = document.querySelector(".inner-content");
 const hideInner = document.getElementById("hide-inner");
+const incomeModal = document.getElementById("income-modal");
 
 let isModalOpen = false;
 
@@ -19,6 +20,7 @@ hideInner.addEventListener("click", () => {
 
 deliveryModalTrigger.addEventListener("mouseenter", () => {
     deliveryModal.style.display = "block";
+    incomeModal.style.display = "none";
     isModalOpen = !isModalOpen;
 })
 

@@ -1,0 +1,23 @@
+#seventh-section {
+    padding: 3% 10%;
+    font-size: 1.1rem;
+}
+
+#seventh-section ul {
+    list-style-type: none;
+}
+
+#seventh-section #first-ul li {
+    margin-top: 1%;
+}
+
+#seventh-section #second-ul li {
+    margin-top: 2%;
+}
+#seventh-section #second-ul li a {
+    font-weight: 600;
+}
+
+#seventh-section #second-ul li a:hover {
+    #4469E4;
+}

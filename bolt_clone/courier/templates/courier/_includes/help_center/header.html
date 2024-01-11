@@ -1,0 +1,33 @@
+{% load static %}
+
+<header class="section-header">
+    <div class="left-container">
+        <div class="logo">
+            <img class="logo-img"
+                 src="{% static 'courier/media/bolt_logo.png' %}"
+                 width="120">
+        </div>
+        <a class="logo-title" href="#">
+            Сайт для кур'єрів Bolt Food в Україні
+        </a>
+    </div>
+    <div class="right-container">
+        <a class="logo-title" href="#">
+            Головна
+        </a>
+        <div class="dropdown-container" id="delivery-trigger">
+            <p class="logo-title dropdown">Доставка з Bolt Food</p>
+            <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i>
+        </div>
+        {% include './delivery_dropdown.html' %}
+        <div class="dropdown-container">
+            <p class="logo-title dropdown" id="open-income">Дохід</p>
+            <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i>
+        </div>
+        {% include './income_dropdown.html' %}
+        <a class="logo-title" href="#">
+            Контакти
+        </a>
+        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+    </div>
+</header>
