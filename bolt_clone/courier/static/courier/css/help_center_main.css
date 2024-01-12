@@ -1,0 +1,8 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+#delivery-modal,
+#income-modal {
+    top: 95% !important;
+}

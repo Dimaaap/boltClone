@@ -1,0 +1,47 @@
+#main-section {
+    height: 605px;
+    margin-top: 0%;
+    text-align:center;
+}
+
+#main-section .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(60%);
+}
+
+#main-section .image-container {
+    background-image: url("../../../media/help-center-main-page.jpg");
+    background-size: cover;
+    height: 605px;
+    width: 100%;
+    background-position: center center;
+}
+
+#main-section h1 {
+    position: absolute;
+    top: 30%;
+    color: white;
+    font-weight: 700;
+    width: 60%;
+    font-size: 4.3rem;
+    text-align: center;
+    justify-content: center;
+    left: 19%;
+}
+
+#main-section a {
+    position: absolute;
+    top: 95%;
+}
+
+#main-section a:hover {
+    color: white;
+}

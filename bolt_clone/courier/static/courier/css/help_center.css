@@ -13,6 +13,14 @@ header {
     padding: 10px;
     max-height: 200px;
     z-index: 1000;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+header.scrolled {
+    background: black;
+    color: white;
 }
 
 header .logo-img {
@@ -48,6 +56,15 @@ header .delivery-dropdown .inner-content{
 
 header .income-dropdown .income-inner-content {
     display: none;
+}
+
+header .delivery-dropdown ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header .delivery-dropdown ul li a:hover {
+    color: green;
 }
 
 header .delivery-dropdown .inner-content ul li a,

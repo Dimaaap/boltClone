@@ -1,0 +1,14 @@
+#sixth-section {
+    padding: 4% 10%;
+    margin-top: -100px;
+    font-weight: 500;
+}
+
+#sixth-section hr {
+    border: 1px solid gray;
+    margin-top: 20px;
+}
+
+#sixth-section a {
+    color: #32bb78;
+}

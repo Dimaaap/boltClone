@@ -1,0 +1,51 @@
+#main-section {
+    height: 500px;
+    margin-top: -6%;
+    text-align:center;
+    position: relative;
+}
+
+#main-section .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(50%);
+}
+
+#main-section .image-container {
+    background-image: url("../../../media/info-page-main-image.png");
+    background-size: cover;
+    min-height: 500px;
+    width: 100%;
+    background-position: center center;
+}
+
+#main-section h1 {
+    color: black;
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    color: white;
+    font-weight: 700;
+    width: 40%;
+    font-size: 4.3rem;
+    text-align: center;
+    justify-content: center;
+}
+
+#main-section a {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#main-section a:hover {
+    color: white;
+}

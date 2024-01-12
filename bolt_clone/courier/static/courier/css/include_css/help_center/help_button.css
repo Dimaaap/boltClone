@@ -1,0 +1,31 @@
+.sticky-button {
+    position: fixed;
+    top: 92%;
+    left: 2%;
+    border: none;
+    border-radius: 35%;
+    padding: 3px 10px;
+    background: transparent;
+    transition: background-color 0.5s ease;
+}
+
+.sticky-button:hover {
+    background: #D5D5D5;
+}
+
+.info-container {
+    position: fixed;
+    top: 92%;
+    left: 4.5%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #D5D5D5;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 30px;
+    display: none;
+}
+
+.info-container a {
+    text-decoration: none;
+    color: #D5D5D5;
+}

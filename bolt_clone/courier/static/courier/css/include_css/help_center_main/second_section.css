@@ -1,0 +1,21 @@
+#second-section {
+    padding: 3% 10%;
+    font-weight: 500;
+}
+
+#second-section .sections-container {
+    display: flex;
+}
+
+#second-section .sections-container .step {
+    text-align: center;
+    justify-content: center;
+}
+
+#second-section .sections-container .step a {
+    display: inline-block;
+    width: 70%;
+    color: #34d186;
+    font-weight: 600;
+    font-size: 1.1rem;
+}

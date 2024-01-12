@@ -1,0 +1,91 @@
+#third-section .menu-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#third-section .menu-container .point-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4% 10%;
+}
+
+
+.point-number {
+    margin-right: 10px;
+    font-size: 3.3rem;
+    font-weight: 500;
+}
+
+.even {
+    background: #D5D5D5;
+}
+
+.explain-menu {
+    flex: 1;
+    margin-left: 4%;
+}
+
+.explain-menu h5 {
+    font-size: 1.3rem;
+}
+
+.explain-menu p {
+    width: 90%;
+    font-weight: 500;
+}
+
+.explain-menu h5 a{
+    text-decoration: none;
+    color: #32bb78;
+}
+
+.explain-menu p a {
+    text-decoration: none;
+    color: #32bb78;
+    font-weight: 700;
+}
+
+.btn-menu {
+    display: flex;
+    flex-direction: row;
+    background: #32bb78;
+    width: 25%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 15px;
+    height: 140px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.7rem;
+    text-align: center;
+    align-items: center;
+}
+
+.else-btn-menu {
+    width: 25%
+}
+
+.else-btn-menu .download-btn {
+    display: block;
+    text-decoration: none;
+    color: #32bb78;
+    width: 100%;
+    font-weight: 500;
+    border: 1px solid #32bb78;
+    margin-bottom: 25px;
+    padding: 2% 5%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.else-btn-menu .download-btn:hover {
+    background: #EAFAEA;
+}

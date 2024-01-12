@@ -1,7 +1,7 @@
 <div class="delivery-dropdown" id="delivery-modal">
     <div class="dropdown-content">
         <ul>
-            <li>Реєстрація</li>
+            <li><a href="{% url 'courier_info' %}">Реєстрація</a></li>
             <li>Користування платфор...</li>
             <li>Групування доставок</li>
             <i class="fa-regular fa-square-caret-down" id="open-inner-content"></i>
@@ -9,7 +9,7 @@
             </li>
             <li>Термосумка</li>
             <li>Програма лояльності</li>
-            <li>Страхування</li>
+            <li><a href="{% url 'insurance' %}">Страхування</a></li>
         </ul>
     </div>
     <div class="inner-content">

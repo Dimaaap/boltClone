@@ -1,0 +1,25 @@
+#thanks_section {
+    padding: 4% 10%;
+}
+
+#thanks_section hr {
+    border: 1.5px solid gray;
+}
+
+#thanks_section .container {
+    display: flex;
+}
+
+#thanks_section .text-container {
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    padding: 1% 2%;
+}
+
+#thanks_section .text-container h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #34d186;
+    margin-top: 5%;
+}

@@ -46,3 +46,15 @@ def courier_contacts_view(request):
 
 def courier_help_center_view(request):
     return render(request, "courier/help_center.html")
+
+
+def courier_help_center_main_page(request):
+    return render(request, "courier/help_center_main.html")
+
+
+def courier_info_page(request):
+    return render(request, "courier/info_page.html")
+
+
+def courier_insurance_page(request):
+    return render(request, "courier/insurance_page.html")
