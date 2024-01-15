@@ -1,0 +1,18 @@
+#fourth-section {
+    padding: 1% 12%;
+    display: flex;
+}
+
+#fourth-section .text-container {
+    margin-left: 2%;
+    width: 60%;
+    margin-top: -1%;
+}
+
+#fourth-section .text-container p {
+    font-size: 2rem;
+}
+
+#fourth-section .text-container a {
+    color: rgba(50,187,120,1);
+}

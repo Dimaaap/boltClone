@@ -58,3 +58,19 @@ def courier_info_page(request):
 
 def courier_insurance_page(request):
     return render(request, "courier/insurance_page.html")
+
+
+def courier_loyalty_program_page(request):
+    return render(request, "courier/loyalty_program_page.html")
+
+
+def courier_referral_bonus_page(request):
+    return render(request, "courier/referral_bonus_page.html")
+
+
+def courier_termobag_page(request):
+    return render(request, "courier/termobag_page.html")
+
+
+def courier_delivery_group_page(request):
+    return render(request, "courier/delivery_group_page.html")

@@ -1,0 +1,33 @@
+#second-section .background-container {
+    display: flex;
+    background: rgba(0,0,0,.07);
+    padding: 2% 7%;
+    width: 100%;
+}
+
+#second-section .image-container h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 1%;
+    color: #34d186;
+    text-align: center;
+}
+
+#second-section .text-container {
+    margin-left: 5%;
+    font-size: 1.1rem;
+    width: 80%;
+}
+
+#second-section .text-container a {
+    color: black;
+}
+
+#second-section .rest-content {
+    padding: 2% 7%;
+    font-weight: 500;
+}
+
+#second-section .rest-content a {
+    color: black;
+}

@@ -1,0 +1,23 @@
+#third-section {
+    display: flex;
+    padding: 3% 10%;
+}
+
+#third-section .text-container {
+    padding-left: 5%;
+    font-weight: 500;
+}
+
+#third-section .text-container ul {
+    width: 75%;
+    font-size: 1.1rem;
+    list-style-type: square;
+}
+
+#third-section .text-container ul li {
+    margin-bottom: 2%;
+}
+
+#third-section .text-container ul li a {
+    color: rgba(50,187,120,1);
+}

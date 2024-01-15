@@ -1,0 +1,16 @@
+#second-section {
+    background: rgba(50,187,120,1);
+    padding: 2% 8%;
+    color: white;
+    font-weight: 500;
+}
+
+#second-section a {
+    color: white;
+}
+
+#second-section h6 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 2%;
+}

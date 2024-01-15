@@ -1,0 +1,10 @@
+#second-section {
+    padding: 1% 8%;
+    background: rgba(50,187,120,1);
+    color: white;
+    font-weight: 500;
+}
+
+#second-section h4 {
+    font-size: 2rem;
+}

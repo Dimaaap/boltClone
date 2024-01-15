@@ -1,0 +1,30 @@
+#third-section .title-container {
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+#third-section .title-container h1 {
+    font-size: 2.8rem;
+}
+
+#third-section .title-container p {
+
+    margin-bottom: 3%;
+}
+
+#third-section .category-container {
+    display: flex;
+    background: rgba(243,243,243,1);
+    text-align: center;
+    justify-content: center;
+}
+
+#third-section .category {
+    padding: 3% 6%;
+}
+
+#third-section .category span {
+    font-weight: 700;
+    font-size: 3.2rem;
+}

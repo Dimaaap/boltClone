@@ -1,0 +1,19 @@
+#third-section {
+    padding: 2% 8%;
+    display: flex;
+    font-weight: 500;
+}
+
+#third-section .text-container ul{
+    list-style-type: square;
+}
+
+.red-text {
+    color: red;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+#third-section a {
+    color: rgba(50,187,120,1);
+}

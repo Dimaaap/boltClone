@@ -1,0 +1,17 @@
+#sixth-section {
+    padding: 1% 10%;
+    background: #D5D5D5;
+    font-weight: 500;
+}
+
+#sixth-section a {
+    color: black;
+}
+
+#sixth-section p {
+    font-size: 1.1rem;
+}
+
+#sixth-section ul li {
+    margin-bottom: 15px;
+}
