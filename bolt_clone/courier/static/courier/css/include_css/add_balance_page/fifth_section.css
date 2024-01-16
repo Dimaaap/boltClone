@@ -1,0 +1,9 @@
+#fifth-section {
+    padding: 2% 10%;
+    display: flex;
+    font-weight: 500;
+}
+
+#fifth-section .text-container {
+    margin-left: 5%;
+}

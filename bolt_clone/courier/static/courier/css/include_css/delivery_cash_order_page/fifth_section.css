@@ -1,0 +1,33 @@
+#fifth-section {
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#fifth-section h3 {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 5%;
+}
+
+#fifth-section .container {
+    display: flex;
+}
+
+#fifth-section .text-container ol {
+    width: 90%;
+}
+
+#fifth-section .text-container ol li {
+    margin-bottom: 1%;
+}
+
+#fifth-section .attention-text {
+    color: red;
+    font-weight: 500;
+    margin-top: 2%;
+}
+
+#fifth-section .image-container img {
+    margin-top: -8%;
+}

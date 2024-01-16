@@ -1,0 +1,31 @@
+#fourth-section {
+    padding: 2% 10%;
+}
+
+#fourth-section h3 {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 5%;
+}
+
+#fourth-section .container {
+    display: flex;
+}
+
+#fourth-section .text-container {
+    font-weight: 500;
+    margin-right: 5%;
+}
+
+#fourth-section .text-container b {
+    font-size: 1.1rem;
+}
+
+#fourth-section .text-container i {
+    font-style: normal;
+}
+
+#fourth-section .text-container .green-text {
+    color: rgba(50,187,120,1);
+}

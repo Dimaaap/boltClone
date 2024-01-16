@@ -1,0 +1,50 @@
+#third-section {
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#third-section .container {
+    display: flex;
+    margin-bottom: 7%;
+}
+
+#third-section span,
+#third-section .green-title {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+}
+
+#third-section .green-title,
+#third-section .red-title{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+#third-section .red-title {
+    color: red;
+}
+
+#third-section ul {
+    list-style-type: square;
+}
+
+#third-section ul li {
+    margin-bottom: 1%;
+}
+
+#third-section .explain-title {
+    width: 95%;
+}
+
+#third-section .section-title {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+    font-size: 2.7rem;
+    margin-bottom: 4%;
+}
+
+#third-section .gray-text {
+    font-weight: 700;
+    color: gray;
+    font-size: 1.2rem;
+}

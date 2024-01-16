@@ -1,0 +1,18 @@
+#ninth-section {
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#ninth-section .attention-title {
+    color: red;
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+#ninth-section li {
+    margin-bottom: 1%;
+}
+
+#ninth-section ol ul {
+    list-style-type: square;
+}

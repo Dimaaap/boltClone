@@ -1,0 +1,22 @@
+#third-section .gray-phone {
+    background-color: #D5D5D5;
+    padding: 2% 5%;
+    font-weight: 500;
+}
+
+#third-section .gray-phone p {
+    width: 85%;
+}
+
+#third-section .white-phone {
+    padding: 2% 5%;
+    font-weight: 500;
+}
+
+#third-section .white-phone ul {
+    list-style-type: square;
+}
+
+#third-section .white-phone ul li {
+    margin-bottom: 1%;
+}

@@ -74,3 +74,15 @@ def courier_termobag_page(request):
 
 def courier_delivery_group_page(request):
     return render(request, "courier/delivery_group_page.html")
+
+
+def courier_income_page(request):
+    return render(request, "courier/income_page.html")
+
+
+def courier_delivery_cash_order_page(request):
+    return render(request, "courier/delivery_cash_order.html")
+
+
+def courier_add_balance_page(request):
+    return render(request, "courier/add_balance_page.html")

@@ -1,0 +1,23 @@
+#second-section {
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#second-section .center-title {
+    text-align: center;
+    justify-content: center;
+}
+
+#second-section h3 {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 2%;
+}
+
+#second-section .attention-p {
+    color: red;
+    margin-top: 5%;
+    font-weight: 700;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,14 @@
+#seventh-section {
+    display: flex;
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#seventh-section .text-container {
+    width: 37%;
+    margin-right: 8%;
+}
+
+#seventh-section .text-container span {
+    color: rgba(50,187,120,1);
+}

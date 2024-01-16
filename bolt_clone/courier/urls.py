@@ -14,5 +14,8 @@ urlpatterns = [
     path('help-center/loyalty-program', courier_loyalty_program_page, name="loyalty_program"),
     path('help-center/referral-bonus', courier_referral_bonus_page, name="referral_bonus"),
     path('help-center/termobag', courier_termobag_page, name='termobag'),
-    path('help-center/delivery_group', courier_delivery_group_page, name="delivery_group")
+    path('help-center/delivery_group', courier_delivery_group_page, name="delivery_group"),
+    path('help-center/income', courier_income_page, name="income"),
+    path('help-center/cash-orders/delivery', courier_delivery_cash_order_page, name="cash_delivery"),
+    path('help-center/cash-orders/add-balance', courier_add_balance_page, name="add_balance")
 ]

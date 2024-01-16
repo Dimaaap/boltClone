@@ -1,0 +1,15 @@
+#eleventh-section {
+    padding: 2% 10%;
+    display: flex;
+    font-weight: 500;
+}
+
+#eleventh-section .text-container {
+    width: 55%;
+    margin-right: 8%;
+}
+
+#eleventh-section .text-container p span {
+    color: rgba(50,187,120,1);
+    font-weight: 700;
+}

@@ -1,0 +1,12 @@
+#second-section {
+    background: rgba(50,187,120,1);
+    text-align: center;
+    justify-content: center;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#second-section h1 {
+    font-weight: 700;
+}
