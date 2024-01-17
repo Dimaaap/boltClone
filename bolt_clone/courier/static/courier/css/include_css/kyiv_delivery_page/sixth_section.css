@@ -1,0 +1,12 @@
+#sixth-section .container {
+    background: #D5D5D5;
+    padding: 2% 10%;
+    display: flex;
+}
+
+#sixth-section .text-container {
+    margin-left: 5%;
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 50%;
+}

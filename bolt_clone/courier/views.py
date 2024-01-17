@@ -86,3 +86,7 @@ def courier_delivery_cash_order_page(request):
 
 def courier_add_balance_page(request):
     return render(request, "courier/add_balance_page.html")
+
+
+def courier_kyiv_delivery_zone_page(request):
+    return render(request, "courier/kyiv_delivery_page.html")

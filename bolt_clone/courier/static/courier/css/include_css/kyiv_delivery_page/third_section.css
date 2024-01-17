@@ -1,0 +1,30 @@
+#third-section {
+    font-weight: 500;
+}
+
+#third-section .gray-background{
+    padding: 2% 10%;
+    background: #D5D5D5;
+    display: flex;
+}
+
+#third-section .gray-background .container {
+    margin-right: 5%;
+}
+
+#third-section .container h3 {
+    font-weight: 700;
+}
+
+#third-section .container h3 span {
+    color: rgba(50,187,120,1);
+}
+
+#third-section .container small {
+    justify-content: center;
+    text-align: center;
+}
+
+#third-section .white-background {
+    padding: 2% 10%;
+}

@@ -17,5 +17,6 @@ urlpatterns = [
     path('help-center/delivery_group', courier_delivery_group_page, name="delivery_group"),
     path('help-center/income', courier_income_page, name="income"),
     path('help-center/cash-orders/delivery', courier_delivery_cash_order_page, name="cash_delivery"),
-    path('help-center/cash-orders/add-balance', courier_add_balance_page, name="add_balance")
+    path('help-center/cash-orders/add-balance', courier_add_balance_page, name="add_balance"),
+    path('help-center/income/delivery-zone/kyiv', courier_kyiv_delivery_zone_page, name="kyiv")
 ]
