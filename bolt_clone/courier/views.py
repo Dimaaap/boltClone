@@ -90,3 +90,27 @@ def courier_add_balance_page(request):
 
 def courier_kyiv_delivery_zone_page(request):
     return render(request, "courier/kyiv_delivery_page.html")
+
+
+def courier_lviv_delivery_zone_page(request):
+    return render(request, "courier/lviv_delivery_page.html")
+
+
+def courier_dnipro_delivery_zone_page(request):
+    return render(request, "courier/dnipro_delivery_page.html")
+
+
+def courier_kharkiv_delivery_zone_page(request):
+    return render(request, "courier/kharkiv_delivery_page.html")
+
+
+def courier_vinnytsia_delivery_zone_page(request):
+    return render(request, "courier/vinnytsia_delivery_page.html")
+
+
+def courier_odessa_delivery_zone_page(request):
+    return render(request, "courier/odessa_delivery_page.html")
+
+
+def courier_brovary_delivery_zone_page(request):
+    return render(request, "courier/brovary_delivery_page.html")

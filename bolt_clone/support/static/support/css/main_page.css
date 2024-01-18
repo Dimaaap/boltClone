@@ -1,0 +1,18 @@
+* {
+    font-family: "Montserrat";
+}
+
+.container {
+    text-align: center;
+    font-weight: 500;
+}
+
+.container a {
+    color: #1d965c;
+    text-decoration: none;
+}
+
+.container h1 {
+    font-weight: 700;
+    font-size: 3.2rem;
+}

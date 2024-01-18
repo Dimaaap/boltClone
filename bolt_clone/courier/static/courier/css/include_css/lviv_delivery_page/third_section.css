@@ -1,0 +1,47 @@
+#third-section {
+    font-weight: 500;
+}
+
+#third-section .background-gray {
+    background: #D5D5D5;
+    display: flex;
+    padding: 2% 10%;
+}
+
+#third-section .background-gray .step {
+    margin-right: 8%;
+}
+
+#third-section h3 {
+    font-weight: 700;
+}
+
+#third-section h3 span {
+    color: rgba(50,187,120,1);
+}
+
+#third-section small {
+    margin-left: 50%;
+}
+
+#third-section #second-small {
+    margin-left: 20%;
+}
+
+#third-section .explain-container {
+    padding: 2% 10%;
+}
+
+#third-section .explain-container ul li {
+    list-style-type: square;
+}
+
+#third-section .explain-container ul li a {
+    color: black;
+}
+
+#third-section .image-container {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}

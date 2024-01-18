@@ -1,0 +1,9 @@
+#third-section .card-container {
+    display: flex;
+    padding: 2% 10%;
+}
+
+#third-section .text-container {
+    margin-left: 5%;
+    width: 45%;
+}

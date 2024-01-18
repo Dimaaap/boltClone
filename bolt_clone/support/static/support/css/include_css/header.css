@@ -1,0 +1,73 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-header .rest-content {
+    display: flex;
+    align-items: center;
+    margin-left: 480px;
+    margin-right: -50px;
+}
+
+.main-header .rest-content a {
+    display: flex;
+    align-items: center;
+}
+
+.flag-option,
+.country-title {
+    margin-right: 5px;
+}
+
+.rest-content i {
+    margin-left: 5px;
+}
+
+.main-header .details {
+    display: flex;
+    align-items: center;
+}
+
+.details .support-btn {
+    margin-right: 120px;
+    margin-left: -140px;
+    font-weight: 500;
+    border-radius: 15px;
+    background: white;
+    padding: 7px 10px;
+}
+
+.details .support-btn:hover {
+    background: #F6F6F6;
+}
+
+.details .login-btn {
+    margin-right: 50px;
+    margin-left: -70px;
+    background: #141414;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 7px 10px;
+}
+
+.details .menu-btn {
+    margin-left: -50px;
+    margin-right: 50px;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: black;
+}

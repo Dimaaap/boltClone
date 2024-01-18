@@ -10,3 +10,16 @@
     font-size: 1.1rem;
     width: 50%;
 }
+
+#sixth-section .rest-content {
+    padding: 2% 10%;
+    font-weight: 500;
+}
+
+#sixth-section .rest-content ul {
+    list-style-type: square;
+}
+
+#sixth-section .rest-content ul li {
+    margin-bottom: 1%;
+}

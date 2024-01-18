@@ -18,5 +18,12 @@ urlpatterns = [
     path('help-center/income', courier_income_page, name="income"),
     path('help-center/cash-orders/delivery', courier_delivery_cash_order_page, name="cash_delivery"),
     path('help-center/cash-orders/add-balance', courier_add_balance_page, name="add_balance"),
-    path('help-center/income/delivery-zone/kyiv', courier_kyiv_delivery_zone_page, name="kyiv")
+    path('help-center/income/delivery-zone/kyiv', courier_kyiv_delivery_zone_page, name="kyiv"),
+    path('help-center/income/delivery-zone/lviv', courier_lviv_delivery_zone_page, name="lviv"),
+    path('help-center/income/delivery-zone/dnipro', courier_dnipro_delivery_zone_page, name="dnipro"),
+    path('help-center/income/delivery-zone/kharkiv', courier_kharkiv_delivery_zone_page, name="kharkiv"),
+    path('help-center/income/delivery-zone/vinnytsia',
+         courier_vinnytsia_delivery_zone_page, name="vinnytsia"),
+    path('help-center/income/delivery-zone/odessa', courier_odessa_delivery_zone_page, name="odessa"),
+    path('help-center/income/delivery-zone/brovary', courier_brovary_delivery_zone_page, name="brovary")
 ]

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
 
     'index_page',
     'courier',
+    'support',
 
     'phonenumber_field',
     'ipware',
