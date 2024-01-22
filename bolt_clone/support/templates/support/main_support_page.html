@@ -48,7 +48,7 @@
                     {% for article in category.articles.all %}
                         {% if forloop.last %}
                             <div class="article">
-                            <a href="#">{{article.article_title}}</a>
+                            <a href="{% url 'article' article.article_id %}">{{article.article_title}}</a>
                             <svg width="24" height="24"
                                  viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@
                         </a>
                         {% else %}
                             <div class="article">
-                            <a href="#">{{article.article_title}}</a>
+                            <a href="{% url 'article' article.article_id %}">{{article.article_title}}</a>
                             <svg width="24" height="24"
                                  viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg"

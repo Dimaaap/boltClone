@@ -47,6 +47,8 @@
 
 .categories-list .step {
     display: flex;
+    border-bottom: 1px solid gray;
+    margin-top: 4%;
 }
 
 .categories-list .step-title {
@@ -63,7 +65,7 @@
     padding-bottom: 5%;
     padding-top: 5%;
     font-weight: 500;
-    width: 200%;
+    width: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,8 +85,9 @@
     margin-top: 10%;
     background: #F0F0F0;
     border-radius: 25px;
-    padding: 5% 10%;
+    padding: 3% 7%;
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .view_all:hover {
