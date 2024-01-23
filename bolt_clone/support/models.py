@@ -12,6 +12,10 @@ class ArticleCategories(models.Model):
 
 
 class Articles(models.Model):
+
+    class Meta:
+        ordering = ["article_title"]
+
     article_id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     article_title = models.CharField(max_length=120, default="")
     article_text = models.TextField()

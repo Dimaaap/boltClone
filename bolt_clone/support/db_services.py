@@ -21,17 +21,19 @@ def text_insert_article_in_db():
                             article_category=category)
 
 
-FILES_LIST = {'cant_enter_app': "Я не можу увійти в додаток",
-              'tech_problem': "У мене виникла технічна проблема",
-              'dont_pay_cash_orders.txt': "Я не отримую готівкових запитів на доставку",
-              'cant_get_notifications.txt': "Я не отримую сповіщень з додатка"}
+FILES_LIST = {'add_delivery_requests': "Прийом запиту на доставку",
+              'age_proof_delivery': "Про доставки з підтвердженням віку",
+              'contactless_delivery': "Про безконтактну доставку",
+              'get_more_deliveries': "Як отримувати більше доставок",
+              'move_to_delivery_address': "Рух до адреси доставки",
+              'move_to_restaurant.txt': "Рух до ресторану"}
 
 
 def insert_article_in_db():
     module_dir = os.path.dirname(__file__)
-    category = ArticleCategories.objects.get(category_title="Технічні неполадки")
+    category = ArticleCategories.objects.get(category_title="Інформація про доставку")
     for file in FILES_LIST:
-        file_path = os.path.join(module_dir, f"articles_mark/tech_bugs/{file}")
+        file_path = os.path.join(module_dir, f"articles_mark/delivery_info/{file}")
         with open(file_path, "r", encoding="utf8") as text_file:
             data = text_file.read()
         Articles.objects.create(article_title=FILES_LIST[file], article_text=data,

@@ -18,41 +18,8 @@
 .content .article-text {
     font-size: 1.1rem;
 }
-/*
 
-.content .app-download {
-    display: flex;
-    margin-top: 10%;
-    background: #1d965c;
-    color: white;
-    font-weight: 500;
-    border-radius: 15px;
-    width: 110%;
-    margin-left: -5%;
-    margin-bottom: 15%;
-}
-
-.content .app-download .text-container {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.content .app-download .text-container p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 8%;
-}
-
-.content .app-download .text-container a {
+.content .article-text a {
+    color: green;
     text-decoration: none;
-    background: white;
-    color: black;
-    font-weight: 700;
-    padding: 3% 5%;
-    border-radius: 15px;
 }
-
-.content .app-download .text-container a:hover {
-    background: #F7F7F7;
-}
-*/

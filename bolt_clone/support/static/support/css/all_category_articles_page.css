@@ -1,0 +1,35 @@
+.container form {
+    margin-bottom: 5%;
+}
+
+.content {
+    padding-left: 7%;
+    font-weight: 500;
+}
+
+.content .step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.content .step a {
+    flex: 1;
+    text-decoration: none;
+    color: black;
+}
+
+.content svg {
+    display: inline-block;
+    margin-right: 5%;
+}
+
+hr {
+    width: 95%;
+}
+
+.app-download {
+    width: 90%;
+    margin-left: 5%;
+}
