@@ -1,0 +1,74 @@
+.pagination {
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.pagination nav .wrapper {
+    display: flex;
+    align-items: center;
+    width: 200%;
+}
+
+.pagination nav ul {
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.pagination nav ul li {
+    margin-right: 150%;
+}
+
+.pagination nav ul li a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    min-width: 10px;
+    padding: 40% 140%;
+    border-radius: 7px;
+}
+
+.pagination nav ul li .active {
+    background: #F3F3F3;
+}
+
+.pagination nav ul li a:hover {
+    background: #F3F3F3;
+}
+
+.pagination nav ul li:nth-child(1) {
+    margin-left: -5%;
+}
+
+.pagination svg {
+    cursor: pointer;
+    margin-top: -7%;
+}
+
+.pagination #second {
+    margin-left: 40%;
+}
+
+.pagination #first {
+    margin-right: -7%;
+}
+
+.pagination #first-link {
+    color: gray;
+    margin-top: -7%;
+    margin-right: -9%;
+    cursor: pointer;
+}
+
+.pagination #second-link {
+    display: inline-block;
+    color: gray;
+    margin-top: -7%;
+    margin-left: 28%;
+    cursor: pointer;
+}
+
+.pagination .wrapper .non-active-link {
+    color: gray;
+    cursor: not-allowed;
