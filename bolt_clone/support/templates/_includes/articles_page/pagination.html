@@ -2,7 +2,7 @@
     <div class="pagination">
         <nav>
             <div class="wrapper">
-                {% if  %}
+                {% if page_obj.paginator.num_pages > 1 %}
                     {% if page_obj.previous_page_number >= 1 %}
                     <a href="?page={{page_obj.previous_page_number}}" id="first-link">
                         <svg width="20" height="20" id="first"

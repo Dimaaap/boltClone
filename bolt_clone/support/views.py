@@ -1,15 +1,29 @@
 from django.shortcuts import render, redirect
-from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 
 from .models import Articles, ArticleCategories
 from .db_services import get_all_from_model, get_method_in_model, filter_fields_in_model
 
 
 def main_support_view(request):
-    categories_list = get_all_from_model(ArticleCategories)
-    context = {"categories": categories_list}
-    return render(request, "support/main_support_page.html", context)
+    search_result_query = request.GET.get("q")
+    if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+        if search_result_query:
+            articles = Articles.objects.filter(article_title__icontains=search_result_query)
+            data = [{"title": article.article_title, 'content': article.article_text} for article in articles]
+            print(articles)
+        else:
+            data = {'error': 'За запитом нічого не знайдено'}
+        return JsonResponse(data, safe=False)
+    else:
+        if search_result_query:
+            articles = Articles.objects.filter(article_title__icontains=search_result_query)
+        else:
+            articles = ""
+        categories_list = get_all_from_model(ArticleCategories)
+        context = {"categories": categories_list, "articles": articles}
+        return render(request, "support/main_support_page.html", context)
 
 
 def get_article_page(request, article_id):
@@ -30,3 +44,7 @@ def get_all_category_articles(request, category_id):
     page_obj = paginator.page(page_number)
     context = {"category": category, "articles": articles, "page_obj": page_obj}
     return render(request, "support/all_category_articles_page.html", context)
+
+
+def search_articles(request):
+    return render(request, "support/search_article_page.html ")

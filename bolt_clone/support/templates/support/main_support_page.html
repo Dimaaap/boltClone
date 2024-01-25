@@ -10,6 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+    <!--<script src="{% static 'support/js/hide_article_section.js' %}"></script>-->
+    <script src="{% static 'support/js/finding_results.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -30,13 +36,17 @@
         <h1 class="section-title">
             Для кур'єрів
         </h1>
-        <form method="GET" id="search-form">
+        <form method="get" id="search-form">
+            {% csrf_token %}
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input class="form-control" id="search-field" name="q" type="text" value="{{ request.GET.q }}"
+            <input class="form-control" id="search-field" name="q" type="search" value="{{ request.GET.q }}"
                    placeholder = "Введи своє запитання">
         </form>
     </div>
-    <section class="categories-list">
+    <section id="search-results">
+        <div class="result-item"></div>
+    </section>
+    <section class="categories-list" id="categories-section">
         {% for category in categories %}
             <div class="step">
                 <div class="step-title">
