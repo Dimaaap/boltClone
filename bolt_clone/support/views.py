@@ -6,15 +6,25 @@ from .models import Articles, ArticleCategories
 from .db_services import get_all_from_model, get_method_in_model, filter_fields_in_model
 
 
+def format_article_text_for_ajax(article):
+    formatted_content = " ".join(article.article_text.split()[:20]).strip(":")
+    if not formatted_content[-1].isalnum():
+        formatted_content = formatted_content[:-1]
+    return formatted_content
+
+
 def main_support_view(request):
     search_result_query = request.GET.get("q")
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         if search_result_query:
             articles = Articles.objects.filter(article_title__icontains=search_result_query)
-            data = [{"title": article.article_title, 'content': article.article_text} for article in articles]
-            print(articles)
+            data = [{"title": article.article_title,
+                     "content": format_article_text_for_ajax(article),
+                     "category": article.article_category.category_title,
+                     "url": article.get_absolute_url()}
+                    for article in articles]
         else:
-            data = {'error': 'За запитом нічого не знайдено'}
+            data = {}
         return JsonResponse(data, safe=False)
     else:
         if search_result_query:
@@ -22,7 +32,8 @@ def main_support_view(request):
         else:
             articles = ""
         categories_list = get_all_from_model(ArticleCategories)
-        context = {"categories": categories_list, "articles": articles}
+        context = {"categories": categories_list, "articles": articles,
+                   "count_articles": len(articles), "result_query": search_result_query}
         return render(request, "support/main_support_page.html", context)
 
 

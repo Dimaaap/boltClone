@@ -1,0 +1,6 @@
+<form method="get" id="search-form">
+    {% csrf_token %}
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input class="form-control" id="search-field" name="q" type="search" value="{{ request.GET.q }}"
+           placeholder="Введи своє запитання">
+</form>

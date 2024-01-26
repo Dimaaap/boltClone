@@ -1,0 +1,23 @@
+#search-form {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+#search-form i {
+    position: absolute;
+    top: 32%;
+    left: 19%;
+}
+
+#search-form input {
+    height: 50px;
+    background: #F0F0F0;
+    padding-left: 5%;
+    border: none;
+}
+
+#search-form input:focus{
+    border: 2px solid #32bb78;
+    background: white;
+}

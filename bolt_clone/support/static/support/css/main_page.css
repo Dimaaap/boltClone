@@ -17,30 +17,6 @@
     font-size: 3.2rem;
 }
 
-#search-form {
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 2%;
-}
-
-#search-form i {
-    position: absolute;
-    top: 32%;
-    left: 19%;
-}
-
-#search-form input {
-    height: 50px;
-    background: #F0F0F0;
-    padding-left: 5%;
-    border: none;
-}
-
-#search-form input:focus{
-    border: 2px solid #32bb78;
-    background: white;
-}
-
 .categories-list {
     padding: 2% 10%;
 }
@@ -92,4 +68,58 @@
 
 .view_all:hover {
     background: #E8E8E8;
+}
+
+
+#search-results {
+    padding: 2% 10%;
+}
+
+#search-results .find-results {
+    margin-left: 35%;
+    font-weight: 700;
+}
+
+#search-results .find-desc {
+    margin-left: 30%;
+    font-weight: 500;
+}
+
+#search-results .result-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    justify-content: left;
+}
+
+#search-results .result-item small {
+    font-size: 0.9rem;
+    color: gray;
+    font-weight: 600;
+}
+
+#search-results .result-item {
+    border-bottom: 1px solid gray;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    position: relative;
+}
+
+#search-results .result-item:last-child {
+    border: none;
+}
+
+#search-results .result-item small {
+    font-weight: 500;
+}
+
+#search-results .result-item a {
+    text-decoration: none;
+    color: black;
+}
+
+#search-results .result-item i {
+    color: gray;
+    position: absolute;
+    top: 20%;
 }
