@@ -1,0 +1,115 @@
+.popup {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0%;
+}
+
+.popup .popup-body {
+    padding-left: 1%;
+    display: flex;
+}
+
+.popup .popup-body .left-section {
+    width: 75%;
+    background: #EBEBEB;
+    padding-top: 0.5%;
+    padding-bottom: 0.1%;
+    border-radius: 10px;
+}
+
+.popup .popup-body .left-section .header {
+    list-style-type: none;
+    display: flex;
+}
+
+.popup .popup-body .left-section .header li {
+    margin-right: 3%;
+    font-weight: 600;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+.popup-body .left-section .popup-main-container .ul-row {
+    display: flex;
+    margin-top: 4%;
+    padding-left: 2%;
+}
+
+.popup-main-container .ul-row .ul:nth-child(1) {
+    margin-right: 4%;
+    margin-left: 1.8%;
+}
+
+.popup-main-container .ul-row .ul .ul-title {
+    font-weight: 700;
+    width: 70%;
+}
+
+
+.popup-main-container .ul-row .ul ul {
+    list-style-type: none;
+    width: 95%;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.popup-main-container .ul-row .ul ul li {
+    margin-left: -10%;
+    width: 100%;
+    margin-bottom: 7%;
+    padding: 1% 5%;
+    border-radius: 5px;
+}
+
+.popup-main-container .ul-row .ul ul li:hover {
+    background: #DADADA;
+    font-weight: 600;
+}
+
+.popup-main-container .ul-row .ul ul li i {
+    display: none;
+}
+
+.popup-main-container .ul-row .ul #first-ul li{
+    margin-left: -26%;
+    width: 120%;
+}
+
+.popup-main-container .ul-row .ul #second-ul li{
+    margin-left: -17%;
+}
+
+.popup-main-container .ul-row .ul #last-ul li{
+    margin-left: -20%;
+}
+
+.popup-main-container .ul-row #car-sharing {
+    margin-left: -9%;
+}
+
+.popup-main-container .ul-row .ul #delivery li{
+    margin-left: -19%;
+}
+
+.popup-main-container .ul-row .ul #sharing li {
+    margin-left: -18%;
+}
+
+.popup-main-container .ul-row .ul #business li {
+    margin-left: -18%;
+}
+
+.popup-main-container .ul-row .ul #electro-bike li {
+    margin-left: -17%;
+}
+
+.popup-main-container .ul-row #bolt-plus-container {
+    margin-left: -10%;
+}
+
+.popup-main-container .ul-row .ul #bolt-plus li {
+    margin-left: -25%;
+}
+

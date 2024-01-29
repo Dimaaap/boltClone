@@ -1,0 +1,76 @@
+.popup .popup-body .right-section {
+    background: #EBEBEB;
+    margin-left: 1%;
+    width: 25%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
+
+.popup .popup-body .right-section ul {
+    list-style-type: none;
+}
+
+.popup .popup-body .right-section ul li {
+    font-weight: 600;
+    width: 100%;
+    padding-top: -5%;
+    padding-bottom: -10%;
+}
+
+.popup .popup-body .right-section ul li .flex-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+    margin-bottom: -10%;
+}
+
+.popup .popup-body .right-section ul li #last {
+    margin-bottom: 0;
+}
+
+.popup .popup-body .right-section ul li #last-div,
+.popup .popup-body .right-section ul li #pre-last-div {
+    margin-top: 25%;
+}
+
+.popup .popup-body .right-section ul li #first-img {
+    margin-left: 10%;
+}
+
+.popup .popup-body .right-section ul li .flex-container div {
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.popup .popup-body .right-section ul li .flex-container div:not(:first-child) {
+    margin-top: 20%;
+}
+
+.popup .popup-body .right-section ul li .flex-container #first-div {
+    margin-top: 10%;
+}
+
+.popup .popup-body .right-section ul li p {
+    margin-right: 10px;
+    width: 90%;
+    margin-left: 1%;
+    margin-bottom: -2%;
+}
+
+.popup .popup-body .right-section #first-svg {
+    color: blue;
+}
+
+.popup .popup-body .right-section ul li svg {
+    color: #1d965c;
+}
+
+.popup .popup-body .right-section ul small {
+    font-weight: 500;
+    display: block;
+    width: 80%;
+    color: gray;
+    margin-bottom: -2%;
+    margin-top: 4%;
+}
+

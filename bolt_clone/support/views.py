@@ -4,27 +4,13 @@ from django.http import JsonResponse
 
 from .models import Articles, ArticleCategories
 from .db_services import get_all_from_model, get_method_in_model, filter_fields_in_model
-
-
-def format_article_text_for_ajax(article):
-    formatted_content = " ".join(article.article_text.split()[:20]).strip(":")
-    if not formatted_content[-1].isalnum():
-        formatted_content = formatted_content[:-1]
-    return formatted_content
+from .services import handle_ajax_request
 
 
 def main_support_view(request):
     search_result_query = request.GET.get("q")
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
-        if search_result_query:
-            articles = Articles.objects.filter(article_title__icontains=search_result_query)
-            data = [{"title": article.article_title,
-                     "content": format_article_text_for_ajax(article),
-                     "category": article.article_category.category_title,
-                     "url": article.get_absolute_url()}
-                    for article in articles]
-        else:
-            data = {}
+        data = handle_ajax_request(search_result_query, Articles)
         return JsonResponse(data, safe=False)
     else:
         if search_result_query:
