@@ -1,9 +1,34 @@
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
 .popup {
     width: 100%;
     position: absolute;
-    top: 10%;
-    left: 0%;
+    top: 60%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #fff;
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 5%;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.9s ease-in-out;
 }
+
+.popup.show {
+    opacity: 1;
+}
+
 
 .popup .popup-body {
     padding-left: 1%;

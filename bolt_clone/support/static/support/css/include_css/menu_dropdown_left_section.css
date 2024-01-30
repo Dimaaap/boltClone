@@ -1,3 +1,8 @@
+.active-section {
+    background: white;
+
+}
+
 .popup .popup-body .left-section {
     width: 75%;
     background: #EBEBEB;
@@ -12,10 +17,31 @@
 }
 
 .popup .popup-body .left-section .header li {
-    margin-right: 3%;
+    margin-right: 2%;
     font-weight: 600;
     padding-top: 2%;
     padding-bottom: 2%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.popup .popup-body .left-section .header #second {
+    width: 20%;
+    margin-right: -1%;
+}
+
+.popup .popup-body .left-section .header li a {
+    padding: 10%;
+    border-radius: 10px;
+}
+
+.popup .popup-body .left-section .header li a:hover {
+    background: white;
+}
+
+.popup .popup-body .left-section .header li #second-a {
+    padding: 3.5%;
 }
 
 
@@ -49,6 +75,7 @@
     margin-bottom: 7%;
     padding: 1% 5%;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .popup-main-container .ul-row .ul ul li:hover {
@@ -99,4 +126,50 @@
 
 .popup-main-container .ul-row .ul #bolt-plus li {
     margin-left: -25%;
+}
+
+#drivers-1 li,
+#drivers-2 li,
+#drivers-5 li {
+    margin-left: -24%;
+}
+
+#drivers-3 li {
+    margin-left: -18%;
+}
+
+#drivers-4 li {
+    margin-left: -16%;
+}
+
+#company-1 li{
+    margin-left: -40%;
+}
+
+#company-2 li {
+    margin-left: -23%;
+}
+
+#company-3 li {
+    margin-left: -18%;
+}
+
+#press {
+    margin-left: -35%;
+}
+
+#company-4 {
+    margin-left: -35%;
+}
+
+#company-4 li {
+    margin-left: -20%;
+}
+
+#get_pay_with_bolt,
+#company,
+#safety,
+#support,
+#cities {
+    display: none;
 }

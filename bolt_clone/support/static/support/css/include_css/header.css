@@ -71,3 +71,8 @@
     text-decoration: none;
     color: black;
 }
+
+
+#close-popup {
+    margin-left: -5%;
+}
