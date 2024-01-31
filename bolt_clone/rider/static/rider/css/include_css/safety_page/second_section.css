@@ -1,0 +1,37 @@
+#second-section {
+    margin-top: 15%;
+    width: 80%;
+    margin-left: 10%;
+    background: #E1E1E1;
+    display: flex;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+
+#second-section img {
+    margin-top: -10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+}
+
+#second-section .text-container {
+    padding: 8% 7%;
+}
+
+#second-section .text-container h1 {
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+
+#second-section .text-container p {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 3%;
+}
+
+#second-section .text-container small {
+    display: inline-block;
+    font-weight: 500;
+    color: gray;
+    width: 75%;
+}

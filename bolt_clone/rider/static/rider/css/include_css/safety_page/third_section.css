@@ -1,0 +1,26 @@
+#third-section {
+    padding-left: 9%;
+}
+
+#third-section .row {
+    display: flex;
+    margin-bottom: 3%;
+}
+
+#third-section svg {
+    color: #32bb78;
+}
+
+#third-section .row .step {
+    width: 30%;
+    margin-right: 3%;
+}
+
+#third-section .row .step h5 {
+    font-weight: 700;
+    margin-top: 4%;
+}
+
+#third-section .row .step p {
+    font-weight: 500;
+}
