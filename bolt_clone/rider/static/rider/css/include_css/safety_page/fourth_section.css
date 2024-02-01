@@ -1,0 +1,46 @@
+#fourth-section {
+    padding: 2% 3%;
+    justify-content: center;
+}
+
+#fourth-section h1 {
+    font-weight: 700;
+    width: 50%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+
+#fourth-section .steps {
+    display: flex;
+    margin-left: 10%;
+}
+
+#fourth-section .steps .step {
+    width: 28%;
+    margin-right: 2%;
+    background: #E1E1E1;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+#fourth-section .steps .step .number-title {
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    background: #32bb78;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 2%;
+}
+
+#fourth-section .steps .step h4 {
+    font-weight: 600;
+    margin-top: 5%;
+}
+
+#fourth-section .steps .step p {
+    font-weight: 500;
+}

@@ -8,5 +8,6 @@ urlpatterns = [
     path('', include('index_page.urls')),
     path('courier/', include('courier.urls')),
     path('support/', include('support.urls')),
-    path('rider/', include('rider.urls'))
+    path('rider/', include('rider.urls')),
+    path('scooters/', include('scooters.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

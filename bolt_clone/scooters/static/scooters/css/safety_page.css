@@ -1,0 +1,24 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body header .country-title {
+    margin-top: 6%;
+}
+
+
+body header {
+    position: relative;
+}
+
+body header i {
+    color: white;
+}
+
+body header p {
+    color: white;
+}
+
+#third-section {
+    width: 90%;
+}

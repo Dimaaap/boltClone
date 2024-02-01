@@ -1,0 +1,53 @@
+#third-section {
+    background: #F7F7F7;
+    padding: 2% 10%;
+    width: 100%;
+}
+
+#third-section h1 {
+    font-weight: 700;
+    margin-bottom: 4%;
+    margin-left: 28%;
+}
+
+#third-section .container {
+    display: flex;
+}
+
+#third-section .text-container {
+    width: 70%;
+    margin-right: -10%;
+}
+
+#third-section .container .step {
+    width: 50%;
+    margin-left: 20%;
+}
+
+#third-section .container svg {
+    margin-left: -50%;
+    margin-bottom: -10%;
+}
+
+#third-section .container .step h4 {
+    font-weight: 700;
+    margin-left: 5%;
+}
+
+#third-section .container .step p {
+    margin-left: 5%;
+    font-weight: 500;
+    color: gray;
+}
+
+#third-section .container .step .row {
+    display: flex;
+}
+
+#third-section .image-container {
+    margin-top: 5%;
+}
+
+#third-section .download-btn {
+    margin-left: 40%;
+}

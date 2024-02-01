@@ -1,0 +1,81 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'scooters/css/safety_page.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/menu_dropdown.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/menu_dropdown_left_section.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/menu_dropdown_right_section.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/safety_page/main_section.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/safety_page/second_section.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/include_css/safety_page/third_section.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+    <script src="{% static 'support/js/show_or_hide_help_dropdown.js' %}"></script>
+    <script src="{% static 'support/js/show_different_sections.js' %}"></script>
+    <script src="{% static 'courier/js/custom_accordion.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    {% include '../_includes/header.html' %}
+    {% include 'scooters/_includes/scooters_safety_page/main_section.html' %}
+    {% include 'scooters/_includes/scooters_safety_page/second_section.html' %}
+    {% include 'scooters/_includes/scooters_safety_page/third_section.html' %}
+    <section class="scooter_section" id="fourth-section">
+        <div class="image-container">
+            <img width="500"
+                 src="{% static 'scooters/media/scooter-safety-fourth-section.webp' %}">
+        </div>
+        <div class="text-container">
+            <h2 class="section-title">
+                Bolt | Школа електросамокатів
+            </h2>
+            <p>
+                Дізнайся, як безпечно їздити на самокаті
+            </p>
+            <ol class="laws-ul">
+                <li>
+                    <b>
+                        Scooting and the law
+                    </b>
+                    <a href="https://assets.ctfassets.net/tk7rwcciwvbq/7nrq3fJ2L3G4LNhr3DZqgt/229530201212dd94a5f993f03a99a235/Scooting_and_the_law_UA.pdf">
+                        Відкрити PDF-файл
+                    </a>
+                </li>
+                <li>
+                    <b>
+                        The ABC of scooting
+                    </b>
+                    <a href="https://assets.ctfassets.net/tk7rwcciwvbq/4ymv54FtM43pcqmXGolDQH/9a694c031e786641a2ae9593a51fef2a/the_ABC_of_scooting_UA.pdf">
+                        Відкрити PDF-файл
+                    </a>
+                </li>
+                <li>
+                    <b>
+                        Ride smart, Ride safe
+                    </b>
+                    <a href="https://assets.ctfassets.net/tk7rwcciwvbq/322KTXuRCq6J4VvlAOCEKA/53015fb23cd6a5d8d613d51328c40af0/Ride_Smart_Ride_Safe_UA.pdf">
+                        Відкрити PDF-файл
+                    </a>
+                </li>
+                <li>
+                    <b>
+                        The art of parking
+                    </b>
+                    <a href="https://assets.ctfassets.net/tk7rwcciwvbq/4mkh0dEjOPyGeNmZjICfLg/b22e2efc251d072d1daaa27fca3e8f03/the_art_of_parking_UA.pdf">
+                        Відкрити PDF-файл
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </section>
+{% endblock %}

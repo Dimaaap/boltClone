@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/main_section.css' %}">
     <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/second_section.css' %}">
     <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/third_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/fourth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/fifth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/sixth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/faq_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/safety_page/app_download_section.css' %}">
+    <link rel="stylesheet" href="{% static 'rider/css/include_css/footer.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -23,6 +29,7 @@
     <script src="{% static 'support/js/hide_article_section.js' %}"></script>
     <script src="{% static 'support/js/show_or_hide_help_dropdown.js' %}"></script>
     <script src="{% static 'support/js/show_different_sections.js' %}"></script>
+    <script src="{% static 'courier/js/custom_accordion.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -30,56 +37,10 @@
     {% include '../_includes/safety_page/main_section.html' %}
     {% include '../_includes/safety_page/second_section.html' %}
     {% include '../_includes/safety_page/third_section.html' %}
-    <section class="safety_section" id="fourth-section">
-        <h1 class="section_title">
-            Безпека до, під час та після твоєї поїздки
-        </h1>
-        <div class="steps">
-            <div class="step">
-                <div class="number-title">
-                    1
-                </div>
-                <h4>До</h4>
-                <p>
-                    Перевір рейтинг та кількість поїздок водія після
-                    підтвердження поїздки. Порівняй обличчя водія,
-                    модель та реєстраційний номер автомобіля з
-                    інформацією в додатку. За потреби можеш
-                    зв'язатися з водієм через чат або зателефонувати
-                    йому через додаток. Ми турбуємось про твою
-                    конфіденційність, тож твій номер залишиться прихованим.
-                </p>
-            </div>
-            <div class="step">
-                <div class="number-title">
-                    2
-                </div>
-                <h4>Під час</h4>
-                <p>
-                    Поділись деталями своєї поїздки з близькими,
-                    щоб вони знали твоє місцеперебування та орієнтовний
-                    час прибуття. Але якщо щось піде не так скористайся
-                    кнопкою "Екстренної допомоги" для зв'язку з
-                    профільними службами
-                </p>
-            </div>
-            <div class="step">
-                <div class="number-title">
-                    3
-                </div>
-                <h4>Після</h4>
-                <p>
-                    Оціни свого водія чесно та виважено. Якщо середній
-                    рейтинг водія опуститься нижче порогового значення,
-                    його обліковий запис може бути заблоковано. У разі
-                    виникнення питань безпеки, звертайтесь до служби підтримки
-                    через додаток Bolt або за електронною адресою ukraine@bolt.eu.
-                    У випадку ДТП, рекомендуємо звернутись до поліції та
-                    швидкої допомоги, а також сповістити нас про ситуацію
-                    через додаток. Ти також маєш право звернутись до страхової
-                    компанії UNIQA для відшкодування.
-                </p>
-            </div>
-        </div>
-    </section>
+    {% include '../_includes/safety_page/fourth_section.html' %}
+    {% include '../_includes/safety_page/fifth_section.html' %}
+    {% include '../_includes/safety_page/sixth_section.html' %}
+    {% include '../_includes/safety_page/faq_section.html' %}
+    {% include '../_includes/safety_page/app_download_section.html' %}
+    {% include '../_includes/footer.html' %}
 {% endblock %}

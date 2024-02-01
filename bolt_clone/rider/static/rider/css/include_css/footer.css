@@ -1,0 +1,186 @@
+
+.site-footer {
+    padding: 20px 70px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.bolt-ul-content {
+    margin-left: 10px;
+}
+
+.footer-title {
+    margin: 0;
+}
+
+.footer-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-li {
+    margin: 5px 0;
+}
+
+.site-footer .footer-title,
+.site-footer .second-row-title{
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-left: 220px;
+}
+
+.site-footer .second-row-title {
+    margin-left: 250px;
+}
+
+footer {
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Monserrat", sans-serif
+    margin-top: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+
+}
+
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    margin-top: 10px;
+    padding: 5px 0;
+    font-size: 1.1rem;
+}
+
+footer ul li a:hover {
+    color: #317C43;
+}
+
+.footer .block {
+    display: hidden;
+}
+
+.footer .i2ian3 img {
+    width: 40px;
+    height: 40px;
+    background: red;
+}
+
+footer .i2ian0 .i2ian3 {
+    border: none;
+    border-radius: 15px;
+    background: #DFDFDF;
+    width: 40%;
+    padding: 7px 15px;
+}
+
+footer .i2ian3 svg {
+    position: absolute;
+    display: inline-block;
+    left: 3%;
+    margin-right: 10px;
+}
+
+footer .i2ian3 p{
+    margin-left: 17px;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+footer #block-container {
+    display: none;
+}
+
+footer .links-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+footer .links-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+footer .links-container .social {
+    display: flex;
+}
+
+footer .links-container .download {
+    display: flex;
+}
+
+footer .links-container .social-link {
+    margin-left: 10px;
+    border-radius: 50%;
+    background: #ECECEC;
+    padding: 10px 5px;
+    text-align: center;
+    justify-content: center;
+    padding-left: 7px;
+    padding-right: 5px;
+}
+
+footer .download .download-button {
+    border: none;
+    margin-left: 10px;
+    border-radius: 15px;
+    background: #ECECEC;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+}
+
+footer .download .download-button:hover {
+    background: #D5D5D5;
+}
+
+footer .download #a-download {
+    background: #ECECEC;
+}
+
+footer .additional-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Monserrat", sans-serif
+    font-size: 1.1rem;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+footer .additional-container .bolt-name {
+    display: flex;
+    color: #A5A5A5;
+}
+
+footer .additional-container .additional-links {
+    display: flex;
+    color: #A5A5A5;
+    font-size: 1.1rem;
+}
+
+.additional-container .additional-links .add-link {
+    color: #A5A5A5;
+    margin-right: 15px;
+    margin-left: 5px;
+    font-size: 1.1rem;
+}
+
+.additional-container .additional-links .add-link:hover {
+    color: #317C43;
+}

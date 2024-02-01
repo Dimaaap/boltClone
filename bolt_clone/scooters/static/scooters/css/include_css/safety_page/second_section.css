@@ -1,0 +1,33 @@
+#second-section {
+    background: #F7F7F7;
+    margin-top: 10%;
+    padding: 6% 10%;
+    display: flex;
+}
+
+#second-section .text-container {
+    width: 60%;
+    margin-right: 5%;
+}
+
+#second-section .text-container h1 {
+    font-weight: 700;
+}
+
+#second-section .text-container p {
+    font-weight: 500;
+    color: gray;
+    width: 90%;
+}
+
+
+#second-section .text-container a {
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    background: #32bb78;
+    padding: 2% 5%;
+    border-radius: 20px;
+    margin-top: 3%;
+}

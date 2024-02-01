@@ -1,0 +1,31 @@
+#fifth-section {
+    margin-top: 15%;
+    width: 80%;
+    margin-left: 10%;
+    background: #E1E1E1;
+    display: flex;
+    border-radius: 15px;
+    margin-bottom: 5%;
+    margin-right: 10%;
+}
+
+#fifth-section img {
+    margin-top: -10%;
+    margin-bottom: 10%;
+    margin-left: -10%;
+}
+
+#fifth-section .text-container {
+    padding: 8% 7%;
+}
+
+#fifth-section .text-container h1 {
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+
+#fifth-section .text-container p {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 3%;
+}

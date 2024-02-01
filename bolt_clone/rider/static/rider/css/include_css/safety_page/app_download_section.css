@@ -1,0 +1,35 @@
+.app-download {
+    display: flex;
+    margin-top: 7%;
+    background: #1d965c;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    width: 70%;
+    margin-bottom: 15%;
+    margin-left: 15%;
+}
+
+.app-download .text-container {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.app-download .text-container p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8%;
+}
+
+.app-download .text-container a {
+    text-decoration: none;
+    background: white;
+    color: black;
+    font-weight: 700;
+    padding: 3% 5%;
+    border-radius: 15px;
+}
+
+.app-download .text-container a:hover {
+    background: #F7F7F7;
+}
