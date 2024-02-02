@@ -1,0 +1,27 @@
+#third-section {
+    padding: 2% 10%;
+    display: flex;
+}
+
+#third-section .image-container {
+    margin-right: 10%;
+}
+
+#third-section .image-container img {
+    border-radius: 15px;
+}
+
+#third-section .text-container {
+    margin-top: 7%;
+}
+
+#third-section .text-container p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: gray;
+}
+
+#third-section .text-container small {
+    font-weight: 500;
+    color: gray;
+}

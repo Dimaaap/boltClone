@@ -1,0 +1,30 @@
+#eight-section {
+    margin-top: 10%;
+    padding: 4% 10%;
+    display: flex;
+    background: #e3fded;
+    margin-bottom: 5%;
+}
+
+#eight-section .text-container {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+
+#eight-section h4 {
+    font-weight: 700;
+    margin-bottom: 7%;
+}
+
+#eight-section .text-container p {
+    width: 140%;
+    font-weight: 500;
+    color: gray;
+}
+
+#eight-section .text-container a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}

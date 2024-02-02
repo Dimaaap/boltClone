@@ -1,0 +1,33 @@
+#sixth-section {
+    background:  #F7F7F7;
+    padding: 2% 10%;
+    display: flex;
+}
+
+#sixth-section .image-container {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+#sixth-section .image-container img {
+    margin-top: 20%;
+}
+
+#sixth-section .text-container {
+    width: 35%;
+}
+
+#sixth-section .text-container svg {
+    color: #32bb78;
+    margin-left: -10%;
+    margin-bottom: -15%;
+}
+
+#sixth-section .text-container h5 {
+    font-weight: 700;
+}
+
+#sixth-section .text-container p {
+    color: gray;
+    font-weight: 500;
+}

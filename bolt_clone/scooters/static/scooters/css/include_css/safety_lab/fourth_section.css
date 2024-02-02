@@ -1,0 +1,32 @@
+#fourth-section {
+    padding: 2% 10%;
+    display: flex;
+}
+
+#fourth-section .image-container {
+    margin-right: 10%;
+}
+
+#fourth-section .text-container {
+    margin-top: 5%;
+}
+
+#fourth-section .text-container h1 {
+    font-weight: 700;
+}
+
+#fourth-section .text-container p {
+    font-weight: 500;
+    color: gray;
+}
+
+#fourth-section .text-container a {
+    display: inline-block;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    background: #F7F7F7;
+    padding: 2% 5%;
+    border-radius: 15px;
+    margin-top: 1%;
+}

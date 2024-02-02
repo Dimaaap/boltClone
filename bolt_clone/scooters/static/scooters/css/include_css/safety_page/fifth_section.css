@@ -1,0 +1,43 @@
+#fifth-section {
+    margin-top: 5%;
+    padding: 5% 10%;
+    background: #F7F7F7;
+}
+
+#fifth-section h1 {
+    font-weight: 700;
+    margin-left: 19%;
+    font-size: 2.2rem;
+}
+
+#fifth-section .container {
+    display: flex;
+    padding-left: 10%;
+    margin-top: 5%;
+}
+
+#fifth-section .text-container {
+    width: 30%;
+    margin-left: 10%;
+}
+
+#fifth-section .text-container svg {
+    color: #32bb78;
+    margin-left: -10%;
+    margin-bottom: -15%;
+    margin-right: 10%;
+}
+
+#fifth-section .text-container h5 {
+    font-weight: 700;
+}
+
+#fifth-section .text-container p {
+    color: gray;
+    font-weight: 500;
+}
+
+#fifth-section .image-container {
+    margin-left: 12%;
+}
+

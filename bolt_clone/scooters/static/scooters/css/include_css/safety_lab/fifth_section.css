@@ -1,0 +1,30 @@
+#fifth-section {
+    margin-top: 3%;
+    padding: 2% 10%;
+    display: flex;
+    margin-bottom: 15%;
+}
+
+#fifth-section .text-container {
+    margin-right: 10%;
+}
+
+#fifth-section .text-container h1 {
+    font-weight: 700;
+}
+
+#fifth-section .text-container p {
+    font-weight: 500;
+    color: gray;
+}
+
+#fifth-section .text-container a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    background: #F7F7F7;
+    padding: 2% 5%;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 1%;
+}

@@ -1,0 +1,62 @@
+#fourth-section {
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+}
+
+#fourth-section .image-container img {
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+#fourth-section .text-container {
+    margin-left: 10%;
+}
+
+#fourth-section .text-container .section-title {
+    font-weight: 700;
+}
+
+#fourth-section .text-container p {
+    font-size: 1.1rem;
+    color: gray;
+    margin: 5% auto;
+}
+
+#fourth-section .text-container ol {
+    margin-left: -2%;
+    list-style-type: none;
+}
+
+#fourth-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-left: -4%;
+}
+
+#fourth-section .text-container ol li b {
+    margin-left: 3%;
+    font-weight: 700;
+}
+
+#fourth-section .text-container ol li a {
+    display: block;
+    margin-left: 3%;
+    color: #32bb78;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+#fourth-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-weight: 700;
+}

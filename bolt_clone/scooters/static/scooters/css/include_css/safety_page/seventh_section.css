@@ -1,0 +1,26 @@
+#seventh-section {
+    background: #F7F7F7;
+    padding: 2% 10%;
+    display: flex;
+}
+
+#seventh-section .text-container {
+    width: 35%;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+#seventh-section .text-container svg {
+    color: #32bb78;
+    margin-left: -10%;
+    margin-bottom: -10%;
+}
+
+#seventh-section h5 {
+    font-weight: 700;
+}
+
+#seventh-section p {
+    color: gray;
+    font-weight: 500;
+}
