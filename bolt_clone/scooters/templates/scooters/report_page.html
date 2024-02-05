@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'scooters/css/include_css/header.css' %}">
     <link rel="stylesheet" href="{% static 'scooters/css/include_css/menu_dropdown.css' %}">
     <link rel="stylesheet" href="{% static 'scooters/css/include_css/menu_dropdown_left_section.css' %}">
+    <link rel="stylesheet" href="{% static 'scooters/css/report_page.css' %}">
     <link rel="stylesheet" href="{% static 'rider/css/include_css/footer.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,4 +25,40 @@
 
 {% block body %}
     {% include '../_includes/header.html' %}
+    <section class="scooter_section" id="form-section">
+        <h1>Відгук щодо сервісу Електросамокатів Bolt</h1>
+        <p>Помітили погано припаркований електросамокат чи користувача, що не дотримується
+        правил безпечної їзди?Повідомте нас.</p>
+        <div class="btn-row">
+            <div class="form-btn">
+                <a id="first-btn" class="active" href="#">Звіт про погано припаркований електросамокат</a>
+            </div>
+            <div class="form-btn">
+                <a id="second-btn" href="#">Інші відгуки</a>
+            </div>
+        </div>
+        <form id="report-form" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if forloop.counter != 5 %}
+                    <div class="form-row">
+                        <label>{{ field.label }}</label>
+                        {% if forloop.counter == 1 %}
+                            <small>
+                                Додайте фотографію електросамоката,
+                                щоб допомогти нам швидше вирішити цю проблему.
+                            </small>
+                        {% endif %}
+                        {{ field }}
+                    </div>
+                {% else %}
+                    <div class="form-row hidden">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <button type="submit" class="submit-form">Надіслати звіт</button>
+        </form>
+    </section>
 {% endblock %}
