@@ -1,3 +1,7 @@
+header i {
+    color: black !important;
+}
+
 #form-section {
     padding: 2% 10%;
     text-align: center;
@@ -77,6 +81,7 @@
     display: block;
     font-weight: 600;
     margin-bottom: 1%;
+    margin-top: 2%;
 }
 
 #form-section form .form-row {
@@ -84,7 +89,8 @@
 }
 
 #form-section .form_control,
-#id_rent_company {
+#id_rent_company,
+#second-rent-company {
     background: #F0F0F0;
     border: none;
     width: 70%;
@@ -93,18 +99,10 @@
     font-weight: 500;
 }
 
-#form-section form #id_rent_company option {
-    display: inline-block;
-    padding-bottom: 10%;
-}
-
 #form-section form #id_rent_company option:hover {
-    background: green;
+    background-color: green;
 }
 
-#form-section form .hidden {
-    display: none;
-}
 
 #form-section form .form_control:active {
     border: 1px solid green;
@@ -132,4 +130,37 @@ form .submit-form {
 
 form .submit-form:hover {
     background: #2B8E60;
+}
+
+#other-report-form .submit-form {
+    margin-top: 2%;
+}
+
+footer {
+    margin-top: 10%;
+}
+
+
+#success-section .success-item svg {
+    color: #32bb78;
+}
+
+#success-section .success-item {
+    margin-bottom: 2%;
+}
+
+#success-section h3 {
+    font-weight: 700;
+}
+
+#success-section p {
+    width: 50%;
+    margin-left: 25%;
+    color: gray;
+}
+
+#success-section a {
+    color: #32bb78;
+    font-weight: 700;
+    text-decoration: none;
 }

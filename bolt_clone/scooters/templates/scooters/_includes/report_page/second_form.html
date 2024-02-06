@@ -1,0 +1,19 @@
+<div class="hidden-form">
+    <form id="other-report-form" method="post">
+        {% csrf_token %}
+        {% for field in second_form %}
+        {% if forloop.counter != 2 %}
+        <label>{{ field.label }}</label>
+        {{ field }}
+        {{ field.errors }}
+        {% else %}
+        <div class="form-row hidden" id="second-hidden-block">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button type="submit" class="submit-form" name="form_type" value="form2">Надіслати звіт</button>
+    </form>
+</div>

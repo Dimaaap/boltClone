@@ -1,0 +1,25 @@
+<form id="report-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+    {% if forloop.counter != 5 %}
+    <div class="form-row">
+        <label>{{ field.label }}</label>
+        {% if forloop.counter == 1 %}
+        <small>
+            Додайте фотографію електросамоката,
+            щоб допомогти нам швидше вирішити цю проблему.
+        </small>
+        {% endif %}
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% else %}
+    <div class="form-row hidden">
+        <label>{{ field.label }}</label>
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    <button type="submit" class="submit-form" name="form_type" value="form1">Надіслати звіт</button>
+</form>
