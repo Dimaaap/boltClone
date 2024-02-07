@@ -1,0 +1,81 @@
+#fifth-section {
+    padding: 2% 10%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30%;
+    margin-bottom: 10%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+#fifth-section .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#fifth-section .text-container {
+    position: absolute;
+    top: -5%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: #fff;
+    z-index: 1;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#fifth-section .text-container h1 {
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+#fifth-section .text-container p {
+    font-weight: 500;
+    margin-top: 4%;
+    font-size: 1.1rem;
+}
+
+#fifth-section .text-container .btn-row {
+    margin-top: 5%;
+}
+
+#fifth-section .text-container a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 2% 5%;
+    border-radius: 20px;
+    background: #32bb78;
+}
+
+#fifth-section .text-container #our-cities {
+    margin-left: 4%;
+    color: black;
+    background: white;
+}
+
+#fifth-section .image-container {
+    position: relative;
+    border-radius: 10px;
+}
+
+#fifth-section .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 -500px;
+    display: block;
+    border-radius: 10px;
+}

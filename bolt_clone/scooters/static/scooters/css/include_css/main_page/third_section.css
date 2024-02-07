@@ -1,0 +1,40 @@
+#third-section {
+    padding: 2% 5%;
+    margin-top: 5%;
+    margin-left: 4%;
+}
+
+#third-section h1 {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 3.5rem;
+    width: 100%;
+}
+
+#third-section .section-desc {
+    font-size: 1.1rem;
+    color: gray;
+    font-weight: 500;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+#third-section .steps {
+    display: flex;
+}
+
+#third-section .steps path {
+    color: black;
+    width: 40px;
+    height: 40px;
+}
+
+#third-section .steps .step p b {
+    color: black;
+}
+
+#third-section .steps .step p {
+    color: gray;
+    font-weight: 500;
+    width: 95%;
+}

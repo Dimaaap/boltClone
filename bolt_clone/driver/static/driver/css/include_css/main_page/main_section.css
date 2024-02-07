@@ -1,0 +1,65 @@
+#main-section {
+    height: 103vh;
+    margin-top: -6%;
+    text-align:center;
+    position: relative;
+    z-index: 1;
+}
+
+#main-section .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(80%);
+}
+
+#main-section .image-container {
+    background-image: url("../../../media/driver-main-page-main-section.webp");
+    background-size: cover;
+    min-height: 500px;
+    width: 100%;
+    background-position: center center;
+    z-index: 1;
+}
+
+#main-section .text-container {
+    color: black;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: white;
+    width: 50%;
+    text-align: left;
+    justify-content: center;
+}
+
+#main-section .text-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+#main-section .text-container p {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+#main-section a {
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 6%;
+    background: #32bb78;
+    padding: 2% 10%;
+}
+
+#main-section a:hover {
+    background: #2A9262;
+}

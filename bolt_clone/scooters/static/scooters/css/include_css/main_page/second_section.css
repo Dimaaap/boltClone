@@ -1,0 +1,53 @@
+#second-section {
+    padding: 2% 10%;
+    margin-top: 5%;
+    display: flex;
+}
+
+#second-section .image-container {
+    margin-right: 5%;
+}
+
+#second-section .image-container img {
+    border-radius: 10px;
+}
+
+#second-section .text-container h1 {
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+
+#second-section .text-container ol {
+    margin-left: -2%;
+    list-style-type: none;
+}
+
+#second-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-left: -4%;
+    margin-bottom: 1%;
+}
+
+#second-section .text-container ol li b {
+    margin-left: 3%;
+    font-weight: 700;
+}
+
+#second-section .text-container ol li p {
+    font-weight: 500;
+    color: gray;
+    margin-left: 7%;
+}
+
+#second-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-weight: 700;
+}

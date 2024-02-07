@@ -9,5 +9,6 @@ urlpatterns = [
     path('courier/', include('courier.urls')),
     path('support/', include('support.urls')),
     path('rider/', include('rider.urls')),
-    path('scooters/', include('scooters.urls'))
+    path('scooters/', include('scooters.urls')),
+    path('driver/', include('driver.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
