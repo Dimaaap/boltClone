@@ -1,0 +1,15 @@
+{% if widget.is_required %}
+<select name="{{ widget.name }}" id="{{ widget.id }}" {% if widget.attrs %}{{ widget.attrs|safe }}{% endif %}>
+    <option value=""{% if widget.value is None %} selected{% endif %}>{{ widget.attrs.data_placeholder }}</option>
+    {% for group in widget.optgroups %}{% for option in group %}
+        <option value="{{ option.value|stringformat:'s' }}" {% if widget.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+    {% endfor %}{% endfor %}
+</select>
+{% else %}
+<select name="{{ widget.name }}" id="{{ widget.id }}" {% if widget.attrs %}{{ widget.attrs|safe }}{% endif %}>
+    <option value="">{{ widget.attrs.data_placeholder }}</option>
+    {% for group in widget.optgroups %}{% for option in group %}
+        <option value="{{ option.value|stringformat:'s' }}" {% if widget.value == option.value %}selected{% endif %}>{{ option.label }}</option>
+    {% endfor %}{% endfor %}
+</select>
+{% endif %}

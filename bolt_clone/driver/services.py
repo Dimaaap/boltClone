@@ -1,4 +1,4 @@
-from .models import CountryZones, DriverCountries
+from .models import CountryZones, DriverCountries, DriverCities
 from .data_storage import DataStorage
 
 data_storage = DataStorage()
@@ -22,5 +22,16 @@ def insert_countries_in_db():
                                               country_emoji_flag=emoji,
                                               country_zone=country_zone)
                 new_country.save()
+    except Exception as e:
+        print(e)
+
+
+def insert_cities_in_db():
+    try:
+        for country in data_storage.CITIES_LIST.keys():
+            country_title = DriverCountries.objects.get(country_title=country)
+            for city in data_storage.CITIES_LIST[country]:
+                new_city = DriverCities(city_title=city, country=country_title)
+                new_city.save()
     except Exception as e:
         print(e)

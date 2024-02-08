@@ -4,6 +4,7 @@
     text-align:center;
     position: relative;
     z-index: 1;
+    font-family: "Montserrat", sans-serif;
 }
 
 #main-section .image-container::before {
@@ -34,9 +35,80 @@
     top: 30%;
     left: 5%;
     color: white;
-    width: 50%;
+    width: 45%;
     text-align: left;
     justify-content: center;
+}
+
+#main-section .form-container {
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    background: white;
+    width: 40%;
+    border-radius: 20px;
+}
+
+#main-section .form-container form {
+    padding: 2% 5%;
+    text-align: left;
+}
+
+#main-section .form-container form h1 {
+    font-weight: 700;
+    font-size: 2.1rem;
+    text-align: left;
+    margin-bottom: 5%;
+}
+
+#main-section .form-container form label {
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 2%;
+}
+
+#main-section .form-container form input {
+    height: 55px;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    background: #F6F6F6;
+    border: none;
+    font-weight: 500;
+    color: gray;
+}
+
+#main-section .form-container form .inline-href {
+    display: inline;
+    padding: 0;
+    background: transparent;
+    color: blue;
+    font-weight: 400;
+}
+
+#main-section .form-container form #id_driver_is_agree_with_policy {
+    width: 20px;
+    height: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+#main-section .form-container form small {
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-top: 1%;
+    width: 90%;
+}
+
+#main-section .form-container form #id_driver_city{
+    height: 55px;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    background: #F6F6F6;
+    border: none;
+    font-weight: 500;
+    color: gray;
+    display: block;
+    width: 100%;
 }
 
 #main-section .text-container h1 {

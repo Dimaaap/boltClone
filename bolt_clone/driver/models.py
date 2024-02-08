@@ -36,6 +36,7 @@ class Driver(models.Model):
     driver_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     driver_email = models.EmailField(unique=True, max_length=100)
     driver_phone_number = PhoneNumberField(blank=False)
+    driver_city = models.ForeignKey(DriverCities, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return f"{self.driver_email} {self.driver_phone_number}"

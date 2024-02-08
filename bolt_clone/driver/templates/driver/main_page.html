@@ -33,5 +33,32 @@
                 та заробляйте за кермом автомобіля!
             </p>
         </div>
+        <div class="form-container">
+            <form class="registration-form" id="driver-registration" method="post">
+                <h1 class="form-header">
+                    Стати водієм
+                </h1>
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if forloop.counter != 4 %}
+                        <div class="form-group">
+                            <label>{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% else %}
+                        <div class="form-group" id="flex-container">
+                            {{ field }}
+                            <small>
+                                Реєструючись, ви погоджуєтесь з
+                                <a href="#" class="inline-href">Правилами та умовами</a>
+                                та підтверджуєте, що ознайомилися з
+                                <a href="#" class="inline-href">Політикою конфіденційності для водіїв</a>,
+                                що діє у вашому регіоні
+                            </small>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </form>
+        </div>
     </section>
 {% endblock %}
