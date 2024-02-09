@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import DriverRegistrationForm
+from .services import form_dropdown_cities_window
 
 
 def driver_main_page(request):
@@ -13,5 +14,6 @@ def driver_main_page(request):
     else:
         form = DriverRegistrationForm()
         print(form.fields)
-    context = {"form": form}
+    countries_list = form_dropdown_cities_window()
+    context = {"form": form, "countries_list": countries_list}
     return render(request, "driver/main_page.html", context)

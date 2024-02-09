@@ -35,3 +35,19 @@ def insert_cities_in_db():
                 new_city.save()
     except Exception as e:
         print(e)
+
+
+def form_dropdown_cities_window():
+    country_city_list = []
+    for country in DriverCountries.objects.all():
+        country_data = {
+            "emoji": country.country_emoji_flag,
+            "name": country.country_title,
+            "cities": []
+        }
+
+        for city in DriverCities.objects.filter(country=country):
+            country_data["cities"].append(city.city_title)
+        country_city_list.append(country_data)
+    sorted_country_list = sorted(country_city_list, key=lambda x: x["name"])
+    return sorted_country_list

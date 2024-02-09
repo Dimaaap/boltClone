@@ -1,8 +1,8 @@
 from django import forms
-from django.utils.html import escape
+from django.utils.html import format_html
 from phonenumber_field.formfields import PhoneNumberField
 
-from .models import DriverCities
+from .models import DriverCities, DriverCountries
 from .data_storage import DataStorage
 
 data_storage = DataStorage()
@@ -21,7 +21,7 @@ class DriverRegistrationForm(forms.Form):
                                         "placeholder": "Введіть адресу електронної пошти"
                                     }))
 
-    driver_phone_number = PhoneNumberField(region="UA", label="Номер телефону*",
+    driver_phone_number = PhoneNumberField(region="UA", label="Номер телефону",
                                            widget=forms.NumberInput(attrs={
                                                "class": "form-control",
                                                "id": "driver-number",
@@ -29,13 +29,12 @@ class DriverRegistrationForm(forms.Form):
                                            }))
     driver_phone_number.error_messages["invalid"] = "Некоректний формат номеру(+380501234123)"
 
-    driver_city = forms.ModelChoiceField(label="Місто",
-                                         queryset=DriverCities.objects.select_related("country").order_by(
-                                             "country__country_title", "city_title"),
-                                         widget=forms.Select(attrs={
-                                             "class": "city-select",
-                                             "placeholder": "Місто, в якому ви будете їздити"
-                                         }))
+    driver_city = forms.CharField(label="Місто",
+                                  widget=forms.TextInput(attrs={
+                                      "class": "form-control",
+                                      "placeholder": "Місто, в якому ви будете їздити",
+                                      "id": "city-select-field"
+                                  }))
 
     driver_is_agree_with_policy = forms.BooleanField(
         required=True,

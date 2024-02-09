@@ -20,6 +20,7 @@
 {% block js_additional %}
     <script src="{% static 'support/js/show_or_hide_help_dropdown.js' %}"></script>
     <script src="{% static 'support/js/show_different_sections.js' %}"></script>
+    <script src="{% static 'driver/js/open_select_dropdown.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -40,12 +41,26 @@
                 </h1>
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if forloop.counter != 4 %}
-                        <div class="form-group">
+                    {% if forloop.counter == 3 %}
+                        <div class="form-group" id="select-window-form-group">
                             <label>{{ field.label }}</label>
                             {{ field }}
+                            <span class="icons">
+                                <i class="fa-solid fa-circle-xmark fa-xl" style="color: #bababa;" id="clear-field-value"></i>
+                                <i class="fa-solid fa-chevron-down fa-lg" id="open-dropdown"></i>
+                            </span>
+                            <div class="dropdown">
+                                {% for country in countries_list %}
+                                    <p>{{ country.emoji }} {{ country.name }}</p>
+                                    <ul class="cities-ul">
+                                        {% for city in country.cities %}
+                                            <li>{{ city }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                            </div>
                         </div>
-                    {% else %}
+                    {% elif forloop.counter == 4 %}
                         <div class="form-group" id="flex-container">
                             {{ field }}
                             <small>
@@ -56,8 +71,31 @@
                                 що діє у вашому регіоні
                             </small>
                         </div>
+                    {% else %}
+                        <div class="form-group">
+                            <label>{{ field.label }}</label>
+                            {{ field }}
+                        </div>
                     {% endif %}
                 {% endfor %}
+                <small id="additional-info">
+                    Щойно ви станете водієм чи водійкою, ми час від часу
+                    надсилатиммемо вам пропозиції та акції, пов'язані із
+                    нашими сервісами. Ви завжди зможете відписатись,
+                    змінивши налаштування розсилок.
+                </small>
+                <button type="submit" class="driver-sign-up">
+                    Зареєструватись водієм
+                </button>
+                <p class="login-invite">
+                    Вже зареєстровані? <a href="#">Увійдіть</a>
+                </p>
+                <p class="login-invite">
+                    Якщо володієте кількома авто або здійснюєте
+                    управління кількома водіями - <a href="#">
+                    зареєструйтесь як власник автопарку.
+                </a>
+                </p>
             </form>
         </div>
     </section>
