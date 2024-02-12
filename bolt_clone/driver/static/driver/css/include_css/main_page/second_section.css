@@ -1,0 +1,44 @@
+#second-section {
+    padding: 2% 10%;
+    margin-top: 12%;
+}
+
+#second-section h1 {
+    margin-bottom: 3%;
+}
+
+#second-section .section-desc {
+    font-weight: 400;
+    font-size: 1.3rem;
+    width: 65%;
+}
+
+#second-section .steps {
+    margin-top: 3%;
+    display: flex;
+    margin-bottom: 3%;
+}
+
+#second-section .steps .step {
+    width: 33%;
+}
+
+#second-section .steps .step h6 {
+    font-size: 1.3rem;
+    margin-top: 5%;
+}
+
+#second-section .steps .step p {
+    width: 90%;
+    font-weight: 400;
+}
+
+#second-section .steps .step a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#second-section .steps .step svg {
+    color: #5b68f6;
+}

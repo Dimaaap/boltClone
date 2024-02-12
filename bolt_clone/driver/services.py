@@ -50,4 +50,5 @@ def form_dropdown_cities_window():
             country_data["cities"].append(city.city_title)
         country_city_list.append(country_data)
     sorted_country_list = sorted(country_city_list, key=lambda x: x["name"])
+    sorted_country_list = sorted(sorted_country_list, key=lambda x: (x["name"] != "Україна", x["name"]))
     return sorted_country_list

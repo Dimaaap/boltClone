@@ -1,9 +1,9 @@
 from django import forms
-from django.utils.html import format_html
+from django.core.exceptions import ObjectDoesNotExist
 from phonenumber_field.formfields import PhoneNumberField
 
-from .models import DriverCities, DriverCountries
 from .data_storage import DataStorage
+from .models import Driver
 
 data_storage = DataStorage()
 
@@ -40,3 +40,17 @@ class DriverRegistrationForm(forms.Form):
         required=True,
         widget=forms.CheckboxInput(attrs={"class": "agree-checkbox"})
     )
+
+    def clean_driver_email(self):
+        driver_email = self.cleaned_data["driver_email"]
+        try:
+            Driver.objects.get(driver_email=driver_email)
+        except ObjectDoesNotExist:
+            return driver_email
+        raise forms.ValidationError("Користувач з таким email уже зареєстрований на сайті")
+
+
+class PhoneNumberVerificationForm(forms.Form):
+    otp_code = forms.CharField(max_length=4, label="", required=True,
+                               widget=forms.TextInput(attrs={"class": "form-control",
+                                                             "id": "otp_code_field"}))

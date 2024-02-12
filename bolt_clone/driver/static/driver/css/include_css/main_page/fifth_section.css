@@ -1,0 +1,45 @@
+#fifth-section {
+    padding: 2% 5%;
+    width: 80%;
+    margin-left: 10%;
+    background: #f4f4f6;
+    border-radius: 15px;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10%;
+}
+
+#fifth-section .text-container {
+    margin-top: 5%;
+}
+
+#fifth-section .text-container h1 {
+    width: 80%;
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+
+#fifth-section .text-container p {
+    margin-top: 5%;
+    font-size: 1.5rem;
+}
+
+#fifth-section .text-container a {
+    background: #5b68f6;
+    color: white;
+    text-decoration: none;
+    padding: 3% 6%;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-top: 5%;
+    display: inline-block;
+}
+
+#fifth-section .text-container a:hover {
+    background: #4D56CA;
+}
+
+
+#fifth-section .image-container img {
+    border-radius: 15px;
+}

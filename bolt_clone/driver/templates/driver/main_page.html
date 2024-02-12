@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{% static 'driver/css/include_css/menu_dropdown_left_section.css' %}">
     <link rel="stylesheet" href="{% static 'driver/css/include_css/right_section.css' %}">
     <link rel="stylesheet" href="{% static 'driver/css/include_css/main_page/main_section.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/include_css/main_page/second_section.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/include_css/main_page/third_section.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/include_css/main_page/faq_section.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/include_css/main_page/fifth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/include_css/footer.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -21,82 +26,16 @@
     <script src="{% static 'support/js/show_or_hide_help_dropdown.js' %}"></script>
     <script src="{% static 'support/js/show_different_sections.js' %}"></script>
     <script src="{% static 'driver/js/open_select_dropdown.js' %}"></script>
+    <script src="{% static 'driver/js/clear_field_value.js' %}"></script>
+    <script src="{% static 'courier/js/custom_accordion.js' %}"></script>
 {% endblock %}
 
 {% block body %}
     {% include './_includes/header.html' %}
-    <section class="driver_section" id="main-section">
-        <div class="image-container"></div>
-        <div class="text-container">
-            <h1>Заробляйте з Bolt в Україні</h1>
-            <p>
-                Станьте водієм Bolt, вибирайте години роботи
-                та заробляйте за кермом автомобіля!
-            </p>
-        </div>
-        <div class="form-container">
-            <form class="registration-form" id="driver-registration" method="post">
-                <h1 class="form-header">
-                    Стати водієм
-                </h1>
-                {% csrf_token %}
-                {% for field in form %}
-                    {% if forloop.counter == 3 %}
-                        <div class="form-group" id="select-window-form-group">
-                            <label>{{ field.label }}</label>
-                            {{ field }}
-                            <span class="icons">
-                                <i class="fa-solid fa-circle-xmark fa-xl" style="color: #bababa;" id="clear-field-value"></i>
-                                <i class="fa-solid fa-chevron-down fa-lg" id="open-dropdown"></i>
-                            </span>
-                            <div class="dropdown">
-                                {% for country in countries_list %}
-                                    <p>{{ country.emoji }} {{ country.name }}</p>
-                                    <ul class="cities-ul">
-                                        {% for city in country.cities %}
-                                            <li>{{ city }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% elif forloop.counter == 4 %}
-                        <div class="form-group" id="flex-container">
-                            {{ field }}
-                            <small>
-                                Реєструючись, ви погоджуєтесь з
-                                <a href="#" class="inline-href">Правилами та умовами</a>
-                                та підтверджуєте, що ознайомилися з
-                                <a href="#" class="inline-href">Політикою конфіденційності для водіїв</a>,
-                                що діє у вашому регіоні
-                            </small>
-                        </div>
-                    {% else %}
-                        <div class="form-group">
-                            <label>{{ field.label }}</label>
-                            {{ field }}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-                <small id="additional-info">
-                    Щойно ви станете водієм чи водійкою, ми час від часу
-                    надсилатиммемо вам пропозиції та акції, пов'язані із
-                    нашими сервісами. Ви завжди зможете відписатись,
-                    змінивши налаштування розсилок.
-                </small>
-                <button type="submit" class="driver-sign-up">
-                    Зареєструватись водієм
-                </button>
-                <p class="login-invite">
-                    Вже зареєстровані? <a href="#">Увійдіть</a>
-                </p>
-                <p class="login-invite">
-                    Якщо володієте кількома авто або здійснюєте
-                    управління кількома водіями - <a href="#">
-                    зареєструйтесь як власник автопарку.
-                </a>
-                </p>
-            </form>
-        </div>
-    </section>
+    {% include './_includes/main_page/main_section.html' %}
+    {% include './_includes/main_page/second_section.html' %}
+    {% include './_includes/main_page/third_section.html' %}
+    {% include './_includes/main_page/faq_section.html' %}
+    {% include './_includes/main_page/fifth_section.html' %}
+    {% include './_includes/footer.html' %}
 {% endblock %}

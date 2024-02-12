@@ -139,3 +139,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 COUNTRIES_JSON_FILE = os.path.join(BASE_DIR / 'bolt_clone' / 'countries_codes.json')
+
+TOKEN_LIFESPAN = 10
+OTP_EXPIRE_TIME = 10
+TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
+TWILIO_PHONE_NUMBER = config("TWILIO_PHONE_NUMBER")

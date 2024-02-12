@@ -175,6 +175,13 @@
 
 #main-section .form-container .dropdown {
     display: none;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#main-section .form-container .dropdown ul li {
+    margin-left: -4%;
 }
 
 #main-section .form-container form ul {
@@ -217,4 +224,16 @@
 
 #main-section a:hover {
     background: #2A9262;
+}
+
+
+#main-section .form-container .errorlist li {
+    color: red;
+    font-weight: 600;
+    margin-bottom: -6%;
+    margin-top: -3%;
+}
+
+#main-section .form-container .errorlist li:hover {
+    background: transparent;
 }

@@ -1,0 +1,11 @@
+<div class="dropdown" id="dropdown">
+    {% for country in countries_list %}
+    <p>{{ country.emoji }} {{ country.name }}</p>
+    <ul class="cities-ul">
+        {% for city in country.cities %}
+        <li>{{ city }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+</div>

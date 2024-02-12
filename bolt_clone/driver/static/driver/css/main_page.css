@@ -1,3 +1,7 @@
 body header {
     position: relative;
 }
+
+body {
+    font-family: "Montserrat", sans-serif;
+}

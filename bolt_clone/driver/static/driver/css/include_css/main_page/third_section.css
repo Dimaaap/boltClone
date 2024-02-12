@@ -1,0 +1,66 @@
+#third-section {
+    padding: 2% 10%;
+    background: #f4f4f6;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 15px;
+}
+
+#third-section .container {
+    display: flex;
+    margin-top: 5%;
+}
+
+#third-section h1 {
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+#third-section .section-description {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#third-section .text-container {
+    margin-left: -3%;
+    margin-top: 5%;
+}
+
+#third-section .text-container ol {
+    list-style-type: none;
+}
+
+#third-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-bottom: 3%;
+}
+
+#third-section .text-container ol li p {
+    font-weight: 400;
+    margin-left: 7%;
+    margin-top: -7%;
+    width: 120%;
+}
+
+#third-section .text-container ol li p b {
+    display: inline-block;
+    margin-bottom: 5%;
+}
+
+#third-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #5b68f6;
+    color: white;
+    font-weight: 700;
+}
+
+#third-section .image-container {
+    margin-left: 10%;
+    width: 45%;
+}
