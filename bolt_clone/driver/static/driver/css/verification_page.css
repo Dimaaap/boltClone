@@ -36,6 +36,8 @@ header {
     cursor: pointer;
     font-weight: 600;
     color: #5b68f6;
+    text-decoration: none;
+    display: none;
 }
 
 form {

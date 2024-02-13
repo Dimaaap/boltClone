@@ -1,3 +1,6 @@
+from random import randint
+from twilio.base.exceptions import TwilioRestException
+
 from .models import CountryZones, DriverCountries, DriverCities
 from .data_storage import DataStorage
 
@@ -52,3 +55,21 @@ def form_dropdown_cities_window():
     sorted_country_list = sorted(country_city_list, key=lambda x: x["name"])
     sorted_country_list = sorted(sorted_country_list, key=lambda x: (x["name"] != "Україна", x["name"]))
     return sorted_country_list
+
+
+def generate_sms_confirmation_code_service():
+    code = randint(data_storage.SMALLEST_SMS_CODE_VALUE, data_storage.HIGHEST_SMS_CODE_VALUE)
+    return code
+
+
+def form_sms_message_service(client, generated_sms_code: str, user_phone_number):
+    try:
+        message = client.messages.create(
+            body=f"\nЛаскаво просимо вас у Bolt Driver\n"
+                 f"Ваш код для реєстрації - {generated_sms_code}\n"
+                 f"Нікому не повідомляйте цей код",
+            from_=data_storage.AUTH_TOKEN_PHONE_NUMBER,
+            to=str(user_phone_number)
+        )
+    except TwilioRestException:
+        print("exception")

@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from django.conf import settings
+
 
 @dataclass
 class DataStorage:
@@ -295,3 +297,8 @@ class DataStorage:
         ]
     }
     is_agree_with_policy = [("1", "Підтверджую")]
+    SMALLEST_SMS_CODE_VALUE = 1000
+    HIGHEST_SMS_CODE_VALUE = 9999
+    ACCOUNT_SID = settings.TWILIO_ACCOUNT_SID
+    AUTH_TOKEN = settings.TWILIO_AUTH_TOKEN
+    AUTH_TOKEN_PHONE_NUMBER = settings.TWILIO_PHONE_NUMBER
