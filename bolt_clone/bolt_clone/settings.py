@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
     'ipware',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -40,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'bolt_clone.urls'
@@ -145,3 +147,10 @@ OTP_EXPIRE_TIME = 10
 TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = config("TWILIO_PHONE_NUMBER")
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+    "https://127.0.0.1:8000",
+    "https://localhost:8000"
+]

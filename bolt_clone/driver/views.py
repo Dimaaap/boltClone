@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import JsonResponse
+
+from twilio.rest import Client
 
 from .forms import DriverRegistrationForm, PhoneNumberVerificationForm
 from .services import form_dropdown_cities_window
 from .models import Driver
-from .form_handlers import driver_registration_form_handler
+from .form_handlers import driver_registration_form_handler, send_sms_message_service
+from .data_storage import DataStorage
+
+data_storage = DataStorage()
+client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
 
 
 def driver_main_page(request):
@@ -43,3 +50,9 @@ def verification_phone_number(request, verification_code):
     user_phone_number = request.session["user_phone_number"]
     context = {"form": form, "phone_number": user_phone_number}
     return render(request, "driver/verification_page.html", context)
+
+
+def resend_code_view(request):
+    user_phone_number = request.session["user_phone_number"]
+    send_sms_message_service(request, client, user_phone_number)
+    return JsonResponse({"status": "success"})
