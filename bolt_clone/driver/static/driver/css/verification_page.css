@@ -68,3 +68,13 @@ footer .lang-container {
     border-radius: 25px;
     font-weight: 500;
 }
+
+.errorlist {
+    list-style-type: none;
+    width: 200%;
+    color: red;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: -50%;
+    margin-top: 3%;
+}

@@ -1,4 +1,4 @@
-const selectField = document.getElementById("city-select-id");
+const selectField = document.getElementById("city-select-field");
 const hideDropdownBtn = document.getElementById("open-dropdown");
 const dropdown = document.getElementById("dropdown");
 const iconsRow = document.querySelector(".icons");

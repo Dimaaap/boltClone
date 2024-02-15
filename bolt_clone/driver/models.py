@@ -42,6 +42,8 @@ class Driver(models.Model):
     driver_email = models.EmailField(unique=True, max_length=100)
     driver_phone_number = PhoneNumberField(blank=False)
     driver_city = models.ForeignKey(DriverCities, on_delete=models.CASCADE, default="")
+    device_id = models.GenericIPAddressField(default="", null=True)
+    is_verification = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.driver_email} {self.driver_phone_number}"
@@ -52,6 +54,9 @@ class Driver(models.Model):
             settings.SECRET_KEY, algorithm="HS256"
         )
 
+    def verificate_user(self):
+        self.is_verification = True
+
     @staticmethod
     def verify_sms_code_token(token):
         try:
@@ -59,3 +64,4 @@ class Driver(models.Model):
         except Exception as e:
             return None
         return get_data_from_model(Driver, "driver_id", driver_id)
+

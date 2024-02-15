@@ -8,6 +8,10 @@
         </p>
     </div>
     <div class="form-container">
-        {% include './driver_registration_form.html' %}
+        {% if not verification %}
+            {% include './driver_registration_form.html' %}
+        {% else %}
+            <h1>вфілводіф</h1>
+        {% endif %}
     </div>
 </section>

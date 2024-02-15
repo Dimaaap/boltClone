@@ -73,3 +73,12 @@ def form_sms_message_service(client, generated_sms_code: str, user_phone_number)
         )
     except TwilioRestException:
         print("exception")
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get("REMOTE_ADDR")
+    return ip
