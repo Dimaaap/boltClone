@@ -1,8 +1,13 @@
 from random import randint
+import jwt
+import datetime
+from django.conf import settings
+
 from twilio.base.exceptions import TwilioRestException
 
-from .models import CountryZones, DriverCountries, DriverCities
+from .models import CountryZones, DriverCountries, DriverCities, Driver
 from .data_storage import DataStorage
+from .db_services import get_data_from_model
 
 data_storage = DataStorage()
 
@@ -38,6 +43,7 @@ def insert_cities_in_db():
                 new_city.save()
     except Exception as e:
         print(e)
+
 
 
 def form_dropdown_cities_window():
@@ -82,3 +88,28 @@ def get_client_ip(request):
     else:
         ip = request.META.get("REMOTE_ADDR")
     return ip
+
+
+def check_if_device_unique(request):
+    driver_ip = get_client_ip(request)
+    driver = get_data_from_model(Driver, "device_id", driver_ip)
+    return driver and driver.is_verification
+
+
+def generate_token(session_id):
+    payload = {
+        "session_id": session_id,
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(seconds=600)
+    }
+    token = jwt.encode(payload, settings.SECRET_KEY, algorithm="HS256")
+    return token
+
+
+def verify_token(token, secret_key=settings.SECRET_KEY):
+    try:
+        decoded_payload = jwt.decode(token, secret_key, algorithms=["HS256"])
+        return bool(decoded_payload)
+    except jwt.ExpiredSignatureError:
+        return "Token has expired"
+    except jwt.InvalidTokenError:
+        return "Invalid token"

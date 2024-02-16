@@ -1,0 +1,22 @@
+<section class="main-content">
+    <h1 class="section-title">
+        Ввести код
+    </h1>
+    <p class="section-desc">
+        Код підтвердження було відправлено на
+    </p>
+    <p class="phone-number">
+        {{ phone_number }}
+    </p>
+    <form class="otp-code-form" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        {{ field }}
+        {{ field.errors }}
+        {% endfor %}
+    </form>
+    <div class="timer-container">
+        <p id="countdown">Надіслати код повторно через <span id="counter">30</span></p>
+        <a href="{% url 'resend_code' %}" class="repeat-code-btn" id="repeat-btn">Надіслати код повторно</a>
+    </div>
+</section>

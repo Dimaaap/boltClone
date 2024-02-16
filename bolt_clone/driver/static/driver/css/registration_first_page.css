@@ -1,0 +1,31 @@
+#registration-form-section {
+    text-align: center;
+    justify-content: center;
+}
+
+#registration-form-section .info-section {
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 1%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#registration-form-section .info-section img {
+    display: inline-block;
+    margin-left: -90%;
+}
+
+#registration-form-section .info-section h6 {
+    font-weight: 700;
+    margin-top: -3%;
+    margin-left: -35%;
+}
+
+#registration-form-section .info-section p {
+    color: gray;
+    font-weight: 500;
+    width: 80%;
+    text-align: left;
+    margin-left: 9%;
+}

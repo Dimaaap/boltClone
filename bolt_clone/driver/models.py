@@ -1,11 +1,7 @@
 from uuid import uuid4
-from time import time
-import jwt
 
 from django.db import models
-from django.conf import settings
 
-from .db_services import get_data_from_model
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -48,20 +44,17 @@ class Driver(models.Model):
     def __str__(self):
         return f"{self.driver_email} {self.driver_phone_number}"
 
-    def get_sms_code_token(self, expires_in=600):
-        return jwt.encode(
-            {"reset_page": str(self.driver_id), "exp": time() + expires_in},
-            settings.SECRET_KEY, algorithm="HS256"
-        )
 
-    def verificate_user(self):
-        self.is_verification = True
+class DriverCarModels(models.Model):
+    model_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    model_title = models.CharField(max_length=30)
 
-    @staticmethod
-    def verify_sms_code_token(token):
-        try:
-            driver_id = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])["reset_page"]
-        except Exception as e:
-            return None
-        return get_data_from_model(Driver, "driver_id", driver_id)
+    def __str__(self):
+        return f"{self.model_title}"
 
+
+class DriverCarInfo(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    driver_first_name = models.CharField(max_length=70)
+    driver_last_name = models.CharField(max_length=80)
+    referral_code = models.CharField(max_length=20, null=True, default="")

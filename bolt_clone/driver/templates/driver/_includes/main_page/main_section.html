@@ -11,7 +11,12 @@
         {% if not verification %}
             {% include './driver_registration_form.html' %}
         {% else %}
-            <h1>вфілводіф</h1>
+            <div class="authorized-title">
+                <h1>З поверненням, {{ user_email }}</h1>
+                <p>Ви б хотіли продовжити вашу реєстрацію?</p>
+                <a href="{% url 'registration_first' '127.0.0.1' %}" id="continue-registration">Продовжити</a>
+                <a href="#" id="start-registration-again">Не ви? Тоді реєструйтесь прямо зараз!</a>
+            </div>
         {% endif %}
     </div>
 </section>
