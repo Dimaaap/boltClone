@@ -45,7 +45,7 @@ class Driver(models.Model):
         return f"{self.driver_email} {self.driver_phone_number}"
 
 
-class DriverCarModels(models.Model):
+class DriverCars(models.Model):
     model_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     model_title = models.CharField(max_length=30)
 
@@ -53,8 +53,17 @@ class DriverCarModels(models.Model):
         return f"{self.model_title}"
 
 
+class DriverCarModels(models.Model):
+    model_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    car_id = models.OneToOneField(DriverCars, on_delete=models.CASCADE)
+    model = models.CharField(max_length=100)
+
+
 class DriverCarInfo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     driver_first_name = models.CharField(max_length=70)
     driver_last_name = models.CharField(max_length=80)
     referral_code = models.CharField(max_length=20, null=True, default="")
+    driver_has_own_car = models.BooleanField(default=True)
+    driver_car = models.ForeignKey(DriverCarModels, on_delete=models.CASCADE, default="")
+
