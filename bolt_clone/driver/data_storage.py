@@ -557,7 +557,7 @@ class DataStorage:
         {"AIWAYS": ["U5"]},
         {"AKT": ["200 TT"]},
         {"Alfa Romeo": ["147", "156", "159", "166", "Giulia", "Giulietta", "MiTo", "Stelvio", "Tonale"]},
-        {"Aprilia", ["ETX", "RS4", "SR", "STX"]},
+        {"Aprilia": ["ETX", "RS4", "SR", "STX"]},
         {"Aston Martin": ["DBX", "Rapide", "RapideE"]},
         {"Atlas Zongshen": ["Z", "ZS", "ZS80"]},
         {"Atul": ["Rickshaw (Tuktuk)"]},
@@ -795,7 +795,390 @@ class DataStorage:
         {"Hero Honda": [
             "Achiever", 'Glamour', "HF", "Hunk", "Karizma", "Passion", "Splendor", "Super"
         ]},
-
+        {"Holden": [
+            "Acadia", "Astra", "Barina", "Berlina", "Calais", "Caprice", "Captiva", "Clubsport",
+            "Colorado", "Commodore", "Cruze", "Epica", "Equinox", "Evoke", "Malibu", "Spark",
+            "Statesman", "Trailblazer", "Trax", "Viva", "Volt"
+        ]},
+        {"Honda": [
+            "Accord", "Ace", "Activa", "Acura MDX", "ADV 150", "ADV 160", "ADV 350", "Air Blade",
+            "Airwave", "Amaze", "Aria", "Aviator", "Ballade", "Bike", "BR-V", "Brio", "Brio Amaze",
+            "Brio Mobilio", "Cargo 150", "CB", "CB 125", "CB 125F Twister", "CB 150R", "CB 190R",
+            "CB 250 Twister", "CB 300R", "CB 500X", "CBF", "CBR", "CBR 250R", "CBR 650F", "CBR 650R",
+            "CD", "CG", "CGL 125 Tool", "City", "Civic", "Clarity", "Click 110i", "Click 125i",
+            "Click 1150i", "Click 160i", "CR-V", "CRF", "Crossroad", "Crosstour", "Cruising 125",
+            "CT125", "Dio", "Dio 110", "Dream", "e", "e:NP1", "e:NS1", "e:Ny1", "Edix", "Element",
+            "Elevate", "Elite", "Elysion", "Everus VE-1", "FCX Clarity", "Fit", "Fit Aria",
+            "Forza 300", "Forza 350", "FR-V", "Freed", "Giorno", "GL 150", "Grazia", "HR-V",
+            "Hybrid", "Icon", "Insight", "Inspire", "Invicta CB 160F", "Jade", "Jazz", "Lead 125",
+            "Legend", "Life", "Livo", "M-NV Dongfeng", "Mobilio", "Mobilio Spike", "Moove", "MSX 125",
+            "N-WGN", "Navi", "Nova Tena", "Odyssey", "Passport", "PCX", "Phantom", "Pilot", "Rebel",
+            "Ridgeline", "Scoopy", "Shuttle", "Siming X-NV", "Sonic 125", "Spacy i", "Spike", "Stepwgn",
+            "Stream", "Super Cub 110", "Tornado", "Trigger", "Vezel", "Wave 100", "Wave 110",
+            "Wave 125i", "Wave 125R", "WR-V", "XR", "XR 150", "XRE 300", "Zoomer X", "ZR-V"
+        ]},
+        {"Hongqi": ["E-HS9", "H5", "H9", "HS5", "HS7"]},
+        {"Hover": ["CUV"]},
+        {"Hozon": ["Neta N01", "Neta S", "Neta U", "Neta V"]},
+        {"HSV": ["Tracksport"]},
+        {"Hummer": ["H2", "H3"]},
+        {"Hyundai": [
+            "Accent", "Atos", "Avante", "Azera", "Bayon", "Casper", "Centennial", "Creta", "Custo",
+            "Elantra", "Entourage", "Eon", "Equus", "Exter", "Galloper", "Genesis", "Getz", "GRAND i10",
+            "Grand Santa Fe Maxcruz", "Grand Starex", "Grandeur", "H-1", "H-1 TQ", "H-200", "HB20",
+            "HB20S", "HB20X", "i10", "i20", "i30", "i30 Combi", "i40", "i45", "i800", "iMax", "Ioniq",
+            "IONIQ 5", "IONIQ 6", "IONIQ 7", "Ioniq Electric", "ix20", "ix35", "ix55", "Kauai", "Kona",
+            "Kona EV", "Lafesta", "Matrix", "Nexo", "Palisade", "Santa Cruz", "Santa Fe", "Santro",
+            "Santro Plus", "Solaris", "Sonata", "Starex", "Stargazer", "Staria", "Starks", "Terracan",
+            "Tiburon", "Trajet", "Tuscon", "Veloster", "Venue", "Veracruz", "Verna", "Xcent", "XG30"
+        ]},
+        {"Ikco": ["Dena", "Runna", "Samand", "Samand LX", "Soren", "Tara"]},
+        {"Infinity", [
+            "EX-series", "EX35", "FX-series", "FX35", "FX37", "G-series", "G25", "G35", "G37", "I30",
+            "JX-series", "JX35", "M", "M-series", "Q30", "Q30s", "Q40", "Q45", "Q50", "Q70", "QX30",
+            "QX40", "QX50", "QX55", "QX56", "QX60", "QX70", "QX80"
+        ]},
+        {"Ingrace": ["Estel"]},
+        {"Innoson": ["IVM FOX"]},
+        {"Ivan Khodro": ["Runna", "Soren"]},
+        {"ISLO": ["KANGUR", "MUTANT", "RABBIT", "RACER", "RUSH", "SIOUX"]},
+        {"Isuzu": ["Ascender", "Axiom", "D-Max", "Gemini", "Isuzu Axiom", "MU-7", "MU-X", "Rodeo"]},
+        {"ITALIKA": [
+            "125 Z", "150 SZ", "150 Z", "200 Z", "250 Z", "AT 110", "AT 110 RT", "AT 125", "AT 125 RT",
+            "D 125", "D 150", "DM 125", "DM 150", "DM 200", "DM 250", "DS 125", "DS 150", "DS 150 G",
+            "DSG 125", "DT 110", "DT 125", "DT 150", "DT 200", "DT 250", "FIERA 150", "FT 115", "FT 125",
+            "FT 150", "FT 150 GTS", "FT 150 TS", "FT 180 TS", "FT 200 TS", "FT 250 TS", "MODENA 150",
+            "MODENA 175", "RC 125", "RC 150", "RC 200", "RT 200", "RT 250", "SPT FIRE 200", "TC 200",
+            "TC 250", "V 200", "VITALIA 125", "VITALIA 150", "VORT-X 200", "VORT-X 650", "VORT-X 300",
+            "VX 250 EFI", "W 150", "WS 175", "X 125", "X 150", "XS 150", "XT 110", "XT 125 RT", "XW150"
+        ]},
+        {"Iveco": ["Daily"]},
+        {"IZUKA": [
+            "CITI 150", "CL 150", "CL 250", "DPL 200", "IZ 180 R", "IZ 250", "KL 125", "KPR 200",
+            "TL 125 A", "TL 150 N"
+        ]},
+        {"JAC Motors": [
+            "iEV7s", "iEVS4", "J2", "J3", "J4", "J5", "J6", "J7", "JAC", "JS2", "JS3", "JS8", "S4"
+        ]},
+        {"Jaguar": [
+            "E-Pace", "F-Pace", "F-Pace R-Sport", "I-Pace", "S-Type", "XE", "XF", "XJ", "XJL", "XJR"
+        ]},
+        {"Jamuna": ["Pegasus"]},
+        {"Jeep": [
+            "Avenger", "Cherokee", "Cherokee Trailhawk", "Commander", "Compass", "Gladiator",
+            "Grand Cherokee", "Grand Wagoneer", "Liberty", "Meridian", "Patriot", "Renegade",
+            "Wagoneer", "Wrangler"
+        ]},
+        {"Jetour": ["Dashing", "X70", "X90"]},
+        {"Jiagi": ["S"]},
+        {"Jinbei": ["sy1028"]},
+        {"Jincheng": ["Baby Machine"]},
+        {"JMC": ["Landwind X2"]},
+        {"Kantanka": ["Amoanimaa"]},
+        {"KAWASAKI": [
+            "KLR 650", "KLX 110", "KLX 140", "KLX 230", "KLX 300 R", "KLX 140", "Ninja 400", "Ninja 650",
+            "Ninja H2", "Ninja H2R", "Ninja ZX-10R", "Ninja ZX-6R", "Versys 1000", "Versys 650", "Versys X300",
+            "Vulcan 1700", "Vulcan 900", "W 175 SE", "Z 900 RS"
+        ]},
+        {"KEEWAY": [
+            "GT270", "K-LIGHT 202", "Magnet", "PATAGONIAN EAGLE 250", "RKR", "RKS", "RKV", "Superlight",
+            "SUPERLIGHT 200"
+        ]},
+        {"Kenton": [
+            "Blitz 110", "BLITZ 125", "Bull 200", "Bull 250", "c110", "Cafe Racer 150", "Classic 150",
+            "Dakar 150", "Dakar 200", "Forza 150", "Fusion 125", "GL 125", "GL 200", "GL 150",
+            "GLX 150", "GTR 150 DLX", "GTR 200", "GTS 150", "Milestone", "Rider 200", "Shark 150",
+            "Shark 200", "SKUA 150", "Viva 100"
+        ]},
+        {"Khazar": ["D5", "LD", "LX", "SD"]},
+        {"Kia": [
+            "Avella", "Cadenza", "Carens", "Carnival", "Cee`d", "Cee`s Sportswagon", "Ceed",
+            "Cerato", "Clarus", "e-Niro", "e-Soul", "EV3", "EV4", "EV5", "EV6", "EV6 GT",
+            "EV9", "Forte", "Forte LX", "Joice", "K3", "K5", "K7", "K8", "K9 / K900",
+            "Lotze", "Magentis", "Mohave", "Morning", "Niro", "Opirus", "Optima",
+            "Pegas", "Picanto", "Pregio", "Pride", "ProCee`d", "Quoris", "Ray", "Rio", "Rio Cross",
+            "Rio X Line", "Rio-YB", "Rondo", "Sedona", "Seltos", "Sephia", "Shuma", "Soluto Xcite",
+            "Sonet", "Sorento", "Soul", "Soul EV", "Spectra", "Sportage", "Stinger", "Stonic",
+            "Telluride", "Venga", "Visto", "XCeed"
+        ]},
+        {"Kinetic": ["HIRHEV", "Velocity"]},
+        {"KTM": [
+            "125 Duke", "125 SX", "150 SX", "250 SX", "250 SX-F", "350 SX-F", "390 Duke", "450 SX-F",
+            "Duke", "RC", "RC200"
+        ]},
+        {"KYMCO": ["TOP BOY 125", "X TOWN 250i", "XCITING S 400"]},
+        {"Kymstone": ["Husky 200"]},
+        {"Lada": [
+            "2104 Жигули", "2106 Жигули", "2107 Жигули", "2109 Самара", "21099 Самара", "2110", "2111", "2112",
+            "2114 Самара II", "2115 Самара II", "2120 Надежда", "2123 Нива", "2170 Priora", "Granta",
+            "Kalina", "Largus", "Niva", "Priora", "Vesta", "XRAY"
+        ]},
+        {"Lamborghini": ["Aventador", "Gallardo", "Huracan", "Revuelto", "Sterrato", "Urus"]},
+        {"Lambretta": ["V125", "V200", "V300"]},
+        {"Lancia": ["Delta", "LX", "Lybra", "Musa", "Phedra", "Thema", "Thesis", "Voyager", "Ypsilon"]},
+        {"Land Rover": [
+            "Defender", "Discovery", "Discovery Sport", "Evoque", "Freelander"
+        ]},
+        {"LDV": ["G10", "Maxus", "T60"]},
+        {"Leapmotor": ["C11", "T03"]},
+        {"Leopard": [
+            "EN125 - YES", "EN150", "EN150 Sport", "EN200", "GSX150", "GTS150STD", "HB110 buzz",
+            "HT 150", "HT 200", "KH 150", "KH 180", "MD 125", "MD 150", "MD200 TC", "MT -150",
+            "MT -25", "STREET 15-", "STREET 200"
+        ]},
+        {"LEVC": ["LEVC TX VISTA COMFORT", "LEVC TX VISTA COMFORT PLUS", "LEVC TXE", "TX", "TX Vista"]},
+        {"Lexus": [
+            "BYD F6", "CT", "CT200h", "ES", "ES250", "ES300", "ES300h", "ES330", "ES350", "GS", "GS200t",
+            "GS300", "GS300h", "GS450h", "GX", "HS", "IS", "IS 300h", "LBX", "LS", "LX", "LX570", "NX",
+            "NX300", "NX300h", "NX450h", "NX450H+", "RX", "RX400H", "RX450H", "RX450h", "RX450hL",
+            "RZ", "TX", "UX", "UX F-Sport", 'UX200', "UX250h", "UX300e"
+        ]},
+        {"Lifan": [
+            "214835", "320", "520", "620", "720", "820", "AR 125", "Bike", "Cebrium", "FR 200", "Glint",
+            "GY 200", "KP", "KP mini 150", "KP150", "KPR", "KPR 200", "KPS", "KPT", "LF 110",
+            "LF 6420", "LF 7160", "Maple", "Meiwei", "Myway", "NAZ", "NAZ LF 720"
+        ]},
+        {"Lincoln": [
+            "Aviator", "Continental", "Corsair", "LS", "MKC", "MKS", "MKT", "MKX", "MKZ", "Nautilus",
+            "Navigator", "Town Car"
+        ]},
+        {"Link Tour": ["EV"]},
+        {"LML": ["STAR 125", "STAR 200", "STAR 4T 125", "STAR 4T 200"]},
+        {"London Cab": ["TX4", "TX5"]},
+        {"Lotus": ["Eletra", "Emeya", "Envya", "Evija"]},
+        {"LTI": ["ELEGANCE", "Style", "TX2", "TX4"]},
+        {"Lynk&Co": ["01", "02", "03", "05", "06", "07", "09"]},
+        {"Mahindra": [
+            "4x4", "Alfa (TukTuk)", "Arro", "Bike", "Centuro", "Duro", "Flyte", "Gusto", "KUV 100",
+            "Pantero", "Rodeo", "TUV 300", "XUV 300", "XUV 500", "XYLO SUV"
+        ]},
+        {"Malaguti": ["Madison 150"]},
+        {"Mana": ["E-Bike"]},
+        {"Maruti": [
+            "HB110 Buzz", "KN 250 GS", "KORAK 110", "MD-150", "MT-125", "MT-150", "MT-200", "PHANTOM300",
+            "PLUS 150 CC", "TUK 200"
+        ]},
+        {"Maserati": [
+            "Ghibli", "GranTurismo", "GranTurismo Folgore", "Grecale", "Grecale Folgore", "Levante",
+            "Quattroporte"
+        ]},
+        {"Maxus": ["D60", "Euniq 5", "Euniq 6", "EV30"]},
+        {"Maybach": [
+            "57", "57 Zeppelin", "57s", "62", "62 Landaulet", "62 Zeppelin", "62s", "G 650 Landaulet",
+            "GLS 600", "S-class"
+        ]},
+        {"Mazda": [
+            "2", "3", "300", "323F", "5", "6", "626", "Allegro", "Atenza", "Axela", "AZ", "Biante",
+            "BT-50", "Capella", "Carol", "CX", "CX-3", "CX-30", "CX-4", "CX-5", "CX-50", "CX-60",
+            "CX-7", "CX-8", "CX-9", "CX-90", "Demio", "Familia", "Flair", "Millenia", "MPV", "MX-30",
+            "Premacy", "Protege", "RX-8", "Tribute", "Verisa", "Versia", "Xedos 6", "Xedos 9"
+        ]},
+        {"McLaren Automotive": ["P650"]},
+        {"Mercedes-Benz": [
+            "190", "200", "200c", "270", "A-class", "A170", "A180", "A200", "A250", "AMG GT 4-Door Coupe",
+            "B-class", "B180", "B200", "B220", "B250", "C-class", "C180", 'C200', "C220", "C240", "C250",
+            "C270", "C300", "C320", "C350", "CBT", "Citan", "CLA", "CLA Shooting Brake", "CLA200", "CLA220",
+            "CLK", "CLS", "CLS220", "CLS250", "E320", "E-class", "E-class Limousine", "E200", "E220",
+            "E250", "E300", "E350", "E400", "E53 AMG", "EQA", "EQB", "EQC", "EQC 400", "EQE", "EQE SUV",
+            "EQS", "EQS SUV", "EQT", "EQV", "EQV 300", "eVito", "G-class", "G63 AMG", "GL", "GLA", "GLA200",
+            "GLA220", "GLB", "GLC", "GLC Coupe", "GLC200", "GLC220", "GLC250", "GLC250d", "GLC350e", "GLE",
+            "GLE Coupe", "GLE350", "GLS63", "M-class", "ML-class", "ML250", "ML350", "R-class", "R350",
+            "S-class", "S300", "S350", "S400", "S450", "S500", "S560", "S580", "S65 AMG", "S650", "SL",
+            "Sprinter", "T 180 D", "V-class", "V220", "V250", "V300", "Valente", "Vaneo", "Viano", "Vito",
+            "Vito 113", "Vito 114", "Vito 116", "Vito 119", "Vito 220", "VITO TAXI", "VITO VAXI+", "X-class"
+        ]},
+        {"Mercury": ["Mariner", "Milan", "Mountaineer"]},
+        {"MG": [
+            "-", "3", "350", "4 EV", "5", "5 EV", "550", "6", "750", "Cyberster", "EP", "ES", "Extender",
+            "F3", "GS", "GT", "HS", "Jeely Rand", "M5", "Marvel R", "Marvel X", "MG eHS", "MG4", "MG5",
+            "One a", "One B", "RX5", "RX8", "V80", "VS HEV", "ZS", "ZS EV"
+        ]},
+        {"Micro": ["MPV Junior 3"]},
+        {"MINI": ["Aceman", "Clubman", "Cooper", "Countryman", "Paceman"]},
+        {"Mitsubishi": [
+            "Airtrek", "ASX", "Attrage", "Carisma", "Challenger", "Chariot",
+            "Colt", "Colt Plus", "Delica", "Eclipse", "Eclipse Cross", "EK", "Endeavor", "Galant",
+            "Grandis", "i-MiEV", "L200", "Lancer", "Lancer Evolution", "Mirage", "Montero",
+            "Outlander", "Outlander Sport", "Pajero", "Pajero iO", "Pajero Sport", "RVR", "Shogun",
+            "Space Star", "Space Wagon", "Triton", "XFC", "Xforce", "Xpander", "Xpander Cross", "Xpander GT"
+        ]},
+        {"MOTO GUZZI": ["AUDACE CARBON", "V 85 TT", "V7 II RACER", "V7 III STONE", "B9 BOBBER", "V9 ROAMER"]},
+        {"Motostar": [
+            "SK 110 DAX-A", "SK 125-5", "SK 150-NT-A", "SK BR200", "SK150-BR-New", "SK150-X-CKD", "SMX150",
+            "Star 200", "XPRO 150", "XPRO 200"
+        ]},
+        {"MPM motors": ["Erelis"]},
+        {"MV AGUSTA": ["BRUTALE 1090", "BRUTALE 675", "BRUTALE 800", "F3 675", "F4 RR", "RIVALE 800"]},
+        {"Neta": ["U Pro 400", "V", "V Chao 400 Lite", "X"]},
+        {"Nio": ["EC6", "EC7", "EL7", "ES7", "ES8", "ET5", "ET5 Orion", "ET7"]},
+        {"Nissan": [
+            "AD", "Advan", "Almera", "Almera Classic", "Altima", "Aprio", "Ariya", "Armada", "Bluebird",
+            "Caravan", "Cedric", "Cefiro", "Cube", "Dayz", "Dualis", "Dualis 2", "e-NV200 Dynamo",
+            "Elgrand", "Frontier", "Fuga", "Gloria", "GT-R", "Juke", "Kicks", "Kubistar", "Lafesta",
+            "Latio", "Leaf", "Liberty", "Livina", "Magnite", "March", "Maxima", "Maxima QX",
+            "Micra", "Mocco", "Murano", "Navara", "Note", "NV100 Clipper", "NV200", "NV300",
+            "NV350", "NV400", "Otti", "Pathfinder", "Patrol", "Pino", "Pintara", "Pixo",
+            "Platina", "Presage", "Presea", "Primastar", "Primera", "Pulsar", "Qashqai", "Qashqai+2",
+            "Quest", "Rogue", "Sentra", "Serena", "Skyline", "Sunny", "Sylphy", "Teana", "Terra", "Terrano",
+            "Tiida", "Titan", "Townstar", "Tsuru", "V-Drive", "Versa", "Wingroad", "X-Tera", "X-Trail"
+        ]},
+        {"NIU": ["NQi"]},
+        {"Opel": [
+            "Adam", "Agila", "Ampera", "Ampera-e", "Antara", "Astra", "Astra Classic", "Astra Sports Tourer",
+            "Cascada", "Combo Life", "Combo Tour", "Combo-e Life", "Corsa", "Corsa-e", "Crossland X", "Frontera",
+            "Grandland X", "Insignia", "Karl", "Meriva", "Mokka", "Mokka-e", "Mavano", "Omega", "Signum",
+            "Sintra", "Vectra", "Vectra C", "Vita", "Vivaro", "Vivaro-e", "Zafira", "Zafira-e"
+        ]},
+        {"Paggio": [
+            "CT100", "Elegante", "LT", "LX", "SXL", "V12", "V15", "VXL"
+        ]},
+        {"Perodua": ["Alza", "Aruz", "Axia", "Bezza", "Myvi"]},
+        {"Peugeot": [
+            "107", "108", "2008", "206", "206+", "207", "207 SW", "208", "3008", "301",
+            "306", "307", "307 SW", "308", "308 SW", "4007", "4008", "405", "406", "407",
+            "407 SW", "408", "5008", "508", "508 SW", "607", "806", "807", "Bipper", "Boxer",
+            "Boxer 335", "Boxer 436", "Django", "e-2008", "e-208", "e-Rifter", "e-Traveller",
+            "Expert", "Expert Combi", "Expert Eurobus", "Expert G9", "Expert Independence",
+            "Expert Tepee", "Horizon", "iOn", "Pars", "Partner", "Pragya", "Premier", "Rifter", "Traveller"
+        ]},
+        {"PHP": ["Merkaba", "Pride"]},
+        {"Piaggio": ["Rickshaw (TukTuk)"]},
+        {"Plymouth": ["Neon"]},
+        {"Polestar": ["1", "2", "3", "4"]},
+        {"Pontiac": ["G3", "G6", "G8", "Grand Prix", "Torrent", "Vibe", "Wave"]},
+        {"Porsche": [
+            "911", "Boxter", "Cayenne", "Cayenne Coupe", "Cayman", "Macan", "Panamera", "Panamera Sport Turismo",
+            "Taycan", "Taycan Cross Turismo", "Taycan Sport Turismo"
+        ]},
+        {"Pragya": ["Bajaj", "CVS", "Qute"]},
+        {"Proton": ["BT3SRSRM4A", "EXORA", "GEN2", "Persona", "Preve", "Saga", "Savvy"]},
+        {"Quantum Technologies": ["E4"]},
+        {"Qute": ["Pragya"]},
+        {"Race": ["City", "Fiero", "Hyosung", "SR"]},
+        {"Range Rover": ["Evoque", "Sport", "Velar", "Vogue"]},
+        {"Ravon": ["Gentra", "Nexia", "R2", "R3", "R4"]},
+        {"Regal": ["Prince Pearl"]},
+        {"Renault": [
+            "19", "Alaskan", "Arkana", "Austral", "Avantime", "Captur", "City K-ZE", "Clio",
+            "Clio Estate", "Clio Grandtour", "Clio Symbol", "Dokker", "Duster", "Espace",
+            "Express", "Fluence", "Fluence Z.E.", "Grand Espace", "Grand Modus", "Grand Scenic",
+            "Kadjar", "Kangoo", "Kangoo Z.E.", "Kaptur", "Karian", "Kiger", "Koleos", "Kwid", "Laguna",
+            "Latitude", "Lodgy", "Logan", "Logan II", "Logan MCV", "Master", "Megane", "Megane E-Tech Electric",
+            "Megane Grandcoupe", "Megane Grandtour", "Megane Scenic", "Modus", "Orosh", "Rafale", "Safrane",
+            "Samsung", "Sandero", "Scala", "Scenic", "Stepway", "Symbol", "Talisman", "Talismane Berline",
+            "Thalia", "Tondar", "Trafic", "Triber", "Twingo", "Vel Satis", "Zoe"
+        ]},
+        {"Renault Samsung": [
+            "QM3", "QM6", "SM3", "SM3 Z.E.", "SM5", "SM6", "SM7", "XM3"
+        ]},
+        {"Rio": ["Taxi"]},
+        {"Road Prince": ["Classic", "Jackpot", "Passion", "Power +", "ROBINSON", "RX3", "Shift 125", "WEGO"]},
+        {"Roadmaster": ["Delight", "Prime", "Rapido", "Rex", "Velocity"]},
+        {"Rolls-Royce": [
+            "Cullinan", "Dawn", "Ghost", "Phantom Coupe", "Phantom Drophead Coupe", "Phantom VII", "Spectre",
+            "Wraith"
+        ]},
+        {"Rongxing": ["RX200"]},
+        {"Rover": ["25", "416 GSI", "45", "75", "MG ZT", "Sport", "Streetwise"]},
+        {"Royal Alloy": ["GP 150"]},
+        {"Royal Enfield": ["Bullet", "Classic", "Continental", "Himalayan", "Interceptor", "ThunderBird"]},
+        {"Runner": [
+            "AD80S", "Bike", "Bullet", "Cheeta", "Deluxe", "F100", "Kite", "KnightRider", "Royal", "Turbo", "UM"
+        ]},
+        {"Saab": ["9-3", "9-4X", "9-5", "9-7X"]},
+        {"SABA": ["GLXI", "Scooter"]},
+        {"Saic": [
+            "Maxus D60", "Maxus D60e", "Maxus D90", "Maxus Euniq 6", "Maxus Euniq 6 Grand SUV",
+            "Maxus Euniq 9", "Roewe 360", "Roewe 950", "Roewe Ei5", "Roewe i5", "Roewe i6", "Roewe Marvel R",
+            "Roewe Marvel X", "Roewe RX3", "Roewe RX5", "Roewe RX5 Max"
+        ]},
+        {"Saipa": ["131", "132SE", "Quick", "Saina", "SX", "Tiba"]},
+        {"Salti": ["S200"]},
+        {"Samand": ["AZ", "AZ Runna", "CNG", "Dena", "EL", "Ikco", "LX", "SE", "Soren"]},
+        {"SanLG": ["Bike"]},
+        {"Saturn": ["Astra", "Aura", "Ion", "Outlook", "Vue"]},
+        {"Scion": ["iA", "iM", 'tC', "xA", "xB", "xD"]},
+        {"Scomadi": ["tt 125i"]},
+        {"Seat": [
+            "Alhambra", "Altea", "Altea XL", "Arona", "Ateca", "Cordoba", "Exeo", "Ibiza", "Leon",
+            "Leon Estate", "Mii", "Tarraco", "Toledo"
+        ]},
+        {"Senova": ["A1", "Baic"]},
+        {"Seres": ["3", "E3"]},
+        {"Shangai": ["Englon", "Maple", "SCEO"]},
+        {"Shineray": ["MPV750"]},
+        {"Siytto": ["SVI-150"]},
+        {"Skoda": [
+            "Citigo", "Enyaq", "Enyaq iV", 'Fabia', "Fabia Combi", "Felicia", "Kamiq", "Karoq", "Kodiaq",
+            "Kushaq", "Octavia", "Octavia Estate", "Praktik", "Rapid", "Rapid Spaceback", "Roomster",
+            "Scala", "Slavia", "Superb", "Yeti"
+        ]},
+        {"Skywell": ["EV6"]},
+        {"SMART": ["#1", "EQ ForFour", "ForFour", "ForTwo"]},
+        {"Sonlink": ["SL125"]},
+        {"Soueast": ["A5 Yiwu", "DX3", "DX5", "DX7", "DX9", "Lioncel"]},
+        {"Speranza": ["A516", "Envy"]},
+        {"SsangYong": [
+            "Actyon", "Korando", "Kyron", "Rexton", "Rodius", "Stavic", "Tivoli", "Turismo", "XLV Estate"
+        ]},
+        {"Star": ["Desert TR5", "SK 150-NT-A", "SK200 - DESERT", "SMX150", "TRC-150CC", "XPRO150-R", "XPRO200-R"]},
+        {"Strom": ["Chimpanzee", "GORILLA", "LEOPARD", "PANTHER", "SEA-100L"]},
+        {"Subaru": [
+            "Ascent", "Crosstrek", "Forester", "Impreza", "Impreza WRX STI", "Justy", "Legacy", "Levorg",
+            "Liberty", "Outback", "Pleo", "Solterra", "Stella", "Traviq", "Trezia", "Tribeca", "Vivio",
+            "WRX", "XV"
+        ]},
+        {"Suda": ["SA01"]},
+        {"Suzuki": [
+            "Access", "Across", "Aerio", "Alto", "AN125", "APV", "AX 100", "AX 4", "Baleno", "Best 110",
+            "Best 125", "BRGMAN", "BURGMAN STREET", "C 50", "Celerio", "Cervo", "Ciaz", "Cultus VXL",
+            "Cultus VXR", "Dzire", "EN 125 - 2A", "Ertiga", "Escudo", "Every", "FD 110", "Forenza",
+            "Forenzai", "GF 110", "GF", "Gixxer", "GIXXER SF 250", "GN 125 F", "GN125", "GR 650",
+            "Grand Vitara", "GS150R", "GSX - S150", "GSX S750", "GSX-R 1000 A", "GSX-R 1000 R",
+            "GSX-R 150", "GSX-R 600", "GSX-R 750", "GZ150", "HAYABUSA", "Hayate", "HURACAN", "Hustler",
+            "Ignis", "Intruder", "Jimny", "KATANA", "Kei", "Khyber", "Kizashi", "Landy", "Let`s", "Liana",
+            "M 109 R", "Mehran", "Palette", "Raider R150 Fi", "Reno", "S 40", "S-Presso", "Shooter",
+            "Skydrive", "Slingshot", "Smash", "Solio", "Spacia", "Splash", "Step 125", "Suzuki Crevo", "Swace",
+            "Swift", "Swish", "SX4", "SX4 S-Cross", "Thunder", "V-STROM 1000", "V-STROM 250", "V-STROM 650",
+            "V-STROM 650 XT", "Verona", "Vitara", "VSTROM 1000 XT", "Wagon", "Wagon R", "XL-7"
+        ]},
+        {"Sym": ["GR"]},
+        {"T better": ["Better"]},
+        {"Taiga": ["TL 125-5", "TL 150 CR1", "TL 200 GY-3B", "TL 200 SUPERLIGHT", "TL 250 CR5", "TL110-2GF"]},
+        {"TAILG": ["TL1500"]},
+        {"Tata": [
+            "Aria", "Bolt", "Indica", "Indigo", "Nano", "Nexon", "Safari Storme", "Tiago", "Tigor", "Vista",
+            "Xenon", "Zest"
+        ]},
+        {"Tesla": ["Cybertruck", "Model 3", "Model S", "Model X", "Model Y"]},
+        {"Test Model": ["Tuk-tuk"]},
+        {"Tobe": ["M`Car"]},
+        {"Toyota": [
+            "100", "110", "4Runner", "Aerio", "Agya", "Allex", "Allion", "Alphard", "Altezza", "Altis",
+            "Aqua", "Aristo", "Ateva", "Aurion", "Auris", "Avalon", "Avanza", "Avensis", "Avensis Verso",
+            "Axio", "Aygo", "Aygo X", "BB", "Belta", "Blade", "Brevis", "bZ4X", "C-HR", "C-RV", "Caldina",
+            "Cami", "Camry", "Carib", "Carina", "Cavalier", "CBA-ZNE10G", "Century", "Chaser", "Coaster",
+            "Commuter", "Corolla", "Corolla Cros", "Corolla Touring", "Corolla Verso", "Corona", "Corsa",
+            "Cosra", 'Cresta', "Cross", "Crown", "Daihatsu", "Duet", "Echo", "Esquire", "Estima", "Etios",
+            "Fiedler", "FJ Cruiser", "Fortuner", "Funcargo", "G-Touring", "Gaia", "Grand Hiace", "Grand Highlander",
+            "GX-R", "Harrier", "HiAce", "Highlander", "Hilux", "Hilux Revo", "Hilux Vigo", "Innova", "Ipsum",
+            "IQ", "Isis", "Ist", "Kaluga", "Kigege", "Kluger", "Land Cruiser", "Land Cruiser VXR",
+            "La Prado", "Mark II", "Mark X", "Matrix", "Mirai", "Nadia", "Noah", "NZE", "Opa", "Passo",
+            "Passo Sette", "Picnic", "Pixis", "Platz", "Porte", "Premio", "Previa", "Prius", "Prius Plus",
+            "Prius v", "Prius c", "ProAce", "ProAce City Verso", "ProAce Verso", "Probox", "Progress",
+            "Quantum", "Ractis", "Raum", "RAV4", "Reguis", "Reiz", "Ruckus", "Rumion", "Runx", "Rush 800", "SAI",
+            "Scion", "Sequoia", "Sienna", "Sienta", "Solara", "Soluna", "Spacio", "Spade", "Sprinter",
+            "Starlet", "Succeed", "Tacoma", "Tarago", "Tercel", "Toyota Allion", "Tundra", "Urban Cruiser",
+            "Vellfire", "Veloz", "Ventury", "Venza", "Verossa", "Verso", "Verso S", "Vios", "Vista", "Vitz",
+            "Voltz", "Voxy", "Will", "Windom", "Wish", "xA", "Yaris", "Yaris Ativ", "Yaris Cross", "Yaris Verso"
+        ]},
+        {"Tris": ["Concode", "Concode 139"]},
+        {"TRIUMPH": [
+            "BONNEVILE", "ROCKET 3", "SCRAMBLER 1200", "SPEED TWIN", "STREET TRIPLE", "THRUXTON", "TIGER 1200",
+            "TIGER 660", "TIGER 800", "TIGER 900"
+        ]},
+        {"Trumpchi": ["GA3"]},
+        {"TVS": []}
 
 
     ]
