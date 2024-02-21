@@ -54,3 +54,10 @@ class PhoneNumberVerificationForm(forms.Form):
     otp_code = forms.CharField(max_length=4, label="", required=True,
                                widget=forms.TextInput(attrs={"class": "form-control",
                                                              "id": "otp_code_field"}))
+
+
+class DriverCarInfo(forms.Form):
+    first_name = forms.CharField(max_length=100, label="Ім'я", required=True,
+                                 widget=forms.TextInput(attrs={"class": "form-control",
+                                                               "id": "driver-first-name-input-field"}))
+    last_name = forms.CharField(max_length=100, label="Прізвище")

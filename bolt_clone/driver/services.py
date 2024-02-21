@@ -5,7 +5,7 @@ from django.conf import settings
 
 from twilio.base.exceptions import TwilioRestException
 
-from .models import CountryZones, DriverCountries, DriverCities, Driver
+from .models import CountryZones, DriverCountries, DriverCities, Driver, DriverCars, DriverCarModels
 from .data_storage import DataStorage
 from .db_services import get_data_from_model
 
@@ -44,6 +44,27 @@ def insert_cities_in_db():
     except Exception as e:
         print(e)
 
+
+def insert_cars_in_db():
+    try:
+        for model in data_storage.CAR_MODELS:
+            new_car = DriverCars.objects.create(model_title=model)
+            new_car.save()
+    except Exception as e:
+        print(e)
+
+
+def insert_car_models_in_db():
+    try:
+        for car in data_storage.MODELS_LIST:
+            model_title = ''.join(car.keys())
+            car_model = get_data_from_model(DriverCars, "model_title", model_title)
+            for models in car.values():
+                for model in models:
+                    new_model = DriverCarModels.objects.create(car_id=car_model, model=model)
+                    new_model.save()
+    except Exception as e:
+        print(e)
 
 
 def form_dropdown_cities_window():

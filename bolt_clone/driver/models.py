@@ -2,8 +2,11 @@ from uuid import uuid4
 
 from django.db import models
 
+from .data_storage import DataStorage
 
 from phonenumber_field.modelfields import PhoneNumberField
+
+data_storage = DataStorage()
 
 
 class CountryZones(models.Model):
@@ -55,15 +58,22 @@ class DriverCars(models.Model):
 
 class DriverCarModels(models.Model):
     model_id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    car_id = models.OneToOneField(DriverCars, on_delete=models.CASCADE)
+    car_id = models.ForeignKey(DriverCars, on_delete=models.CASCADE)
     model = models.CharField(max_length=100)
 
 
 class DriverCarInfo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    driver_id = models.ForeignKey(Driver, on_delete=models.CASCADE)
     driver_first_name = models.CharField(max_length=70)
     driver_last_name = models.CharField(max_length=80)
     referral_code = models.CharField(max_length=20, null=True, default="")
     driver_has_own_car = models.BooleanField(default=True)
     driver_car = models.ForeignKey(DriverCarModels, on_delete=models.CASCADE, default="")
+    driver_car_created_year = models.CharField(max_length=4, choices=data_storage.CAR_CREATED_YEAR_LIST,
+                                               null=True, blank=True)
+    driver_number_sign = models.CharField(max_length=8, null=True, default="")
+    driver_car_color = models.CharField(max_length=50, choices=data_storage.CAR_COLORS_LIST)
 
+    def __str__(self):
+        return f"{self.driver_first_name} {self.driver_last_name}"

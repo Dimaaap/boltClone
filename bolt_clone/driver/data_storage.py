@@ -706,13 +706,13 @@ class DataStorage:
             "7 Crossback E-Tense", "9", "9 E-Tense"
         ]},
         {"Ducati": ["Monster 795", "Monster 796"]},
-        {"Exeed": ["LX", "TX", "VX"]},
+        {"Exceed": ["LX", "TX", "VX"]},
         {"FAW": [
             "Bestune B30", "Bestune B50", "Bestune B70", "Bestune B90", "Bestune E01", "Bestune T33",
             "Bestune T55", "Bestune T77", "Bestune T99", "Bestune X40", "Bestune X80", "CA 6371",
             "CA 7158", "Diandongwu Young Mini EV", "R7", "S80", "T77", "V2", "V5", "V80", "X40"
         ]},
-        {"Fekon": ["Bike"]},
+        {"Fecon": ["Bike"]},
         {"Ferrari": ["459 Italia", 'F430', "FF", "CTC4Luso", "Purosangue"]},
         {"Fiat": [
             "500L", "500L Living", "500X", "Albea", "Argo", "Brava", "Bravo", "Croma", "Doblo", "Ducato",
@@ -833,14 +833,14 @@ class DataStorage:
             "Tiburon", "Trajet", "Tuscon", "Veloster", "Venue", "Veracruz", "Verna", "Xcent", "XG30"
         ]},
         {"Ikco": ["Dena", "Runna", "Samand", "Samand LX", "Soren", "Tara"]},
-        {"Infinity", [
+        {"Infinity": [
             "EX-series", "EX35", "FX-series", "FX35", "FX37", "G-series", "G25", "G35", "G37", "I30",
             "JX-series", "JX35", "M", "M-series", "Q30", "Q30s", "Q40", "Q45", "Q50", "Q70", "QX30",
             "QX40", "QX50", "QX55", "QX56", "QX60", "QX70", "QX80"
         ]},
         {"Ingrace": ["Estel"]},
         {"Innoson": ["IVM FOX"]},
-        {"Ivan Khodro": ["Runna", "Soren"]},
+        {"Iran Khodro": ["Runna", "Soren"]},
         {"ISLO": ["KANGUR", "MUTANT", "RABBIT", "RACER", "RUSH", "SIOUX"]},
         {"Isuzu": ["Ascender", "Axiom", "D-Max", "Gemini", "Isuzu Axiom", "MU-7", "MU-X", "Rodeo"]},
         {"ITALIKA": [
@@ -946,7 +946,6 @@ class DataStorage:
         {"LML": ["STAR 125", "STAR 200", "STAR 4T 125", "STAR 4T 200"]},
         {"London Cab": ["TX4", "TX5"]},
         {"Lotus": ["Eletra", "Emeya", "Envya", "Evija"]},
-        {"LTI": ["ELEGANCE", "Style", "TX2", "TX4"]},
         {"Lynk&Co": ["01", "02", "03", "05", "06", "07", "09"]},
         {"Mahindra": [
             "4x4", "Alfa (TukTuk)", "Arro", "Bike", "Centuro", "Duro", "Flyte", "Gusto", "KUV 100",
@@ -1178,9 +1177,106 @@ class DataStorage:
             "TIGER 660", "TIGER 800", "TIGER 900"
         ]},
         {"Trumpchi": ["GA3"]},
-        {"TVS": []}
-
-
+        {"TVS": [
+            "Apache", "Apache 160", "Apache RR310", "Apache RTR 160", "Apache RTR 180", "Apache 200",
+            "Bike", "Classic", "Dazz", "HX150", "Jupiter", "King (TukTuk)", "Metro", "NTORQ 125",
+            "Phonix", "Raider", "ROCKZ 125", "Scooty", "Scrambler", "Star", "Star HLX-150", "Star HLX-100",
+            "Stryker", "Stryker 125", "TVS 100", "Victor", "Wego"
+        ]},
+        {"Twinco": ["Eagle"]},
+        {"Um": ["DSR", "ETX", "Hypersport", "Nitrox", "PowerMax", "Renegade", "RS4", "SR", "STX", "Xtreet"]},
+        {"United": ["Alpha", "Bravo"]},
+        {"Vauxhall": [
+            "Adam", "Agila", "Ampera", "Ampera-e", "Antara", "Astra", "Cascada", "Combo", "Combo Life",
+            "Combo Tour", "Corsa", "Corsa-e", "Crossland", "Crossland X", "Grandland", "Grandland X",
+            "Insignia", "Meriva", 'Mokka', "Mokka-e", "Movano", "Signum", "Vectra", "Vivaro", "Vivaro-e",
+            "Z", "Zafira", "ZS", "ZS80"
+        ]},
+        {"Vector": ["150"]},
+        {"Vento": [
+            "302", "Atom 150", "Crossmax 200", "Crossmax 250", "Cyclone 150", "Cyclone 200", "Hotrod 150",
+            "Leoncino", "Lithium 150", "Lucky 7 400", "Nitrox 200", "Nitrox 250", "Phantom 150 ZX", "Rocketman 250",
+            "Ryder 150", "Spectra 5i", "Terra ROD 150", "Thriller 200", "Thunderstar 250", "TNT", "Tornado",
+            "Tornado 250", "Workman 150", "Workman 250"
+        ]},
+        {"VESPA": ["GTS", "LX 125", "Primavera", "PX", "S 125", 'Sprint', 'Xz450']},
+        {"VGV": ["U70 PRO", "U75 PRO"]},
+        {"Victor-R": ["110", "Classic", 'Deviser', "DY100", "Plight", "Roebuck", "Sprout", "V100", "V80"]},
+        {"Volga": ["3110", "31105", "3111", "Gaz 24", "KA", "Siber", "TR", "TZ"]},
+        {"Volkswagen": [
+            "Amarok", "Arteon", "Arteon Shooting Brake", "Atlas", "Beetle", "Bora", "Caddy", "Caddy Inva",
+            "Caddy Maxi", "California", "Caravelle", "CC", "Crafter", "CrossFox", "e-Bora", "e-Golf", "e-Lavida",
+            "e-Up", "Eos Cabrio", "Fox", "Gol", "Gol Sedan / Voyage", "Golf", "Golf GTE", "Golf GTI",
+            "Golf Plus", "Golf Sportsvan", "Golf Variant", "ID.3", "ID.4", "ID.5", "ID.6", "ID.6 Crozz",
+            "ID.7", "ID.Buzz", "Jetta", "Jetta Clasico", "Jetta Europa A4", "Koi", "Kombi", "LT35",
+            "Lupo", "Multivan", "Nivus", "Parati Surf", "Passat", "Passat CC", "Passat Combi", "Phaeton",
+            "Phideon", "Pointer", "Polo", "Polo Sedan", "Polo Vivo", "Routan", "Scirocco", "Sharan", "Shuttle",
+            "Suran", "T-Cross", "T-Roc", "Taigo", "Taos", "Teramont", "Tharu", "Tiguan", "Touareg", "Touran",
+            "Transporter", "Transporter California", "Transporter Caravan", "Transporter Caravelle",
+            "Transporter Kombi", "Transporter Multivan", "Up", "Vento", "Virtus", "Voyage", "VR"
+        ]},
+        {"Volvo": [
+            "Achiever", "C30", "C40 Recharge", "C70", 'CBZ', "CD", "Dash", "Duet", "EX30", "EX90",
+            "Glamour", "HF", "Hunk", "Karizma", "Maestro", "Passion", "Photon", "Pleasure", "S40",
+            "S60", "S70", "S80", "S90", "Splendor", "Super", "V40", "V40 Cross Country", "V50",
+            "V60", "V60 Cross Country", "V70", "V90", "V90 Cross Country", "XC40", "XC40 Recharge",
+            "XC60", "XC70", "XC90", "Xtreme"
+        ]},
+        {"Vortex": [
+            "Achiever", "Estina", "Glamour", "HF", "Hunk", "Karizma", "Passion", "Splendor", "Super",
+            "Tingo", "Xtreme"
+        ]},
+        {"Walton": [
+            "Cruize", "Fusion", "Leo", "Prizm", "Ranger", "Stylex", "Xplore"
+        ]},
+        {"Weltmeister": ["E5", "EX5", "EX5 Pro", "EX5-Z", "EX6", "EX6 Plus 6", "W6"]},
+        {"Winnonie": ["Winnonie"]},
+        {"Wuling Motors": ["Bingo"]},
+        {"Xpeng": ["G3", "G3i", 'G9', "P5", "P7"]},
+        {"Yamaha": [
+            "Aerox", 'AG200', "Alpha", "BW`s 125", "Crux", "Cygnus Alpha", "Cygnus ZR", "Enticer", "Exciter 150",
+            "Fascino", "Fazer", "Fazer FI 2", "Fazzio", "Finn", "Fino","Fino 125", "Fiore", "FreeGo", "FZ",
+            "FZ 25", "FZ FI", "FZ-S FI", "FZS", "Gladiator", "Grand Filano", "GT 125", "Jupiter RC", "Lexi",
+            "M", 'M-Slaz', 'Mio 115', "Mio 125", "Mio Fazzio", "Mio Fino FI", "MT-03", "MT-07", "MT-09",
+            "MT-125", "MT-15", "NMAX", 'Nouvo E', "Nouvo MX", "Nouvo SX", "QBIX", "R15", "Ray", "Ray zr",
+            "Saluto", "Spark 115i", "Spark 135", "Speed", "SR400", "SS", "SZ", "SZ-RR", "T110 Crypton",
+            "Tenere 250", "Tricity 155", "TTX", "WR155R", "XMAX 300", "XSR 125", "XSR 155", "XSR 900",
+            "XT 1200 Z", "XTZ 125 E", "XTZ 150", "XVS 250 VSTAR", "SVS 950 BOLT", "YB 125", "YBR", "YBR 125 C",
+            "YBR 125 ZR", "YBR 125G", "YC-Z 110", "YS125", 'YZF', "YZF-R1" ,"YZF-R15", 'YZF-R3' ,"YZF-R6"
+        ]},
+        {"Yamazuki": ["F 125 AZ", "GX 200"]},
+        {"ZAZ": ["Forza", "Lanos", "Sens", "Vida"]},
+        {"Zeekr": ["001", "007", "009", "X"]},
+        {"Zongshen": ["CG-125", "Ruyka Classic", "Ruyka Classic R Fi", "Ruyka RK250", "Spark", "ZS"]},
+        {"Zotye": ["Coupa", "Nomad 1.3", "T600", "Z100", "Z300"]}
+    ]
+    CAR_CREATED_YEAR_LIST = [(str(i), (str(i))) for i in range(2000, 2026)]
+    CAR_COLORS_LIST = [
+        ("Білий", "Білий"),
+        ("Чорний", "Чорний"),
+        ("Синій", "Синій"),
+        ("Зелений", "Зелений"),
+        ("Жовтий", "Жовтий"),
+        ("Червоний", "Червоний"),
+        ("Фіолетовий", "Фіолетовий"),
+        ("Сірий", "Сірий"),
+        ("Коричневий", "Коричневий"),
+        ("Бежевий", "Бежевий"),
+        ("Рожевий", "Рожевий"),
+        ("Помаранчевий", "Помаранчевий"),
+        ("Золотий", "Золотий"),
+        ("Сріблястий", "Сріблястий"),
+        ("Бронзовий", "Бронзовий"),
+        ("Бордовий", "Бордовий"),
+        ("Винний", "Винний"),
+        ("Винний червоний", "Винний червоний"),
+        ("Небесно-блакитний", "Небесно-блакитний"),
+        ("Небесно-блакитний", "Небесно-блакитний"),
+        ("Блакитний", "Блакитний"),
+        ("Перламутрово білий", "Перламутрово білий"),
+        ("Перламутровий", "Перламутровий"),
+        ("Темно-сірий", "Темно-сірий"),
+        ("Темно-синій", "Темно-синій"),
     ]
     is_agree_with_policy = [("1", "Підтверджую")]
     SMALLEST_SMS_CODE_VALUE = 1000
