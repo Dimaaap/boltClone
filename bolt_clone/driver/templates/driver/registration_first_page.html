@@ -14,6 +14,9 @@
 {% endblock %}
 
 {% block js_additional %}
+    <script src="{% static 'driver/js/registration_first_page/show_and_hide_checkbox.js' %}"></script>
+    <script src="{% static 'driver/js/registration_first_page/show_and_hide_select_car_model.js' %}"></script>
+    <script src="{% static 'driver/js/registration_first_page/hide_or_show_xmarks.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -33,6 +36,62 @@
                 Використайте ваш номер телефону, щоб увійти.
             </p>
         </div>
-
+        <h1 class="section-title">
+            Особиста інформація та дані про авто
+        </h1>
+        <p class="section-desc">
+            Під час замовлення клієнт бачить лише ваше ім'я та дані про авто
+        </p>
+        <form class="car-info-form" method="post">
+            {% csrf_token %}
+            <p>
+                <b>Маєте кілька ТЗ?</b>
+            </p>
+            <p class="href-p">
+                <a href="#">Реєструйтесь як власник автопарку →</a>
+            </p>
+            {% for field in form %}
+                {% if forloop.counter == 4 or forloop.counter == 5 %}
+                    <div class="field-group checkbox">
+                        {{ field }}
+                        {% if forloop.counter == 4 %}
+                            <label class="checkbox-label" id="first-checkbox">{{ field.label }}</label>
+                        {% else %}
+                            <label class="checkbox-label" id="second-checkbox">{{ field.label }}</label>
+                        {% endif %}
+                        {{ field.errors }}
+                    </div>
+                {% else %}
+                    <div class="field-group">
+                        {% if forloop.counter > 5 %}
+                            <label class="after-checkboxes">{{ field.label }}</label>
+                        {% else %}
+                            <label>{{ field.label }}</label>
+                        {% endif %}
+                        <div class="input-with-icon">
+                            {{ field }}
+                            {% if forloop.counter == 6 or forloop.counter == 7 or forloop.counter == 8 or forloop.counter == 10 %}
+                                <span class="xmark-span">
+                                    <i class="fa-solid fa-xmark" style="color: #ababab;"></i>
+                                    <i class="pipe-mark">|</i>
+                                </span>
+                            {% endif %}
+                            {% if forloop.counter == 3 %}
+                                <small>Реферальний код вводити тут</small>
+                            {% elif forloop.counter == 7 or forloop.counter == 6 %}
+                                <small class="not-found-car-model">
+                                    Якщо ви не знаходите модель вашого ТЗ у списку - дайте нам знати,
+                                    напишіть на info@bolt.eu.
+                                </small>
+                            {% endif %}
+                            {{ field.errors }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <center>
+                <button type="submit" class="next-step">Далі</button>
+            </center>
+        </form>
     </section>
 {% endblock %}

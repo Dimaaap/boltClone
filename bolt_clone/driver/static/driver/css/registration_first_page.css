@@ -29,3 +29,107 @@
     text-align: left;
     margin-left: 9%;
 }
+
+#registration-form-section .section-title {
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-top: 3%;
+}
+
+#registration-form-section .section-desc {
+    font-weight: 500;
+    color: gray;
+    font-size: 0.9rem;
+    margin-top: 0.5%;
+}
+
+#registration-form-section form {
+    width: 50%;
+    margin-left: 25%;
+    text-align: left;
+    justify-content: left;
+    margin-top: 2%;
+}
+
+#registration-form-section form .href-p {
+    font-weight: 500;
+    margin-top: -2%;
+}
+
+#registration-form-section form .field-group {
+    margin-bottom: 4%;
+}
+
+#registration-form-section form label {
+    font-weight: 700;
+    margin-bottom: 1%;
+    font-weight: 0.9rem;
+}
+
+#registration-form-section .form-control {
+    height: 55px;
+    background: #f4f4f6;
+    border: none;
+    font-weight: 500;
+}
+
+#registration-form-section small {
+    font-weight: 500;
+    margin-top: 1%;
+    color: gray;
+    display: inline-block;
+}
+
+#registration-form-section .checkbox-label {
+    font-weight: 400;
+    margin-top: -5%;
+    margin-left: 5%;
+}
+
+#registration-form-section form #first-checkbox {
+    margin-left: 1%;
+    margin-top: -10%;
+    display: inline-block;
+}
+
+form input[type="checkbox"]:checked {
+    background: red;
+}
+
+#id_has_own_car,
+#id_no_has_own_car {
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: rgba(91,104,246);
+}
+
+form .next-step {
+    padding: 2% 5%;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 5%;
+    background: #5b68f6;
+    color: white;
+    font-weight: 700;
+}
+
+form .input-with-icon {
+    position: relative;
+}
+
+.xmark-span {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-30%);
+    right: 55px;
+    font-weight: 600;
+}
+
+.xmark-span i {
+    font-weight: 600;
+}
+
+.xmark-span i {
+    cursor: pointer;
+}

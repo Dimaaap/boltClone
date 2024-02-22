@@ -3,7 +3,7 @@ from django.contrib import messages
 
 from twilio.rest import Client
 
-from .forms import DriverRegistrationForm, PhoneNumberVerificationForm
+from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfo
 from .services import form_dropdown_cities_window, check_if_device_unique, verify_token, get_client_ip
 from .models import Driver, DriverCities
 from .form_handlers import driver_registration_form_handler, send_sms_message_service
@@ -78,4 +78,13 @@ def resend_code_view(request):
 
 
 def registration_first_page(request, device_ip: str):
-    return render(request, "driver/registration_first_page.html")
+    if request.method == "POST":
+        form = DriverCarInfo(request.POST)
+        if form.is_valid():
+            pass
+        else:
+            pass
+    else:
+        form = DriverCarInfo()
+    context = {"form": form}
+    return render(request, "driver/registration_first_page.html", context)

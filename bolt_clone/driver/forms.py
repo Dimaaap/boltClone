@@ -59,5 +59,47 @@ class PhoneNumberVerificationForm(forms.Form):
 class DriverCarInfo(forms.Form):
     first_name = forms.CharField(max_length=100, label="Ім'я", required=True,
                                  widget=forms.TextInput(attrs={"class": "form-control",
-                                                               "id": "driver-first-name-input-field"}))
-    last_name = forms.CharField(max_length=100, label="Прізвище")
+                                                               "id": "driver-first-name-input-field",
+                                                               "placeholder": "Ім'я"}))
+    last_name = forms.CharField(max_length=100, label="Прізвище", required=True,
+                                widget=forms.TextInput(attrs={"class": "form-control",
+                                                              "id": "driver-last-name-input-field",
+                                                              "placeholder": "Прізвище"}))
+    referral_code = forms.CharField(max_length=20, label="Реферальний код(латиницею)", required=False,
+                                    widget=forms.TextInput(attrs={"class": "form-control",
+                                                                  "id": "driver-referral-code",
+                                                                  "placeholder": "Реферальний код вводити тут"}))
+    has_own_car = forms.BooleanField(required=False, label="У мене є авто, яке я водитиму",
+                                     widget=forms.CheckboxInput(attrs={"checked": "checked"}))
+    no_has_own_car = forms.BooleanField(required=False, label="Я бажаю знайти автопарк задля працевлаштування. "
+                                                              "Натискаючи галочку, "
+                                                              "Ви погоджуєтесь, що надана інформація про вас буде "
+                                                              "передана автопаркам, що з нами співпрацюють, для "
+                                                              "зв'язку та обговорення співпраці між Вами. Ви можете"
+                                                              " скасувати свою згоду в будь-який час ",
+                                        widget=forms.CheckboxInput(attrs={"checked": "checked"}))
+    driver_car = forms.CharField(required=True, label="Марка(назва виробника) та модель авто",
+                                 widget=forms.TextInput(attrs={
+                                     "class": "form-control after-checkboxes with-span",
+                                     "id": "driver-car-select"
+                                 }))
+    driver_car_model = forms.CharField(required=True, label="", widget=forms.TextInput(attrs={
+        "class": "form-control after-checkboxes hidden-field with-span",
+        "id": "driver-model-car-select"
+    }))
+    created_year = forms.CharField(required=True, label="Рік випуску авто",
+                                   widget=forms.Select(choices=data_storage.CAR_CREATED_YEAR_LIST, attrs={
+                                       "class": "form-control after-checkboxes with-span",
+                                       "id": "created-car-year-select-field"
+                                   }))
+    driver_number_sign = forms.CharField(required=True, label="Номерний знак",
+                                         widget=forms.TextInput(attrs={
+                                             "class": "form-control after-checkboxes",
+                                             "id": "driver-number-sign",
+                                             "placeholder": "AA7771AA"
+                                         }))
+    car_color = forms.CharField(required=True, label="Колір кузова авто",
+                                widget=forms.Select(choices=data_storage.CAR_COLORS_LIST, attrs={
+                                    "class": "form-control after-checkboxes with-span",
+                                    "id": "form-car-color-select-field"
+                                }))
