@@ -121,15 +121,24 @@ form .input-with-icon {
 .xmark-span {
     position: absolute;
     top: 45%;
-    transform: translateY(-30%);
     right: 55px;
-    font-weight: 600;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
 }
 
 .xmark-span i {
     font-weight: 600;
+    margin-right: 10px;
+    margin-bottom: -5px;
 }
 
 .xmark-span i {
     cursor: pointer;
+}
+
+.xmark-span .input-pipe {
+    color: gray;
+    font-weight: 500;
+    font-size: 1.2rem;
 }

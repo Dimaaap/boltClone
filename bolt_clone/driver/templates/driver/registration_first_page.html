@@ -73,7 +73,12 @@
                             {% if forloop.counter == 6 or forloop.counter == 7 or forloop.counter == 8 or forloop.counter == 10 %}
                                 <span class="xmark-span">
                                     <i class="fa-solid fa-xmark" style="color: #ababab;"></i>
-                                    <i class="pipe-mark">|</i>
+                                    {% if forloop.counter == 7 %}
+                                        <small class="input-pipe" id="car-model-field-pipe">|</small>
+                                    {% else %}
+                                        <small class="input-pipe">|</small>
+                                    {% endif %}
+
                                 </span>
                             {% endif %}
                             {% if forloop.counter == 3 %}
