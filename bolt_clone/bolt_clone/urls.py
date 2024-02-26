@@ -10,5 +10,6 @@ urlpatterns = [
     path('support/', include('support.urls')),
     path('rider/', include('rider.urls')),
     path('scooters/', include('scooters.urls')),
-    path('driver/', include('driver.urls'))
+    path('driver/', include('driver.urls')),
+    path('select2/', include('django_select2.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

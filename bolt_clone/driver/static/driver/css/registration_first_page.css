@@ -142,3 +142,14 @@ form .input-with-icon {
     font-weight: 500;
     font-size: 1.2rem;
 }
+
+.xmark-span .fa-angle-down {
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.xmark-span #car-model-arrow {
+    display: none;
+}

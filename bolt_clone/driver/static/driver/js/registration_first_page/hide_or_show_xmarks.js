@@ -12,7 +12,6 @@ const addOnClickListenerToXMarks = () => {
     cancelMarks.forEach((mark) => {
         mark.addEventListener("click", () => {
             const xMarkIndex = cancelMarks.indexOf(mark);
-            console.log(inputsWithMarks[xMarkIndex].value)
             inputsWithMarks[xMarkIndex].value = "";
             mark.style.display = "none";
         })

@@ -1250,7 +1250,7 @@ class DataStorage:
         {"Zongshen": ["CG-125", "Ruyka Classic", "Ruyka Classic R Fi", "Ruyka RK250", "Spark", "ZS"]},
         {"Zotye": ["Coupa", "Nomad 1.3", "T600", "Z100", "Z300"]}
     ]
-    CAR_CREATED_YEAR_LIST = [(str(i), (str(i))) for i in range(2000, 2026)]
+    CAR_CREATED_YEAR_LIST = [(str(i), (str(i))) for i in range(2000, 2026)][::-1]
     CAR_COLORS_LIST = [
         ("Білий", "Білий"),
         ("Чорний", "Чорний"),

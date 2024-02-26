@@ -8,6 +8,10 @@ from .models import Driver
 data_storage = DataStorage()
 
 
+CAR_COLOR_CHOICES = [("", "")] + data_storage.CAR_COLORS_LIST
+CAR_YEAR_CHOICES = [("", "")] + data_storage.CAR_CREATED_YEAR_LIST
+
+
 class DriverRegistrationForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
@@ -87,8 +91,8 @@ class DriverCarInfo(forms.Form):
         "class": "form-control after-checkboxes hidden-field with-span",
         "id": "driver-model-car-select"
     }))
-    created_year = forms.CharField(required=True, label="Рік випуску авто",
-                                   widget=forms.Select(choices=data_storage.CAR_CREATED_YEAR_LIST, attrs={
+    created_year = forms.CharField(required=True, label="Рік випуску авто", initial=["", ""],
+                                   widget=forms.Select(choices=CAR_YEAR_CHOICES, attrs={
                                        "class": "form-control after-checkboxes with-span",
                                        "id": "created-car-year-select-field"
                                    }))
@@ -99,7 +103,7 @@ class DriverCarInfo(forms.Form):
                                              "placeholder": "AA7771AA"
                                          }))
     car_color = forms.CharField(required=True, label="Колір кузова авто",
-                                widget=forms.Select(choices=data_storage.CAR_COLORS_LIST, attrs={
+                                widget=forms.Select(choices=CAR_COLOR_CHOICES, attrs={
                                     "class": "form-control after-checkboxes with-span",
                                     "id": "form-car-color-select-field"
                                 }))

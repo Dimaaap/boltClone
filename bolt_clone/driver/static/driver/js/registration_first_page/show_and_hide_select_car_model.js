@@ -11,11 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
    carModelSelectPipe.style.display = "none";
 
    carSelectField.addEventListener("input", () => {
-        carModelSelectField.style.display = "block";
-        carModelSelectFieldSmall[1].style.display = "block";
-        carModelSelectFieldSmall[0].style.display = "none";
-        xMarks[0].style.top = "45%";
-        xMarks[1].style.top = "25%";
-        carModelSelectPipe.style.display = "inline-block";
+        if(carSelectField.value.length >= 1){
+            carModelSelectField.style.display = "block";
+            carModelSelectFieldSmall[1].style.display = "block";
+            carModelSelectFieldSmall[0].style.display = "none";
+            xMarks[0].style.top = "45%";
+            xMarks[1].style.display = "flex";
+            xMarks[1].style.top = "25%";
+            carModelSelectPipe.style.display = "inline-block";
+        } else {
+            carModelSelectField.style.display = "none";
+            carModelSelectFieldSmall[1].style.display = "none";
+            carModelSelectFieldSmall[0].style.display = "block";
+            xMarks[0].style.top = "25%";
+        }
    })
 })
