@@ -10,3 +10,11 @@ def get_data_from_model(model, key, value):
     except ObjectDoesNotExist:
         return None
     return data
+
+
+def get_all_data_from_model(model):
+    try:
+        queryset = model.objects.all()
+    except Exception:
+        return None
+    return queryset

@@ -1,14 +1,18 @@
+import json
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 from twilio.rest import Client
 
 from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfo
 from .services import form_dropdown_cities_window, check_if_device_unique, verify_token, get_client_ip
-from .models import Driver, DriverCities
+from .models import Driver, DriverCities, DriverCars
 from .form_handlers import driver_registration_form_handler, send_sms_message_service
 from .data_storage import DataStorage
-from .db_services import get_data_from_model
+from .db_services import get_data_from_model, get_all_data_from_model
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
@@ -86,5 +90,21 @@ def registration_first_page(request, device_ip: str):
             pass
     else:
         form = DriverCarInfo()
-    context = {"form": form}
+    cars_list = get_all_data_from_model(DriverCars)
+    context = {"form": form, "cars": cars_list}
     return render(request, "driver/registration_first_page.html", context)
+
+
+@csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
+def search_car_models(request, device_ip):
+    if request.method == "POST":
+        data = json.loads(request.body.decode('utf-8'))
+        term = data.get("term", "")
+        print("Received term: " + term)
+        car_list = DriverCars.objects.filter(model_title__icontains=term).values("model_title")
+        print(list(car_list))
+        return JsonResponse(list(car_list), safe=False)
+    else:
+        return JsonResponse({"error": "Метод не підтримується"}, status=405)
+
+

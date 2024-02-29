@@ -7,8 +7,6 @@ const xMarkSpansList = document.querySelectorAll(".xmark-span");
 const driverCarModelSelectField = document.getElementById("driver-model-car-select")
 
 
-console.log(fieldsAfterCheckboxes)
-
 document.addEventListener("DOMContentLoaded", () => {
     handleSecondCheckboxVisibility();
     driverHasOwnCar.addEventListener("change", () => {

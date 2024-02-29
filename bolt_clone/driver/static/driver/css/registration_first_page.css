@@ -153,3 +153,40 @@ form .input-with-icon {
 .xmark-span #car-model-arrow {
     display: none;
 }
+
+form .dropdown {
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    background: white;
+    box-shadow: 1px 1px 11px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 11px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 11px 0px rgba(0,0,0,0.75);
+    z-index: 1000;
+    top: 68%;
+    padding: 2% auto;
+    padding-top: 1%;
+    display: none;
+}
+
+form .dropdown .car-section {
+    padding: 0.5% 3%;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+form .dropdown .car-section p{
+    margin-top: 2%;
+}
+
+form .dropdown .car-section:hover{
+    background: #F5F5F5;
+}
+
+form .dropdown .no-options-text {
+    font-weight: 500;
+    color: gray;
+    margin-left: 45%;
+    margin-top: 1%;
+}
