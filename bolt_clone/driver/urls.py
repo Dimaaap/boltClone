@@ -7,5 +7,7 @@ urlpatterns = [
     path('verification/<str:verification_code>/', verification_phone_number, name="number_verification"),
     path('resend-code', resend_code_view, name="resend_code"),
     path('registration/first/<str:device_ip>', registration_first_page, name="registration_first"),
-    path('search/<str:device_ip>', search_car_models, name="search_cars")
+    path('search/<str:device_ip>', search_car_models, name="search_cars"),
+    path('search_car_model/<str:device_ip>/<str:brand>/', search_car_models_by_car,
+         name="get_car_models"),
 ]

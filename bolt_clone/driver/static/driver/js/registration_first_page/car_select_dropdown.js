@@ -1,6 +1,10 @@
 const carSelectDropdown = document.getElementById("car-model-select");
 const carSelectDropdownField = document.getElementById("driver-car-select");
 const carSelectChevron = document.querySelector(".fa-angle-down");
+const carOptions = Array.from(document.querySelectorAll(".car-section"));
+const cars = Array.from(document.querySelectorAll(".cars"));
+const faXMark = document.querySelector(".fa-xmark");
+const carModelSelectF = document.getElementById("driver-model-car-select")
 
 
 let isModalOpen = false;
@@ -32,10 +36,21 @@ const fetchData = (inputValue, csrfToken, deviceIp) => {
         }
         data.forEach((car) => {
             resultHtml += `<div class=car-section>
-                                    <p class=found-cars>${car.model_title}</p>
+                                    <p class=car>${car.model_title}</p>
                                 </div>`
         });
         carSelectDropdown.innerHTML = resultHtml;
+        bindClickToCarOptions();
+    })
+}
+
+const carSelectListener = () => {
+     carOption.addEventListener("click", () => {
+        carSelectDropdownField.value = carOption.innerText.trim();
+        console.log(carSelectDropdownField.value)
+        faXMark.style.display = "flex";
+        showHideDropdown();
+        carModelSelectF.style.display = "inline-block";
     })
 }
 
@@ -78,3 +93,25 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+
+const carOptionClick = (carOptions) => {
+    carOptions.forEach((carOption) => {
+        carOption.addEventListener("click", () => {
+            carSelectDropdownField.value = carOption.innerText.trim();
+            faXMark.style.display = "flex";
+            carModelSelectF.style.display = "inline-block";
+            showHideDropdown();
+            const changeEvent = new Event("change");
+            carSelectDropdownField.dispatchEvent(changeEvent)
+        })
+    })
+}
+
+
+const bindClickToCarOptions = () => {
+    const carOptions = document.querySelectorAll(".car-section");
+    carOptionClick(carOptions);
+}
+
+carOptionClick(carOptions)

@@ -20,7 +20,8 @@
     <script src="{% static 'driver/js/registration_first_page/hide_or_show_arrow.js' %}"></script>
     <script src="{% static 'driver/js/registration_first_page/hide_car_model_select_field_on_xmark_click.js' %}"></script>
     <script src="{% static 'driver/js/registration_first_page/car_select_dropdown.js' %}"></script>
-    <script src="{% static 'driver/js/registration_first_page/add_selected_car_into_field_value.js' %}"></script>
+    <script src="{% static 'driver/js/registration_first_page/car_model_select_dropdown.js' %}"></script>
+    <script src="{% static 'driver/js/registration_first_page/disallow_two_modal_open.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -76,7 +77,8 @@
                             {{ field }}
                             {% if forloop.counter == 6 %}
                                 {% include './_includes/registration_first_page/select_car_dropdown.html' %}
-                            {% else %}
+                            {% elif forloop.counter == 8 %}
+                                {% include './_includes/registration_first_page/select_car_model_dropdown.html' %}
                             {% endif %}
                             {% if forloop.counter == 6 or forloop.counter == 7 or forloop.counter == 8 or forloop.counter == 10 %}
                                 <span class="xmark-span">

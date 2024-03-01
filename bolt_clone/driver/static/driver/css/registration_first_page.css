@@ -170,6 +170,10 @@ form .dropdown {
     display: none;
 }
 
+form #model-select {
+    top: -150%;
+}
+
 form .dropdown .car-section {
     padding: 0.5% 3%;
     font-weight: 500;
@@ -180,7 +184,8 @@ form .dropdown .car-section p{
     margin-top: 2%;
 }
 
-form .dropdown .car-section:hover{
+form .dropdown .car-section:hover,
+form #model-select option:hover {
     background: #F5F5F5;
 }
 
@@ -189,4 +194,18 @@ form .dropdown .no-options-text {
     color: gray;
     margin-left: 45%;
     margin-top: 1%;
+}
+
+
+form #model-select {
+    padding: 1%;
+}
+
+form #model-select option {
+    padding: 2%;
+    margin-top: 1%;
+    cursor: pointer;
+    font-weight: 500;
+    width: 101%;
+    margin-left: -1%;
 }

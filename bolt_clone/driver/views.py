@@ -9,10 +9,10 @@ from twilio.rest import Client
 
 from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfo
 from .services import form_dropdown_cities_window, check_if_device_unique, verify_token, get_client_ip
-from .models import Driver, DriverCities, DriverCars
+from .models import Driver, DriverCities, DriverCars, DriverCarModels
 from .form_handlers import driver_registration_form_handler, send_sms_message_service
 from .data_storage import DataStorage
-from .db_services import get_data_from_model, get_all_data_from_model
+from .db_services import get_data_from_model, get_all_data_from_model, filter_data_from_model
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
@@ -106,5 +106,20 @@ def search_car_models(request, device_ip):
         return JsonResponse(list(car_list), safe=False)
     else:
         return JsonResponse({"error": "Метод не підтримується"}, status=405)
+
+
+@csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
+def search_car_models_by_car(request, device_ip, brand):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body.decode("utf-8"))
+            brand = data["brand"]
+            car = get_data_from_model(DriverCars, "model_title", brand)
+            #models = DriverCarModels.objects.filter(car_id=car.model_id).values_list("model", flat=True)
+            models = filter_data_from_model(DriverCarModels, "car_id", car.model_id).values_list("model", flat=True)
+            return JsonResponse(list(models), safe=False)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
 
 

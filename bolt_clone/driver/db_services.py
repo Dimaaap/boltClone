@@ -12,6 +12,12 @@ def get_data_from_model(model, key, value):
     return data
 
 
+def filter_data_from_model(model, key, value):
+    eq_filter = EqualFilter()
+    data = model.objects.filter(**eq_filter(key, value))
+    return data
+
+
 def get_all_data_from_model(model):
     try:
         queryset = model.objects.all()

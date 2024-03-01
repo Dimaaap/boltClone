@@ -4,7 +4,7 @@ const carModelField = document.getElementById("driver-car-select");
 
 
 
-carModelField.addEventListener("input", () => {
+carModelField.addEventListener("change", () => {
     if (fieldWithSelect.style.display === "none"){
         selectArrow.style.display = "none";
     } else {

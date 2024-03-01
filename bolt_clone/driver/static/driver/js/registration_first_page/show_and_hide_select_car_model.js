@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
    xMarks[0].style.top = "25%";
    carModelSelectPipe.style.display = "none";
 
-   carSelectField.addEventListener("input", () => {
+   carSelectField.addEventListener("change", () => {
         if(carSelectField.value.length >= 1){
+            console.log(carSelectField.value)
             carModelSelectField.style.display = "block";
             carModelSelectFieldSmall[1].style.display = "block";
             carModelSelectFieldSmall[0].style.display = "none";
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             xMarks[1].style.top = "25%";
             carModelSelectPipe.style.display = "inline-block";
         } else {
+            console.log("dsada")
             carModelSelectField.style.display = "none";
             carModelSelectFieldSmall[1].style.display = "none";
             carModelSelectFieldSmall[0].style.display = "block";
