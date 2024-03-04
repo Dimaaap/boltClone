@@ -47,7 +47,6 @@ const fetchData = (inputValue, csrfToken, deviceIp) => {
 const carSelectListener = () => {
      carOption.addEventListener("click", () => {
         carSelectDropdownField.value = carOption.innerText.trim();
-        console.log(carSelectDropdownField.value)
         faXMark.style.display = "flex";
         showHideDropdown();
         carModelSelectF.style.display = "inline-block";

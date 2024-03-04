@@ -174,18 +174,21 @@ form #model-select {
     top: -150%;
 }
 
-form .dropdown .car-section {
+form .dropdown .car-section,
+form #year-section .year {
     padding: 0.5% 3%;
     font-weight: 500;
     cursor: pointer;
 }
 
-form .dropdown .car-section p{
+form .dropdown .car-section p,
+form .#year-select .year p {
     margin-top: 2%;
 }
 
 form .dropdown .car-section:hover,
-form #model-select option:hover {
+form #model-select option:hover,
+form #year-select p:hover {
     background: #F5F5F5;
 }
 
@@ -197,15 +200,22 @@ form .dropdown .no-options-text {
 }
 
 
-form #model-select {
+form #model-select,
+form #year-select {
     padding: 1%;
 }
 
-form #model-select option {
+form #model-select option,
+form #year-select .year {
     padding: 2%;
     margin-top: 1%;
     cursor: pointer;
     font-weight: 500;
     width: 101%;
     margin-left: -1%;
+}
+
+
+#year-select {
+    top: -80%;
 }

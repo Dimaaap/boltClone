@@ -3,6 +3,7 @@ const carModelSelectDropdownField = document.getElementById("driver-model-car-se
 const carModelSelectChevron = Array.from(document.querySelectorAll(".fa-angle-down"))[1];
 const carModalFaXMark = Array.from(document.querySelectorAll(".fa-xmark"))[1];
 const carBrandField = document.getElementById("driver-car-select");
+const carBrandSelectDropdown = document.getElementById("car-model-select")
 
 
 let isModalWindowOpen = false;
@@ -15,6 +16,12 @@ const showHideDropdownWindow = () => {
     }
     isModalWindowOpen = !isModalWindowOpen;
 }
+
+carBrandField.addEventListener("click", () => {
+    if(carBrandSelectDropdown.style.display === "block" && carModelSelectDropdown.style.display === "block"){
+        showHideDropdownWindow()
+    }
+})
 
 carModelSelectDropdownField.addEventListener("click", () => {
     showHideDropdownWindow();
@@ -46,8 +53,24 @@ carBrandField.addEventListener("change", () => {
                 option.value = model;
                 option.textContent = model;
                 carModelSelectDropdown.appendChild(option)
+                option.addEventListener("click", () => {
+                    carModelSelectDropdownField.value = model
+                    showHideDropdownWindow();
+                    carModalFaXMark.style.display = "flex";
+                })
             })
         })
         .catch(error => console.error("Error fetching car models: " + error))
     }
+})
+
+
+carModelSelectDropdownField.addEventListener("input", () => {
+    const searchQuery = carModelSelectDropdownField.value.toLowerCase();
+    const modelOptions = carModelSelectDropdown.querySelectorAll("option");
+
+    modelOptions.forEach(option => {
+        const matchesSearchQuery = option.textContent.toLowerCase().includes(searchQuery);
+        option.style.display = matchesSearchQuery ? "" : "none";
+    })
 })

@@ -7,7 +7,6 @@ from .models import Driver
 
 data_storage = DataStorage()
 
-
 CAR_COLOR_CHOICES = [("", "")] + data_storage.CAR_COLORS_LIST
 CAR_YEAR_CHOICES = [("", "")] + data_storage.CAR_CREATED_YEAR_LIST
 
@@ -46,6 +45,7 @@ class DriverRegistrationForm(forms.Form):
     )
 
     def clean_driver_email(self):
+        print("In validate method")
         driver_email = self.cleaned_data["driver_email"]
         try:
             Driver.objects.get(driver_email=driver_email)
@@ -91,10 +91,11 @@ class DriverCarInfo(forms.Form):
         "class": "form-control after-checkboxes hidden-field with-span",
         "id": "driver-model-car-select"
     }))
-    created_year = forms.CharField(required=True, label="Рік випуску авто", initial=["", ""],
-                                   widget=forms.Select(choices=CAR_YEAR_CHOICES, attrs={
+    created_year = forms.CharField(required=True, label="Рік випуску авто",
+                                   widget=forms.TextInput(attrs={
                                        "class": "form-control after-checkboxes with-span",
-                                       "id": "created-car-year-select-field"
+                                       "id": "created-car-year-select-field",
+                                       "readonly": "readonly"
                                    }))
     driver_number_sign = forms.CharField(required=True, label="Номерний знак",
                                          widget=forms.TextInput(attrs={
@@ -103,7 +104,8 @@ class DriverCarInfo(forms.Form):
                                              "placeholder": "AA7771AA"
                                          }))
     car_color = forms.CharField(required=True, label="Колір кузова авто",
-                                widget=forms.Select(choices=CAR_COLOR_CHOICES, attrs={
+                                widget=forms.TextInput(attrs={
                                     "class": "form-control after-checkboxes with-span",
-                                    "id": "form-car-color-select-field"
+                                    "id": "form-car-color-select-field",
+                                    "readonly": "readonly"
                                 }))

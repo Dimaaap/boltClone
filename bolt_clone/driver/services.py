@@ -112,6 +112,7 @@ def get_client_ip(request):
 
 
 def check_if_device_unique(request):
+    print("Сheck if device in unique")
     driver_ip = get_client_ip(request)
     driver = get_data_from_model(Driver, "device_id", driver_ip)
     return driver and driver.is_verification
@@ -126,7 +127,20 @@ def generate_token(session_id):
     return token
 
 
+def is_user_in_db(email: str):
+    return len(list(Driver.objects.filter(driver_email=email))) > 0
+
+
+def check_if_token_verified(request, verification_code):
+    driver = verify_token(verification_code)
+    if isinstance(driver, str):
+        return False
+    request.session["verification_code"] = verification_code
+    return True
+
+
 def verify_token(token, secret_key=settings.SECRET_KEY):
+    print("In user verify_token")
     try:
         decoded_payload = jwt.decode(token, secret_key, algorithms=["HS256"])
         return bool(decoded_payload)

@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from twilio.rest import Client
 
 from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfo
-from .services import form_dropdown_cities_window, check_if_device_unique, verify_token, get_client_ip
+from .services import *
 from .models import Driver, DriverCities, DriverCars, DriverCarModels
 from .form_handlers import driver_registration_form_handler, send_sms_message_service
 from .data_storage import DataStorage
@@ -36,15 +36,14 @@ def driver_main_page(request):
     else:
         form = DriverRegistrationForm(initial={"driver_city": "Київ"})
     countries_list = form_dropdown_cities_window()
+    user_email = request.session.get("email", "")
     context = {"form": form, "countries_list": countries_list, "verification": is_verification,
-               "user_email": request.session["email"]}
+               "user_email": user_email}
     return render(request, "driver/main_page.html", context)
 
 
 def verification_phone_number(request, verification_code):
-    driver = verify_token(verification_code)
-    request.session["verification_code"] = verification_code
-    if isinstance(driver, str):
+    if not check_if_token_verified(request, verification_code):
         return redirect(driver_main_page)
     if request.method == "POST":
         form = PhoneNumberVerificationForm(request.POST)
@@ -62,14 +61,17 @@ def verification_phone_number(request, verification_code):
                                     driver_city=driver_city,
                                     device_id=client_ip,
                                     is_verification=True)
-                new_driver.save()
+                try:
+                    new_driver.objects.get_or_create()
+                except Exception as e:
+                    messages.error(request, "Здається, щось пішло не так")
             else:
                 form.add_error("otp_code", "Неправильний код.Надіслати код ще раз")
         else:
             messages.error(request, "Неправильний код. Спробуйте ще раз")
     else:
         form = PhoneNumberVerificationForm()
-    user_phone_number = request.session["user_phone_numer"]
+    user_phone_number = request.session.get("new_user")["phone_number"]
     context = {"form": form, "phone_number": user_phone_number}
     return render(request, "driver/verification_page.html", context)
 
@@ -91,7 +93,9 @@ def registration_first_page(request, device_ip: str):
     else:
         form = DriverCarInfo()
     cars_list = get_all_data_from_model(DriverCars)
-    context = {"form": form, "cars": cars_list}
+    year_list = [int(year) for year, _ in data_storage.CAR_CREATED_YEAR_LIST]
+    car_color_list = [color for color, _ in data_storage.CAR_COLORS_LIST]
+    context = {"form": form, "cars": cars_list, "year_list": year_list, "color_list": car_color_list}
     return render(request, "driver/registration_first_page.html", context)
 
 
@@ -100,9 +104,7 @@ def search_car_models(request, device_ip):
     if request.method == "POST":
         data = json.loads(request.body.decode('utf-8'))
         term = data.get("term", "")
-        print("Received term: " + term)
         car_list = DriverCars.objects.filter(model_title__icontains=term).values("model_title")
-        print(list(car_list))
         return JsonResponse(list(car_list), safe=False)
     else:
         return JsonResponse({"error": "Метод не підтримується"}, status=405)
@@ -115,7 +117,6 @@ def search_car_models_by_car(request, device_ip, brand):
             data = json.loads(request.body.decode("utf-8"))
             brand = data["brand"]
             car = get_data_from_model(DriverCars, "model_title", brand)
-            #models = DriverCarModels.objects.filter(car_id=car.model_id).values_list("model", flat=True)
             models = filter_data_from_model(DriverCarModels, "car_id", car.model_id).values_list("model", flat=True)
             return JsonResponse(list(models), safe=False)
         except Exception as e:
