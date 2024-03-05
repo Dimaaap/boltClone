@@ -7,10 +7,10 @@ from django.http import JsonResponse
 
 from twilio.rest import Client
 
-from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfo
+from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm
 from .services import *
-from .models import Driver, DriverCities, DriverCars, DriverCarModels
-from .form_handlers import driver_registration_form_handler, send_sms_message_service
+from .models import Driver, DriverCities, DriverCars, DriverCarModels, DriverCarInfo
+from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
 from .data_storage import DataStorage
 from .db_services import get_data_from_model, get_all_data_from_model, filter_data_from_model
 
@@ -85,18 +85,28 @@ def resend_code_view(request):
 
 def registration_first_page(request, device_ip: str):
     if request.method == "POST":
-        form = DriverCarInfo(request.POST)
+        form = DriverCarInfoForm(request.POST)
         if form.is_valid():
-            pass
+            verification_first_step(request, form)
+            return redirect(registration_second_page, device_ip)
         else:
-            pass
+            print(form.errors)
     else:
-        form = DriverCarInfo()
+        form = DriverCarInfoForm()
     cars_list = get_all_data_from_model(DriverCars)
     year_list = [int(year) for year, _ in data_storage.CAR_CREATED_YEAR_LIST]
     car_color_list = [color for color, _ in data_storage.CAR_COLORS_LIST]
     context = {"form": form, "cars": cars_list, "year_list": year_list, "color_list": car_color_list}
     return render(request, "driver/registration_first_page.html", context)
+
+
+def registration_second_page(request, device_ip):
+    if request.method == "POST":
+        form = DriverCarDocumentsForm(request.POST)
+    else:
+        form = DriverCarDocumentsForm
+    context = {"form": form}
+    return render(request, "driver/registration_second_page.html", context)
 
 
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
@@ -121,6 +131,3 @@ def search_car_models_by_car(request, device_ip, brand):
             return JsonResponse(list(models), safe=False)
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
-
-
-

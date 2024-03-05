@@ -77,3 +77,12 @@ class DriverCarInfo(models.Model):
 
     def __str__(self):
         return f"{self.driver_first_name} {self.driver_last_name}"
+
+
+class DriverCarDocuments(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    driver_car_id = models.ForeignKey(DriverCarInfo, on_delete=models.CASCADE)
+    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/")
+    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/")
+    driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/")
+    insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/")

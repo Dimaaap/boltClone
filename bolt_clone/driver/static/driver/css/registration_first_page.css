@@ -49,6 +49,7 @@
     text-align: left;
     justify-content: left;
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 #registration-form-section form .href-p {
@@ -112,6 +113,7 @@ form .next-step {
     background: #5b68f6;
     color: white;
     font-weight: 700;
+    margin-top: 3%;
 }
 
 form .input-with-icon {
@@ -188,7 +190,8 @@ form .#year-select .year p {
 
 form .dropdown .car-section:hover,
 form #model-select option:hover,
-form #year-select p:hover {
+form #year-select p:hover,
+form #color-select p:hover {
     background: #F5F5F5;
 }
 
@@ -201,12 +204,14 @@ form .dropdown .no-options-text {
 
 
 form #model-select,
-form #year-select {
+form #year-select,
+form #color-select {
     padding: 1%;
 }
 
 form #model-select option,
-form #year-select .year {
+form #year-select .year,
+form #color-select .color {
     padding: 2%;
     margin-top: 1%;
     cursor: pointer;
@@ -215,7 +220,19 @@ form #year-select .year {
     margin-left: -1%;
 }
 
-
 #year-select {
     top: -80%;
+}
+
+#color-select {
+    top: 120%;
+}
+
+footer {
+    border-top: 1px solid #F5F5F5;
+}
+
+form .errorlist {
+    margin-left: -4%;
+    width: 50%;
 }

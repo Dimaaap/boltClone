@@ -1,7 +1,9 @@
-<div class="dropdown" id="model-select">
+<div class="dropdown" id="color-select">
     <div class="dropdown-content">
-        {% for color in car_color_list %}
-
+        {% for color in color_list %}
+            <div class="color-section">
+                <p class="color">{{ color }}</p>
+            </div>
         {% endfor %}
     </div>
 </div>

@@ -1,0 +1,88 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'driver/css/verification_page.css' %}">
+    <link rel="stylesheet" href="{% static 'driver/css/registration_second_page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+
+{% endblock %}
+
+{% block body %}
+    {% include './_includes/verification_page/header.html' %}
+    <section id="registration-second">
+        <div class="image-container">
+            <img class="progress-indicator"
+                 width="350"
+                 src="{% static 'driver/media/registration_second.jpg' %}">
+        </div>
+        <div class="info-section">
+            <h1 class="section-title">
+                Завантаження документів
+            </h1>
+            <p class="section-description">
+                Допускаються відскановані документи або їх якісні фото.
+            </p>
+        </div>
+        <form class="registration-form" id="car-documents-form" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="field-group">
+                    <div class="label-section">
+                        <label>{{ field.label }}</label>
+                        <span class="warning-title">Обов'язково</span>
+                    </div>
+                    <div class="additional-info">
+                        {% if forloop.counter == 1 %}
+                            <p>
+                                Фото дійсного постійного українського <b>водійського посвідчення</b> із
+                                відкритою категорією "B" - стороною, де вказані Ваші фото, ім'я та прізвище,
+                                номер документа та дата народження.
+                                <br>
+                                <i>
+                                    Якщо ваше посвідчення водія не має терміну дії(безстрокове) - оберіть 31.12.2099 або
+                                    будь-яку іншу дату в далекому майбутньому.
+                                </i>
+                            </p>
+                        {% elif forloop.counter == 2 %}
+                            <p>
+                                Будь ласка, завантажте Ваше чітке <b>портретне фото</b> (т.зв. "селфі") -
+                                на ній має бути видно лише Ваше обличчя, без сонцезахисних окулярів чи/та головного
+                                убору.
+                            </p>
+                        {% elif forloop.counter == 3 %}
+                            <p>
+                                Фото <b>українського свідоцтва про державну реєстрацію ТЗ</b>(т.зв. "техпаспорта") -
+                                стороною, де вказаний державний номер авто та рік його випуску.
+                            </p>
+                        {% else %}
+                            <p>
+                                Фото сторінки <b>страхового полісу ОСЦПВ ВНТЗ</b> (т.зв. "автоцивілки") або його
+                                електронна версія (.pdf) - у ньому повинні бути зазанчені дані застрахованого авто
+                                (його марка, модель, рік випуску, номерний знак) та строк дії самого полісу.
+                            </p>
+                            <p>
+                                <i>
+                                    Страхування рівня КАСКО також підходить. Якщо Ви належите до визначеної групи
+                                    громадян України, за яких таке страхування здійснює безпосередньо держава -
+                                    завантажте фото Вашого посвідчення у розгорнутому вигляді натомість, а строком дії
+                                    вкажіть 31.12.2099 або будь-яку іншу дату у далекому майбутньому.
+                                </i>
+                            </p>
+                        {% endif %}
+                    </div>
+                    {{ field }}
+                </div>
+            {% endfor %}
+        </form>
+    </section>
+{% endblock %}

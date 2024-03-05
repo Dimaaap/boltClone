@@ -1,0 +1,18 @@
+#registration-second {
+    text-align: center;
+    justify-content: center;
+}
+
+#registration-second .info-section {
+    margin-top: 2%;
+}
+
+#registration-second .info-section h1 {
+    font-weight: 700;
+    font-size: 1.9rem;
+}
+
+#registration-second .info-section p {
+    font-weight: 500;
+    color: gray;
+}

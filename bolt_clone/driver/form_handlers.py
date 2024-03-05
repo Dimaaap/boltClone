@@ -1,9 +1,10 @@
 from django.shortcuts import redirect
+from django.contrib import messages
 from uuid import uuid4
 
 from twilio.rest import Client
 
-from .models import DriverCities
+from .models import DriverCities, Driver, DriverCarModels, DriverCarInfo
 from .db_services import get_data_from_model
 from .services import generate_sms_confirmation_code_service, form_sms_message_service, generate_token
 from .data_storage import DataStorage
@@ -41,3 +42,30 @@ def send_sms_message_service(sms_client, request, phone_number):
     generated_sms_code = generate_sms_confirmation_code_service()
     request.session["otp_code"] = generated_sms_code
     form_sms_message_service(sms_client, generated_sms_code, phone_number)
+
+
+def verification_first_step(request, form):
+    (
+        driver_first_name, driver_last_name, referral_code, driver_has_own_car, driver_no_has_own_car,
+        driver_car, driver_car_model, driver_car_created_year, driver_number_sign, driver_car_color
+    ) = form.cleaned_data.values()
+    try:
+        driver = get_data_from_model(Driver, "driver_email", request.session["email"])
+        driver_car_model = get_data_from_model(DriverCarModels, "model", driver_car_model)
+    except Exception:
+        messages.error(request, "Щось пішло не так")
+    else:
+        new_driver_car_info, created = DriverCarInfo.objects.get_or_create(
+            driver_id=driver,
+            driver_first_name=driver_first_name.capitalize(),
+            driver_last_name=driver_last_name.capitalize(),
+            referral_code=referral_code,
+            driver_has_own_car=driver_has_own_car,
+            driver_car=driver_car_model,
+            driver_number_sign=driver_number_sign.upper(),
+            driver_car_color=driver_car_color
+        )
+        if created:
+            new_driver_car_info.save()
+
+

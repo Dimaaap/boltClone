@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.core.exceptions import ObjectDoesNotExist
 from phonenumber_field.formfields import PhoneNumberField
@@ -60,7 +62,7 @@ class PhoneNumberVerificationForm(forms.Form):
                                                              "id": "otp_code_field"}))
 
 
-class DriverCarInfo(forms.Form):
+class DriverCarInfoForm(forms.Form):
     first_name = forms.CharField(max_length=100, label="Ім'я", required=True,
                                  widget=forms.TextInput(attrs={"class": "form-control",
                                                                "id": "driver-first-name-input-field",
@@ -109,3 +111,38 @@ class DriverCarInfo(forms.Form):
                                     "id": "form-car-color-select-field",
                                     "readonly": "readonly"
                                 }))
+
+    def clean_driver_number_sign(self):
+        driver_number_sign = self.cleaned_data["driver_number_sign"]
+        ukrainian_pattern = r'^([АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ]{2}\s\d{4}\s[АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ]{2})'
+        eu_pattern = r'([A-Z]{1,2}\d{4}\s?[A-Z]{0,2})|(\d{1,4}\s?[A-Z]{2,4})$'
+        if not(re.match(ukrainian_pattern, driver_number_sign) or re.match(eu_pattern, driver_number_sign)):
+            raise forms.ValidationError("Некоректний формат номеру телефону")
+        if len(driver_number_sign) > 8:
+            raise forms.ValidationError("Некоректний формат номеру")
+        return driver_number_sign
+
+
+class DriverCarDocumentsForm(forms.Form):
+    driver_license = forms.FileField(required=True, label="Водійське посвідчення",
+                                     widget=forms.FileInput(attrs={
+                                         "class": "file-field-input",
+                                         "id": "driver-licence"
+                                     }))
+    driver_photo = forms.ImageField(required=True, label="Ваше фото",
+                                    widget=forms.FileInput(attrs={
+                                        "class": "file-field-input",
+                                        "id": "driver-photo"
+                                    }))
+    driver_tech_passport = forms.FileField(required=True, label="Техпаспорт",
+                                           widget=forms.FileInput(attrs={
+                                               "class": "file-field-input",
+                                               "id": "driver-tech-passport"
+                                           }))
+    driver_insurance_policy = forms.FileField(required=True, label="Страховий поліс авто",
+                                              widget=forms.FileInput(attrs={
+                                                  "class": "file-field-input",
+                                                  "id": "driver-insurance-policy"
+                                              }))
+
+
