@@ -16,3 +16,84 @@
     font-weight: 500;
     color: gray;
 }
+
+#registration-second form {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+form .label-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+form .label-section label {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+form .label-section span {
+    color: red;
+    margin-left: 20%;
+    font-weight: 500;
+}
+
+form .field-group {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 5%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+form .additional-info {
+    text-align: left;
+    font-weight: 500;
+    margin-top: 2%;
+}
+
+form .btn-section {
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+form .btn-section #next-step-btn {
+    margin-left: 2%;
+}
+
+form .btn-section .form-button {
+    text-decoration: none;
+    padding: 1.5% 4%;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+form .back-button {
+    background: #F5F5F5;
+    color: black;
+}
+
+form .custom-file-downloader {
+    border: none;
+    padding: 2% 4%;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: -65%;
+    margin-top: 1%;
+}
+
+form input[type='file'] {
+    display: none;
+}
+
+form .submit-btn {
+    color: white;
+    background: #5b68f6;
+}
+
+footer {
+    border-top: 1px solid #F5F5F5
+}

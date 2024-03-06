@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block js_additional %}
-
+    <script src="{% static 'driver/js/registration_second_page/custom_file_downloader.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -33,13 +33,13 @@
                 Допускаються відскановані документи або їх якісні фото.
             </p>
         </div>
-        <form class="registration-form" id="car-documents-form" method="post">
+        <form class="registration-form" id="car-documents-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
                 <div class="field-group">
                     <div class="label-section">
                         <label>{{ field.label }}</label>
-                        <span class="warning-title">Обов'язково</span>
+                        <span class="warning-title">Обов'язково*</span>
                     </div>
                     <div class="additional-info">
                         {% if forloop.counter == 1 %}
@@ -80,9 +80,18 @@
                             </p>
                         {% endif %}
                     </div>
-                    {{ field }}
+                    <div class="file-upload-wrapper">
+                        {{ field }}
+                        <button type="button" class="custom-file-downloader">+Завантажити файл</button>
+                        <span id="custom-text"></span>
+                    </div>
                 </div>
             {% endfor %}
+            <div class="btn-section">
+                <a href="#" class="form-button back-button">Назад</a>
+                <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
+            </div>
         </form>
     </section>
+    {% include './_includes/verification_page/footer.html' %}
 {% endblock %}
