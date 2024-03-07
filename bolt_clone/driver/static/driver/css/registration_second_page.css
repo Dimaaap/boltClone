@@ -97,3 +97,88 @@ form .submit-btn {
 footer {
     border-top: 1px solid #F5F5F5
 }
+
+.dropdown_modal {
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 120%;
+    margin-left: -10%;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown_modal .close {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-left: 90%;
+    cursor: pointer;
+}
+
+.dropdown_modal .sections {
+    display: flex;
+}
+
+.dropdown_modal .document-container {
+    width: 100%;
+}
+
+.dropdown_modal .document-container .doc-image {
+    width: 300px;
+    max-height: 800px;
+}
+
+.dropdown_modal .text-container .modal-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.dropdown_modal .text-container .modal-desc {
+    font-weight: 500;
+    color: gray;
+    text-align: left;
+}
+
+.dropdown_modal .text-container .step {
+    text-align: left;
+    justify-content: left;
+}
+
+.dropdown_modal .text-container .step img {
+    display: inline-block;
+}
+
+.dropdown_modal .text-container .step h5 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.dropdown_modal .text-container .step p {
+    font-weight: 500;
+    color: gray;
+    margin-left: 7%;
+    font-size: 0.9rem;
+    width: 80%;
+    margin-top: -1%;
+}
+
+.dropdown_modal .buttons-container {
+    margin-bottom: 4%;
+    margin-top: 2%;
+}
+
+.dropdown_modal .button-container {
+    padding: 2% 3%;
+    border-radius: 25px;
+    background: #F5F5F5;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.dropdown_modal #photo-correct {
+    margin-left: 1%;
+    color: white;
+    background: #5b68f6;
+}

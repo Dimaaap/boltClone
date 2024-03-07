@@ -14,7 +14,11 @@
             <div class="authorized-title">
                 <h1>З поверненням, {{ user_email }}</h1>
                 <p>Ви б хотіли продовжити вашу реєстрацію?</p>
-                <a href="{% url 'registration_first' '127.0.0.1' %}" id="continue-registration">Продовжити</a>
+                {% if last_page == "first" %}
+                    <a href="{% url 'registration_first' '127.0.0.1' %}" class="continue-registration">Продовжити</a>
+                {% elif last_page == "second" %}
+                    <a href="{% url 'registration_second' '127.0.0.1' %}" class="continue-registration">Продовжити</a>
+                {% endif %}
                 <a href="#" id="start-registration-again">Не ви? Тоді реєструйтесь прямо зараз!</a>
             </div>
         {% endif %}

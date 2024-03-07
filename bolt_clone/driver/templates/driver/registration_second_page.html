@@ -14,7 +14,9 @@
 {% endblock %}
 
 {% block js_additional %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="{% static 'driver/js/registration_second_page/custom_file_downloader.js' %}"></script>
+    <script src="{% static 'driver/js/registration_second_page/file_worker.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -81,6 +83,72 @@
                         {% endif %}
                     </div>
                     <div class="file-upload-wrapper">
+                        <div class="dropdown_modal">
+                            <div class="modal_content">
+                                <span class="close">X</span>
+                                <div class="sections">
+                                    <div class="document-container">
+                                        <h4>Loading...</h4>
+                                    </div>
+                                    <div class="text-container">
+                                        <h3 class="modal-title">
+                                            Перевірити розбірливість
+                                        </h3>
+                                        <p class="modal-desc">
+                                            Переконайтеся, що інформація на фото документа є читабельною,
+                                            чіткою та без розмиття
+                                        </p>
+                                        <div class="step-container">
+                                            <div class="step">
+                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
+                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                                                     alt="check mark" color="#34D186">
+                                                <h5>Увесь документ</h5>
+                                                <p class="step-title">
+                                                    Переконайтесь, що на фото увесь документ вміщається у кадрі.
+                                                    Це допомагає перевірити його швидше.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
+                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                                                     alt="check mark" color="#34D186">
+                                                <h5>Горизонтальний текст</h5>
+                                                <p class="step-title">
+                                                    Текст на документі повинен бути горизонтальним
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
+                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                                                     alt="check mark" color="#34D186">
+                                                <h5>Гарне освітлення</h5>
+                                                <p class="step-title">
+                                                    Темні кімнати та різке світло погано впливають на якість фотографій
+                                                    та ускладнюють аналіз.
+                                                </p>
+                                            </div>
+                                            <div class="step">
+                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
+                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                                                     alt="check mark" color="#34D186">
+                                                <h5>Чіткі фото</h5>
+                                                <p class="step-title">
+                                                    Якщо фото вийшло розмитим, натисніть "Обрати інше фото" та
+                                                    спробуйте ще раз.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttons-container">
+                                    <a href="#" class="button-container" id="choose-other">Обрати інше фото</a>
+                                    <a href="#" class="button-container" id="photo-correct">
+                                        Фото, зроблене мною, є розбірливим
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         {{ field }}
                         <button type="button" class="custom-file-downloader">+Завантажити файл</button>
                         <span id="custom-text"></span>
@@ -88,7 +156,7 @@
                 </div>
             {% endfor %}
             <div class="btn-section">
-                <a href="#" class="form-button back-button">Назад</a>
+                <a href="{% url 'registration_first' device_ip %}" class="form-button back-button">Назад</a>
                 <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
             </div>
         </form>

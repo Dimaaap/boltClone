@@ -148,3 +148,11 @@ def verify_token(token, secret_key=settings.SECRET_KEY):
         return "Token has expired"
     except jwt.InvalidTokenError:
         return "Invalid token"
+
+
+def get_user_last_registration_page(request):
+    if request.session.get("on_second_page"):
+        return "second"
+    elif request.session.get("on_third_page"):
+        return "third"
+    return "first"

@@ -1,18 +1,17 @@
 import json
 
-from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 from twilio.rest import Client
 
-from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm
-from .services import *
-from .models import Driver, DriverCities, DriverCars, DriverCarModels, DriverCarInfo
-from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
 from .data_storage import DataStorage
 from .db_services import get_data_from_model, get_all_data_from_model, filter_data_from_model
+from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
+from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm
+from .models import Driver, DriverCities, DriverCars, DriverCarModels
+from .services import *
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
@@ -37,8 +36,9 @@ def driver_main_page(request):
         form = DriverRegistrationForm(initial={"driver_city": "Київ"})
     countries_list = form_dropdown_cities_window()
     user_email = request.session.get("email", "")
+    last_user_page = get_user_last_registration_page(request)
     context = {"form": form, "countries_list": countries_list, "verification": is_verification,
-               "user_email": user_email}
+               "user_email": user_email, "last_page": last_user_page}
     return render(request, "driver/main_page.html", context)
 
 
@@ -84,6 +84,7 @@ def resend_code_view(request):
 
 
 def registration_first_page(request, device_ip: str):
+    request.session["on_first_page"] = True
     if request.method == "POST":
         form = DriverCarInfoForm(request.POST)
         if form.is_valid():
@@ -101,11 +102,16 @@ def registration_first_page(request, device_ip: str):
 
 
 def registration_second_page(request, device_ip):
+    request.session["on_second_page"] = True
+    try:
+        del request.session["on_first_page"]
+    except KeyError:
+        pass
     if request.method == "POST":
         form = DriverCarDocumentsForm(request.POST)
     else:
         form = DriverCarDocumentsForm
-    context = {"form": form}
+    context = {"form": form, "device_ip": device_ip}
     return render(request, "driver/registration_second_page.html", context)
 
 
