@@ -17,30 +17,30 @@
     color: gray;
 }
 
-#registration-second form {
+#registration-second #car-documents-form {
     width: 60%;
     margin-left: 20%;
     margin-top: 3%;
 }
 
-form .label-section {
+#car-documents-form .label-section {
     display: flex;
     justify-content: space-between;
     align-items: center
 }
 
-form .label-section label {
+#car-documents-form .label-section label {
     font-weight: 500;
     font-size: 1.4rem;
 }
 
-form .label-section span {
+#car-documents-form .label-section span {
     color: red;
     margin-left: 20%;
     font-weight: 500;
 }
 
-form .field-group {
+#car-documents-form .field-group {
     width: 75%;
     margin-left: 12.5%;
     margin-bottom: 5%;
@@ -48,22 +48,22 @@ form .field-group {
     border-bottom: 1px solid #F5F5F5;
 }
 
-form .additional-info {
+#car-documents-form .additional-info {
     text-align: left;
     font-weight: 500;
     margin-top: 2%;
 }
 
-form .btn-section {
+#car-documents-form .btn-section {
     margin-top: 1%;
     margin-bottom: 4%;
 }
 
-form .btn-section #next-step-btn {
+#car-documents-form .btn-section #next-step-btn {
     margin-left: 2%;
 }
 
-form .btn-section .form-button {
+#car-documents-form .btn-section .form-button {
     text-decoration: none;
     padding: 1.5% 4%;
     border: none;
@@ -71,12 +71,12 @@ form .btn-section .form-button {
     font-weight: 600;
 }
 
-form .back-button {
+#car-documents-form .back-button {
     background: #F5F5F5;
     color: black;
 }
 
-form .custom-file-downloader {
+#car-documents-form .custom-file-downloader {
     border: none;
     padding: 2% 4%;
     border-radius: 20px;
@@ -85,11 +85,11 @@ form .custom-file-downloader {
     margin-top: 1%;
 }
 
-form input[type='file'] {
+#car-documents-form input[type='file'] {
     display: none;
 }
 
-form .submit-btn {
+#car-documents-form .submit-btn {
     color: white;
     background: #5b68f6;
 }
@@ -120,11 +120,15 @@ footer {
 
 .dropdown_modal .document-container {
     width: 100%;
+    background: #F5F5F5;
+    margin-bottom: 1%;
+    margin-right: 2%;
 }
 
 .dropdown_modal .document-container .doc-image {
-    width: 300px;
-    max-height: 800px;
+    width: 96%;
+    max-height: 100%;
+    margin-top: 5%;
 }
 
 .dropdown_modal .text-container .modal-title {
@@ -181,4 +185,15 @@ footer {
     margin-left: 1%;
     color: white;
     background: #5b68f6;
+}
+
+.dropdown_modal .no-doc-image {
+    width: 350px;
+    border-radius: 15px;
+    vertical-align: middle;
+    margin-top: 35%;
+}
+
+.hidden {
+    display: none;
 }

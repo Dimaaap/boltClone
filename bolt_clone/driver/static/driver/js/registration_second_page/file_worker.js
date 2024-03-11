@@ -2,33 +2,23 @@ const fileInputs = Array.from(document.querySelectorAll("input[type='file']"));
 const dropdownContainers = Array.from(document.querySelectorAll(".dropdown_modal"));
 const closeButtons = Array.from(document.querySelectorAll(".close"));
 const documentContainers = Array.from(document.querySelectorAll(".document-container"));
+const photoIsCorrectBtn = Array.from(document.querySelectorAll(".second-btn"));
+const documentExpiredForm = document.getElementById("document-data-form");
+const hiddenTextContainers = Array.from(document.querySelectorAll(".hidden-text-container"));
 
-
-/*fileInputs.forEach((fileInput) => {
-    fileInput.addEventListener("change", () => {
-        if(fileInput.files.length > 0){
-            const selectedFile = fileInput.files[0];
-            let inputIndex = fileInputs.indexOf(fileInput);
-            const reader = new FileReader();
-            dropdownContainers[inputIndex].style.display = "block";
-            reader.onload = (e) => {
-                console.log("Here")
-                console.log(e.target);
-                documentContainers[inputIndex].innerHTML = `<img src="${e.target.result}" alt="Uploaded Document"
-                style="width: 300px;"/>`
-            }
-            reader.readAsDataURL(selectedFile)
-        }
-    })
-})
-*/
 
 fileInputs.forEach((fileInput) => {
     fileInput.addEventListener("change", () => {
-        if(fileInput.files.length > 0){
-            const selectedFile = fileInput.files[0];
-            let inputIndex = fileInputs.indexOf(fileInput)
-            dropdownContainers[inputIndex].style.display = "block";
+        const selectedFile = fileInput.files[0];
+        let inputIndex = fileInputs.indexOf(fileInput);
+
+        const documentContainer = documentContainers[inputIndex];
+        while (documentContainer.firstChild) {
+            documentContainer.removeChild(documentContainer.firstChild);
+        }
+
+        dropdownContainers[inputIndex].style.display = "block";
+        if(selectedFile){
             if(selectedFile.type === "application/pdf"){
                 const reader = new FileReader();
                 reader.onload = (e) => {
@@ -44,36 +34,70 @@ fileInputs.forEach((fileInput) => {
 
                         const renderContext = {
                             canvasContext: context,
-                            viewport: viewport,
+                            viewport: viewport
                         };
-
-                        const renderTask = page.render(renderContext);
-                        renderTask.promise.then(() => {
+                        const readerTask = page.render(renderContext);
+                        readerTask.promise.then(() => {
                             const documentContainer = documentContainers[inputIndex];
                             documentContainer.innerHTML = `<img class="doc-image"
-                            src="${canvas.toDataURL()}" alt="Uploaded Document"/>`;
+                                src="${canvas.toDataURL()}" alt="Uploaded Document"/>`;
                         })
                     })
                 }
                 reader.readAsArrayBuffer(selectedFile);
-            } else if (selectedFile.type.startsWith("image/")){
+            } else if(selectedFile.type.startsWith("image/")){
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     const documentContainer = documentContainers[inputIndex];
                     documentContainer.innerHTML = `<img class="no-doc-image"
-                    src="${e.target.result}" alt="Uploaded Document"/>`;
+                        src="${e.target.result}" alt="Uploaded Document"/>`;
                 };
                 reader.readAsDataURL(selectedFile);
             } else {
-                console.error("Unsupported file type")
+                console.error("Unsupported file type");
             }
         }
     });
 });
 
+photoIsCorrectBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        let dropdown = dropdownContainers[photoIsCorrectBtn.indexOf(btn)];
+        updateModalContent(dropdown);
+    })
+})
+
+const updateModalContent = (dropdown) => {
+    const textContainer = dropdown.querySelector("#text-container");
+    const hiddenText = dropdown.querySelector("#hidden-text-container");
+    const hiddenModalTitle = hiddenText.querySelector("h3");
+    const hiddenModalDesc = hiddenText.querySelector("p");
+
+    textContainer.classList.add("hidden");
+    hiddenText.classList.remove("hidden");
+    hiddenModalTitle.classList.remove("hidden");
+    hiddenModalDesc.classList.remove("hidden");
+    hiddenText.style.width = "100%";
+
+}
+
 closeButtons.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", (event) => {
+        event.preventDefault();
         let btnIndex = closeButtons.indexOf(closeBtn);
-        dropdownContainers[btnIndex].style.display = "none";
+        let dropdown = dropdownContainers[btnIndex];
+        dropdown.style.display = "none";
+
+        const textContainer = dropdown.querySelector("#text-container");
+        const hiddenText = dropdown.querySelector("#hidden-text-container");
+        const hiddenModalTitle = hiddenText.querySelector("h3");
+        const hiddenModalDesc = hiddenText.querySelector("p");
+
+        textContainer.classList.remove("hidden");
+        hiddenText.classList.add("hidden");
+        hiddenModalTitle.classList.add("hidden");
+        hiddenModalDesc.classList.add("hidden");
+
+        hiddenText.style.width = "";
     })
 })

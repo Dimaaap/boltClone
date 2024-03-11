@@ -146,3 +146,9 @@ class DriverCarDocumentsForm(forms.Form):
                                               }))
 
 
+class DriverDocumentsExpirationForm(forms.Form):
+
+    expiration_date = forms.DateField(label="Термін дії до", required=True, widget=forms.DateInput(
+        attrs={"class": "form-control", "id": "document-expiration-time-field"}
+    ))
+

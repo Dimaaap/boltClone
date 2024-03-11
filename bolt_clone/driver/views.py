@@ -6,11 +6,10 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from twilio.rest import Client
 
-from .data_storage import DataStorage
-from .db_services import get_data_from_model, get_all_data_from_model, filter_data_from_model
+from .db_services import get_all_data_from_model, filter_data_from_model
 from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
-from .forms import DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm
-from .models import Driver, DriverCities, DriverCars, DriverCarModels
+from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm,
+                    DriverDocumentsExpirationForm)
 from .services import *
 
 data_storage = DataStorage()
@@ -110,8 +109,9 @@ def registration_second_page(request, device_ip):
     if request.method == "POST":
         form = DriverCarDocumentsForm(request.POST)
     else:
-        form = DriverCarDocumentsForm
-    context = {"form": form, "device_ip": device_ip}
+        form = DriverCarDocumentsForm()
+    exp_form = DriverDocumentsExpirationForm()
+    context = {"form": form, "device_ip": device_ip, "exp_form": exp_form}
     return render(request, "driver/registration_second_page.html", context)
 
 

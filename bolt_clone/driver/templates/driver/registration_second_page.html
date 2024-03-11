@@ -90,7 +90,7 @@
                                     <div class="document-container">
                                         <h4>Loading...</h4>
                                     </div>
-                                    <div class="text-container">
+                                    <div class="text-container" id="text-container">
                                         <h3 class="modal-title">
                                             Перевірити розбірливість
                                         </h3>
@@ -140,10 +140,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="text-container" id="hidden-text-container">
+                                        <h3 class="modal-title hidden hidden-modal-title">
+                                            Деталі документу
+                                        </h3>
+                                        <p class="modal-desc hidden">
+                                            Будь ласка, надайте наступну інформацію про цей документ
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="buttons-container">
                                     <a href="#" class="button-container" id="choose-other">Обрати інше фото</a>
-                                    <a href="#" class="button-container" id="photo-correct">
+                                    <a href="javascript:void(0);" class="button-container second-btn" id="photo-correct">
                                         Фото, зроблене мною, є розбірливим
                                     </a>
                                 </div>
@@ -159,6 +167,14 @@
                 <a href="{% url 'registration_first' device_ip %}" class="form-button back-button">Назад</a>
                 <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
             </div>
+        </form>
+        <form class="hidden" id="document-data-form" method="post">
+            {% csrf_token %}
+            {% for field in exp_form %}
+                {{ field.label }}
+                {{ field }}
+                {{ field.errors }}
+            {% endfor %}
         </form>
     </section>
     {% include './_includes/verification_page/footer.html' %}
