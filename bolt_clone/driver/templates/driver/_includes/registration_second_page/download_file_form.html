@@ -1,0 +1,60 @@
+ <form class="registration-form" id="car-documents-form" method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="field-group">
+                    <div class="label-section">
+                        <label>{{ field.label }}</label>
+                        <span class="warning-title">Обов'язково*</span>
+                    </div>
+                    <div class="additional-info">
+                        {% if forloop.counter == 1 %}
+                            <p>
+                                Фото дійсного постійного українського <b>водійського посвідчення</b> із
+                                відкритою категорією "B" - стороною, де вказані Ваші фото, ім'я та прізвище,
+                                номер документа та дата народження.
+                                <br>
+                                <i>
+                                    Якщо ваше посвідчення водія не має терміну дії(безстрокове) - оберіть 31.12.2099 або
+                                    будь-яку іншу дату в далекому майбутньому.
+                                </i>
+                            </p>
+                        {% elif forloop.counter == 2 %}
+                            <p>
+                                Будь ласка, завантажте Ваше чітке <b>портретне фото</b> (т.зв. "селфі") -
+                                на ній має бути видно лише Ваше обличчя, без сонцезахисних окулярів чи/та головного
+                                убору.
+                            </p>
+                        {% elif forloop.counter == 3 %}
+                            <p>
+                                Фото <b>українського свідоцтва про державну реєстрацію ТЗ</b>(т.зв. "техпаспорта") -
+                                стороною, де вказаний державний номер авто та рік його випуску.
+                            </p>
+                        {% else %}
+                            <p>
+                                Фото сторінки <b>страхового полісу ОСЦПВ ВНТЗ</b> (т.зв. "автоцивілки") або його
+                                електронна версія (.pdf) - у ньому повинні бути зазанчені дані застрахованого авто
+                                (його марка, модель, рік випуску, номерний знак) та строк дії самого полісу.
+                            </p>
+                            <p>
+                                <i>
+                                    Страхування рівня КАСКО також підходить. Якщо Ви належите до визначеної групи
+                                    громадян України, за яких таке страхування здійснює безпосередньо держава -
+                                    завантажте фото Вашого посвідчення у розгорнутому вигляді натомість, а строком дії
+                                    вкажіть 31.12.2099 або будь-яку іншу дату у далекому майбутньому.
+                                </i>
+                            </p>
+                        {% endif %}
+                    </div>
+                    <div class="file-upload-wrapper">
+                        {% include './form_dropdown_modal.html' %}
+                        {{ field }}
+                        <button type="button" class="custom-file-downloader">+Завантажити файл</button>
+                        <span id="custom-text"></span>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="btn-section">
+                <a href="{% url 'registration_first' device_ip %}" class="form-button back-button">Назад</a>
+                <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
+            </div>
+        </form>

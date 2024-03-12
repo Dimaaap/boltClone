@@ -1,0 +1,86 @@
+<div class="dropdown_modal">
+    <div class="modal_content">
+        <span class="close">X</span>
+        <div class="sections">
+            <div class="document-container">
+                <h4>Loading...</h4>
+            </div>
+            <div class="text-container" id="text-container">
+                <h3 class="modal-title">
+                    Перевірити розбірливість
+                </h3>
+                <p class="modal-desc">
+                    Переконайтеся, що інформація на фото документа є читабельною,
+                    чіткою та без розмиття
+                </p>
+                <div class="step-container">
+                    <div class="step">
+                        <img width="24" height="24" class="object-contain max-w-none mt-1"
+                             src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                             alt="check mark" color="#34D186">
+                        <h5>Увесь документ</h5>
+                        <p class="step-title">
+                            Переконайтесь, що на фото увесь документ вміщається у кадрі.
+                            Це допомагає перевірити його швидше.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <img width="24" height="24" class="object-contain max-w-none mt-1"
+                             src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                             alt="check mark" color="#34D186">
+                        <h5>Горизонтальний текст</h5>
+                        <p class="step-title">
+                            Текст на документі повинен бути горизонтальним
+                        </p>
+                    </div>
+                    <div class="step">
+                        <img width="24" height="24" class="object-contain max-w-none mt-1"
+                             src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                             alt="check mark" color="#34D186">
+                        <h5>Гарне освітлення</h5>
+                        <p class="step-title">
+                            Темні кімнати та різке світло погано впливають на якість фотографій
+                            та ускладнюють аналіз.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <img width="24" height="24" class="object-contain max-w-none mt-1"
+                             src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
+                             alt="check mark" color="#34D186">
+                        <h5>Чіткі фото</h5>
+                        <p class="step-title">
+                            Якщо фото вийшло розмитим, натисніть "Обрати інше фото" та
+                            спробуйте ще раз.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-container" id="hidden-text-container">
+                <h3 class="modal-title hidden hidden-modal-title">
+                    Деталі документу
+                </h3>
+                <p class="modal-desc hidden">
+                    Будь ласка, надайте наступну інформацію про цей документ
+                </p>
+                <div class="document-date-input hidden">
+                    <label class="document-data-input-label">
+                        Термін дії до
+                    </label>
+                    <input type="date" class="date-input" id="date-input" value="">
+                    <div class="input-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <a href="javascript:void(0);" class="button-container choose-other" id="choose-other">
+                Обрати інше фото
+            </a>
+            <a href="javascript:void(0);" class="button-container second-btn" id="photo-correct">
+                Фото, зроблене мною, є розбірливим
+            </a>
+        </div>
+        <div class="btn-section hidden">
+            <button class="button-container agree-btn" id="agree-btn">Підтвердити</button>
+        </div>
+    </div>
+</div>

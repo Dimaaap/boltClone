@@ -8,8 +8,7 @@ from twilio.rest import Client
 
 from .db_services import get_all_data_from_model, filter_data_from_model
 from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
-from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm,
-                    DriverDocumentsExpirationForm)
+from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm)
 from .services import *
 
 data_storage = DataStorage()
@@ -110,9 +109,13 @@ def registration_second_page(request, device_ip):
         form = DriverCarDocumentsForm(request.POST)
     else:
         form = DriverCarDocumentsForm()
-    exp_form = DriverDocumentsExpirationForm()
-    context = {"form": form, "device_ip": device_ip, "exp_form": exp_form}
+    context = {"form": form, "device_ip": device_ip}
     return render(request, "driver/registration_second_page.html", context)
+
+
+@csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
+def save_file_view(request, field_name: str, exp_time: str):
+    print("Getting AJAX request")
 
 
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY

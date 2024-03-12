@@ -70,7 +70,8 @@ class DriverCarInfo(models.Model):
     referral_code = models.CharField(max_length=20, null=True, default="")
     driver_has_own_car = models.BooleanField(default=True)
     driver_car = models.ForeignKey(DriverCarModels, on_delete=models.CASCADE, default="")
-    driver_car_created_year = models.CharField(max_length=4, choices=data_storage.CAR_CREATED_YEAR_LIST,
+    driver_car_created_year = models.CharField(max_length=4,
+                                               choices=data_storage.CAR_CREATED_YEAR_LIST,
                                                null=True, blank=True)
     driver_number_sign = models.CharField(max_length=8, null=True, default="")
     driver_car_color = models.CharField(max_length=50, choices=data_storage.CAR_COLORS_LIST)
@@ -82,10 +83,12 @@ class DriverCarInfo(models.Model):
 class DriverCarDocuments(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     driver_car_id = models.ForeignKey(DriverCarInfo, on_delete=models.CASCADE)
-    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/")
-    driver_license_expiration_time = models.DateField(auto_now=True)
-    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/")
-    driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/")
-    driver_tech_passport_expiration_time = models.DateField(auto_now=True)
-    insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/")
-    driver_insurance_policy = models.DateField(auto_now=True)
+    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/", null=True, default=None)
+    driver_license_expiration_time = models.DateField(auto_now=True, null=True)
+    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/", null=True, default=None)
+    driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/",
+                                            null=True, default=None)
+    driver_tech_passport_expiration_time = models.DateField(auto_now=True, null=True)
+    insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/",
+                                        null=True, default=None)
+    driver_insurance_policy_expiration_time = models.DateField(auto_now=True, null=True)

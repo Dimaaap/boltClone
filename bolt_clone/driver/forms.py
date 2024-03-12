@@ -127,28 +127,24 @@ class DriverCarDocumentsForm(forms.Form):
     driver_license = forms.FileField(required=True, label="Водійське посвідчення",
                                      widget=forms.FileInput(attrs={
                                          "class": "file-field-input",
-                                         "id": "driver-licence"
+                                         "id": "driver-licence",
+                                         "accept": "image/*, application/pdf"
                                      }))
     driver_photo = forms.ImageField(required=True, label="Ваше фото",
                                     widget=forms.FileInput(attrs={
                                         "class": "file-field-input",
-                                        "id": "driver-photo"
+                                        "id": "driver-photo",
+                                        "accept": "image/*"
                                     }))
     driver_tech_passport = forms.FileField(required=True, label="Техпаспорт",
                                            widget=forms.FileInput(attrs={
                                                "class": "file-field-input",
-                                               "id": "driver-tech-passport"
+                                               "id": "driver-tech-passport",
+                                               "accept": "image/*, application/pdf"
                                            }))
     driver_insurance_policy = forms.FileField(required=True, label="Страховий поліс авто",
                                               widget=forms.FileInput(attrs={
                                                   "class": "file-field-input",
-                                                  "id": "driver-insurance-policy"
+                                                  "id": "driver-insurance-policy",
+                                                  "accept": "image/*, application/pdf"
                                               }))
-
-
-class DriverDocumentsExpirationForm(forms.Form):
-
-    expiration_date = forms.DateField(label="Термін дії до", required=True, widget=forms.DateInput(
-        attrs={"class": "form-control", "id": "document-expiration-time-field"}
-    ))
-

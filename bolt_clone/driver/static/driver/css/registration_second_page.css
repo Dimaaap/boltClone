@@ -123,6 +123,7 @@ footer {
     background: #F5F5F5;
     margin-bottom: 1%;
     margin-right: 2%;
+    margin-left: 2%;
 }
 
 .dropdown_modal .document-container .doc-image {
@@ -172,13 +173,21 @@ footer {
     margin-top: 2%;
 }
 
-.dropdown_modal .button-container {
+.dropdown_modal .button-container,
+#agree-btn {
     padding: 2% 3%;
     border-radius: 25px;
     background: #F5F5F5;
     text-decoration: none;
     color: black;
     font-weight: 600;
+}
+
+#agree-btn {
+    border: none;
+    background: #5b68f6;
+    color: white;
+    margin-top: 3%;
 }
 
 .dropdown_modal #photo-correct {
@@ -196,4 +205,31 @@ footer {
 
 .hidden {
     display: none;
+}
+
+.dropdown_modal .document-date-input {
+    text-align: left;
+    justify-content: left;
+}
+
+.dropdown_modal .date-input {
+    width: 90%;
+    height: 50px;
+    padding: 1% 3%;
+    background: #F5F5F5;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.dropdown_modal .document-data-input-label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1%;
+}
+
+.dropdown_modal .input-errors {
+    color: red;
+    font-weight: 500;
+    margin-top: 1%;
 }

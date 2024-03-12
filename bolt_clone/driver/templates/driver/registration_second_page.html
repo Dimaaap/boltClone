@@ -17,6 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="{% static 'driver/js/registration_second_page/custom_file_downloader.js' %}"></script>
     <script src="{% static 'driver/js/registration_second_page/file_worker.js' %}"></script>
+    <script src="{% static 'driver/js/registration_second_page/check_input_date.js' %}"></script>
+    <script src="{% static 'driver/js/registration_second_page/choose_other_file.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -35,147 +37,7 @@
                 Допускаються відскановані документи або їх якісні фото.
             </p>
         </div>
-        <form class="registration-form" id="car-documents-form" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-                <div class="field-group">
-                    <div class="label-section">
-                        <label>{{ field.label }}</label>
-                        <span class="warning-title">Обов'язково*</span>
-                    </div>
-                    <div class="additional-info">
-                        {% if forloop.counter == 1 %}
-                            <p>
-                                Фото дійсного постійного українського <b>водійського посвідчення</b> із
-                                відкритою категорією "B" - стороною, де вказані Ваші фото, ім'я та прізвище,
-                                номер документа та дата народження.
-                                <br>
-                                <i>
-                                    Якщо ваше посвідчення водія не має терміну дії(безстрокове) - оберіть 31.12.2099 або
-                                    будь-яку іншу дату в далекому майбутньому.
-                                </i>
-                            </p>
-                        {% elif forloop.counter == 2 %}
-                            <p>
-                                Будь ласка, завантажте Ваше чітке <b>портретне фото</b> (т.зв. "селфі") -
-                                на ній має бути видно лише Ваше обличчя, без сонцезахисних окулярів чи/та головного
-                                убору.
-                            </p>
-                        {% elif forloop.counter == 3 %}
-                            <p>
-                                Фото <b>українського свідоцтва про державну реєстрацію ТЗ</b>(т.зв. "техпаспорта") -
-                                стороною, де вказаний державний номер авто та рік його випуску.
-                            </p>
-                        {% else %}
-                            <p>
-                                Фото сторінки <b>страхового полісу ОСЦПВ ВНТЗ</b> (т.зв. "автоцивілки") або його
-                                електронна версія (.pdf) - у ньому повинні бути зазанчені дані застрахованого авто
-                                (його марка, модель, рік випуску, номерний знак) та строк дії самого полісу.
-                            </p>
-                            <p>
-                                <i>
-                                    Страхування рівня КАСКО також підходить. Якщо Ви належите до визначеної групи
-                                    громадян України, за яких таке страхування здійснює безпосередньо держава -
-                                    завантажте фото Вашого посвідчення у розгорнутому вигляді натомість, а строком дії
-                                    вкажіть 31.12.2099 або будь-яку іншу дату у далекому майбутньому.
-                                </i>
-                            </p>
-                        {% endif %}
-                    </div>
-                    <div class="file-upload-wrapper">
-                        <div class="dropdown_modal">
-                            <div class="modal_content">
-                                <span class="close">X</span>
-                                <div class="sections">
-                                    <div class="document-container">
-                                        <h4>Loading...</h4>
-                                    </div>
-                                    <div class="text-container" id="text-container">
-                                        <h3 class="modal-title">
-                                            Перевірити розбірливість
-                                        </h3>
-                                        <p class="modal-desc">
-                                            Переконайтеся, що інформація на фото документа є читабельною,
-                                            чіткою та без розмиття
-                                        </p>
-                                        <div class="step-container">
-                                            <div class="step">
-                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
-                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
-                                                     alt="check mark" color="#34D186">
-                                                <h5>Увесь документ</h5>
-                                                <p class="step-title">
-                                                    Переконайтесь, що на фото увесь документ вміщається у кадрі.
-                                                    Це допомагає перевірити його швидше.
-                                                </p>
-                                            </div>
-                                            <div class="step">
-                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
-                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
-                                                     alt="check mark" color="#34D186">
-                                                <h5>Горизонтальний текст</h5>
-                                                <p class="step-title">
-                                                    Текст на документі повинен бути горизонтальним
-                                                </p>
-                                            </div>
-                                            <div class="step">
-                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
-                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
-                                                     alt="check mark" color="#34D186">
-                                                <h5>Гарне освітлення</h5>
-                                                <p class="step-title">
-                                                    Темні кімнати та різке світло погано впливають на якість фотографій
-                                                    та ускладнюють аналіз.
-                                                </p>
-                                            </div>
-                                            <div class="step">
-                                                <img width="24" height="24" class="object-contain max-w-none mt-1"
-                                                     src="https://signup.bolt.eu/driver/check-mark.bb80ee32.svg"
-                                                     alt="check mark" color="#34D186">
-                                                <h5>Чіткі фото</h5>
-                                                <p class="step-title">
-                                                    Якщо фото вийшло розмитим, натисніть "Обрати інше фото" та
-                                                    спробуйте ще раз.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-container" id="hidden-text-container">
-                                        <h3 class="modal-title hidden hidden-modal-title">
-                                            Деталі документу
-                                        </h3>
-                                        <p class="modal-desc hidden">
-                                            Будь ласка, надайте наступну інформацію про цей документ
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="buttons-container">
-                                    <a href="#" class="button-container" id="choose-other">Обрати інше фото</a>
-                                    <a href="javascript:void(0);" class="button-container second-btn" id="photo-correct">
-                                        Фото, зроблене мною, є розбірливим
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {{ field }}
-                        <button type="button" class="custom-file-downloader">+Завантажити файл</button>
-                        <span id="custom-text"></span>
-                    </div>
-                </div>
-            {% endfor %}
-            <div class="btn-section">
-                <a href="{% url 'registration_first' device_ip %}" class="form-button back-button">Назад</a>
-                <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
-            </div>
-        </form>
-        <form class="hidden" id="document-data-form" method="post">
-            {% csrf_token %}
-            {% for field in exp_form %}
-                {{ field.label }}
-                {{ field }}
-                {{ field.errors }}
-            {% endfor %}
-        </form>
+        {% include './_includes/registration_second_page/download_file_form.html' %}
     </section>
     {% include './_includes/verification_page/footer.html' %}
 {% endblock %}
