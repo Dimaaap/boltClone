@@ -1,15 +1,21 @@
 import json
+import base64
+from uuid import uuid4
 
 from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
+from django.core.files.base import ContentFile
+from django.core.exceptions import FieldDoesNotExist
+
 from twilio.rest import Client
 
 from .db_services import get_all_data_from_model, filter_data_from_model
 from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
 from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm)
 from .services import *
+from .models import DriverCarDocuments, Driver, DriverCarInfo
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
@@ -95,6 +101,7 @@ def registration_first_page(request, device_ip: str):
     cars_list = get_all_data_from_model(DriverCars)
     year_list = [int(year) for year, _ in data_storage.CAR_CREATED_YEAR_LIST]
     car_color_list = [color for color, _ in data_storage.CAR_COLORS_LIST]
+    request.session["device_ip"] = device_ip
     context = {"form": form, "cars": cars_list, "year_list": year_list, "color_list": car_color_list}
     return render(request, "driver/registration_first_page.html", context)
 
@@ -113,9 +120,52 @@ def registration_second_page(request, device_ip):
     return render(request, "driver/registration_second_page.html", context)
 
 
+def create_random_file_name_service() -> str:
+    file_name = uuid4()
+    return str(file_name)
+
+
+def decoded_request_body_service(file_url: str) -> ContentFile:
+    image_format, image_str = file_url.split(";base64,")
+    image_extension = image_format.split('/')[-1]
+    data = base64.b64decode(image_str)
+    file_name = create_random_file_name_service()
+    image_file = ContentFile(data, name=f"f{file_name}.{image_extension}")
+    return image_file
+
+
+def save_file_in_model_service(request, field_name: str, exp_time: str, file_url: str):
+    image_file = decoded_request_body_service(file_url)
+    current_driver = get_driver_by_email_service(request)
+    driver_car_info = get_driver_car_info_by_driver_service(current_driver)
+    driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver_car_info)
+    try:
+        image_model_field = DriverCarDocuments._meta.get_field(field_name)
+    except FieldDoesNotExist:
+        print("Field does not exist")
+    else:
+        if field_name != "driver_photo":
+            image_expiration_date = DriverCarDocuments._meta.get_field(f"{field_name}_expiration_time")
+
+
+
+def get_driver_by_email_service(request):
+    driver_email = request.session.get("email")
+    driver = get_data_from_model(Driver, "driver_email", driver_email)
+    return driver
+
+
+def get_driver_car_info_by_driver_service(driver):
+    driver_car_info = get_data_from_model(DriverCarInfo, "driver_id", driver)
+    return driver_car_info
+
+
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
 def save_file_view(request, field_name: str, exp_time: str):
-    print("Getting AJAX request")
+    if request.method == "POST":
+        file = request.POST.get("file")
+        image_file = save_file_in_model_service(request, field_name, exp_time, file)
+    return JsonResponse({"message": "File saved success", "status": "success"})
 
 
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY

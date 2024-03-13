@@ -89,6 +89,8 @@ class DriverCarDocuments(models.Model):
     driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/",
                                             null=True, default=None)
     driver_tech_passport_expiration_time = models.DateField(auto_now=True, null=True)
-    insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/",
+    driver_insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/",
                                         null=True, default=None)
     driver_insurance_policy_expiration_time = models.DateField(auto_now=True, null=True)
+
+
