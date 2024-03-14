@@ -2,6 +2,7 @@ import json
 import base64
 from uuid import uuid4
 
+import pyshorteners
 from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -133,12 +134,18 @@ def decoded_request_body_service(file_url: str) -> ContentFile:
     image_file = ContentFile(data, name=f"f{file_name}.{image_extension}")
     return image_file
 
+def shorten_image_url(image_url: str) -> str:
+    s = pyshorteners.Shortener()
+    shorten_url = s.chilpit.short(image_url)
+    return shorten_url
+
 
 def save_file_in_model_service(request, field_name: str, exp_time: str, file_url: str):
     image_file = decoded_request_body_service(file_url)
     current_driver = get_driver_by_email_service(request)
     driver_car_info = get_driver_car_info_by_driver_service(current_driver)
     driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver_car_info)
+    file_url = shorten_image_url(file_url)
     try:
         image_model_field = DriverCarDocuments._meta.get_field(field_name)
     except FieldDoesNotExist:
@@ -146,6 +153,24 @@ def save_file_in_model_service(request, field_name: str, exp_time: str, file_url
     else:
         if field_name != "driver_photo":
             image_expiration_date = DriverCarDocuments._meta.get_field(f"{field_name}_expiration_time")
+            if not driver_docs:
+                new_car_doc = DriverCarDocuments()
+                setattr(new_car_doc, image_model_field.name, file_url)
+                setattr(new_car_doc, image_expiration_date.name, exp_time)
+                new_car_doc.driver_car_id = driver_car_info
+                new_car_doc.save()
+                print("In new_car_doc container")
+            else:
+                setattr(driver_docs, image_model_field.name, file_url)
+                setattr(driver_docs, image_expiration_date.name, exp_time)
+                driver_docs.save()
+                print("In driver_docs container")
+        else:
+            if not driver_docs:
+                new_car = DriverCarDocuments.objects.create(driver_car_id=driver_car_info, driver_photo=file_url)
+                print("In not driver_docs container")
+                new_car.save()
+        print("dsadsadsa")
 
 
 

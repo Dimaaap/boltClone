@@ -83,14 +83,15 @@ class DriverCarInfo(models.Model):
 class DriverCarDocuments(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     driver_car_id = models.ForeignKey(DriverCarInfo, on_delete=models.CASCADE)
-    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/", null=True, default=None)
+    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/", null=True, default=None, max_length=500)
     driver_license_expiration_time = models.DateField(auto_now=True, null=True)
-    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/", null=True, default=None)
+    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/", null=True, default=None, max_length=500)
     driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/",
-                                            null=True, default=None)
+                                            null=True, default=None, max_length=500)
     driver_tech_passport_expiration_time = models.DateField(auto_now=True, null=True)
     driver_insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/",
-                                        null=True, default=None)
+                                        null=True, default=None, max_length=500)
     driver_insurance_policy_expiration_time = models.DateField(auto_now=True, null=True)
 
-
+    def __str__(self):
+        return self.driver_tech_passport.upload_to
