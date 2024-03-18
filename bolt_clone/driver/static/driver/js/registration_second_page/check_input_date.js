@@ -3,7 +3,7 @@ const dropdownArray = Array.from(document.querySelectorAll(".dropdown_modal"));
 const dateInputFieldArray = Array.from(document.querySelectorAll(".date-input"));
 const errorContainerArray = Array.from(document.querySelectorAll(".input-errors"));
 const uploadFileFieldArray = Array.from(document.querySelectorAll("input[type='file']"));
-const documentContainerArray = Array.from(document.querySelectorAll(".document-container"))
+const documentContainerArray = Array.from(document.querySelectorAll(".document-container"));
 
 
 let todayDay = new Date();
@@ -47,8 +47,6 @@ const getCookie = (name) => {
     return cookieValue ? decodeURIComponent(cookieValue) : null;
 }
 
-//////////////// ФАЙЛ ТРЕБА ЗАБИРАТИ ЧЕРЕЗ docs //////////////////////
-
 sendInputDateBtnArray.forEach(btn => {
     let btnIndex = sendInputDateBtnArray.indexOf(btn);
     let dateInput = dateInputFieldArray[btnIndex];
@@ -70,8 +68,9 @@ sendInputDateBtnArray.forEach(btn => {
             if(inputDate <= todayDay) {
                 errorContainer.innerText = "Неприпустима дата строку дії. Переконайтесь, що обрана дата в майбутньому"
             } else {
-                console.log("Sending AJAX request...")
                 sendAJAXRequest(file, dateValue, fileInputName);
+                dropdownArray[btnIndex].style.display = "none";
+
             }
         } else {
             errorContainer.innerText = "Поле обов'язкове для заповнення"

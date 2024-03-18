@@ -83,15 +83,44 @@ class DriverCarInfo(models.Model):
 class DriverCarDocuments(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     driver_car_id = models.ForeignKey(DriverCarInfo, on_delete=models.CASCADE)
-    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/", null=True, default=None, max_length=500)
-    driver_license_expiration_time = models.DateField(auto_now=True, null=True)
-    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/", null=True, default=None, max_length=500)
+    driver_license = models.FileField(upload_to="docs/license/%Y/%m/%d/", null=True, default=None, max_length=1000)
+    driver_license_expiration_time = models.DateField(auto_now=False, null=True)
+    driver_photo = models.FileField(upload_to="docs/photos/%Y/%m/%d/", null=True, default=None, max_length=1000)
     driver_tech_passport = models.FileField(upload_to="docs/tech_passports/%Y/%m/%d/",
-                                            null=True, default=None, max_length=500)
-    driver_tech_passport_expiration_time = models.DateField(auto_now=True, null=True)
+                                            null=True, default=None, max_length=1000)
+    driver_tech_passport_expiration_time = models.DateField(auto_now=False, null=True)
     driver_insurance_policy = models.FileField(upload_to="docs/insurance_policy/%Y/%m/%d/",
-                                        null=True, default=None, max_length=500)
-    driver_insurance_policy_expiration_time = models.DateField(auto_now=True, null=True)
+                                        null=True, default=None, max_length=1000)
+    driver_insurance_policy_expiration_time = models.DateField(auto_now=False, null=True)
 
     def __str__(self):
-        return self.driver_tech_passport.upload_to
+        return (f"{self.driver_car_id} --- {self.driver_license} --- {self.driver_photo}"
+                f"--- {self.driver_tech_passport} --- {self.driver_insurance_policy}")
+
+    def is_file_uploaded(self, field_name):
+        file_field = getattr(self, field_name)
+        return bool(file_field)
+
+
+    def check_uploaded_file(self):
+        uploaded_files = []
+        for field in self._meta.fields:
+            if isinstance(field, (models.FileField, models.ImageField)):
+                field_name = field.name
+                if self.is_file_uploaded(field_name):
+                    uploaded_files.append(field_name)
+                else:
+                    uploaded_files.append(None)
+        return uploaded_files
+
+
+    def get_model_field_values(self):
+        files = {}
+        for file in self.check_uploaded_file():
+            if file:
+                uploaded_file = getattr(self, file)
+                files[file] = uploaded_file
+        return files
+
+    def get_field_value_by_title(self, field_name: str):
+        return getattr(self, field_name)

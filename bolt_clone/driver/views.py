@@ -1,14 +1,8 @@
 import json
-import base64
-from uuid import uuid4
 
-import pyshorteners
-from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from django.core.files.base import ContentFile
-from django.core.exceptions import FieldDoesNotExist
 
 from twilio.rest import Client
 
@@ -16,7 +10,7 @@ from .db_services import get_all_data_from_model, filter_data_from_model
 from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
 from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm)
 from .services import *
-from .models import DriverCarDocuments, Driver, DriverCarInfo
+from .models import Driver
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
@@ -117,79 +111,19 @@ def registration_second_page(request, device_ip):
         form = DriverCarDocumentsForm(request.POST)
     else:
         form = DriverCarDocumentsForm()
-    context = {"form": form, "device_ip": device_ip}
+    driver = GetDriverInfoHelper.get_driver_car_info_by_email_service(request)
+    driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver)
+    updated_fields = driver_docs.get_model_field_values()
+    context = {"form": form, "device_ip": device_ip, "driver_docs": driver_docs, "updated_fields": updated_fields}
     return render(request, "driver/registration_second_page.html", context)
-
-
-def create_random_file_name_service() -> str:
-    file_name = uuid4()
-    return str(file_name)
-
-
-def decoded_request_body_service(file_url: str) -> ContentFile:
-    image_format, image_str = file_url.split(";base64,")
-    image_extension = image_format.split('/')[-1]
-    data = base64.b64decode(image_str)
-    file_name = create_random_file_name_service()
-    image_file = ContentFile(data, name=f"f{file_name}.{image_extension}")
-    return image_file
-
-def shorten_image_url(image_url: str) -> str:
-    s = pyshorteners.Shortener()
-    shorten_url = s.chilpit.short(image_url)
-    return shorten_url
-
-
-def save_file_in_model_service(request, field_name: str, exp_time: str, file_url: str):
-    image_file = decoded_request_body_service(file_url)
-    current_driver = get_driver_by_email_service(request)
-    driver_car_info = get_driver_car_info_by_driver_service(current_driver)
-    driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver_car_info)
-    file_url = shorten_image_url(file_url)
-    try:
-        image_model_field = DriverCarDocuments._meta.get_field(field_name)
-    except FieldDoesNotExist:
-        print("Field does not exist")
-    else:
-        if field_name != "driver_photo":
-            image_expiration_date = DriverCarDocuments._meta.get_field(f"{field_name}_expiration_time")
-            if not driver_docs:
-                new_car_doc = DriverCarDocuments()
-                setattr(new_car_doc, image_model_field.name, file_url)
-                setattr(new_car_doc, image_expiration_date.name, exp_time)
-                new_car_doc.driver_car_id = driver_car_info
-                new_car_doc.save()
-                print("In new_car_doc container")
-            else:
-                setattr(driver_docs, image_model_field.name, file_url)
-                setattr(driver_docs, image_expiration_date.name, exp_time)
-                driver_docs.save()
-                print("In driver_docs container")
-        else:
-            if not driver_docs:
-                new_car = DriverCarDocuments.objects.create(driver_car_id=driver_car_info, driver_photo=file_url)
-                print("In not driver_docs container")
-                new_car.save()
-        print("dsadsadsa")
-
-
-
-def get_driver_by_email_service(request):
-    driver_email = request.session.get("email")
-    driver = get_data_from_model(Driver, "driver_email", driver_email)
-    return driver
-
-
-def get_driver_car_info_by_driver_service(driver):
-    driver_car_info = get_data_from_model(DriverCarInfo, "driver_id", driver)
-    return driver_car_info
 
 
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY
 def save_file_view(request, field_name: str, exp_time: str):
     if request.method == "POST":
         file = request.POST.get("file")
-        image_file = save_file_in_model_service(request, field_name, exp_time, file)
+        FileUploadedHandler.save_file_in_model_service(request, field_name, exp_time, file)
+        return redirect(registration_second_page, request.session.get("device_ip", "127.0.0.1"))
     return JsonResponse({"message": "File saved success", "status": "success"})
 
 

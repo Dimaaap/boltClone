@@ -128,23 +128,27 @@ class DriverCarDocumentsForm(forms.Form):
                                      widget=forms.FileInput(attrs={
                                          "class": "file-field-input",
                                          "id": "driver-licence",
+                                         "name": "driver_license",
                                          "accept": "image/*, application/pdf"
                                      }))
     driver_photo = forms.ImageField(required=True, label="Ваше фото",
                                     widget=forms.FileInput(attrs={
                                         "class": "file-field-input",
                                         "id": "driver-photo",
+                                        "name": "driver_photo",
                                         "accept": "image/*"
                                     }))
     driver_tech_passport = forms.FileField(required=True, label="Техпаспорт",
                                            widget=forms.FileInput(attrs={
                                                "class": "file-field-input",
                                                "id": "driver-tech-passport",
+                                               "name": "driver_tech_passport",
                                                "accept": "image/*, application/pdf"
                                            }))
     driver_insurance_policy = forms.FileField(required=True, label="Страховий поліс авто",
                                               widget=forms.FileInput(attrs={
                                                   "class": "file-field-input",
                                                   "id": "driver-insurance-policy",
+                                                  "name": "driver_insurance_policy",
                                                   "accept": "image/*, application/pdf"
                                               }))

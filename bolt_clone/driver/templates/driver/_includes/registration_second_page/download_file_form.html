@@ -4,7 +4,11 @@
                 <div class="field-group">
                     <div class="label-section">
                         <label>{{ field.label }}</label>
-                        <span class="warning-title">Обов'язково*</span>
+                        {% if field.name not in updated_fields.keys %}
+                            <span class="warning-title error">Обов'язково*</span>
+                        {% else %}
+                            <span class="warning-title" id="success">Завантажено</span>
+                        {% endif %}
                     </div>
                     <div class="additional-info">
                         {% if forloop.counter == 1 %}
@@ -48,8 +52,16 @@
                     <div class="file-upload-wrapper">
                         {% include './form_dropdown_modal.html' %}
                         {{ field }}
-                        <button type="button" class="custom-file-downloader">+Завантажити файл</button>
-                        <span id="custom-text"></span>
+                        {% if field.name not in updated_fields.keys %}
+                            <button type="button" class="custom-file-downloader">+Завантажити файл</button>
+                            <span id="custom-text"></span>
+                        {% else %}
+                            <div class="file-info-container">
+                                <a href="{{ updated_fields.field.name.url }}" class="file-href">
+                                    {{ updated_fields.get.field.name }}
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
