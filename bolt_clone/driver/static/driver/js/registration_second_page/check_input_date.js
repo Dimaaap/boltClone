@@ -70,7 +70,7 @@ sendInputDateBtnArray.forEach(btn => {
             } else {
                 sendAJAXRequest(file, dateValue, fileInputName);
                 dropdownArray[btnIndex].style.display = "none";
-
+                location.reload();
             }
         } else {
             errorContainer.innerText = "Поле обов'язкове для заповнення"

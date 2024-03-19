@@ -237,3 +237,26 @@ footer {
     font-weight: 500;
     margin-top: 1%;
 }
+
+#car-documents-form .file-info-container {
+    text-align: left;
+}
+
+#car-documents-form .file-info-container .file-href {
+    color: gray;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+#car-documents-form .file-info-container i {
+    color: gray;
+    font-weight: 600;
+    margin-left: 100%;
+}
+
+#car-documents-form .gray-text {
+    color: gray;
+    font-weight: 500;
+    margin-top: -2%;
+}

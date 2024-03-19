@@ -103,6 +103,9 @@ def registration_first_page(request, device_ip: str):
 
 def registration_second_page(request, device_ip):
     request.session["on_second_page"] = True
+    driver = GetDriverInfoHelper.get_driver_car_info_by_email_service(request)
+    driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver)
+    updated_fields = driver_docs.get_model_field_values()
     try:
         del request.session["on_first_page"]
     except KeyError:
@@ -111,11 +114,24 @@ def registration_second_page(request, device_ip):
         form = DriverCarDocumentsForm(request.POST)
     else:
         form = DriverCarDocumentsForm()
+    files_expiration_date = driver_docs.get_files_expiration_time
+    context = {"form": form, "device_ip": device_ip, "driver_docs": driver_docs,
+               "updated_fields": updated_fields, "files_expiration_date": files_expiration_date}
+    return render(request, "driver/registration_second_page.html", context)
+
+
+def delete_file_view(request, field_name: str):
     driver = GetDriverInfoHelper.get_driver_car_info_by_email_service(request)
     driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver)
-    updated_fields = driver_docs.get_model_field_values()
-    context = {"form": form, "device_ip": device_ip, "driver_docs": driver_docs, "updated_fields": updated_fields}
-    return render(request, "driver/registration_second_page.html", context)
+    model_field = driver_docs._meta.get_field(field_name)
+    setattr(driver_docs, model_field.name, None)
+    if field_name != "driver_photo":
+        file_expiration_time_field = f'{field_name}_expiration_time'
+        model_expiration_time = driver_docs._meta.get_field(file_expiration_time_field)
+        setattr(driver_docs, model_expiration_time.name, None)
+    driver_docs.save()
+    return redirect(registration_second_page, request.session.get("device_ip", "127.0.0.1"))
+
 
 
 @csrf_exempt  # TODO: REMOVE IT BEFORE DEPLOY

@@ -124,3 +124,14 @@ class DriverCarDocuments(models.Model):
 
     def get_field_value_by_title(self, field_name: str):
         return getattr(self, field_name)
+
+
+    def get_files_expiration_time(self):
+        files = self.get_model_field_values()
+        files_exp_time = {}
+        for file_name in files:
+            if file_name != "driver_photo":
+                file_name_exp_time_field = f"{file_name}_expiration_time"
+                exp_time = getattr(self, file_name_exp_time_field)
+                files_exp_time[file_name] = exp_time
+        return files_exp_time
