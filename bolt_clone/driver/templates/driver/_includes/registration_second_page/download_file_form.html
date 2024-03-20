@@ -54,6 +54,9 @@
             <div class="file-upload-wrapper">
                 {% include './form_dropdown_modal.html' %}
                 {{ field }}
+                <div class="form-errors">
+                    {{ field.errors }}
+                </div>
                 {% if field.name not in updated_fields.keys %}
                     <button type="button" class="custom-file-downloader">+Завантажити файл</button>
                     <span id="custom-text"></span>
@@ -80,6 +83,6 @@
     {% endfor %}
     <div class="btn-section">
         <a href="{% url 'registration_first' device_ip %}" class="form-button back-button">Назад</a>
-        <button type="submit" id="next-step-btn" class="form-button submit-btn">Далі</button>
+        <button type="submit" id="next-step-btn" class="form-button submit-btn" name="next-step-btn">Далі</button>
     </div>
 </form>

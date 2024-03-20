@@ -260,3 +260,10 @@ footer {
     font-weight: 500;
     margin-top: -2%;
 }
+
+#car-documents-form .form-errors {
+    text-align: left;
+    margin-left: 30%;
+    font-size: 1rem;
+    font-weight: 400;
+}

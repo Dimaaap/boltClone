@@ -28,6 +28,7 @@ const sendAJAXRequest = (file, expTime, fieldName) => {
         if(!response.ok) {
             throw new Error(`HTTP Error! status: ${response.status}`);
         } else if (response.headers.get("Content-Type").includes("application/json")){
+            location.reload();
             return response.json();
         } else {
             throw new Error("Not JSON response")
@@ -70,7 +71,6 @@ sendInputDateBtnArray.forEach(btn => {
             } else {
                 sendAJAXRequest(file, dateValue, fileInputName);
                 dropdownArray[btnIndex].style.display = "none";
-                location.reload();
             }
         } else {
             errorContainer.innerText = "Поле обов'язкове для заповнення"

@@ -8,7 +8,8 @@ from twilio.rest import Client
 
 from .db_services import get_all_data_from_model, filter_data_from_model
 from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
-from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm)
+from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm,
+                    DriverPaymentInfoForm)
 from .services import *
 from .models import Driver
 
@@ -110,14 +111,37 @@ def registration_second_page(request, device_ip):
         del request.session["on_first_page"]
     except KeyError:
         pass
-    if request.method == "POST":
+    if request.method == "POST" and "next-step-btn" in request.POST:
         form = DriverCarDocumentsForm(request.POST)
+        driver = GetDriverInfoHelper.get_driver_car_info_by_email_service(request)
+        driver_docs = get_data_from_model(DriverCarDocuments, "driver_car_id", driver)
+        if driver_docs.is_all_fields_filled():
+            return redirect(registration_third_page, device_ip)
+        else:
+            empty_field = driver_docs.get_first_empty_field()
+            form.add_error(empty_field, "Будь ласка, завантажте необхідний документ")
     else:
         form = DriverCarDocumentsForm()
     files_expiration_date = driver_docs.get_files_expiration_time
     context = {"form": form, "device_ip": device_ip, "driver_docs": driver_docs,
                "updated_fields": updated_fields, "files_expiration_date": files_expiration_date}
     return render(request, "driver/registration_second_page.html", context)
+
+
+def registration_third_page(request, device_ip:str):
+    request.session["on_third_page"] = True
+    try:
+        del request.session["on_second_page"]
+        del request.session["on_first_page"]
+    except KeyError:
+        pass
+    if request.method == "POST":
+        form = DriverPaymentInfoForm(request.POST)
+    else:
+        form = DriverPaymentInfoForm()
+    context = {"form": form}
+    return render(request, "driver/registration_third_page.html", context)
+
 
 
 def delete_file_view(request, field_name: str):
@@ -139,7 +163,6 @@ def save_file_view(request, field_name: str, exp_time: str):
     if request.method == "POST":
         file = request.POST.get("file")
         FileUploadedHandler.save_file_in_model_service(request, field_name, exp_time, file)
-        return redirect(registration_second_page, request.session.get("device_ip", "127.0.0.1"))
     return JsonResponse({"message": "File saved success", "status": "success"})
 
 

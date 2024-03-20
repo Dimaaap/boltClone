@@ -135,3 +135,26 @@ class DriverCarDocuments(models.Model):
                 exp_time = getattr(self, file_name_exp_time_field)
                 files_exp_time[file_name] = exp_time
         return files_exp_time
+
+    def get_first_empty_field(self):
+        for i in self._meta.fields:
+            if not getattr(self, i.name):
+                return i.name
+
+    def is_all_fields_filled(self):
+        fields = self._meta.fields
+        for i in fields:
+            if not getattr(self, i.name):
+                return False
+        return True
+
+
+class DriverPaymentInfo(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    driver_id = models.OneToOneField(Driver, on_delete=models.CASCADE)
+    ipn_number = models.CharField(max_length=10, unique=True)
+    bank_card_owner_name = models.CharField(max_length=200)
+    iban_number = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.driver_id} {self.bank_card_owner_name}"

@@ -1,0 +1,78 @@
+footer {
+    border-top: 1px solid #F5F5F5;
+}
+
+#registration-third .image-container {
+    margin-left: 38%;
+}
+
+#registration-third .info-container {
+    text-align: center;
+}
+
+#registration-third .info-container .section-title {
+    font-weight: 600;
+}
+
+#registration-third .info-container p {
+    width: 90%;
+    margin-left: 5%;
+    color: gray;
+    font-weight: 500;
+}
+
+#registration-third form {
+    margin-top: 3%;
+    width: 45%;
+    margin-left: 27.5%;
+}
+
+#registration-third form .form-group {
+    margin-bottom: 2%;
+}
+
+#registration-third label {
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+#registration-third input {
+    height: 50px;
+    background: #F5F5F5;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 1%;
+}
+
+#registration-third form p {
+    color: gray;
+    font-weight: 500;
+}
+
+#registration-third form .btn-container {
+    margin-left: 33%;
+}
+
+#registration-third form .btn-container .form-btn {
+    padding: 15px 30px;
+    background: #F5F5F5;
+    color: black;
+    font-weight: 600;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 10%;
+}
+
+#registration-third form .btn-container #prev-step {
+    text-decoration: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+#registration-third form .btn-container #next-step {
+    color: white;
+    background: #5b68f6;
+    margin-left: 5px;
+}

@@ -124,31 +124,63 @@ class DriverCarInfoForm(forms.Form):
 
 
 class DriverCarDocumentsForm(forms.Form):
-    driver_license = forms.FileField(required=True, label="Водійське посвідчення",
+    driver_license = forms.FileField(required=False, label="Водійське посвідчення",
                                      widget=forms.FileInput(attrs={
                                          "class": "file-field-input",
                                          "id": "driver-licence",
                                          "name": "driver_license",
                                          "accept": "image/*, application/pdf"
                                      }))
-    driver_photo = forms.ImageField(required=True, label="Ваше фото",
+    driver_photo = forms.ImageField(required=False, label="Ваше фото",
                                     widget=forms.FileInput(attrs={
                                         "class": "file-field-input",
                                         "id": "driver-photo",
                                         "name": "driver_photo",
                                         "accept": "image/*"
                                     }))
-    driver_tech_passport = forms.FileField(required=True, label="Техпаспорт",
+    driver_tech_passport = forms.FileField(required=False, label="Техпаспорт",
                                            widget=forms.FileInput(attrs={
                                                "class": "file-field-input",
                                                "id": "driver-tech-passport",
                                                "name": "driver_tech_passport",
                                                "accept": "image/*, application/pdf"
                                            }))
-    driver_insurance_policy = forms.FileField(required=True, label="Страховий поліс авто",
+    driver_insurance_policy = forms.FileField(required=False, label="Страховий поліс авто",
                                               widget=forms.FileInput(attrs={
                                                   "class": "file-field-input",
                                                   "id": "driver-insurance-policy",
                                                   "name": "driver_insurance_policy",
                                                   "accept": "image/*, application/pdf"
                                               }))
+
+
+class DriverPaymentInfoForm(forms.Form):
+    ipn_number = forms.CharField(max_length=10, label="Індивідуальний податковий номер(ІПН)",
+                                 widget=forms.TextInput(attrs={
+                                     "class": "form-control",
+                                     "id": "ipn-number",
+                                     "name": "ipn-number",
+                                     "placeholder": "3270975554"
+                                 }))
+    bank_card_owner_name = forms.CharField(max_length=200, label="Ім'я та прізвище власника банківскої картки",
+                                           widget=forms.TextInput(attrs={
+                                               "class": "form-control",
+                                               "id": "bank-card-owner-name",
+                                               "name": "bank-card-owner-name",
+                                               "placeholder": "Mykhailo Hrushevskyi"
+                                           }))
+    iban_number = forms.CharField(max_length=100, label="IBAN рахунку банківської картки",
+                                  widget=forms.TextInput(attrs={
+                                      "class": "form-control",
+                                      "id": "iban-number",
+                                      "name": "iban-number",
+                                      "placeholder": "UA 40 123456 00000 1234 5678 9012 34"
+                                  }))
+
+
+    def clear_ipn_number(self):
+        ipn_number = self.cleaned_data["ipn_number"]
+        all_digits = [i.isdigit() for i in ipn_number]
+        if all(all_digits):
+            return ipn_number
+        return forms.ValidationError("Неправильний формат ІПН. Він може містити лише цифри 0-9")
