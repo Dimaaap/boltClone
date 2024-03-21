@@ -9,6 +9,7 @@ urlpatterns = [
     path('registration/first/<str:device_ip>', registration_first_page, name="registration_first"),
     path('registration/second/<str:device_ip>', registration_second_page, name="registration_second"),
     path('registration/third/<str:device_ip>', registration_third_page, name="registration_third"),
+    path('registration/finished', finish_registration_page, name="finish_registration"),
     path('search/<str:device_ip>', search_car_models, name="search_cars"),
     path('search_car_model/<str:device_ip>/<str:brand>/', search_car_models_by_car,
          name="get_car_models"),

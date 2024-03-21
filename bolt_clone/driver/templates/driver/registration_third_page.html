@@ -36,37 +36,7 @@
             </p>
         </div>
         <div class="form-container">
-            <form class="section-form" id="driver-payment-method" method="POST">
-                {% csrf_token %}
-                {% for field in form %}
-                    <div class="form-group">
-                        <label>{{ field.label }}</label>
-                        {{ field }}
-                        {{ field.errors }}
-                        <div class="additional-info-container">
-                            {% if forloop.counter == 1 %}
-                                <p class="additional-title">
-                                    Тобто ваш реєстраційний номер облікової картки платника податків
-                                    (<a href="https://igov.org.ua/subcategory/1/1/situation/13">РНОКПП</a>, 10 цифр).
-                                </p>
-                            {% elif forloop.counter == 2 %}
-                                <p class="additional-title">
-                                    Ім'я та прізвище слід вводити латиницею(як у закордонному паспорті).
-                                </p>
-                            {% else %}
-                                <p class="additional-title">
-                                    <a href="https://bank.gov.ua/ua/iban">IBAN-номер</a> повинен бути від гривневої
-                                    (₴/UAH) картки українського банку.
-                                </p>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
-                <div class="btn-container">
-                    <a href="#" id="prev-step" class="form-btn">Назад</a>
-                    <button type="submit" id="next-step" class="form-btn">Далі</button>
-                </div>
-            </form>
+            {% include './_includes/registration_third_page/registration_form.html' %}
         </div>
     </section>
     {% include './_includes/verification_page/footer.html' %}

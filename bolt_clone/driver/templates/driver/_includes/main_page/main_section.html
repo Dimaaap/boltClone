@@ -18,6 +18,8 @@
                     <a href="{% url 'registration_first' '127.0.0.1' %}" class="continue-registration">Продовжити</a>
                 {% elif last_page == "second" %}
                     <a href="{% url 'registration_second' '127.0.0.1' %}" class="continue-registration">Продовжити</a>
+                {% elif last_page == "third" %}
+                    <a href="{% url 'registration_third' '127.0.0.1' %}" class="continue-registration">Продовжити</a>
                 {% endif %}
                 <a href="#" id="start-registration-again">Не ви? Тоді реєструйтесь прямо зараз!</a>
             </div>

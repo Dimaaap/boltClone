@@ -6,11 +6,14 @@ from twilio.rest import Client
 
 from .models import DriverCities, Driver, DriverCarModels, DriverCarInfo
 from .db_services import get_data_from_model
-from .services import generate_sms_confirmation_code_service, form_sms_message_service, generate_token
+from .services.token_services import TokenService
+from .services.sms_message_services import SmsMessageService
 from .data_storage import DataStorage
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
+sms_message_service = SmsMessageService()
+token_service = TokenService()
 
 
 def driver_registration_form_handler(request, form):
@@ -30,18 +33,12 @@ def driver_registration_form_handler(request, form):
         request.session["phone_number"] = str(phone_number)
         request.session["city"] = city
         session_id = str(uuid4())
-        user_token = generate_token(session_id)
+        user_token = token_service.generate_token(session_id)
         request.session["generated_token"] = user_token
     except Exception as e:
         return redirect("number_verification")
-    send_sms_message_service(client, request, phone_number)
+    sms_message_service.send_sms_message_service(client, request, phone_number)
     return user_token
-
-
-def send_sms_message_service(sms_client, request, phone_number):
-    generated_sms_code = generate_sms_confirmation_code_service()
-    request.session["otp_code"] = generated_sms_code
-    form_sms_message_service(sms_client, generated_sms_code, phone_number)
 
 
 def verification_first_step(request, form):
@@ -52,6 +49,8 @@ def verification_first_step(request, form):
     try:
         driver = get_data_from_model(Driver, "driver_email", request.session["email"])
         driver_car_model = get_data_from_model(DriverCarModels, "model", driver_car_model)
+        driver_car_info = get_data_from_model(DriverCarInfo, "driver_id", driver)
+
     except Exception:
         messages.error(request, "Щось пішло не так")
     else:

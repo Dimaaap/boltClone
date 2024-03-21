@@ -183,4 +183,11 @@ class DriverPaymentInfoForm(forms.Form):
         all_digits = [i.isdigit() for i in ipn_number]
         if all(all_digits):
             return ipn_number
-        return forms.ValidationError("Неправильний формат ІПН. Він може містити лише цифри 0-9")
+        raise forms.ValidationError("Неправильний формат ІПН. Він може містити лише цифри 0-9")
+
+    def clear_iban_number(self):
+        iban_number = self.cleaned_data["iban_number"]
+        iban_pattern = re.compile(r'^UA\d{s}\s\d{6}\s\d{6}\s\d{4}\s\d{4}\s\d{4}\s\d{2}$')
+        if iban_pattern.match(iban_number):
+            return iban_number
+        raise forms.ValidationError("Неправильний формат IBAN. Повинен бути ^UA 123456 0000 1234 5678 9012 34")

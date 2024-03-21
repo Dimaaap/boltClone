@@ -7,15 +7,18 @@ from django.views.decorators.csrf import csrf_exempt
 from twilio.rest import Client
 
 from .db_services import get_all_data_from_model, filter_data_from_model
-from .form_handlers import driver_registration_form_handler, send_sms_message_service, verification_first_step
+from .form_handlers import driver_registration_form_handler, verification_first_step
 from .forms import (DriverRegistrationForm, PhoneNumberVerificationForm, DriverCarInfoForm, DriverCarDocumentsForm,
                     DriverPaymentInfoForm)
-from .services import *
-from .models import Driver
+from .services.services import *
+from .services.sms_message_services import SmsMessageService
+from .services.token_services import TokenService
+from .models import Driver, DriverPaymentInfo
 
 data_storage = DataStorage()
 client = Client(data_storage.ACCOUNT_SID, data_storage.AUTH_TOKEN)
-
+send_sms_service = SmsMessageService()
+token_service = TokenService()
 
 def driver_main_page(request):
     if check_if_device_unique(request):
@@ -43,7 +46,7 @@ def driver_main_page(request):
 
 
 def verification_phone_number(request, verification_code):
-    if not check_if_token_verified(request, verification_code):
+    if not token_service.check_if_token_verified(request, verification_code):
         return redirect(driver_main_page)
     if request.method == "POST":
         form = PhoneNumberVerificationForm(request.POST)
@@ -79,21 +82,41 @@ def verification_phone_number(request, verification_code):
 def resend_code_view(request):
     user_phone_number = request.session["user_phone_number"]
     verification_code = request.session["verification_code"]
-    send_sms_message_service(client, request, user_phone_number)
+    send_sms_service.send_sms_message_service(client, request, user_phone_number)
     return redirect(verification_phone_number, verification_code)
 
 
 def registration_first_page(request, device_ip: str):
     request.session["on_first_page"] = True
+    driver_email = request.session.get("email")
+    driver = get_data_from_model(Driver, "driver_email", driver_email)
+    try_get_driver_car_info = get_data_from_model(DriverCarInfo, "driver_id", driver)
     if request.method == "POST":
         form = DriverCarInfoForm(request.POST)
+        if try_get_driver_car_info:
+            return redirect(registration_second_page, device_ip)
         if form.is_valid():
             verification_first_step(request, form)
             return redirect(registration_second_page, device_ip)
         else:
             print(form.errors)
     else:
-        form = DriverCarInfoForm()
+        if try_get_driver_car_info:
+            form = DriverCarInfoForm(initial={
+                "first_name": try_get_driver_car_info.driver_first_name,
+                "last_name": try_get_driver_car_info.driver_last_name,
+                "referral_code": try_get_driver_car_info.referral_code,
+                "has_own_car": try_get_driver_car_info.driver_has_own_car,
+                "driver_car": try_get_driver_car_info.driver_car.car_id.model_title,
+                "driver_car_model": try_get_driver_car_info.driver_car.model,
+                "driver_car_created_year": try_get_driver_car_info.driver_car_created_year,
+                "created_year": try_get_driver_car_info.driver_car_created_year,
+                "driver_number_sign": try_get_driver_car_info.driver_number_sign,
+                "car_color": try_get_driver_car_info.driver_car_color
+
+            })
+        else:
+            form = DriverCarInfoForm()
     cars_list = get_all_data_from_model(DriverCars)
     year_list = [int(year) for year, _ in data_storage.CAR_CREATED_YEAR_LIST]
     car_color_list = [color for color, _ in data_storage.CAR_COLORS_LIST]
@@ -137,10 +160,32 @@ def registration_third_page(request, device_ip:str):
         pass
     if request.method == "POST":
         form = DriverPaymentInfoForm(request.POST)
+        if form.is_valid():
+            driver_email = request.session.get("email")
+            driver = get_data_from_model(Driver, "driver_email", driver_email)
+            ipn_number, bank_card_owner, iban_number = (form.cleaned_data.get("ipn_number"),
+                                                        form.cleaned_data.get("bank_card_owner_name"),
+                                                        form.cleaned_data.get("iban_number"))
+            new_car_info = DriverPaymentInfo(driver_id=driver, ipn_number=ipn_number,
+                                              bank_card_owner_name=bank_card_owner, iban_number=iban_number)
+            try:
+                new_car_info.save()
+            except Exception as e:
+                print(e)
+                form.add_error("iban_number", "Ви вже заповнювали цю форму")
+            else:
+                return redirect(finish_registration_page)
+        else:
+            pass
     else:
         form = DriverPaymentInfoForm()
-    context = {"form": form}
+    context = {"form": form, "device_ip": device_ip}
     return render(request, "driver/registration_third_page.html", context)
+
+
+
+def finish_registration_page(request):
+    return render(request, "driver/finish_registration_page.html")
 
 
 
