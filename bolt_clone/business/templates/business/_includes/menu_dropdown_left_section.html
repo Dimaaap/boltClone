@@ -1,0 +1,548 @@
+<div class="left-section">
+    <div class="popup-section-header">
+        <ul class="header">
+            <li><a href="#" class="active-section">Сервіси</a></li>
+            <li id="second"><a href="#" id="second-a">Заробляйте з Bolt</a></li>
+            <li><a href="#">Компанія</a></li>
+            <li><a href="#">Безпека</a></li>
+            <li><a href="#">Підтримка</a></li>
+            <li><a href="#">Міста</a></li>
+        </ul>
+    </div>
+    <div class="popup-main-container">
+        <div class="header-container" id="services">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Поїздки
+                    </p>
+                    <ul id="first-ul">
+                        <li>
+                            <a href="{% url 'rider_safety' %}">
+                                Безпека пасажирів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Замовити поїздку
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Стати водієм
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Електросамокати
+                    </p>
+                    <ul id="second-ul">
+                        <li>
+                            <a href="{% url 'scooter_safety' %}">
+                                Безпека електросамокатів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Повідомити про електросамокат
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Лабораторія безпеки
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Доставка продуктів Bolt Market
+                    </p>
+                    <ul id="last-ul">
+                        <li>
+                            <a href="#">
+                                Стати кур'єром
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Додати ресторан чи крамницю
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Доставка Bolt Food
+                    </p>
+                    <ul id="delivery">
+                        <li>
+                            <a href="#">
+                                Стати кур'єром
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Додати ресторан чи крамницю
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul" id="car-sharing">
+                    <p class="ul-title">
+                        Каршерінг Bolt Drive
+                    </p>
+                    <ul id="sharing">
+                        <li>
+                            <a href="#">
+                                Запитання та відповіді
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Повідомити про проблему з ТЗ
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Корпоративні поїздки Bolt Business
+                    </p>
+                    <ul id="business">
+                        <li>
+                            <a href="#">
+                                Переваги
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Робочий обліковий запис
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Сервіси
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Bolt Food для корпоративних клієнтів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Електровелосипеди
+                    </p>
+                    <ul id="electro-bike">
+                        <li>
+                            <a href="#">
+                                Лабораторія безпеки
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Повідомити про електровелосипед
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Запитання та відповіді
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul" id="bolt-plus-container">
+                    <p class="ul-title">
+                        Bolt Plus
+                    </p>
+                    <ul id="bolt-plus">
+                        <li>
+                            <a href="#">
+                                Переваги
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Як приєднатися
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Запитання та відповіді
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-container" id="get_pay_with_bolt">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">Водіям</p>
+                    <ul id="drivers-1">
+                        <li>
+                            <a href="#">
+                                Стати водієм(-ою)
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Як це працює
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Запитання та відповіді
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Безпека водіїв
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Кур'єрам
+                    </p>
+                    <ul id="drivers-2">
+                        <li>
+                            <a href="#">
+                                Стати кур'єром
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Як це працює
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Запитання та відповіді
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Партнери Bolt Food
+                    </p>
+                    <ul id="drivers-3">
+                        <li>
+                            <a href="#">
+                                Додати ресторан чи крамницю
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Автопаркам
+                    </p>
+                    <ul id="drivers-4">
+                        <li>
+                            <a href="#">
+                                Зареєструватись як власник автопарку
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Франшизи
+                    </p>
+                    <ul id="drivers-5">
+                        <li>
+                             <a href="#">
+                                 Про франшизу Bolt
+                                 <i class="fa-solid fa-arrow-right"></i>
+                             </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-container" id="company">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Кар'єра
+                    </p>
+                    <ul id="company-1">
+                        <li>
+                            <a href="#">
+                                Вакансії
+                            </a>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Життя у Bolt
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Команди
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Місця
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Про компанію Bolt
+                    </p>
+                    <ul id="company-2">
+                        <li>
+                            <a href="#">
+                                Зелений план Bolt
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Bolt Environmental Policy
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title">
+                        Блог
+                    </p>
+                    <ul id="company-3">
+                        <li>
+                            <a href="#">
+                                Новини
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Кампанії
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для пасажирів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для водіїв
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для кур'єрів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Корпоративні поїздки Bolt Business
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Доставка Bolt Food
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Каршерінг Bolt Drive
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul">
+                    <p class="ul-title" id="press">
+                        Преса
+                    </p>
+                    <ul id="company-4">
+                        <li>
+                            <a href="#">
+                                Правила використання бренду
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-container" id="safety">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Безпека
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Безпека водіїв
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Безпека пасажирів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Безпека електросамокатів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Лабораторія безпеки
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-container" id="support">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Підтримка
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Для пасажирів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для водіїв
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для кур'єрів
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Доставка Bolt Food
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для власників автопарків
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Для ресторанів та кафе
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Корпоративні поїздки Bolt Business
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-container" id="cities">
+            <div class="ul-row">
+                <div class="ul">
+                    <p class="ul-title">
+                        Міста
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Аеропорти
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Міські рішення
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Зарядні станції Bolt
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

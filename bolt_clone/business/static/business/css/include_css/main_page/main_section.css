@@ -1,0 +1,92 @@
+#main-section {
+    font-family: "Montserrat";
+    height: 103vh;
+    margin-top: -6%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#main-section .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    filter: brightness(80%);
+}
+
+#main-section .image-container {
+    background-image: url("../../../media/business-index-hero.webp");
+    background-size: cover;
+    min-height: 500px;
+    width: 100%;
+    background-position: center center;
+    z-index: 1;
+}
+
+#main-section .text-container {
+    color: black;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    color: white;
+    width: 50%;
+    text-align: left;
+    justify-content: center;
+}
+
+#main-section .text-container h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+#main-section .text-container p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 80%;
+}
+
+#main-section .btn-container {
+    display: flex;
+}
+
+#main-section .btn-container a {
+    display: inline-block;
+}
+
+#main-section #view-all {
+    background: white;
+}
+
+#main-section #view-all:hover {
+    background: #f5f6f7;
+}
+
+#main-section #register-now {
+    background: #32bb78;
+    color: white;
+}
+
+#main-section #register-now:hover {
+    background: #1d965c;
+}
+
+#main-section a {
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 3%;
+    padding: 2% 5%;
+    margin-right: 2%;
+}
+
+#main-section a:hover {
+    background: #FCFCFC;
+}

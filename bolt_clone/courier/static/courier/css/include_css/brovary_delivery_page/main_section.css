@@ -3,6 +3,7 @@
     margin-top: -6%;
     text-align:center;
     position: relative;
+    z-index: 1;
 }
 
 #main-section .image-container::before {

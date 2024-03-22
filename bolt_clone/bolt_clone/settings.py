@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'rider',
     'scooters',
     'driver',
+    'business',
 
     'phonenumber_field',
     'ipware',

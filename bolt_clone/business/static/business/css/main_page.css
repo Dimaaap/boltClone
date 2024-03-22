@@ -1,0 +1,12 @@
+body header {
+    position: relative;
+}
+
+body header i {
+    color: white;
+}
+
+body header p {
+    color: white;
+    margin-top: 10%;
+}

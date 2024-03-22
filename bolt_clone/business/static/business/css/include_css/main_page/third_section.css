@@ -1,0 +1,19 @@
+#third-section {
+    font-family: "Montserrat";
+    padding: 1% 10%;
+}
+
+#third-section .text-container {
+    width: 75%;
+}
+
+#third-section .text-container h1 {
+    font-weight: 700;
+}
+
+#third-section .text-container p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: gray;
+    margin-top: 2%;
+}
