@@ -1,0 +1,56 @@
+#fourth_section {
+    font-family: "Montserrat";
+}
+
+#fourth_section .container {
+    display: flex;
+    margin-top: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+#fourth_section .image-container {
+    margin-right: 8%;
+}
+
+#fourth_section .image-container img {
+    border-radius: 15px;
+}
+
+#fourth_section .text-container {
+    margin-top: -3%;
+}
+
+#fourth_section .text-container ol {
+    list-style-type: none;
+}
+
+#fourth_section .text-container ol li {
+    counter-increment: my-counter;
+    margin-bottom: 3%;
+}
+
+#fourth_section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-weight: 700;
+}
+
+#fourth_section .text-container ol li .point-title {
+    font-weight: 700;
+    margin-top: -5%;
+    margin-left: 5%;
+}
+
+#fourth_section .text-container ol li .point-desc {
+    margin-left: 5%;
+    font-weight: 500;
+    color: gray;
+}

@@ -1,0 +1,37 @@
+#seventh-section {
+    font-family: "Montserrat";
+    margin-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+}
+
+#seventh-section .text-container {
+    margin-left: 10%;
+}
+
+#seventh-section .text-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#seventh-section .text-container p {
+    font-weight: 500;
+    color: gray;
+    margin-top: 2%;
+    font-size: 1.1rem;
+    margin-bottom: 7%;
+}
+
+#seventh-section .text-container a {
+    text-decoration: none;
+    background: #32bb78;
+    color: white;
+    font-weight: 600;
+    padding: 3% 7%;
+    border-radius: 25px;
+}
+
+#seventh-section .text-container a:hover {
+    background: #1d965c;
+}

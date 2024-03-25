@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/main_section.css' %}">
     <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/second_section.css' %}">
     <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/third_section.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/fourth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/fifth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/sixth_section.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/seventh_section.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/main_page/eight_section.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -29,53 +34,9 @@
     {% include './_includes/main_page/main_section.html' %}
     {% include './_includes/main_page/second_section.html' %}
     {% include './_includes/main_page/third_section.html' %}
-    <section id="fourth_section">
-        <div class="container">
-            <div class="image-container">
-                <img width="300" height="250"
-                     src="{% static 'business/media/features-image.webp' %}" />
-            </div>
-            <div class="text-container">
-                <ol class="features-list">
-                    <li>
-                        <p class="point-title">
-                            Заощаджуйте час
-                        </p>
-                        <p class="point-desc">
-                            Автоматичні звіти про робочі поїздки команди.
-                            Заощаджуйте час працівників на заповнення звітів про витрати.
-                        </p>
-                    </li>
-                    <li>
-                        <p class="point-title">
-                            Скоротіть витрати на поїздки
-                        </p>
-                        <p class="point-desc">
-                            Ціни Bolt - одні з найвигідніших на ринку. Заощаджуйте гроші
-                            для важливіших завдань.
-                        </p>
-                    </li>
-                    <li>
-                        <p class="point-title">
-                            Отримайте повний контроль і видимість
-                        </p>
-                        <p class="point-desc">
-                            Встановлюйте розклад, коли саме ваша команда зможе здійнсювати поїздки,
-                            скільки грошей витратить, а також тип транспорту, який використовуватиме. Додавайте або
-                            видаляйте співробітників, якщо склад вашої команди змінюватиметься.
-                        </p>
-                    </li>
-                    <li>
-                        <p class="point-title">
-                            Просте виставлення рахунків
-                        </p>
-                        <p class="point-desc">
-                            Сплачуйте за всі робочі поїздки вашої команди раз на місяць за
-                            допомогою банківського переказу або ж окремо за кожну поїздку.
-                        </p>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </section>
+    {% include './_includes/main_page/fourth_section.html' %}
+    {% include './_includes/main_page/fifth_section.html' %}
+    {% include './_includes/main_page/sixth_section.html' %}
+    {% include './_includes/main_page/seventh_section.html' %}
+    {% include './_includes/main_page/eight_section.html' %}
 {% endblock %}

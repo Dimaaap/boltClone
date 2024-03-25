@@ -1,0 +1,50 @@
+#eight-section {
+    font-family: "Montserrat";
+    margin-top: 8%;
+    width: 80%;
+    margin-left: 10%;
+    padding-left: 7%;
+    padding-top: 1%;
+    padding-right: 7%;
+    background: #2f313f;
+    color: white;
+    border-radius: 15px;
+}
+
+#eight-section .container {
+    display: flex;
+}
+
+#eight-section .container .text-container h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+#eight-section .container .text-container p {
+    font-weight: 500;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#eight-section .text-container ol {
+    list-style-type: none;
+}
+
+#eight-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-bottom: 3%;
+    margin-left: -7%;
+}
+
+#eight-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-weight: 700;
+}

@@ -1,0 +1,37 @@
+#sixth-section {
+    font-family: "Montserrat";
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    margin-top: 5%;
+}
+
+#sixth-section .text-container {
+    margin-right: 5%;
+}
+
+#sixth-section .text-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#sixth-section .text-container p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: gray;
+    margin-top: 1%;
+    margin-bottom: 7%;
+}
+
+#sixth-section .text-container a {
+    text-decoration: none;
+    background: #32bb78;
+    color: white;
+    font-weight: 600;
+    padding: 3% 7%;
+    border-radius: 25px;
+}
+
+#sixth-section .text-container a:hover {
+    background: #1d965c;
+}
