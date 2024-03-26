@@ -1,0 +1,51 @@
+#third-section {
+    font-family: "Montserrat";
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 15%;
+    display: flex;
+}
+
+#third-section img {
+    border-radius: 10px;
+}
+
+#third-section .text-container {
+    margin-left: 5%;
+}
+
+#third-section .text-container h4 {
+    font-weight: 700;
+    font-size: 1.9rem;
+    margin-bottom: 4%;
+}
+
+#third-section .text-container ol {
+    list-style-type: none;
+    padding-left: 0;
+    width: 80%;
+}
+
+#third-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-bottom: 8%;
+}
+
+#third-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-weight: 700;
+}
+
+#third-section .text-container ol li p {
+    display: inline;
+    margin-left: 1%;
+    text-align: right;
+}

@@ -9,6 +9,7 @@
     background: #2f313f;
     color: white;
     border-radius: 15px;
+    margin-bottom: 10%;
 }
 
 #eight-section .container {
@@ -28,6 +29,7 @@
 
 #eight-section .text-container ol {
     list-style-type: none;
+    padding-left: 0;
 }
 
 #eight-section .text-container ol li {
@@ -47,4 +49,42 @@
     background: #32bb78;
     color: white;
     font-weight: 700;
+}
+
+#eight-section .text-container ol li p {
+    display: inline;
+    margin-left: 1%;
+    text-align: right;
+}
+
+#eight-section .btn-section {
+    margin-left: -6%;
+    margin-top: 7%;
+}
+
+#eight-section .btn-section .section-btn {
+    border: none;
+    padding: 3% 6%;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 25px;
+}
+
+#eight-section #white-btn {
+    margin-left: 5%;
+}
+
+#eight-section #white-btn:hover {
+    background: #fafafb;
+}
+
+#eight-section #green-btn {
+    background: #32bb78;
+    color: white;
+}
+
+#eight-section #green-btn:hover {
+    background: #1d965c;
 }

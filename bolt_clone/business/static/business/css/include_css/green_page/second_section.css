@@ -1,0 +1,30 @@
+#second-section{
+    font-family: "Montserrat";
+    padding: 15% 7%;
+}
+
+#second-section .container {
+    display: flex;
+}
+
+#second-section .container .header-container {
+    width: 90%;
+    font-size: 2rem;
+    margin-right: 5%;
+}
+
+#second-section .container .header-container h1 {
+    font-weight: 700;
+}
+
+#second-section .container .desc-container {
+    width: 80%;
+}
+
+#second-section .container .desc-container p {
+    font-weight: 500;
+    color: gray;
+    font-size: 1.2rem;
+}
+
+
