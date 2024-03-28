@@ -1,0 +1,26 @@
+#tenth-section {
+    padding: 7% 7%;
+    font-family: "Montserrat";
+    justify-content: center;
+}
+
+#tenth-section h2 {
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+#tenth-section p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: gray;
+}
+
+#tenth-section p a {
+    text-decoration: none;
+    color: #1d965c;
+}
+
+#tenth-section p a:hover {
+    text-decoration: underline;
+    color: #127042;
+}

@@ -55,8 +55,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const pageNumContainer = document.querySelector(".page-num");
     const imageContainer = document.querySelector(".carousel");
     const progressBar = document.querySelector(".busy-selector");
+    const imagesContainer = document.querySelector(".image-container");
 
-    function updateCarousel() {
+    function updateCarousel(direction) {
         const currentImage = images[currentIndex];
         const nextImage = images[(currentIndex + 1) % images.length];
         const hasNextSlide = currentIndex < images.length - 1;
@@ -70,25 +71,27 @@ document.addEventListener("DOMContentLoaded", function() {
         pageNumContainer.textContent = `${currentIndex + 1} / ${images.length}`;
 
         const progress = ((currentIndex + 1) / images.length) * 100;
+        const imageWidth = images[0].clientWidth;
         progressBar.style.width = `${progress}%`;
 
         const prevSlideBtn = document.getElementById("prev-slide");
         const nextSlideBtn = document.getElementById("next-slide");
         prevSlideBtn.style.display = hasPrevSlide ? 'block' : 'none';
         nextSlideBtn.style.display = hasNextSlide ? 'block' : 'none';
+
     }
 
     document.getElementById("prev-slide").addEventListener("click", function() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+            updateCarousel("next");
         }
     });
 
     document.getElementById("next-slide").addEventListener("click", function() {
         if (currentIndex < images.length - 1) {
             currentIndex++;
-            updateCarousel();
+            updateCarousel("prev");
         }
     });
 

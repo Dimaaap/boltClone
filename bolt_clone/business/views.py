@@ -7,3 +7,7 @@ def business_main_page_view(request):
 
 def business_green_page_view(request):
     return render(request, "business/green_page.html")
+
+
+def business_signup_page_view(request):
+    return render(request, "business/signup_page.html")

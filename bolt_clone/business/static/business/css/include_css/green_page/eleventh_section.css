@@ -1,0 +1,34 @@
+#eleventh-section {
+    padding: 10% 7%;
+    background: #151619;
+    color: white;
+    font-family: "Montserrat";
+    display: flex;
+}
+
+#eleventh-section .header-container {
+    width: 50%;
+}
+
+#eleventh-section .header-container h2 {
+    font-weight: 700;
+}
+
+#eleventh-section .text-container {
+    margin-left: 5%;
+    width: 42%;
+}
+
+#eleventh-section .text-container p {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+#eleventh-section .text-container p a {
+    text-decoration: none;
+    color: #1d965c;
+}
+
+#eleventh-section .text-container p a:hover {
+    text-decoration: underline;
+}

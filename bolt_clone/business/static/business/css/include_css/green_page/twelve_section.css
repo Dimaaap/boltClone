@@ -1,0 +1,65 @@
+#twelve-section {
+    font-family: "Montserrat";
+    padding: 10% 7%;
+}
+
+#twelve-section .container {
+    display: flex;
+}
+
+#twelve-section .container .image-container {
+    margin-right: 10%;
+}
+
+#twelve-section .container .image-container img {
+    border-radius: 10px;
+}
+
+#twelve-section .text-container {
+    margin-top: -5%;
+}
+
+#twelve-section .container .text-container h3 {
+    font-weight: 700;
+}
+
+#twelve-section .container .text-container p {
+    width: 75%;
+    margin-top: 3%;
+    font-weight: 500;
+    color: gray;
+    font-size: 1.1rem;
+    margin-bottom: 3%;
+}
+
+#twelve-section .text-container ol {
+    list-style-type: none;
+    padding-left: 0;
+    width: 80%;
+}
+
+#twelve-section .text-container ol li {
+    counter-increment: my-counter;
+    margin-bottom: 8%;
+}
+
+#twelve-section .text-container ol li::before {
+    content: counter(my-counter);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #32bb78;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 3%;
+}
+
+#twelve-section .text-container ol li p {
+    display: inline-block;
+    margin-left: 5%;
+    text-align: right;
+}

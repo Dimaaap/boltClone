@@ -1,0 +1,26 @@
+#ninth-section {
+    padding: 10% 7%;
+    font-family: "Montserrat";
+    background: #151619;
+    color: white;
+    display: flex;
+}
+
+#ninth-section .header-container {
+    width: 30%;
+    margin-right: 10%;
+}
+
+#ninth-section .header-container h2 {
+    font-weight: 700;
+}
+
+#ninth-section .text-container {
+    width: 35%;
+    margin-left: 15%;
+}
+
+#ninth-section .text-container p {
+    font-weight: 500;
+    font-size: 1.1rem;
+}

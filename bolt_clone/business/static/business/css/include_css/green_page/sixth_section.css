@@ -1,0 +1,13 @@
+#sixth-section {
+    font-family: "Montserrat";
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 1%;
+}
+
+#sixth-section .text-container {
+    width: 65%;
+    color: gray;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

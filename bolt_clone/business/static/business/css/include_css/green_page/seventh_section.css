@@ -1,0 +1,29 @@
+#seventh-section {
+    padding-top: 10%;
+    padding-left: 7%;
+    padding-right: 7%;
+    font-family: "Montserrat";
+    display: flex;
+}
+
+#seventh-section .header-container {
+    width: 60%;
+    margin-right: 5%;
+}
+
+#seventh-section .header-container h3 {
+    font-weight: 700;
+    width: 90%;
+}
+
+#seventh-section .text-container {
+    margin-left: 5%;
+    width: 70%;
+}
+
+#seventh-section .text-container p {
+    font-weight: 500;
+    color: gray;
+    font-size: 1.2rem;
+}
+

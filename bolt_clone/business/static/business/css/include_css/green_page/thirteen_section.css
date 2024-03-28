@@ -1,0 +1,50 @@
+#thirteen-section {
+    font-family: "Montserrat";
+    margin-bottom: 10%;
+}
+
+#thirteen-section .container {
+    width: 86%;
+    margin-left: 7%;
+    background: green;
+    padding-top: 10%;
+    padding-left: 5%;
+    display: flex;
+    border-radius: 15px;
+    background: #1d965c;
+    color: white;
+}
+
+#thirteen-section .container .text-container {
+    width: 40%;
+}
+
+#thirteen-section .container .text-container h1 {
+    font-weight: 700;
+}
+
+#thirteen-section .container .text-container p {
+    margin-top: 5%;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10%;
+}
+
+#thirteen-section .container .text-container a {
+    text-decoration: none;
+    background: white;
+    font-weight: 700;
+    color: black;
+    padding: 3% 5%;
+    margin-top: 5%;
+    border-radius: 50px;
+}
+
+#thirteen-section .container .text-container a:hover {
+    background: #f5f6f7;
+}
+
+#thirteen-section .container .image-container {
+    margin-top: -10%;
+    margin-left: 10%;
+}
