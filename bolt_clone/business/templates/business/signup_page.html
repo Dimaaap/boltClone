@@ -3,6 +3,7 @@
 {% load static %}
 {% block css_additional %}
     <link rel="stylesheet" href="{% static 'business/css/signup_page.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/signup_page/signup_form.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
@@ -20,75 +21,87 @@
 {% endblock %}
 
 {% block body %}
-    <header>
-        <img src="{% static 'business/media/for-business-logo-black-thick-77452cfd7a9e0002b7ebed834cb2e9e6.svg' %}"
-    </header>
-    <section class="main-section">
-        <div class="content">
-            <div class="text-container">
-                <h1>
-                    Можливість пересуватися швидко - те, що потрібно для бізнесу
-                </h1>
-                <dl class="steps">
-                    <dt class="step-title">
-                        <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
-                             width="24" height="24"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.09 2h-6.2c-.8 0-1.6.3-2.1.9l-8 8c-1.2 1.2-1.2 3.1 0 4.2l6.1 6.2c.6.6 1.4.9 2.1.9.7 0 1.5-.3 2.1-.9l8-8c.6-.6.9-1.3.9-2.1V5c.1-1.7-1.3-3-2.9-3zm-2.5 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
-                                  fill="currentColor">
-                            </path>
-                        </svg>
-                        Розпочніть безкоштовно
-                    </dt>
-                    <dd class="step-desc">
-                        <p>
-                            Без плати за реєстрацію чи підписку. Отримайте обліковий запис Bolt Business
-                            безплатно вже сьогодні.
-                        </p>
-                    </dd>
-                    <dt class="step-title">
-                        <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
-                             width="24"
-                             height="24"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM21 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM22.91 15.41l.44 2.2a2 2 0 0 1-.44 1.66 2 2 0 0 1-1.55.73h-8.78a2.002 2.002 0 0 1-1.55-.73 2 2 0 0 1-.41-1.66l.44-2.2A3 3 0 0 1 14 13h6a3 3 0 0 1 2.91 2.41zM10.05 13a4.93 4.93 0 0 0-.92 2l-.44 2.22A3.92 3.92 0 0 0 9.17 20H2.61a2 2 0 0 1-1.58-.73 2 2 0 0 1-.41-1.66l.44-2.2A3 3 0 0 1 4 13h6.05z"
-                                  fill="currentColor">
-                            </path>
-                        </svg>
-                        Додайте ваших співробітників
-                    </dt>
-                    <dd class="step-desc">
-                        <p>
-                            Додайте членів Вашої команди по одному або використайте наш швидкий та зручний інструмент
-                            для завантаження списком.
-                        </p>
-                    </dd>
-                    <dt class="step-title">
-                        <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
-                             width="24"
-                             height="24"
-                             fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M7.5 5.499a4.5 4.5 0 0 1 9 0v.5H20a2 2 0 0 1 2 2v3.135c-3.145 1.433-6.527 2.308-10 2.308s-6.854-.876-10-2.308V7.999a2 2 0 0 1 2-2h3.5v-.5zm7 0v.5h-5v-.5a2.5 2.5 0 0 1 5 0z"
-                                  fill="currentColor">
-                            </path>
-                            <path d="M2 13.16V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6.84c-3.143 1.369-6.569 2.132-10 2.132-3.432 0-6.857-.764-10-2.133z"
-                                  fill="currentColor">
-                            </path>
-                        </svg>
-                        Налаштувати команди
-                    </dt>
-                    <dd class="step-desc">
-                        Встановіть особисті ліміти подорожей для кожного зі співробітників або згрупуйте їх
-                        у команди. Додавайте коди витрат для окремих осіб чи команд, щоб зробити облік витрат
-                        ще простішим.
-                    </dd>
-                </dl>
+    <main>
+        <header>
+            <img src="{% static 'business/media/for-business-logo-black-thick-77452cfd7a9e0002b7ebed834cb2e9e6.svg' %}"
+        </header>
+        <section id="main-section">
+            <div class="content">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <div class="text-container">
+                    <h1>
+                        Можливість пересуватися швидко - те, що потрібно бізнесу
+                    </h1>
+                    <dl class="steps">
+                        <dt class="step-title">
+                            <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
+                                 width="24" height="24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.09 2h-6.2c-.8 0-1.6.3-2.1.9l-8 8c-1.2 1.2-1.2 3.1 0 4.2l6.1 6.2c.6.6 1.4.9 2.1.9.7 0 1.5-.3 2.1-.9l8-8c.6-.6.9-1.3.9-2.1V5c.1-1.7-1.3-3-2.9-3zm-2.5 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+                                      fill="currentColor">
+                                </path>
+                            </svg>
+                            Розпочніть безкоштовно
+                        </dt>
+                        <dd class="step-desc">
+                            <p>
+                                Без плати за реєстрацію чи підписку. Отримайте обліковий запис Bolt Business
+                                безплатно вже сьогодні.
+                            </p>
+                        </dd>
+                        <dt class="step-title">
+                            <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
+                                 width="24"
+                                 height="24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM21 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM22.91 15.41l.44 2.2a2 2 0 0 1-.44 1.66 2 2 0 0 1-1.55.73h-8.78a2.002 2.002 0 0 1-1.55-.73 2 2 0 0 1-.41-1.66l.44-2.2A3 3 0 0 1 14 13h6a3 3 0 0 1 2.91 2.41zM10.05 13a4.93 4.93 0 0 0-.92 2l-.44 2.22A3.92 3.92 0 0 0 9.17 20H2.61a2 2 0 0 1-1.58-.73 2 2 0 0 1-.41-1.66l.44-2.2A3 3 0 0 1 4 13h6.05z"
+                                      fill="currentColor">
+                                </path>
+                            </svg>
+                            Додайте ваших співробітників
+                        </dt>
+                        <dd class="step-desc">
+                            <p>
+                                Додайте членів Вашої команди по одному або використайте наш швидкий та зручний інструмент
+                                для завантаження списком.
+                            </p>
+                        </dd>
+                        <dt class="step-title">
+                            <svg class="tw-mr-3 tw-text-green-500 tw--mt-1 tw-inline"
+                                 width="24"
+                                 height="24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M7.5 5.499a4.5 4.5 0 0 1 9 0v.5H20a2 2 0 0 1 2 2v3.135c-3.145 1.433-6.527 2.308-10 2.308s-6.854-.876-10-2.308V7.999a2 2 0 0 1 2-2h3.5v-.5zm7 0v.5h-5v-.5a2.5 2.5 0 0 1 5 0z"
+                                      fill="currentColor">
+                                </path>
+                                <path d="M2 13.16V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6.84c-3.143 1.369-6.569 2.132-10 2.132-3.432 0-6.857-.764-10-2.133z"
+                                      fill="currentColor">
+                                </path>
+                            </svg>
+                            Налаштувати команди
+                        </dt>
+                        <dd class="step-desc">
+                            Встановіть особисті ліміти подорожей для кожного зі співробітників або згрупуйте їх
+                            у команди. Додавайте коди витрат для окремих осіб чи команд, щоб зробити облік витрат
+                            ще простішим.
+                        </dd>
+                    </dl>
+                </div>
+                <div class="form-container">
+                    {% include './_includes/signup_page/signup_form.html' %}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 {% endblock %}

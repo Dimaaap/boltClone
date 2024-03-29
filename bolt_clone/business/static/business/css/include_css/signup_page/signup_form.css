@@ -1,0 +1,119 @@
+#signup-form {
+    width: 90%;
+    margin-top: -20%;
+    background: #F5F5F5;
+    padding: 4%;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+#signup-form h5 {
+    font-weight: 700;
+    margin-left: 8%;
+}
+
+#signup-form p {
+    font-weight: 500;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 90%;
+    margin-left: 8%;
+}
+
+#signup-form .field-group {
+    margin-bottom: 3%;
+    margin-left: 8%;
+}
+
+#signup-form label {
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+#signup-form .form-control {
+    height: 50px;
+    /*background: #F5F5F5;*/
+    border: none;
+    width: 85%;
+    position: relative;
+}
+
+#signup-form .small-p {
+    margin-top: 3%;
+    margin-bottom: 5%;
+    font-weight: 500;
+    width: 85%;
+    font-size: 0.9rem;
+    margin-left: 8%;
+}
+
+#signup-form .small-p a {
+    text-decoration: none;
+    color: #2eb875;
+}
+
+#signup-form .small-p a:hover {
+    text-decoration: underline;
+}
+
+#signup-form .submit-btn {
+    border: none;
+    background: rgb(50, 187, 120, 0.9);
+    color: white;
+    font-weight: 700;
+    width: 85%;
+    display: block;
+    border-radius: 50px;
+    padding: 3% 5%;
+    margin-left: 8%;
+}
+
+#signup-form .submit-btn:hover {
+    background: rgba(50, 187, 120, 1);
+}
+
+#signup-form small {
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#signup-form small a {
+    color: #2eb875;
+    text-decoration: none;
+}
+
+#signup-form small a:hover {
+    text-decoration: underline;
+}
+
+#signup-form .google-btn .google-logo svg {
+    width: 24px;
+    height: 24px;
+}
+
+#signup-form .google-btn {
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 3% 22%;
+    margin-top: 5%;
+    margin-left: 9%;
+    border-radius: 50px;
+    border: none;
+}
+
+#signup-form .google-btn:hover {
+    background: #FAFAFA;
+}
+
+#signup-form .errorlist {
+    list-style-type: none;
+    margin-left: -8%;
+    width: 89%;
+    margin-top: 4%;
+    font-weight: 500;
+    color: red;
+}

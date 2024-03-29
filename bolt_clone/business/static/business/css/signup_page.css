@@ -1,3 +1,40 @@
 body {
     padding: 5%;
+    background-color: #F5F5F5;
+}
+
+#main-section {
+    font-family: "Montserrat";
+}
+
+#main-section .content {
+    display: flex;
+    margin-top: 5%;
+}
+
+#main-section .text-container {
+    width: 50%;
+    margin-right: 10%;
+}
+
+#main-section .text-container h1 {
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+
+#main-section .text-container .steps path {
+    color: rgb(50, 187, 120);
+    display: inline-block;
+    margin-right: 2%;
+}
+
+#main-section .text-container .step-desc {
+    font-weight: 500;
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 83%;
+}
+
+#main-section .form-container {
+    width: 40%;
 }
