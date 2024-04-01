@@ -1,5 +1,7 @@
 from django import forms
 
+from phonenumber_field.formfields import PhoneNumberField
+
 
 class BusinessOwnerRegistrationForm(forms.Form):
     owner_email = forms.EmailField(label="Робоча адреса електронної пошти", max_length=60,
@@ -34,3 +36,39 @@ class BusinessOwnerRegistrationForm(forms.Form):
             raise forms.ValidationError("Пароль повинен містити хоча б одну цифру і літеру")
         return owner_password
 
+
+class BusinessOwnerLoginForm(forms.Form):
+    owner_email = forms.EmailField(label="Адреса електронної пошти", required=True,
+                                   widget=forms.EmailInput(attrs={
+                                       "class": "form-control",
+                                       "id": "owner_email"
+                                   }))
+
+    owner_password = forms.CharField(label="Пароль", required=False,
+                                     widget=forms.PasswordInput(attrs={
+                                         "class": "form-control",
+                                         "id": "owner_password",
+                                         "placeholder": "Введіть пароль",
+                                         "name": "current_password"
+                                     }))
+
+
+class BusinessOwnerPersonalDataForm(forms.Form):
+    owner_first_name = forms.CharField(max_length=100, label="Ім'я", required=True,
+                                       widget=forms.TextInput(attrs={
+                                           "class": "form-control",
+                                           "id": "owner_first_name",
+                                           "placeholder": "Ім'я"
+                                       }))
+
+    owner_last_name = forms.CharField(max_length=150, label="Прізвище", required=True,
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control",
+                                          "id": "owner_last_name",
+                                          "placeholder": "Прізвище"
+                                      }))
+    owner_phone_number = PhoneNumberField(region="UA", label="Номер телефону",
+                                          widget=forms.TextInput(attrs={
+                                              "class": "form-control",
+                                              "id": "owner_phone_number"
+                                          }))

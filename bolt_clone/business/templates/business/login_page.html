@@ -1,0 +1,92 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'business/css/login_page.css' %}" />
+    <link rel="stylesheet" href="{% static 'business/css/include_css/login_page/login_form.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+    <script src="{% static 'business/js/login_page/login_form_handler.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <header class="main-header">
+        <img width="300"
+             height="300"
+             src="{% static 'business/media/for-business-logo-black-thick-77452cfd7a9e0002b7ebed834cb2e9e6.svg' %}"
+    </header>
+    <section id="main-section">
+        <h3 class="section-title">З поверненням</h3>
+        <p class="section-desc">
+            Вперше в Bolt Business?
+            <a href="{% url 'signup' %}">
+                Зареєструватись
+            </a>
+        </p>
+        <form class="login-form" id="login-form" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if forloop.counter == 2 %}
+                    <div class="field-group hidden-group">
+                        <label id="password-label">{{ field.label }}</label>
+                        {{ field }}
+                        <a href="#" id="forgot-password">Забули пароль?</a>
+                    </div>
+                {% else %}
+                    <div class="field-group">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <a href="javascript: void(0);" class="form-btn" id="send-email">Продовжити за допомогою електронної пошти</a>
+            <button type="submit" class="form-btn" id="submit-btn">Увійти</button>
+            <p class="or-title">або</p>
+            <a href="#" class="form-btn" id="continue-with-google">
+                <svg class="tw-icon-svg"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M23.52 12.273c0-.851-.076-1.67-.218-2.455H12v4.642h6.458a5.52 5.52 0 0 1-2.394 3.622v3.01h3.878c2.269-2.088 3.578-5.165 3.578-8.82z"
+                          fill="#4285F4">
+                    </path>
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 24c3.24 0 5.956-1.075 7.941-2.907l-3.878-3.011c-1.074.72-2.449 1.145-4.063 1.145-3.126 0-5.771-2.11-6.715-4.947h-4.01v3.109A11.995 11.995 0 0 0 12 23.999z"
+                          fill="#34A853">
+                    </path>
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd" d="M5.285 14.28A7.213 7.213 0 0 1 4.91 12c0-.791.136-1.56.376-2.28V6.61H1.276A11.995 11.995 0 0 0 0 12c0 1.936.464 3.769 1.276 5.389l4.01-3.11z"
+                          fill="#FBBC05">
+                    </path>
+                    <path fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 4.773c1.761 0 3.343.605 4.587 1.794l3.442-3.442C17.95 1.19 15.234 0 11.999 0 7.31 0 3.25 2.69 1.276 6.61l4.009 3.11c.944-2.836 3.59-4.947 6.714-4.947z"
+                          fill="#EA4335">
+                    </path>
+                </svg>
+                Продовжити з Google
+            </a>
+            <a href="#" class="form-btn" id="continue-with-href">
+                <svg class="tw-icon-svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.986 2.167a.999.999 0 1 0-1.754-.808l-10 11.982A1.003 1.003 0 0 0 3 14.986h8.07l-1.14 6.848a.999.999 0 1 0 1.752.81L21.767 10.62c.25-.298.305-.714.14-1.067A.998.998 0 0 0 21 8.977h-8.15l1.136-6.81z"
+                          fill="currentColor">
+                    </path>
+                </svg>
+                Продовжити за допомогою посилання
+            </a>
+        </form>
+    </section>
+{% endblock %}

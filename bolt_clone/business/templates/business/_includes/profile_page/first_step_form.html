@@ -1,0 +1,17 @@
+<form class="section-form" id="personal-data-form" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="field-group">
+        <label>{{ field.label }}</label>
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% endfor %}
+    <p class="desc">
+        Якщо у вас є акаунт Bolt для особистих поїздок, ми підключимо ваш номер до вашого
+        корпоративного облікового запису Bolt.
+    </p>
+    <button type="submit" class="submit-btn">
+        Продовжити
+    </button>
+</form>

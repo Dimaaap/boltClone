@@ -1,0 +1,44 @@
+#main-section .section-form {
+    width: 45%;
+    margin-left: 27%;
+}
+
+#main-section .field-group {
+    text-align: left;
+    padding-bottom: 2%;
+}
+
+#main-section .field-group label {
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+#main-section input {
+    height: 50px;
+    background: #F5F5F5;
+    border: none;
+}
+
+#main-section .desc {
+    font-weight: 500;
+    color: gray;
+    text-align: left;
+    width: 95%;
+    font-size: 0.9rem;
+}
+
+#main-section button {
+    background: rgba(50, 187, 120, 0.9);
+    color: white;
+    font-weight: 600;
+    padding: 3% 5%;
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 5%;
+    display: block;
+}
+
+#main-section button:hover {
+    background: rgba(50, 187, 120, 1);
+}

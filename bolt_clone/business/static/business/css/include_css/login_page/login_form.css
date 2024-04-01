@@ -1,0 +1,102 @@
+#login-form {
+    width: 70%;
+    margin-left: 15%;
+}
+
+#login-form label {
+    font-weight: 700;
+    margin-left: -23%;
+    margin-bottom: 1%;
+}
+
+#login-form #password-label {
+    margin-left: -42%;
+}
+
+#login-form #forgot-password {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2%;
+    margin-left: -35%;
+    font-weight: 500;
+    color: #2eb875;
+}
+
+#login-form #forgot-password:hover {
+    text-decoration: underline;
+}
+
+#login-form .hidden-group {
+    display: none;
+}
+
+#login-form input {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
+    height: 50px;
+    background: #F5F5F5;
+    border: none;
+}
+
+#login-form button {
+    background: rgba(50, 187, 120, 0.9);
+    color: white;
+    padding: 2% 5%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: -8%;
+    visibility: hidden;
+}
+
+#login-form svg {
+    width: 24px;
+    height: 24px;
+}
+
+#login-form .form-btn {
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 3% 5%;
+    border: none;
+    border-radius: 50px;
+}
+
+#login-form #send-email {
+    background: rgba(50, 187, 120, 0.9);
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    padding: 2% 4%;
+}
+
+#login-form #send-email:hover {
+    background: rgba(50, 187, 120, 1);
+}
+
+#login-form .or-title {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#login-form #continue-with-google,
+#login-form #continue-with-href {
+    color: black;
+    background: rgba(244, 245, 246, 0.8);
+    padding: 2% 4%;
+    margin-left: 25%;
+    width: 50%;
+}
+
+#login-form #continue-with-google:hover {
+    background: rgba(244, 245, 246, 1);
+}
+
+#login-form #continue-with-href:hover {
+    background: rgba(244, 245, 246, 1);
+}
+
+#login-form #continue-with-href {
+    margin-top: 2%;
+}
