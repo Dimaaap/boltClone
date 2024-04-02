@@ -7,5 +7,6 @@ urlpatterns = [
     path("green", business_green_page_view, name="green"),
     path("signup", business_signup_page_view, name="signup"),
     path("login", business_login_page_view, name="business_login"),
-    path("signup/profile", owner_profile_page_view, name="profile")
+    path("signup/profile", owner_profile_page_view, name="profile"),
+    path("signup/profile/next", owner_profile_page_third_step_view, name="third_step")
 ]

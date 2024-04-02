@@ -72,3 +72,13 @@ class BusinessOwnerPersonalDataForm(forms.Form):
                                               "class": "form-control",
                                               "id": "owner_phone_number"
                                           }))
+
+
+class BusinessCompanyData(forms.Form):
+    company_name = forms.CharField(max_length=200, required=True, label="Назва компанії",
+                                   widget=forms.TextInput(attrs={
+                                       "class": "form-control",
+                                       "id": "company_name_field",
+                                       "placeholder": "Наприклад: ТОВ 'Назва компанії'"
+                                   }))
+    
