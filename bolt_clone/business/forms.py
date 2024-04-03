@@ -2,6 +2,10 @@ from django import forms
 
 from phonenumber_field.formfields import PhoneNumberField
 
+from .data_storage import DataStorage
+
+data_storage = DataStorage()
+
 
 class BusinessOwnerRegistrationForm(forms.Form):
     owner_email = forms.EmailField(label="Робоча адреса електронної пошти", max_length=60,
@@ -74,11 +78,29 @@ class BusinessOwnerPersonalDataForm(forms.Form):
                                           }))
 
 
-class BusinessCompanyData(forms.Form):
+class BusinessCompanyDataForm(forms.Form):
     company_name = forms.CharField(max_length=200, required=True, label="Назва компанії",
                                    widget=forms.TextInput(attrs={
                                        "class": "form-control",
                                        "id": "company_name_field",
                                        "placeholder": "Наприклад: ТОВ 'Назва компанії'"
                                    }))
-    
+    company_country = forms.CharField(max_length=50, required=True, label="Країна",
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control select",
+                                          "id": "company_country",
+                                          "readonly": "readonly"
+                                      }))
+    workers_count = forms.CharField(label="Штат працівників", required=True,
+                                    widget=forms.TextInput(attrs={
+                                        "class": "form-control select",
+                                        "id": "workers_count",
+                                        "placeholder": "Кількість працівників",
+                                        "readonly": "readonly"
+                                    }))
+    promo_code = forms.CharField(label="Промокод", required=False,
+                                 widget=forms.TextInput(attrs={
+                                     "class": "form-control",
+                                     "id": "promo_code",
+                                     "placeholder": "Введіть промокод"
+                                 }))

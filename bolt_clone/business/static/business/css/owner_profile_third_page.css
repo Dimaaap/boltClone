@@ -1,0 +1,51 @@
+#main-section .section-title {
+    font-weight: 700;
+}
+
+#main-section .section-desc {
+    font-weight: 500;
+    color: gray;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#main-section .signup-info svg {
+    width: 24px;
+    height: 24px;
+    color: blue;
+}
+
+#main-section .signup-info .title-container {
+    display: flex;
+}
+
+#main-section .signup-info span {
+    display: inline-block;
+    margin-top: 1%;
+}
+
+#main-section .signup-info h5 {
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 3%;
+    margin-top: 1.5%;
+}
+
+#main-section .signup-info {
+    width: 50%;
+    margin-left: 25%;
+    background: rgba(235, 236, 255, 1);
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#main-section .signup-info .advert-desc {
+    width: 90%;
+    text-align: left;
+    margin-left: 7%;
+    font-weight: 500;
+}
+
+#main-section .signup-info .advert-desc a {
+    color: black;
+}

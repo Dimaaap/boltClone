@@ -1,0 +1,30 @@
+<form class="third-step-form" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="field-group">
+        <label>{{ field.label }}</label>
+        {% if forloop.counter == 2 %}
+            <div id="countries-select-modal">
+                {% for emoji, country in countries_list %}
+                    <p class="country">{{ emoji }} {{ country }}</p>
+                {% endfor %}
+            </div>
+            <i class="fa-solid fa-angle-down" style="color: #000000;" id="first"></i>
+        {% elif forloop.counter == 3 %}
+            <div id="workers-count-modal">
+                {% for count in employees_count %}
+                    <p class="count">{{ count }}</p>
+                {% endfor %}
+            </div>
+            <i class="fa-solid fa-angle-down" style="color: #000000;" id="second"></i>
+        {% endif %}
+        {{ field }}
+        {{ field.errors }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="submit-btn">Створити обліковий запис</button>
+    <small class="additional-info">
+        Зареєструвавшись, Ви погоджуєтесь із нашими <a href="#">Правилами та умовами</a>,
+        а також із <a href="#">Політикою конфіденційності</a>.
+    </small>
+</form>

@@ -14,7 +14,7 @@ class BusinessCountries(models.Model):
     country_emoji = models.CharField(max_length=20, blank=True, default="")
 
     def __str__(self):
-        return f"{self.country_title} {self.country_emoji}"
+        return f"{self.country_emoji} {self.country_title}"
 
 class BusinessOwnerData(models.Model):
     owner_id = models.UUIDField(primary_key=True, editable=False, default=uuid4)
@@ -25,8 +25,7 @@ class BusinessOwnerData(models.Model):
     owner_phone_number = PhoneNumberField(region="UA")
     company_name = models.CharField(max_length=200)
     company_country_id = models.ForeignKey(BusinessCountries, on_delete=models.CASCADE)
-    company_employees_count = models.CharField(max_length=14, choices=data_storage.EMPLOYEES_COUNT,
-                                               blank=True)
+    company_employees_count = models.CharField(max_length=14, blank=True)
     promo = models.CharField(max_length=50, blank=True)
 
     def __str__(self):

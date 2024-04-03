@@ -1,0 +1,96 @@
+#main-section .third-step-form {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+#main-section .third-step-form .field-group {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: left;
+}
+
+#main-section .third-step-form label {
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+#main-section .third-step-form input,
+#main-section .third-step-form .form-control {
+    height: 50px;
+    background: #F5F5F5;
+    border: none;
+    font-weight: 500;
+}
+
+#main-section .third-step-form i {
+    position: absolute;
+    top: 85%;
+    left: 68.5%;
+    cursor: pointer;
+}
+
+#main-section .third-step-form #second {
+    top: 98.5%;
+}
+
+#main-section .submit-btn {
+    margin-top: 2%;
+    display: block;
+    width: 100%;
+    background: rgba(50,187,120,0.9);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 3% 5%;
+    border-radius: 50px;
+}
+
+#main-section .submit-btn:hover {
+    background: rgba(50, 187, 120, 1);
+}
+
+#main-section small {
+    font-weight: 500;
+    color: gray;
+    margin-top: 2%;
+    display: inline-block;
+    width: 90%;
+    margin-bottom: 5%;
+}
+
+#main-section small a {
+    text-decoration: none;
+    color: rgba(50, 187, 120, 1);
+}
+
+#main-section small a:hover {
+    text-decoration: underline;
+}
+
+#main-section #countries-select-modal {
+    -webkit-box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    max-height: 360px;
+    overflow-y: auto;
+    display: none;
+}
+
+#main-section #countries-select-modal p,
+#main-section #workers-count-modal p {
+    padding: 1% 2%;
+    cursor: pointer;
+}
+
+#main-section #countries-select-modal p:hover,
+#main-section #workers-count-modal p:hover {
+    background: #F5F5F5;
+}
+
+#main-section #workers-count-modal {
+    -webkit-box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.75);
+    display: none;
+}
