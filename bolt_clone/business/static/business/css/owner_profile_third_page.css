@@ -49,3 +49,15 @@
 #main-section .signup-info .advert-desc a {
     color: black;
 }
+
+.flexible-btn {
+    position: absolute;
+    left:85%;
+    top: 4%;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    background: #F5F5F5;
+    padding: 1.5% 2%;
+    border-radius: 50%;
+}

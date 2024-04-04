@@ -30,3 +30,14 @@ def insert_countries_in_db():
         new_country.save()
 
 
+def clear_session_service(request):
+    session_keys = [i for i in request.session.keys() if not i.startswith("_")
+                    and i != 'google-oauth2_state' and i != 'device_ip' and i != 'social_auth_last_login_backend']
+    for i in session_keys:
+        del request.session[i]
+
+
+def search_country_in_model_service(company_country: str):
+    company_country = company_country[2:].lstrip()
+    country = get_data_from_model(BusinessCountries, "country_title", company_country)
+    return country

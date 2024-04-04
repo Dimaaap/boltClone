@@ -1,0 +1,87 @@
+nav .nav-header {
+    border-bottom: 1px solid #AFAFAF;
+    padding: 2% 5%;
+}
+
+nav .nav-header img {
+    display: inline-block;
+    margin-top: 1%;
+    margin-bottom: -1%;
+}
+
+nav .nav-body {
+    padding: 2% auto;
+    font-size: 1.1rem;
+    overflow-y: auto;
+    max-height: 410px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+nav .nav-body .start-point {
+    padding: 2% 4%;
+    background: rgba(224, 255, 240, 1);
+}
+
+nav .nav-body .start-point a {
+    color: rgba(29, 150, 92, 1);
+    font-weight: 700;
+}
+
+nav .nav-body .menu-point {
+    padding: 2% 4%;
+}
+
+nav .nav-body .menu-point h6 {
+    color: gray;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+nav .nav-body .menu-point ul {
+    list-style-type: none;
+}
+
+nav .nav-body .menu-point ul li {
+    margin-left: -12%;
+    width: 110%;
+    padding: 2% 4%;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+nav .nav-body .menu-point ul li:hover {
+    background: #F5F5F5;
+}
+
+nav .nav-body .menu-point ul i {
+    margin-left: 70%;
+}
+
+nav .nav-footer {
+    border-top: 1px solid #AFAFAF;
+    padding: 2% 4%;
+    display: flex;
+}
+
+nav .nav-footer .logo {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    color: gray;
+    margin-top: 8%;
+}
+
+nav .nav-footer .desc {
+    width: 100%;
+    margin-left: 25%;
+    margin-top: -20%;
+}
+
+nav .nav-footer .desc p {
+    margin-top: -3%;
+}

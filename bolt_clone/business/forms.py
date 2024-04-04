@@ -3,6 +3,8 @@ from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 
 from .data_storage import DataStorage
+from .models import BusinessOwnerData
+from .services import get_data_from_model
 
 data_storage = DataStorage()
 
@@ -27,6 +29,8 @@ class BusinessOwnerRegistrationForm(forms.Form):
         owner_email = self.cleaned_data["owner_email"]
         if not owner_email:
             raise forms.ValidationError("Заповніть це поле")
+        if get_data_from_model(BusinessOwnerData, "owner_email", owner_email):
+            raise forms.ValidationError("Підтвердіть email")
         return owner_email
 
 
