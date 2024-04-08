@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 
 from .forms import *
-from .data_storage import DataStorage
 from .services import *
-from driver.models import Driver
-from courier.models import CourierMainInfo
 from .models import *
 
 
@@ -28,7 +27,7 @@ def business_signup_page_view(request):
         if form.is_valid():
             owner_email, owner_password = form.cleaned_data.values()
             hashed_password = make_password(owner_password)
-            request.session["business_info"] = {"owner_email": owner_email, "owner_password": hashed_password}
+            request.session["business_info"] = {"owner_email": owner_email, "password": hashed_password}
             return redirect(owner_profile_page_view)
     else:
         is_in_second_step = request.session.get("second_step")
@@ -46,7 +45,13 @@ def business_login_page_view(request):
     if request.method == "POST":
         form = BusinessOwnerLoginForm(request.POST)
         if form.is_valid():
-            pass
+            user_email, user_password = form.cleaned_data.values()
+            user = authenticate(request, email=user_email, password=user_password)
+            if user is not None:
+                login(request, user)
+                return redirect(business_account_page, str(user.owner_id))
+            else:
+                return messages.error(request, "Неправильний логін або пароль")
     else:
         user_email = request.session.get("owner_email", None)
         if not user_email:
@@ -83,12 +88,6 @@ def owner_profile_page_view(request):
     context = {"form": form}
     return render(request, "business/owner_profile_page.html", context)
 
-
-def is_in_drivers_or_couriers_service(phone_number: str):
-    driver = get_data_from_model(Driver, "driver_phone_number", phone_number)
-    courier = filter_data_from_model(CourierMainInfo, "courier_phone_number", phone_number)
-    return [driver, courier]
-
 def owner_profile_page_third_step_view(request):
     if not request.session.get("first_page"):
         return redirect(business_signup_page_view)
@@ -108,12 +107,16 @@ def owner_profile_page_third_step_view(request):
             owner_data.update({"company_name": company_title,
                                "company_employees_count": workers_count, "promo": promo_code[0]})
             try:
-                new_owner = BusinessOwnerData.objects.create(**owner_data, company_country_id=country)
-                new_owner.save()
+                new_owner = BusinessOwnerData.objects.create_user(**owner_data, company_country_id=country)
             except Exception as e:
                 print(e)
             else:
-                return request(business_account_page, str(new_owner.owner_id))
+                new_owner = authenticate(request, email=new_owner.owner_email, password=new_owner.password)
+                if new_owner:
+                    login(request, new_owner)
+                    return redirect(business_account_page, str(new_owner.owner_id))
+                else:
+                    print("Error")
     else:
         form = BusinessCompanyDataForm(initial={"company_country": "🇺🇦 Україна"})
     countries_list = data_storage.COUNTRY_LIST

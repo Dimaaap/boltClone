@@ -3,6 +3,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from .filters import EqualFilter
 from .data_storage import DataStorage
 from .models import BusinessCountries
+from driver.models import Driver
+from courier.models import CourierMainInfo
 
 
 data_storage = DataStorage()
@@ -41,3 +43,9 @@ def search_country_in_model_service(company_country: str):
     company_country = company_country[2:].lstrip()
     country = get_data_from_model(BusinessCountries, "country_title", company_country)
     return country
+
+
+def is_in_drivers_or_couriers_service(phone_number: str):
+    driver = get_data_from_model(Driver, "driver_phone_number", phone_number)
+    courier = filter_data_from_model(CourierMainInfo, "courier_phone_number", phone_number)
+    return [driver, courier]

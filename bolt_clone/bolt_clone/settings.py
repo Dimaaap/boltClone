@@ -48,8 +48,9 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
+    'business.backends.CustomOwnerBackend',
     'social_core.backends.google.GoogleOAuth2',
-    'django.contrib.auth.backends.ModelBackend'
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 ROOT_URLCONF = 'bolt_clone.urls'
@@ -114,6 +115,8 @@ DATABASES = {
         'PORT': config("DB_PORT")
     }
 }
+
+AUTH_USER_MODEL =  "business.BusinessOwnerData"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
