@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
-from django.contrib.auth.hashers import make_password
 
 from .forms import *
 from .services import *
@@ -26,8 +25,7 @@ def business_signup_page_view(request):
         form = BusinessOwnerRegistrationForm(request.POST)
         if form.is_valid():
             owner_email, owner_password = form.cleaned_data.values()
-            hashed_password = make_password(owner_password)
-            request.session["business_info"] = {"owner_email": owner_email, "password": hashed_password}
+            request.session["business_info"] = {"email": owner_email, "password": owner_password}
             return redirect(owner_profile_page_view)
     else:
         is_in_second_step = request.session.get("second_step")
@@ -35,7 +33,7 @@ def business_signup_page_view(request):
         if not is_in_second_step or not is_in_third_step:
             form = BusinessOwnerRegistrationForm()
         else:
-            user_email = request.session.get("business_info")["owner_email"]
+            user_email = request.session.get("business_info")["email"]
             form = BusinessOwnerRegistrationForm(initial={"owner_email": user_email})
     context = {"form": form}
     return render(request, "business/signup_page.html", context)
@@ -53,7 +51,7 @@ def business_login_page_view(request):
             else:
                 return messages.error(request, "Неправильний логін або пароль")
     else:
-        user_email = request.session.get("owner_email", None)
+        user_email = request.session.get("email", None)
         if not user_email:
             form = BusinessOwnerLoginForm()
         else:
@@ -106,17 +104,16 @@ def owner_profile_page_third_step_view(request):
             owner_data = request.session["business_info"]
             owner_data.update({"company_name": company_title,
                                "company_employees_count": workers_count, "promo": promo_code[0]})
+            user_email, user_password = owner_data["email"], owner_data["password"]
+            del owner_data["email"]
+            del owner_data["password"]
             try:
-                new_owner = BusinessOwnerData.objects.create_user(**owner_data, company_country_id=country)
+                new_owner = BusinessOwnerData.objects.create_user(email=user_email, password=user_password,
+                                                                  **owner_data, company_country_id=country)
             except Exception as e:
                 print(e)
             else:
-                new_owner = authenticate(request, email=new_owner.owner_email, password=new_owner.password)
-                if new_owner:
-                    login(request, new_owner)
-                    return redirect(business_account_page, str(new_owner.owner_id))
-                else:
-                    print("Error")
+                return redirect(business_account_page, str(new_owner.owner_id), version=4)
     else:
         form = BusinessCompanyDataForm(initial={"company_country": "🇺🇦 Україна"})
     countries_list = data_storage.COUNTRY_LIST
@@ -127,6 +124,7 @@ def owner_profile_page_third_step_view(request):
 
 
 def business_account_page(request, owner_id):
+    print(request.user.email)
     clear_session_service(request)
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     if not owner:

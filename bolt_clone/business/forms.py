@@ -29,7 +29,7 @@ class BusinessOwnerRegistrationForm(forms.Form):
         owner_email = self.cleaned_data["owner_email"]
         if not owner_email:
             raise forms.ValidationError("Заповніть це поле")
-        if get_data_from_model(BusinessOwnerData, "owner_email", owner_email):
+        if get_data_from_model(BusinessOwnerData, "email", owner_email):
             raise forms.ValidationError("Підтвердіть email")
         return owner_email
 

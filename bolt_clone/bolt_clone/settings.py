@@ -48,7 +48,7 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'business.backends.CustomOwnerBackend',
+    #'business.backends.CustomOwnerBackend',
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
