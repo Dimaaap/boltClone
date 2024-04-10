@@ -1,25 +1,23 @@
-from uuid import UUID
-
-from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth.backends import BaseBackend
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
+
+user_model = get_user_model()
 
 
-
-class CustomOwnerBackend(ModelBackend):
-    def authenticate(self, request, owner_email=None, password=None, **kwargs):
-        User = get_user_model()
+class EmailAuthBackend(BaseBackend):
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        if username is None or password is None:
+            return
         try:
-            user = User.objects.get(owner_email=owner_email)
+            user = user_model.objects.get(email=username)
             if user.check_password(password):
                 return user
-        except User.DoesNotExist:
-            return None
-    def get_user(self, user_id):
-        User = get_user_model()
-        try:
-            return User.objects.get(owner_id=UUID(user_id, version=4))
-        except User.DoesNotExist:
-            return None
+        except user_model.DoesNotExist:
+            raise ValidationError("Invalid login credentials")
 
-    def has_perm(self, user_obj, perm, obj=None):
-        return True
+    def get_user(self, user_id):
+        try:
+            return user_model.objects.get(pk=user_id)
+        except user_model.DoesNotExist:
+            return None

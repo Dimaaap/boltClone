@@ -2,7 +2,6 @@ from pathlib import Path
 from decouple import config
 import os
 
-from pythonjsonlogger.jsonlogger import JsonFormatter
 from .logging_formatters import CustomJsonFormatter
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,9 +47,9 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    #'business.backends.CustomOwnerBackend',
-    'social_core.backends.google.GoogleOAuth2',
+    'business.backends.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2'
 )
 
 ROOT_URLCONF = 'bolt_clone.urls'
@@ -166,3 +165,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config("CLIENT_SECRET")
 
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'business/signup/'
+
+#EMAIL SETTINGS
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")

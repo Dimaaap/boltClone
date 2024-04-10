@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
 
 from .forms import *
 from .services import *
@@ -8,6 +12,14 @@ from .models import *
 
 
 data_storage = DataStorage()
+
+
+def send_user_mail(subject: str, user_email: str, file_name):
+    html_message = render_to_string(f"business/emails/{file_name}")
+    plain_message = strip_tags(html_message)
+    from_email = settings.EMAIL_HOST_USER
+    to = user_email
+    send_mail(subject, plain_message, from_email, [to], html_message=html_message)
 
 
 def business_main_page_view(request):
@@ -113,7 +125,9 @@ def owner_profile_page_third_step_view(request):
             except Exception as e:
                 print(e)
             else:
-                return redirect(business_account_page, str(new_owner.owner_id), version=4)
+                #login(request, new_owner, backend="business.backends.EmailAuthBackend")
+                send_user_mail("Активація акаунту", new_owner.email, "business_confirmation.html")
+                return redirect(business_account_page, str(new_owner.owner_id))
     else:
         form = BusinessCompanyDataForm(initial={"company_country": "🇺🇦 Україна"})
     countries_list = data_storage.COUNTRY_LIST
@@ -124,10 +138,9 @@ def owner_profile_page_third_step_view(request):
 
 
 def business_account_page(request, owner_id):
-    print(request.user.email)
     clear_session_service(request)
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     if not owner:
         return redirect(business_signup_page_view)
-    context = {"owner_id": owner_id}
+    context = {"owner_id": owner_id, "user_email": owner.email}
     return render(request, "business/account_page.html", context)
