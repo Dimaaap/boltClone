@@ -1,0 +1,47 @@
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'business/css/failed_verification_page.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <img width="300" height="250"
+             src="{% static 'business/media/for-business-logo-black-thick-77452cfd7a9e0002b7ebed834cb2e9e6.svg' %}"
+        />
+        <div class="main-section">
+                <div class="text-alert">
+                    <span class="sign">
+                        <svg class="tw-icon-svg"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15c0 .6-.4 1-1 1s-1-.4-1-1v-5c0-.6.4-1 1-1s1 .4 1 1v5zm-1-8c-.8 0-1.5-.7-1.5-1.5S11.2 6 12 6s1.5.7 1.5 1.5S12.8 9 12 9z"
+                                  fill="currentColor">
+                            </path>
+                        </svg>
+                    </span>
+                    <p class="text-alert-p">
+                        Неправильний код підтвердження електронної адреси.
+                    </p>
+                </div>
+            </div>
+        <footer>
+            <small>
+                &copysr; 2024 Bolt Technology OÜ
+            </small>
+        </footer>
+    </div>
+{% endblock %}

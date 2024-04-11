@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.hashers import make_password, check_password
+from django.core.signing import TimestampSigner
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -33,6 +34,7 @@ class BusinessOwnerData(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    is_email_verified = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     USERNAME_FIELD = "email"
@@ -48,3 +50,24 @@ class BusinessOwnerData(AbstractBaseUser):
 
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
+
+    def get_user_full_name(self):
+        return f"{self.owner_first_name} {self.owner_last_name}"
+
+    def generate_verification_token(self):
+        signer = TimestampSigner()
+        token = signer.sign(self.owner_id)
+        return token
+
+
+
+class CompanyLegalInformation(models.Model):
+    company_legal_name = models.CharField(max_length=250, default="")
+    bills_email = models.EmailField(max_length=150, default="")
+    company_address = models.CharField(max_length=200, default="")
+    edrpou_data = models.CharField(max_length=8, default="")
+    company_ipn = models.CharField(max_length=12, default="")
+    owner_id = models.ForeignKey(BusinessOwnerData, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.bills_email} {self.company_legal_name}"

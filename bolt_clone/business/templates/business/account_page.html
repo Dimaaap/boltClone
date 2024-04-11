@@ -36,19 +36,56 @@
                 </div>
                 <div class="steps-container">
                     <div class="stepper">
-                        <div class="point"></div>
-                        <div class="title">
-                            <p class="point-title">
-                                <b>Перевірте вашу електронну пошту</b>
-                            </p>
-                            <p class="point-desc">
-                                Ми надіслали лист з підтвердженням на {{ user_email }}.
-                                Якщо ви не бачите його, перевірте папку "Спам". Посилання
-                                для підтвердження дійсне протягом 24 годин.
-                            </p>
-                            <a href="#" class="primary-btn">Надіслати лист повторно</a>
-                        </div>
+                        {% if not owner.is_email_verified %}
+                            <div class="point"></div>
+                            <div class="title">
+                                <p class="point-title">
+                                    <b>Перевірте вашу електронну пошту</b>
+                                </p>
+                                <p class="point-desc">
+                                    Ми надіслали лист з підтвердженням на {{ user_email }}.
+                                    Якщо ви не бачите його, перевірте папку "Спам". Посилання
+                                    для підтвердження дійсне протягом 24 годин.
+                                </p>
+                                <a href="#" class="primary-btn">Надіслати лист повторно</a>
+                            </div>
+                        {% else %}
+                            <svg class="tw-icon-svg"
+                                         viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10"
+                                                fill="currentColor"></circle>
+                                        <path d="M11 16c-.3 0-.5-.114-.7-.343l-3-3.428c-.4-.458-.4-1.143 0-1.6.4-.458 1-.458 1.4 0l2.3 2.628 4.3-4.914c.4-.457 1-.457 1.4 0 .4.457.4 1.143 0 1.6l-5 5.714c-.2.229-.4.343-.7.343z"
+                                              fill="#fff">
+                                        </path>
+                                    </svg>
+                                <p class="point-desc-verified">
+                                    Електронну адресу підтверджено
+                                </p>
+                        {% endif %}
                     </div>
+                    {% if owner.is_email_verified %}
+                        <div class="stepper second">
+                            <div class="point smaller"><circle cx="10" cy="10" r="8"/></div>
+                            <div class="title">
+                                <p class="point-title">
+                                    <b>
+                                        Додайте реквізити Вашого роботодавця, що будуть використані для виставлення
+                                        рахунків
+                                    </b>
+                                </p>
+                                <p class="point-desc" id="second-point-desc">
+                                    Будь ласка, надайте юридичну інформацію про Вашу компанію-роботодавця,
+                                    яку бачитимете у рахунках.
+                                </p>
+                                <a href="{% url 'setup_billing' owner.owner_id %}" id="add-details">Додати деталі</a>
+                            </div>
+                        </div>
+                        <div class="stepper third">
+                            <div class="point" id="smaller">3</div>
+                            <p class="next-step-title">Додайте спосіб оплати</p>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

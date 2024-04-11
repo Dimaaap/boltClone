@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
+from django.core.signing import TimestampSigner, SignatureExpired, BadSignature
 
 from .forms import *
 from .services import *
@@ -14,8 +15,8 @@ from .models import *
 data_storage = DataStorage()
 
 
-def send_user_mail(subject: str, user_email: str, file_name):
-    html_message = render_to_string(f"business/emails/{file_name}")
+def send_user_mail(subject: str, user_email: str, file_name: str, user_token):
+    html_message = render_to_string(f"business/emails/{file_name}", {"user_token": user_token})
     plain_message = strip_tags(html_message)
     from_email = settings.EMAIL_HOST_USER
     to = user_email
@@ -126,7 +127,9 @@ def owner_profile_page_third_step_view(request):
                 print(e)
             else:
                 #login(request, new_owner, backend="business.backends.EmailAuthBackend")
-                send_user_mail("Активація акаунту", new_owner.email, "business_confirmation.html")
+                user_token = new_owner.generate_verification_token()
+                send_user_mail("Активація акаунту", new_owner.email,
+                               "business_confirmation.html", user_token)
                 return redirect(business_account_page, str(new_owner.owner_id))
     else:
         form = BusinessCompanyDataForm(initial={"company_country": "🇺🇦 Україна"})
@@ -142,5 +145,24 @@ def business_account_page(request, owner_id):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     if not owner:
         return redirect(business_signup_page_view)
-    context = {"owner_id": owner_id, "user_email": owner.email}
+    context = {"owner_id": owner_id, "user_email": owner.email, "owner": owner}
     return render(request, "business/account_page.html", context)
+
+
+def verify_account_via_email_view(request, token: str):
+    MAX_TOKEN_EXPIRATION_TIME = 60 * 60 * 24  #24 hours
+    signer = TimestampSigner()
+    try:
+        user_id = signer.unsign(token, max_age=MAX_TOKEN_EXPIRATION_TIME)
+        owner = get_data_from_model(BusinessOwnerData, "owner_id", user_id)
+        owner.is_email_verified = True
+        owner.save()
+    except (SignatureExpired, BadSignature):
+        return render(request, "business/failed_verification_page.html")
+    else:
+        return redirect(business_account_page, owner.owner_id)
+
+
+def setup_company_billing_view(request, owner_id: str):
+    return render(request, "business/setup_company_billing_page.html")
+
