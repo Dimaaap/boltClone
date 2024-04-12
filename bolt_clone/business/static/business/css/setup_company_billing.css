@@ -5,4 +5,141 @@
 .content {
     padding: 3%;
     justify-content: center;
+    width: 42%;
+    margin-left: 28%;
+}
+
+.content img {
+    display: inline-block;
+    margin-bottom: 5%;
+}
+
+.content .form-title h2 {
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+
+.content .form-title p {
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 5%;
+}
+
+.content form {
+    position: relative;
+}
+
+.content form input {
+    height: 60px;
+    background: #F5F5F5;
+    border: none;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+}
+
+.content form .field-group {
+    margin-bottom: 3%;
+}
+
+.content .additional-info span svg {
+    width: 20px;
+    height: 20px;
+}
+
+.content .additional-info {
+    margin-top: 1%;
+    margin-bottom: -1%;
+}
+
+.content form label {
+    position: absolute;
+    top: 1%;
+    left: 2.5%;
+    z-index: 100;
+    font-size: 0.8rem;
+    color: gray;
+    font-weight: 500;
+}
+
+#company-legal-name,
+#company-country{
+    padding-top: 2.5%;
+}
+
+#company-country {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.content #label-2 {
+    position: absolute;
+    top: 15.5%;
+}
+
+.content #label-3 {
+    position: absolute;
+    top: 30.5%;
+}
+
+.content #label-4 {
+    top: 45.5%;
+}
+
+.content #label-5 {
+    top: 65%;
+}
+
+.content #label-6 {
+    top: 80%;
+}
+
+.content .hidden {
+    display: none;
+}
+
+.content form #inplace-icon {
+    display: inline-block;
+    position: absolute;
+    top: 4%;
+    left: 90%;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+
+.content form .key {
+    display: inline-block;
+    position: absolute;
+    top: 18%;
+    left: 90%;
+    z-index: 100;
+    cursor: not-allowed;
+}
+
+.content form #inplace-icon svg {
+    width: 20px;
+    height: 20px;
+    color: gray;
+}
+
+.content form .inplace-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.content form .submit-btn {
+    width: 100%;
+    padding: 3%;
+    border: none;
+    border-radius: 25px;
+    background: rgba(50,187,120,0.9);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.content form .submit-btn:hover {
+    background: rgba(50, 187, 120, 1);
 }

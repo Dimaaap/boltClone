@@ -164,5 +164,14 @@ def verify_account_via_email_view(request, token: str):
 
 
 def setup_company_billing_view(request, owner_id: str):
-    return render(request, "business/setup_company_billing_page.html")
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    if request.method == "POST":
+        form = CompanyLegalInformationForm(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = CompanyLegalInformationForm(initial={"company_legal_name": owner.company_name,
+                                                    "company_country": owner.company_country_id.country_title})
+    context = {"form": form}
+    return render(request, "business/setup_company_billing_page.html", context)
 

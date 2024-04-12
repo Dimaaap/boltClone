@@ -108,3 +108,41 @@ class BusinessCompanyDataForm(forms.Form):
                                      "id": "promo_code",
                                      "placeholder": "Введіть промокод"
                                  }))
+
+
+class CompanyLegalInformationForm(forms.Form):
+    company_legal_name = forms.CharField(label="Юридична назва компанії", required=True,
+                                         widget=forms.TextInput(attrs={
+                                             "class": "form-control",
+                                             "id": "company-legal-name"
+                                         }))
+    company_country = forms.CharField(label="Країна", required=True,
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control",
+                                          "id": "company-country",
+                                          "readonly": "readonly"
+                                      }))
+    bills_email = forms.EmailField(label="Електронна скринька для рахунків", required=True,
+                                   widget=forms.EmailInput(attrs={
+                                       "class": "form-control",
+                                       "id": "bills-email",
+                                       "placeholder": "Електронна скринька для рахунків"
+                                   }))
+    legal_company_name = forms.CharField(label="Юридична адреса компанії", required=True,
+                                         widget=forms.TextInput(attrs={
+                                             "class": "form-control",
+                                             "id": "legal-company-name",
+                                             "placeholder": "Юридична адреса компанії"
+                                         }))
+    edrpou_data = forms.CharField(max_length=8, label="ЄДРПОУ", required=True,
+                                  widget=forms.TextInput(attrs={
+                                      "class": "form-control",
+                                      "id": "edrpou_data",
+                                      "placeholder": "ЄДРПОУ"
+                                  }))
+    company_ipn = forms.CharField(max_length=12, label="Номер платника ПДВ", required=False,
+                                  widget=forms.TextInput(attrs={
+                                      "class": "form-control",
+                                      "id": "company-ipn",
+                                      "placeholder": "Номер платника ПДВ"
+                                  }))
