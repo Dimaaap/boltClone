@@ -35,6 +35,7 @@ class BusinessOwnerData(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_email_verified = models.BooleanField(default=False)
+    is_legal_info_verified = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     USERNAME_FIELD = "email"

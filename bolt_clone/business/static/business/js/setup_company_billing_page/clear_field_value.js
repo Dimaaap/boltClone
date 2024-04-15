@@ -1,33 +1,42 @@
 const companyNameField = document.getElementById("company-legal-name");
-const clearFieldBtn = document.getElementById("inplace-icon");
+const clearFieldBtn = document.querySelector(".inplace-icon");
+
+const formFields = Array.from(document.querySelectorAll("input"))
+const formSpans = Array.from(document.querySelectorAll(".inplace-icon"))
+
+formFields.splice(0, 1);
+formSpans.splice(2, 1);
 
 
-companyNameField.addEventListener("mouseover", () => {
-    if(companyNameField.value.length >= 1){
-        clearFieldBtn.style.display = "inline-block";
-    }
+formFields.forEach((formField) => {
+    let fieldIndex = formFields.indexOf(formField);
+    formField.addEventListener("mouseover", () => {
+        if(formField.value.length >= 1){
+            formSpans[fieldIndex].style.display = "inline-block";
+        }
+    })
+
+    formField.addEventListener("mouseout", () => {
+        formSpans[fieldIndex].style.display = "none";
+    })
+
+    formField.addEventListener("input", () => {
+        if(formField.value.length < 1) {
+            formSpans[fieldIndex].style.display = "none";
+        } else {
+            formSpans[fieldIndex].style.display = "inline-block";
+        }
+    })
 })
 
+formSpans.forEach((formSpan) => {
+    let spanIndex = formSpans.indexOf(formSpan);
+    formSpan.addEventListener("click", () => {
+        formFields[spanIndex].value = ""
+        formSpan.style.display = "none";
+    })
 
-companyNameField.addEventListener("mouseout", () => {
-    clearFieldBtn.style.display = "none";
-})
-
-
-clearFieldBtn.addEventListener("click", () => {
-    companyNameField.value = ""
-    clearFieldBtn.style.display = "none";
-})
-
-clearFieldBtn.addEventListener("mouseover", () => {
-    clearFieldBtn.style.display = "inline-block";
-})
-
-companyNameField.addEventListener("input", () => {
-    if(companyNameField.value.length <= 1){
-        clearFieldBtn.style.display = "none";
-    }
-    else {
-        clearFieldBtn.style.display = "inline-block";
-    }
+    formSpan.addEventListener("mouseover", () => {
+        formSpan.style.display = "inline-block";
+    })
 })

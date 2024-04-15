@@ -28,8 +28,9 @@
                 <div class="field-group">
                     <label id="label-{{ forloop.counter }}" class="inline-label {% if forloop.counter >= 3 %}hidden{% endif %}">{{ field.label }}</label>
                     {{ field }}
-                    {% if forloop.counter == 1 %}
-                        <span id="inplace-icon">
+                    {{ field.errors }}
+                    {% if forloop.counter == 1 or forloop.counter >= 3 %}
+                        <span class="inplace-icon" id="icon-{{ forloop.counter }}">
                             <svg class="tw-icon-svg"
                                  viewBox="0 0 24 24"
                                  fill="none"
@@ -41,7 +42,10 @@
                                 </path>
                             </svg>
                         </span>
-                    {% elif forloop.counter == 2 %}
+                    {% else %}
+                        <span class="inplace-icon" id="icon-2"></span>
+                    {% endif %}
+                    {% if forloop.counter == 2 %}
                         <span class="inplace-icon key">
                             <svg class="tw-icon-svg"
                                  viewBox="0 0 24 24"
@@ -84,4 +88,5 @@
 
 {% block js_additional %}
     <script src="{% static 'business/js/setup_company_billing_page/clear_field_value.js' %}"></script>
+    <script src="{% static 'business/js/setup_company_billing_page/show_hide_labels.js' %}"></script>
 {% endblock %}

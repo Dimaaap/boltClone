@@ -11,5 +11,6 @@ urlpatterns = [
     path("signup/profile/next", owner_profile_page_third_step_view, name="third_step"),
     path("profile/<str:owner_id>/get_started", business_account_page, name="account"),
     path("signup/verify_account/<str:token>/", verify_account_via_email_view, name="verify_account"),
-    path("company/<str:owner_id>/setup/billing/legal", setup_company_billing_view, name="setup_billing")
+    path("company/<str:owner_id>/setup/billing/legal", setup_company_billing_view, name="setup_billing"),
+    path("company/<str:owner_id>/setup/billing/payment", setup_company_payment_view, name="setup_payment")
 ]

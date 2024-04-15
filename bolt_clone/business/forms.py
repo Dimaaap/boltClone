@@ -128,7 +128,7 @@ class CompanyLegalInformationForm(forms.Form):
                                        "id": "bills-email",
                                        "placeholder": "Електронна скринька для рахунків"
                                    }))
-    legal_company_name = forms.CharField(label="Юридична адреса компанії", required=True,
+    company_address = forms.CharField(label="Юридична адреса компанії", required=True,
                                          widget=forms.TextInput(attrs={
                                              "class": "form-control",
                                              "id": "legal-company-name",
@@ -146,3 +146,16 @@ class CompanyLegalInformationForm(forms.Form):
                                       "id": "company-ipn",
                                       "placeholder": "Номер платника ПДВ"
                                   }))
+
+    def clean_edrpou_data(self):
+        edrpou_data = self.cleaned_data["edrpou_data"]
+        if any(not i.isdigit() for i in edrpou_data):
+            raise forms.ValidationError("Неправильний формат коду ЄДРПОУ")
+        return edrpou_data
+
+
+    def clean_company_ipn(self):
+        company_ipn = self.cleaned_data["company_ipn"]
+        if any(not i.isdigit() for i in company_ipn):
+            raise forms.ValidationError("Неправильний формат номеру платника ПДВ")
+        return company_ipn

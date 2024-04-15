@@ -119,7 +119,8 @@
     margin-right: 4%;
 }
 
-#main #add-details {
+#main #add-details,
+#main #add-payment {
     background: rgba(50,187,120,0.8);
     color: white;
 }

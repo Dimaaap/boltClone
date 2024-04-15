@@ -42,8 +42,9 @@ def business_signup_page_view(request):
             return redirect(owner_profile_page_view)
     else:
         is_in_second_step = request.session.get("second_step")
+        print(is_in_second_step)
         is_in_third_step = request.session.get("third_step")
-        if not is_in_second_step or not is_in_third_step:
+        if not is_in_second_step and not is_in_third_step:
             form = BusinessOwnerRegistrationForm()
         else:
             user_email = request.session.get("business_info")["email"]
@@ -86,16 +87,7 @@ def owner_profile_page_view(request):
                                                      "owner_phone_number": str(phone_number)})
             return redirect(owner_profile_page_third_step_view)
     else:
-        is_in_third_page = request.session.get("third_step")
-        if not is_in_third_page:
-            form = BusinessOwnerPersonalDataForm(initial={"owner_phone_number": "+380"})
-        else:
-            owner_first_name, owner_last_name = (request.session["business_info"]["owner_first_name"],
-                                                 request.session["business_info"]["owner_last_name"])
-            form = BusinessOwnerPersonalDataForm(initial={"owner_phone_number": "+380",
-                                                          "owner_first_name": owner_first_name,
-                                                          "owner_last_name": owner_last_name
-                                                          })
+        form = BusinessOwnerPersonalDataForm(initial={"owner_phone_number": "+380"})
     context = {"form": form}
     return render(request, "business/owner_profile_page.html", context)
 
@@ -126,7 +118,7 @@ def owner_profile_page_third_step_view(request):
             except Exception as e:
                 print(e)
             else:
-                #login(request, new_owner, backend="business.backends.EmailAuthBackend")
+                login(request, new_owner, backend="business.backends.EmailAuthBackend")
                 user_token = new_owner.generate_verification_token()
                 send_user_mail("Активація акаунту", new_owner.email,
                                "business_confirmation.html", user_token)
@@ -168,10 +160,25 @@ def setup_company_billing_view(request, owner_id: str):
     if request.method == "POST":
         form = CompanyLegalInformationForm(request.POST)
         if form.is_valid():
-            pass
+            (company_legal_name, company_country, bills_email, company_address,
+             edrpou_data, company_ipn) = form.cleaned_data.values()
+            new_company_legal = CompanyLegalInformation.objects.create(company_legal_name=company_legal_name,
+                                                                       bills_email=bills_email,
+                                                                       company_address=company_address,
+                                                                       edrpou_data=edrpou_data,
+                                                                       company_ipn=company_ipn,
+                                                                       owner_id=owner)
+            owner.is_legal_info_verified = True
+            owner.save()
+            new_company_legal.save()
+            return redirect(business_account_page, owner_id)
+
     else:
         form = CompanyLegalInformationForm(initial={"company_legal_name": owner.company_name,
                                                     "company_country": owner.company_country_id.country_title})
-    context = {"form": form}
+    context = {"form": form, "owner": owner}
     return render(request, "business/setup_company_billing_page.html", context)
 
+
+def setup_company_payment_view(request, owner_id: str):
+    return render(request, "business/setup_company_payment_page.html")

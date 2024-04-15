@@ -80,26 +80,26 @@
 
 .content #label-3 {
     position: absolute;
-    top: 30.5%;
+    top: 29%;
 }
 
 .content #label-4 {
-    top: 45.5%;
+    top: 43%;
 }
 
 .content #label-5 {
-    top: 65%;
+    top: 61.5%;
 }
 
 .content #label-6 {
-    top: 80%;
+    top: 76%;
 }
 
 .content .hidden {
     display: none;
 }
 
-.content form #inplace-icon {
+.content form .inplace-icon {
     display: inline-block;
     position: absolute;
     top: 4%;
@@ -107,6 +107,27 @@
     z-index: 100;
     cursor: pointer;
     display: none;
+}
+
+.content form #icon-1 {
+    top: 2%
+    left: 120%;
+}
+
+.content form #icon-3 {
+    top: 32%;
+}
+
+.content form #icon-4 {
+    top: 46%;
+}
+
+.content form #icon-5 {
+    top: 65%;
+}
+
+.content form #icon-6 {
+    top: 79%;
 }
 
 .content form .key {
@@ -118,15 +139,10 @@
     cursor: not-allowed;
 }
 
-.content form #inplace-icon svg {
-    width: 20px;
-    height: 20px;
-    color: gray;
-}
-
 .content form .inplace-icon svg {
     width: 20px;
     height: 20px;
+    color: gray;
 }
 
 .content form .submit-btn {
@@ -142,4 +158,12 @@
 
 .content form .submit-btn:hover {
     background: rgba(50, 187, 120, 1);
+}
+
+.content form .errorlist {
+    list-style-type: none;
+    margin-left: -6%;
+    font-weight: 500;
+    margin-top: 1%;
+    color: tomato;
 }
