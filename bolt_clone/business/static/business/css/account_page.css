@@ -144,3 +144,7 @@
 #main #add-details:hover {
     background: rgba(50,187,120,1);
 }
+
+.navbar-container {
+    max-height: 590px;
+}

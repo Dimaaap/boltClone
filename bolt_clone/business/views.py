@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
-from django.core.signing import TimestampSigner, SignatureExpired, BadSignature
+from django.core.signing import SignatureExpired, BadSignature
 
 from .forms import *
 from .services import *
@@ -137,7 +137,9 @@ def business_account_page(request, owner_id):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     if not owner:
         return redirect(business_signup_page_view)
-    context = {"owner_id": owner_id, "user_email": owner.email, "owner": owner}
+    owner_full_name = owner.get_user_full_name()
+    context = {"owner_id": owner_id, "user_email": owner.email, "owner": owner,
+               "owner_full_name": owner_full_name}
     return render(request, "business/account_page.html", context)
 
 
@@ -180,5 +182,14 @@ def setup_company_billing_view(request, owner_id: str):
     return render(request, "business/setup_company_billing_page.html", context)
 
 
+def account_page_view(request, owner_id: str):
+    return render(request, "business/main_account_page.html")
+
+
 def setup_company_payment_view(request, owner_id: str):
-    return render(request, "business/setup_company_payment_page.html")
+    context = {"owner_id": owner_id}
+    return render(request, "business/setup_company_payment_page.html", context)
+
+
+def add_card_view(request, owner_id: str):
+    return render(request, "business/add_card_page.html")

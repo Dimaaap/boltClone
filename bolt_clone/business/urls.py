@@ -12,5 +12,7 @@ urlpatterns = [
     path("profile/<str:owner_id>/get_started", business_account_page, name="account"),
     path("signup/verify_account/<str:token>/", verify_account_via_email_view, name="verify_account"),
     path("company/<str:owner_id>/setup/billing/legal", setup_company_billing_view, name="setup_billing"),
-    path("company/<str:owner_id>/setup/billing/payment", setup_company_payment_view, name="setup_payment")
+    path("company/<str:owner_id>/setup/billing/payment", setup_company_payment_view, name="setup_payment"),
+    path("add_card/<str:owner_id>/", add_card_view, name="add_card"),
+    path("company/<str:owner_id>/account", account_page_view, "account")
 ]

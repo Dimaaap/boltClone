@@ -25,7 +25,77 @@
                 <p class="part-desc">
                     Найкращий вибір, якщо Ви бажаєте додати платіжну картку та почати поїздку.
                 </p>
+                <ul class="advantages-list">
+                    <li>
+                        <span class="li-circle">
+                            <svg class="tw-icon-svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12"
+                                        r="10"
+                                        fill="currentColor"></circle>
+                                <path d="M11 16c-.3 0-.5-.114-.7-.343l-3-3.428c-.4-.458-.4-1.143 0-1.6.4-.458 1-.458 1.4 0l2.3 2.628 4.3-4.914c.4-.457 1-.457 1.4 0 .4.457.4 1.143 0 1.6l-5 5.714c-.2.229-.4.343-.7.343z"
+                                      fill="#fff">
+                                </path>
+                            </svg>
+                        </span>
+                        Плата за корпоративні поїздки стягується
+                        з однієї картки.
+                    </li>
+                    <li>
+                        <span class="li-circle">
+                            <svg class="tw-icon-svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12"
+                                        r="10"
+                                        fill="currentColor"></circle>
+                                <path d="M11 16c-.3 0-.5-.114-.7-.343l-3-3.428c-.4-.458-.4-1.143 0-1.6.4-.458 1-.458 1.4 0l2.3 2.628 4.3-4.914c.4-.457 1-.457 1.4 0 .4.457.4 1.143 0 1.6l-5 5.714c-.2.229-.4.343-.7.343z"
+                                      fill="#fff">
+                                </path>
+                            </svg>
+                        </span>
+                        Ви платите тільки після завершення поїздки.
+                    </li>
+                    <li>
+                        <span class="li-circle">
+                            <svg class="tw-icon-svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12"
+                                        r="10"
+                                        fill="currentColor"></circle>
+                                <path d="M11 16c-.3 0-.5-.114-.7-.343l-3-3.428c-.4-.458-.4-1.143 0-1.6.4-.458 1-.458 1.4 0l2.3 2.628 4.3-4.914c.4-.457 1-.457 1.4 0 .4.457.4 1.143 0 1.6l-5 5.714c-.2.229-.4.343-.7.343z"
+                                      fill="#fff">
+                                </path>
+                            </svg>
+                        </span>
+                        Не потрібна кредитна перевірка.
+                    </li>
+                </ul>
+                <a href="{% url 'add_card' owner_id %}" id="add-credit-card">
+                    Додати платіжну картку
+                </a>
             </div>
+            <div class="right-section">
+                <img width="50" height="50"
+                     src="{% static 'business/media/invoice-choice-avata.png' %}" />
+                <h4 class="section-title">
+                    Здійснюєте понад 50 поїздок щомісяця?
+                </h4>
+                <p class="section-desc">
+                    Уникайте багаторазових списань, сплачуючи за всі поїздки,
+                    здійснені протягом місяця, одним платежем. Зв'яжіться із
+                    нашою службою продажів, щоб під'єднати такий варіант.
+                </p>
+                <a href="#" id="contact-sales-dept">
+                    Зв'яжіться із нашою командою з продажів
+                </a>
+            </div>
+
         </div>
     </div>
 {% endblock %}
