@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+from django.contrib.auth.hashers import check_password
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -183,12 +184,45 @@ def setup_company_billing_view(request, owner_id: str):
 
 
 def account_page_view(request, owner_id: str):
-    return render(request, "business/main_account_page.html")
+    if request.method == "POST":
+        form = ChangeUserPasswordForm(request.POST)
+        if form.is_valid():
+            old_password, new_password = form.cleaned_data.values()
+            if not compare_owner_passwords(old_password, owner_id):
+                return messages.error(request, "Неправильно введений старий пароль")
+            else:
+                owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+                owner.set_password(new_password)
+                try:
+                    owner.save()
+                except Exception as e:
+                    print(e)
+                    print("ERROR")
+                else:
+                    return redirect(business_account_page, owner_id)
+    else:
+        form = ChangeUserPasswordForm()
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    owner_full_name = owner.get_user_full_name()
+    context = {"owner_id": owner_id, "owner": owner, "full_name": owner_full_name, "form": form}
+    return render(request, "business/main_account_page.html", context)
+
+
+def compare_owner_passwords(old_password: str, owner_id):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    owner_password = owner.password
+    return check_password(old_password, owner_password)
 
 
 def setup_company_payment_view(request, owner_id: str):
     context = {"owner_id": owner_id}
     return render(request, "business/setup_company_payment_page.html", context)
+
+
+def logout_user_page_view(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return redirect(business_login_page_view)
 
 
 def add_card_view(request, owner_id: str):

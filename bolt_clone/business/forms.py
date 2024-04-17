@@ -159,3 +159,24 @@ class CompanyLegalInformationForm(forms.Form):
         if any(not i.isdigit() for i in company_ipn):
             raise forms.ValidationError("Неправильний формат номеру платника ПДВ")
         return company_ipn
+
+
+class ChangeUserPasswordForm(forms.Form):
+    current_password = forms.CharField(max_length=200, label="Поточний пароль", required=True,
+                                       widget=forms.PasswordInput(attrs={
+                                           "class": "form-control",
+                                           "placeholder": "Введіть поточний пароль"
+                                       }))
+    new_password = forms.CharField(max_length=200, required=True, label="Новий пароль",
+                                   widget=forms.PasswordInput(attrs={
+                                       "class": "form-control",
+                                       "placeholder": "Введіть новий пароль"
+                                   }))
+
+
+    def clean_new_password(self):
+        new_password = self.cleaned_data["new_password"]
+        if len(new_password) < 6:
+            raise forms.ValidationError("Довжина паролю повинна бути мінімум 6 символів")
+        if all([i.isdigit() for i in new_password]) or all([i.isalpha() for i in new_password]):
+            raise forms.ValidationError("Надто простий пароль. Пароль повинен містити цифри і літери")
