@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+from django.http import JsonResponse
 from django.contrib.auth.hashers import check_password
 from django.core.mail import send_mail
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -65,6 +68,9 @@ def business_login_page_view(request):
                 return redirect(business_account_page, str(user.owner_id))
             else:
                 return messages.error(request, "Неправильний логін або пароль")
+        else:
+            print(form.errors)
+            return messages.error(request, "Помилка")
     else:
         user_email = request.session.get("email", None)
         if not user_email:
@@ -224,6 +230,30 @@ def logout_user_page_view(request):
         logout(request)
         return redirect(business_login_page_view)
 
+
+@csrf_exempt
+@require_POST
+def change_password_view(request, owner_id):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    if request.method == "POST":
+        current_password, new_password = request.POST.get("current_password"), request.POST.get("new_password")
+        if not check_password(current_password, owner.password):
+            return JsonResponse({"success": False})
+        if not validate_password_service(new_password):
+            return JsonResponse({"form_error": "Надто простий пароль. Він повинен містити хоча б одну цифру і літеру"})
+        owner.set_password(new_password)
+        owner.save()
+        return JsonResponse({"success": True, "owner_id": owner_id})
+    else:
+        return JsonResponse({"error": "asdsadas"})
+
+
+def validate_password_service(user_password: str):
+    if all(i.isdigit() for i in user_password) or all(i.isalpha() for i in user_password):
+        return False
+    if len(user_password < 6):
+        return False
+    return True
 
 def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")

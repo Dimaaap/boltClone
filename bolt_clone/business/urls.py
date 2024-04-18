@@ -15,5 +15,6 @@ urlpatterns = [
     path("company/<str:owner_id>/setup/billing/payment", setup_company_payment_view, name="setup_payment"),
     path("add_card/<str:owner_id>/", add_card_view, name="add_card"),
     path("company/<str:owner_id>/account", account_page_view, name="account"),
-    path("company/logout", logout_user_page_view, name="logout")
+    path("company/logout", logout_user_page_view, name="logout"),
+    path("company/<str:owner_id>/change_password", change_password_view, name="change_password")
 ]
