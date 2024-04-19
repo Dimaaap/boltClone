@@ -93,3 +93,51 @@
 #main .container:last-child {
     border-bottom: 0;
 }
+
+/*.hidden-form {
+    display: none;
+}*/
+
+.hidden-form form {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.hidden-form form .field-group {
+    margin-bottom: 2%;
+    position: relative;
+}
+
+.hidden-form form label {
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+.hidden-form form input {
+    background: #F5F5F5;
+    height: 55px;
+    border: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.hidden-form .save-btn {
+    display: inline-block;
+    border: none;
+    padding: 3%;
+    margin-left: 0%;
+    margin-top: 2%;
+    border-radius: 25px;
+    font-weight: 700;
+}
+
+.hidden-form .input-field-icon {
+    position: absolute;
+    top: 50%;
+    left: 92%;
+    cursor: pointer;
+}
+
+.hidden-form .input-field-icon path {
+    color: darkgray;
+}

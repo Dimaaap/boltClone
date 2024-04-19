@@ -180,3 +180,16 @@ class ChangeUserPasswordForm(forms.Form):
             raise forms.ValidationError("Довжина паролю повинна бути мінімум 6 символів")
         if all([i.isdigit() for i in new_password]) or all([i.isalpha() for i in new_password]):
             raise forms.ValidationError("Надто простий пароль. Пароль повинен містити цифри і літери")
+
+
+class ChangeOwnerFullNameForm(forms.Form):
+    owner_first_name = forms.CharField(max_length=100, required=True, label="Ім'я",
+                                       widget=forms.TextInput(attrs={
+                                           "class": "form-control",
+                                           "id": "user-first-name"
+                                       }))
+    owner_last_name = forms.CharField(max_length=200, required=True, label="Прізвище",
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control",
+                                          "id": "user-last-name"
+                                      }))
