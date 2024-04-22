@@ -6,6 +6,8 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from django.core.signing import SignatureExpired, BadSignature
 from django.contrib.auth.decorators import login_required
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 from .forms import *
 from .services import *
@@ -183,6 +185,8 @@ def account_page_view(request, owner_id: str):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     if request.method == "POST":
         form = ChangeUserPasswordForm(request.POST)
+        change_email_form = None
+        change_full_name_form = None
         if form.is_valid():
             old_password, new_password = form.cleaned_data.values()
             if not compare_owner_passwords(old_password, owner_id):
@@ -199,10 +203,11 @@ def account_page_view(request, owner_id: str):
         form = ChangeUserPasswordForm()
         change_full_name_form = ChangeOwnerFullNameForm(initial={"owner_first_name": owner.owner_first_name,
                                                         "owner_last_name": owner.owner_last_name})
+        change_email_form = ChangeOwnerEmailForm(initial={"owner_email": owner.email})
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     owner_full_name = owner.get_user_full_name()
     context = {"owner_id": owner_id, "owner": owner, "full_name": owner_full_name, "form": form,
-               "change_full_name_form": change_full_name_form}
+               "change_full_name_form": change_full_name_form, "change_email_form": change_email_form}
     return render(request, "business/main_account_page.html", context)
 
 
@@ -235,3 +240,49 @@ def change_password_view(request, owner_id):
 
 def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")
+
+
+@csrf_exempt
+@require_POST
+def change_user_name_view(request, owner_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    if request.method == "POST":
+        first_name, last_name = request.POST.get("owner_first_name"), request.POST.get("owner_last_name")
+        if first_name and last_name:
+            if not check_input_username_service(first_name, last_name):
+                return JsonResponse({"form_error": "Некоректне ім'я або прізвище"})
+            else:
+                owner.owner_first_name = first_name
+                owner.owner_last_name = last_name
+                owner.save()
+            return JsonResponse({"success": True, "owner_id": owner_id})
+        else:
+            return JsonResponse({"form_error": "Заповніть всі поля форми", "field": 1})
+    else:
+        return JsonResponse({"error": "WTF?"})
+
+
+@csrf_exempt
+@require_POST
+def change_email_view(request, owner_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    if request.method == "POST":
+        email = request.POST.get("owner_email")
+        if email:
+            if not check_user_email_service(email):
+                return JsonResponse({"form_error": "Некоректна email-адреса"})
+            else:
+                owner.email = email
+                owner.save()
+            return JsonResponse({"success": True, "owner_id": owner_id})
+        else:
+            return JsonResponse({"form_error": "Заповніть поле форми", "field": 1})
+    else:
+        return JsonResponse({"error": "WTF?"})
+
+def check_user_email_service(user_email: str):
+    try:
+        validate_email(user_email)
+    except ValidationError as e:
+        return False
+    return True

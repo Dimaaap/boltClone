@@ -18,6 +18,7 @@
 {% block js_additional %}
     <script src="{% static 'business/js/main_account_page/show_popup_password.js' %}"></script>
     <script src="{% static 'business/js/main_account_page/change_user_full_name_form.js' %}"></script>
+    <script src="{% static 'business/js/main_account_page/change_user_email_form.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -65,12 +66,11 @@
                         </span>
                         <a href="#" class="change-href" id="change-user-full-name">Змінити</a>
                         <div class="form-container hidden-form">
-                            <form method="post">
+                            <form id="change-name-form" method="post" action="{% url 'change_user_name' user.owner_id %}">
                                 {% csrf_token %}
                                 {% for field in change_full_name_form %}
                                     <div class="field-group">
                                         <label class="hidden-form-label">{{ field.label }}</label>
-                                        {{ label }}
                                         {{ field }}
                                         <span class="input-field-icon">
                                             <svg class="tw-icon-svg"
@@ -84,7 +84,7 @@
                                                 </path>
                                             </svg>
                                         </span>
-                                        <div class="errorlist">
+                                        <div class="errorlist error-user-name">
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -96,10 +96,35 @@
                         <span class="point-desc">
                             Електронна пошта
                         </span>
-                        <span class="point-value">
+                        <span class="point-value" id="user-email">
                             {{ owner.email }}
                         </span>
-                        <a href="#" class="change-href">Змінити</a>
+                        <a href="#" class="change-href" id="change-user-email">Змінити</a>
+                        <div class="form-container hidden-form">
+                            <form id="change-email-form" method="post" action="{% url 'change_email' user.owner_id %}">
+                                {% csrf_token %}
+                                {% for field in change_email_form %}
+                                    <div class="field-group">
+                                        <label class="hidden-form-label">{{ field.label }}</label>
+                                        {{ field }}
+                                        <span class="input-field-icon user-email-icon">
+                                            <svg class="tw-icon-svg"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                      clip-rule="evenodd"
+                                                      d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.786-13.786L13 12l3.786 3.786a.69.69 0 0 1 0 1 .771.771 0 0 1-.5.214.772.772 0 0 1-.5-.214L12 13l-3.786 3.786a.648.648 0 0 1-.5.214.648.648 0 0 1-.5-.214.69.69 0 0 1 0-1L11 12 7.214 8.214a.69.69 0 0 1 0-1 .69.69 0 0 1 1 0L12 11l3.786-3.786a.69.69 0 0 1 1 0 .69.69 0 0 1 0 1z"
+                                                      fill="currentColor">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="errorlist error-user-email"></div>
+                                {% endfor %}
+                                <button type="submit" class="save-btn" id="save-user-email">Зберегти</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="row">
                         <span class="point-desc">

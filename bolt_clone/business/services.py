@@ -64,6 +64,12 @@ def validate_password_service(user_password: str):
     return True
 
 
+def check_input_username_service(first_name: str, last_name: str):
+    if len(first_name) > 100 or len(last_name) > 200:
+        return False
+    return True
+
+
 def send_user_mail(subject: str, user_email: str, file_name: str, user_token):
     html_message = render_to_string(f"business/emails/{file_name}", {"user_token": user_token})
     plain_message = strip_tags(html_message)

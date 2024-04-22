@@ -193,3 +193,11 @@ class ChangeOwnerFullNameForm(forms.Form):
                                           "class": "form-control",
                                           "id": "user-last-name"
                                       }))
+
+
+class ChangeOwnerEmailForm(forms.Form):
+    owner_email = forms.EmailField(max_length=60, required=True, label="Електронна пошта",
+                                   widget=forms.EmailInput(attrs={
+                                       "class": "form-control",
+                                       "id": "user-email"
+                                   }))
