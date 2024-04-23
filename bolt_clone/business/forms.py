@@ -201,3 +201,13 @@ class ChangeOwnerEmailForm(forms.Form):
                                        "class": "form-control",
                                        "id": "user-email"
                                    }))
+
+
+class ChangeOwnerPhoneNumberForm(forms.Form):
+    phone_number = PhoneNumberField(region="UA", label="Телефон",
+                                    widget=forms.TextInput(
+                                        attrs={
+                                            "class": "form-control",
+                                            "id": "phone-number-field"
+                                        }
+                                    ))

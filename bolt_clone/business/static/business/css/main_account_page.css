@@ -14,6 +14,10 @@
     font-weight: 500;
 }
 
+#change-user-email {
+    margin-bottom: 3%;
+}
+
 #main .personal-data {
     margin-top: 7%;
     margin-bottom: 5%;
@@ -141,4 +145,27 @@
 
 .hidden-form .input-field-icon path {
     color: darkgray;
+}
+
+.verify-email-alert {
+   background:rgba(255,245,204,1);
+   margin-top: 10%;
+   margin-bottom: 3%;
+   border-radius: 10px;
+   padding: 3%;
+}
+
+.verify-email-alert path {
+    color: rgba(255,197,41,1);
+}
+
+.verify-email-alert .title {
+    display: inline-block;
+    margin-left: 3%;
+}
+
+.verify-email-alert .rest-title {
+    margin-left: 9%;
+    font-weight: 500;
+    color: rgba(116, 122, 130, 1);
 }

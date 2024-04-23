@@ -18,5 +18,6 @@ urlpatterns = [
     path("company/logout", logout_user_page_view, name="logout"),
     path("company/<str:owner_id>/change_password", change_password_view, name="change_password"),
     path("company/<str:owner_id>/change_user_name", change_user_name_view, name="change_user_name"),
-    path("company/<str:owner_id>/change_email", change_email_view, name="change_email")
+    path("company/<str:owner_id>/change_email", change_email_view, name="change_email"),
+    path("company/<str:owner_id>/change_phone_number", change_phone_number_view, name="change_phone_number")
 ]

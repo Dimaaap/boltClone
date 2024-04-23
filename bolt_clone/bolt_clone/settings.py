@@ -8,6 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 
+NUMBER_PATTERN = r'^\+380\d{9}$'
+
 DEBUG = True
 
 ALLOWED_HOSTS = []

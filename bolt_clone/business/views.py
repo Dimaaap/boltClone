@@ -1,3 +1,5 @@
+import re
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -8,6 +10,7 @@ from django.core.signing import SignatureExpired, BadSignature
 from django.contrib.auth.decorators import login_required
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.conf import settings
 
 from .forms import *
 from .services import *
@@ -48,8 +51,10 @@ def business_signup_page_view(request):
 
 def business_login_page_view(request):
     if request.method == "POST":
+        print("Here")
         form = BusinessOwnerLoginForm(request.POST)
         if form.is_valid():
+            print("form is valid")
             user_email, user_password = form.cleaned_data.values()
             user = authenticate(request, email=user_email, password=user_password)
             if user is not None:
@@ -187,6 +192,7 @@ def account_page_view(request, owner_id: str):
         form = ChangeUserPasswordForm(request.POST)
         change_email_form = None
         change_full_name_form = None
+        change_phone_number_form = None
         if form.is_valid():
             old_password, new_password = form.cleaned_data.values()
             if not compare_owner_passwords(old_password, owner_id):
@@ -204,10 +210,12 @@ def account_page_view(request, owner_id: str):
         change_full_name_form = ChangeOwnerFullNameForm(initial={"owner_first_name": owner.owner_first_name,
                                                         "owner_last_name": owner.owner_last_name})
         change_email_form = ChangeOwnerEmailForm(initial={"owner_email": owner.email})
+        change_phone_number_form = ChangeOwnerPhoneNumberForm(initial={"phone_number": owner.owner_phone_number})
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     owner_full_name = owner.get_user_full_name()
     context = {"owner_id": owner_id, "owner": owner, "full_name": owner_full_name, "form": form,
-               "change_full_name_form": change_full_name_form, "change_email_form": change_email_form}
+               "change_full_name_form": change_full_name_form, "change_email_form": change_email_form,
+               "change_phone_number_form": change_phone_number_form}
     return render(request, "business/main_account_page.html", context)
 
 
@@ -273,10 +281,35 @@ def change_email_view(request, owner_id: str):
                 return JsonResponse({"form_error": "Некоректна email-адреса"})
             else:
                 owner.email = email
+                owner.is_email_verified = False
+                owner.save()
+                owner_token = owner.generate_verification_token()
+                send_user_mail("Підтвердження email", owner.email,
+                               "email_confirmation.html", owner_token)
+                owner.is_email_verified = True
                 owner.save()
             return JsonResponse({"success": True, "owner_id": owner_id})
         else:
             return JsonResponse({"form_error": "Заповніть поле форми", "field": 1})
+    else:
+        return JsonResponse({"error": "WTF?"})
+
+
+@csrf_exempt
+@require_POST
+def change_phone_number_view(request, owner_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    if request.method == "POST":
+        phone_number = request.POST.get("phone_number")
+        if phone_number:
+            if not check_user_phone_number_service(phone_number):
+                return JsonResponse({"form_error": "Неправильний формат номеру"})
+            else:
+                owner.owner_phone_number = phone_number
+                owner.save()
+            return JsonResponse({"success": True, "owner_id": owner_id})
+        else:
+            return JsonResponse({"form_error": "Заповніть поле форми"})
     else:
         return JsonResponse({"error": "WTF?"})
 
@@ -286,3 +319,7 @@ def check_user_email_service(user_email: str):
     except ValidationError as e:
         return False
     return True
+
+
+def check_user_phone_number_service(phone_number: str):
+    return re.match(settings.NUMBER_PATTERN, phone_number)
