@@ -16,7 +16,6 @@ from .forms import *
 from .services import *
 from .models import *
 
-
 data_storage = DataStorage()
 
 
@@ -91,6 +90,7 @@ def owner_profile_page_view(request):
     context = {"form": form}
     return render(request, "business/owner_profile_page.html", context)
 
+
 def owner_profile_page_third_step_view(request):
     if not request.session.get("first_page"):
         return redirect(business_signup_page_view)
@@ -146,7 +146,7 @@ def business_account_page(request, owner_id):
 
 @login_required(login_url="business_login")
 def verify_account_via_email_view(request, token: str):
-    MAX_TOKEN_EXPIRATION_TIME = 60 * 60 * 24  #24 hours
+    MAX_TOKEN_EXPIRATION_TIME = 60 * 60 * 24  # 24 hours
     signer = TimestampSigner()
     try:
         user_id = signer.unsign(token, max_age=MAX_TOKEN_EXPIRATION_TIME)
@@ -208,7 +208,7 @@ def account_page_view(request, owner_id: str):
     else:
         form = ChangeUserPasswordForm()
         change_full_name_form = ChangeOwnerFullNameForm(initial={"owner_first_name": owner.owner_first_name,
-                                                        "owner_last_name": owner.owner_last_name})
+                                                                 "owner_last_name": owner.owner_last_name})
         change_email_form = ChangeOwnerEmailForm(initial={"owner_email": owner.email})
         change_phone_number_form = ChangeOwnerPhoneNumberForm(initial={"phone_number": owner.owner_phone_number})
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
@@ -245,6 +245,7 @@ def change_password_view(request, owner_id):
         return JsonResponse({"success": True, "owner_id": owner_id})
     else:
         return JsonResponse({"error": "asdsadas"})
+
 
 def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")
@@ -307,11 +308,12 @@ def change_phone_number_view(request, owner_id: str):
             else:
                 owner.owner_phone_number = phone_number
                 owner.save()
-            return JsonResponse({"success": True, "owner_id": owner_id})
+                return JsonResponse({"success": True, "owner_id": owner_id})
         else:
             return JsonResponse({"form_error": "Заповніть поле форми"})
     else:
         return JsonResponse({"error": "WTF?"})
+
 
 def check_user_email_service(user_email: str):
     try:
