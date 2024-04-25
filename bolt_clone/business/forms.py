@@ -211,3 +211,13 @@ class ChangeOwnerPhoneNumberForm(forms.Form):
                                             "id": "phone-number-field"
                                         }
                                     ))
+
+
+class AddPDFEmailForm(forms.Form):
+    email_address = forms.EmailField(label="", required=False, widget=forms.EmailInput(
+        attrs={
+            "class": "form-control",
+            "id": "email-address-field",
+            "placeholder": "Введіть адресу електронної скриньки"
+        }
+    ))

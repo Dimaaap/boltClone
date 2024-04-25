@@ -157,7 +157,7 @@
                         </span>
                         <a href="javascript: void(0);" class="change-href" id="change-phone-number-btn">Змінити</a>
                         <div class="form-container hidden-form">
-                            <form id="change-phone-number-form" method="POST"
+                            <form id="change-phone-number-form" method="post"
                                   action="{% url 'change_phone_number' user.owner_id %}">
                                 {% for field in change_phone_number_form %}
                                     <div class="field-group">

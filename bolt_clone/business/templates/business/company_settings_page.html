@@ -1,0 +1,147 @@
+{% extends './base_template.html' %}
+
+{% load static %}
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'business/css/account_page.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/include_css/account_page/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'business/css/company_settings_page.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+
+{% block js_additional %}
+    <script src="{% static 'business/js/company_settings_page/add_email_popup.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <section id="main">
+        <div class="content">
+            <div class="navbar-container">
+                {% include './_includes/account_page/navbar.html' %}
+            </div>
+            <div class="rest-container">
+                <h1 class="section-title">
+                    Налаштування
+                </h1>
+                <div class="step-container">
+                    <div class="step">
+                        <h4 class="step-title">
+                            Окремі квитанції на кожну поїздку з PDF-вкладенням
+                        </h4>
+                        <p class="step-desc">
+                            Квитанції за кожну поїздку буде надіслано на вказану вами адресу електронної скриньки
+                        </p>
+                        <a href="javascript:void(0);" class="step-btn" id="add-email-btn">Додати адресу електронної скриньки</a>
+                        <div class="settings-popup hidden-popup hidden" id="email-popup">
+                                <div class="popup-header">
+                                    <h5>Введіть адресу електронної скриньки</h5>
+                                    <a href="javascript:void(0);" id="close-popup-btn">X</a>
+                                </div>
+                                <div class="popup-body">
+                                    <p>
+                                        Додати адресу електронної скриньки аби отримувати квитанції за
+                                        поїздки із PDF-вкладеннями
+                                    </p>
+                                    <form class="form-popup" id="add-pdf-email-form" method="post"
+                                    action="{% url 'add_receipt_email' owner.owner_id %}">
+                                        {% csrf_token %}
+                                        {% for field in add_pdf_email_form %}
+                                            <div class="field-container">
+                                                {{ field }}
+                                                <span class="field-icon" id="email-form-cancel-icon">
+                                                <svg class="tw-icon-svg"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                          clip-rule="evenodd"
+                                                          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.786-13.786L13 12l3.786 3.786a.69.69 0 0 1 0 1 .771.771 0 0 1-.5.214.772.772 0 0 1-.5-.214L12 13l-3.786 3.786a.648.648 0 0 1-.5.214.648.648 0 0 1-.5-.214.69.69 0 0 1 0-1L11 12 7.214 8.214a.69.69 0 0 1 0-1 .69.69 0 0 1 1 0L12 11l3.786-3.786a.69.69 0 0 1 1 0 .69.69 0 0 1 0 1z"
+                                                          fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            </div>
+                                        {% endfor %}
+                                        <div class="errorlist"></div>
+                                        <button type="submit" class="popup-btn" disabled id="email-form-submit">Додати адресу</button>
+                                    </form>
+                                </div>
+                        </div>
+                        <div class="overlay" id="email-overlay"></div>
+                    </div>
+                    <div class="step">
+                        <h4 class="step-title">
+                            Коди витрат
+                        </h4>
+                        <p class="step-desc">
+                            Завантажте список кодів витрат, і перейдіть у розділ "Обмеження", щоб увімкнути
+                            коди витрат для ваших користувачів. Надалі, перед кожною поїздкою в додатку Bolt
+                            потрібно буде вибрати код із цього списку.
+                        </p>
+                        <a href="javascript:void(0);" class="step-btn">Додати коди витрат</a>
+                        <p class="add-info">
+                            Виникли проблеми? <a href="#">Завантажити шаблон</a>
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h4 class="step-title">
+                            API панелі керування компанії
+                        </h4>
+                        <p class="step-desc">
+                            З API панелі керування компанії управління автоматизовано. Включно із додаванням
+                            нових користувачів, оновленням даних чинних та видаленням.
+                        </p>
+                        <a href="javascript:void(0);" class="step-btn">Дозволити доступ до API</a>
+                    </div>
+                    <div class="step">
+                        <h4 class="step-title">
+                            Компенсації
+                        </h4>
+                        <p class="step-desc">
+                            Додайте промокод до вашого облікового запису компанії.
+                        </p>
+                        <a href="javascript:void(0);;" class="step-btn">Додати промокод</a>
+                    </div>
+                    <div class="step">
+                        <h4 class="step-title">
+                            Сповіщення
+                        </h4>
+                        <p class="step-desc">
+                            Основна контактна особа компанії щодо юридичних та платіжних питань
+                        </p>
+                        <p class="step-desc personal-info">
+                            {{ owner_full_name }} ({{ owner.email }})
+                        </p>
+                        <a href="javascript:void(0);" class="step-btn">Змінити</a>
+                    </div>
+                    <div class="step" id="last-step">
+                    <h4 class="step-title">Мова</h4>
+                    <p class="step-desc">
+                        Виберіть мову для порталу Bolt Business.
+                    </p>
+                    <a href="javascript:void(0);" class="step-btn">
+                        <span class="language-sign">
+                            <svg class="tw-icon-svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 1a1 1 0 0 0-2 0v1.5h-5a1 1 0 1 0 0 2h8.243c-.015 1.586-.713 3.153-2.241 4.676-.682-.678-1.2-1.365-1.565-2.057a1 1 0 0 0-1.77.931c.447.85 1.053 1.657 1.808 2.427-.935.693-2.057 1.375-3.382 2.043l.715 1.88c1.61-.802 3.015-1.658 4.192-2.574 1.382 1.075 3.082 2.07 5.072 2.995a1 1 0 0 0 .843-1.814c-1.765-.82-3.22-1.666-4.387-2.531 1.75-1.78 2.7-3.765 2.715-5.976H22a1 1 0 0 0 0-2h-5V1z"
+                                      fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M7.89 9.145a1 1 0 0 0-.935-.644h-.769a1 1 0 0 0-.934.644l-4.186 11a1 1 0 0 0 1.869.711l.897-2.356h5.475l.897 2.359a1 1 0 0 0 1.87-.711L7.89 9.145zm.657 7.355H4.593l1.978-5.197L8.547 16.5z" fill="currentColor">
+                                </path>
+                            </svg>
+                        </span>
+                        Українська
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

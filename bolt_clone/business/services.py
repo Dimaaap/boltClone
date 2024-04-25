@@ -1,9 +1,14 @@
+import re
+
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.hashers import check_password
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.conf import settings
+
 
 from .filters import EqualFilter
 from .data_storage import DataStorage
@@ -82,3 +87,15 @@ def compare_owner_passwords(old_password: str, owner_id):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
     owner_password = owner.password
     return check_password(old_password, owner_password)
+
+
+def check_user_email_service(user_email: str):
+    try:
+        validate_email(user_email)
+    except ValidationError as e:
+        return False
+    return True
+
+
+def check_user_phone_number_service(phone_number: str):
+    return re.match(settings.NUMBER_PATTERN, phone_number)

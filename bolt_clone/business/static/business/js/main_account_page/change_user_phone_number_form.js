@@ -4,6 +4,7 @@ const userPhoneNumber = document.getElementById("user-phone-number");
 const fieldLabelsIcon = document.querySelector(".user-phone-icon");
 const userPhoneNumberField = document.querySelector("#change-phone-number-form .form-control");
 const phoneNumberForm = document.getElementById("change-phone-number-form")
+console.log(phoneNumberForm)
 
 const oldUserPhone = userPhoneNumber.innerHTML;
 
@@ -26,9 +27,9 @@ openChanePhoneNumberFormBtn.addEventListener("click", () => {
 
 phoneNumberForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    fetch(emailForm.action, {
-        method: emailForm.method,
-        body: new FormData(emailForm)
+    fetch(phoneNumberForm.action, {
+        method: phoneNumberForm.method,
+        body: new FormData(phoneNumberForm)
     })
     .then(response => {
         if(!response.ok){

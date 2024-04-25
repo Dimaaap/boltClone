@@ -72,3 +72,15 @@ class CompanyLegalInformation(models.Model):
 
     def __str__(self):
         return f"{self.bills_email} {self.company_legal_name}"
+
+
+class CompanySettingsInfo(models.Model):
+    pdf_receipt_email = models.EmailField(max_length=150, default="")
+    company_id = models.OneToOneField(CompanyLegalInformation, on_delete=models.CASCADE)
+    company_codes = models.FileField(upload_to="codes/%Y/%m/%d")
+    is_api_handle_allowed = models.BooleanField(default=False)
+    promo_codes = models.CharField(max_length=200, default="")
+
+
+    def __str__(self):
+        return f"{self.company_id} {self.pdf_receipt_email}"

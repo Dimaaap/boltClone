@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-point">
-                    <a href="#">
+                    <a href="{% url 'company_settings' owner.owner_id %}">
                         Налаштування
                     </a>
                 </li>
@@ -68,7 +68,7 @@
             </ul>
         </div>
     </div>
-    <a href="{% url 'account' owner_id %}" id="footer-href">
+    <a href="{% url 'account' owner.owner_id %}" id="footer-href">
         <div class="nav-footer">
                 <div class="profile-main-page">
                                     <span class="logo">

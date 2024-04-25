@@ -1,5 +1,3 @@
-import re
-
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -8,9 +6,6 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from django.core.signing import SignatureExpired, BadSignature
 from django.contrib.auth.decorators import login_required
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
-from django.conf import settings
 
 from .forms import *
 from .services import *
@@ -247,6 +242,14 @@ def change_password_view(request, owner_id):
         return JsonResponse({"error": "asdsadas"})
 
 
+def company_settings_view(request, owner_id):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    owner_full_name = owner.get_user_full_name()
+    add_pdf_email_form = AddPDFEmailForm()
+    context = {"owner": owner, "owner_full_name": owner_full_name, "add_pdf_email_form": add_pdf_email_form}
+    return render(request, "business/company_settings_page.html", context)
+
+
 def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")
 
@@ -287,8 +290,6 @@ def change_email_view(request, owner_id: str):
                 owner_token = owner.generate_verification_token()
                 send_user_mail("Підтвердження email", owner.email,
                                "email_confirmation.html", owner_token)
-                owner.is_email_verified = True
-                owner.save()
             return JsonResponse({"success": True, "owner_id": owner_id})
         else:
             return JsonResponse({"form_error": "Заповніть поле форми", "field": 1})
@@ -315,13 +316,14 @@ def change_phone_number_view(request, owner_id: str):
         return JsonResponse({"error": "WTF?"})
 
 
-def check_user_email_service(user_email: str):
-    try:
-        validate_email(user_email)
-    except ValidationError as e:
-        return False
-    return True
 
-
-def check_user_phone_number_service(phone_number: str):
-    return re.match(settings.NUMBER_PATTERN, phone_number)
+@csrf_exempt
+@require_POST
+def add_receipt_email_view(request, owner_id):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    company = get_data_from_model(CompanyLegalInformation, "owner_id", owner)
+    company_settings = get_data_from_model(CompanySettingsInfo, "company_id", company)
+    if request.method == "POST":
+        email = request.POST.get("email_address")
+        return JsonResponse({"status": "OK"})
+    return JsonResponse({"status": "No"})
