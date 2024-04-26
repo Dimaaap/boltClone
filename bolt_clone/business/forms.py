@@ -221,3 +221,12 @@ class AddPDFEmailForm(forms.Form):
             "placeholder": "Введіть адресу електронної скриньки"
         }
     ))
+
+
+class AddPromoCodeForm(forms.Form):
+    promo_code = forms.CharField(label="Промокод", required=False,
+                                 widget=forms.TextInput(attrs={
+                                     "class": "form-control",
+                                     "id": "promo-code",
+                                     "placeholder": "Промокод"
+                                 }))

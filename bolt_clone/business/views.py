@@ -244,14 +244,42 @@ def change_password_view(request, owner_id):
 
 def company_settings_view(request, owner_id):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    company = get_data_from_model(CompanyLegalInformation, "owner_id", owner)
+    company_settings = get_data_from_model(CompanySettingsInfo, "company_id", company)
+    if not company_settings:
+        company_settings = CompanySettingsInfo(company_id=company)
+        company_settings.save()
     owner_full_name = owner.get_user_full_name()
     add_pdf_email_form = AddPDFEmailForm()
-    context = {"owner": owner, "owner_full_name": owner_full_name, "add_pdf_email_form": add_pdf_email_form}
+    add_promo_code_form = AddPromoCodeForm()
+    context = {"owner": owner, "owner_full_name": owner_full_name, "add_pdf_email_form": add_pdf_email_form,
+               "company_settings": company_settings, "add_promo_code_form": add_promo_code_form}
     return render(request, "business/company_settings_page.html", context)
 
 
 def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")
+
+
+def remove_receipt_email_view(request, receipt_email: str, owner_id: str):
+    company_settings = get_data_from_model(CompanySettingsInfo, "pdf_receipt_email", receipt_email)
+    if not company_settings:
+        pass
+    else:
+        company_settings.pdf_receipt_email = ""
+        company_settings.save()
+    return redirect(company_settings_view, owner_id)
+
+
+def allow_api_view(request, owner_id: str):
+    company = get_data_from_model(CompanyLegalInformation, "owner_id", owner_id)
+    company_settings = get_data_from_model(CompanySettingsInfo, "company_id", company)
+    if not company_settings:
+        pass
+    else:
+        company_settings.is_api_handle_allowed = True
+        company_settings.save()
+    return redirect(company_settings_view, owner_id)
 
 
 @csrf_exempt
@@ -325,5 +353,13 @@ def add_receipt_email_view(request, owner_id):
     company_settings = get_data_from_model(CompanySettingsInfo, "company_id", company)
     if request.method == "POST":
         email = request.POST.get("email_address")
-        return JsonResponse({"status": "OK"})
-    return JsonResponse({"status": "No"})
+        if email:
+            if not check_user_email_service(email):
+                return JsonResponse({"form_error": "Неправильний формат email-адреси"})
+            else:
+                company_settings.pdf_receipt_email = email
+                company_settings.save()
+                return JsonResponse({"success": True, "owner_id": owner_id})
+        else:
+            return JsonResponse({"form_error": "Заповніть поле форми"})
+    return JsonResponse({"error": "WTF?"})

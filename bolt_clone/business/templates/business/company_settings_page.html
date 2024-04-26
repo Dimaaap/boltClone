@@ -16,6 +16,7 @@
 
 {% block js_additional %}
     <script src="{% static 'business/js/company_settings_page/add_email_popup.js' %}"></script>
+    <script src="{% static 'business/js/company_settings_page/add_api_popup.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -36,7 +37,26 @@
                         <p class="step-desc">
                             Квитанції за кожну поїздку буде надіслано на вказану вами адресу електронної скриньки
                         </p>
-                        <a href="javascript:void(0);" class="step-btn" id="add-email-btn">Додати адресу електронної скриньки</a>
+                        {% if not company_settings.pdf_receipt_email %}
+                            <a href="javascript:void(0);" class="step-btn" id="add-email-btn">Додати адресу електронної скриньки</a>
+                        {% else %}
+                            <div class="email-badge-container">
+                                <a href="{% url 'remove_receipt_email' company_settings.pdf_receipt_email owner.owner_id %}"
+                                   class="email-badge">
+                                    {{ company_settings.pdf_receipt_email }}
+                                    <span class="cancel-icon">
+                                        <svg class="tw-icon-svg"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.4 12l6.3-6.3c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L12 10.6 5.7 4.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l6.3 6.3-6.3 6.3c-.4.4-.4 1 0 1.4.2.2.4.3.7.3.3 0 .5-.1.7-.3l6.3-6.3 6.3 6.3c.2.2.5.3.7.3.2 0 .5-.1.7-.3.4-.4.4-1 0-1.4L13.4 12z"
+                                                  fill="currentColor">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        {% endif %}
                         <div class="settings-popup hidden-popup hidden" id="email-popup">
                                 <div class="popup-header">
                                     <h5>Введіть адресу електронної скриньки</h5>
@@ -68,7 +88,9 @@
                                             </div>
                                         {% endfor %}
                                         <div class="errorlist"></div>
-                                        <button type="submit" class="popup-btn" disabled id="email-form-submit">Додати адресу</button>
+                                        <button type="submit" class="popup-btn" disabled id="email-form-submit">
+                                            Додати адресу
+                                        </button>
                                     </form>
                                 </div>
                         </div>
@@ -96,8 +118,29 @@
                             З API панелі керування компанії управління автоматизовано. Включно із додаванням
                             нових користувачів, оновленням даних чинних та видаленням.
                         </p>
-                        <a href="javascript:void(0);" class="step-btn">Дозволити доступ до API</a>
+                        {% if not company_settings.is_api_handle_allowed %}
+                            <a href="javascript:void(0);" class="step-btn" id="allow-api">Дозволити доступ до API</a>
+                        {% else %}
+                            <a href="javascript:void(0);" class="step-btn" id="allow-api">Відкрити консоль</a>
+                        {% endif %}
                     </div>
+                    <div class="settings-popup hidden hidden-popup" id="api-popup">
+                        <div class="popup-header">
+                            <h5>API панелі керування компанії</h5>
+                            <a href="javascript:void(0);" id="close-popup-btn-api">X</a>
+                        </div>
+                        <div class="popup-body">
+                            <p>
+                                Я підтвердую, що бажаю надати доступ API панелі керування компанії Bolt
+                                до облікового запису моєї компанії.
+                            </p>
+                            <div class="row-btn">
+                                <a href="javascript: void(0);" class="popup-row-btn" id="no-btn">Ні</a>
+                                <a href="{% url 'allow_api' owner.owner_id %}" class="popup-row-btn" id="yes-btn">Так</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay" id="api-overlay"></div>
                     <div class="step">
                         <h4 class="step-title">
                             Компенсації
@@ -107,6 +150,39 @@
                         </p>
                         <a href="javascript:void(0);;" class="step-btn">Додати промокод</a>
                     </div>
+                    <div class="settings-popup" id="promo-popup">
+                        <div class="popup-header">
+                            <h5>Додати промокод</h5>
+                            <a href="javascript:void(0);" id="close-popup-btn-promo">X</a>
+                        </div>
+                        <div class="popup-body">
+                            <form class="form-popup" id="add-promo-code-form" method="post">
+                                        {% csrf_token %}
+                                        {% for field in add_promo_code_form %}
+                                            <div class="field-container">
+                                                {{ field }}
+                                                <span class="field-icon" id="promo-form-cancel-icon">
+                                                <svg class="tw-icon-svg"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                          clip-rule="evenodd"
+                                                          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm4.786-13.786L13 12l3.786 3.786a.69.69 0 0 1 0 1 .771.771 0 0 1-.5.214.772.772 0 0 1-.5-.214L12 13l-3.786 3.786a.648.648 0 0 1-.5.214.648.648 0 0 1-.5-.214.69.69 0 0 1 0-1L11 12 7.214 8.214a.69.69 0 0 1 0-1 .69.69 0 0 1 1 0L12 11l3.786-3.786a.69.69 0 0 1 1 0 .69.69 0 0 1 0 1z"
+                                                          fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            </div>
+                                        {% endfor %}
+                                        <div class="errorlist"></div>
+                                        <button type="submit" class="popup-btn" disabled id="promo-form-submit">
+                                            Застосувати
+                                        </button>
+                                    </form>
+                        </div>
+                    </div>
+                    <div class="overlay" id="promo-overlay"></div>
                     <div class="step">
                         <h4 class="step-title">
                             Сповіщення

@@ -175,3 +175,57 @@
     color: white;
     font-weight: 700;
 }
+
+.email-badge-container {
+    margin-top: 5%;
+}
+
+.email-badge {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    background: #F3F3F3;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.email-badge path {
+    color: black;
+}
+
+.email-badge:hover {
+    background: #F6F6F6;
+}
+
+#api-popup {
+    width: 40%;
+    left: 40%;
+}
+
+#api-popup p {
+    font-weight: 500;
+    color: gray;
+}
+
+#api-popup .row-btn {
+    justify-content: center;
+    text-align: center;
+}
+
+#api-popup .popup-row-btn {
+    display: inline-block;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    background: #F5F5F5;
+    padding: 3%;
+    width: 15%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#api-popup #yes-btn {
+    color: white;
+    background: #2eb875;
+    margin-left: 3%;
+}

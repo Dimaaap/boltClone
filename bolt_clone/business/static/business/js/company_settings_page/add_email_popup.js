@@ -22,7 +22,6 @@ addEmailBtn.addEventListener("click", () => {
 })
 
 closeEmailPopup.addEventListener("click", () => {
-    console.log("click");
     emailOverlay.style.display = "none";
     emailPopup.style.display = "none";
     isEmailPopupOpen = false;
