@@ -229,3 +229,39 @@
     background: #2eb875;
     margin-left: 3%;
 }
+
+
+#promo-popup {
+    width: 30%;
+    left: 42%;
+}
+
+#promo-popup #promo-form-submit {
+    background: rgba(50, 187, 120, 0.8);
+    color: white;
+    padding: 4%;
+    border-radius: 25px;
+}
+
+#promo-popup #promo-form-submit:hover {
+    background: rgba(50, 187, 120, 1);
+}
+
+#close-popup-btn-promo {
+    margin-left: 29%;
+}
+
+#add-promo-code-form .hidden-label {
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    font-size: 0.8rem;
+    display: none;
+}
+
+#add-promo-code-form .errorlist {
+    font-weight: 500;
+    color: red;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

@@ -17,6 +17,7 @@
 {% block js_additional %}
     <script src="{% static 'business/js/company_settings_page/add_email_popup.js' %}"></script>
     <script src="{% static 'business/js/company_settings_page/add_api_popup.js' %}"></script>
+    <script src="{% static 'business/js/company_settings_page/add_promo_popup.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -107,7 +108,7 @@
                         </p>
                         <a href="javascript:void(0);" class="step-btn">Додати коди витрат</a>
                         <p class="add-info">
-                            Виникли проблеми? <a href="#">Завантажити шаблон</a>
+                            Виникли проблеми? <a href="https://business.bolt.eu/current/assets/cost-codes-example-f3674e83d04860e1fc3a5614341a6cb6.xlsx">Завантажити шаблон</a>
                         </p>
                     </div>
                     <div class="step">
@@ -148,18 +149,20 @@
                         <p class="step-desc">
                             Додайте промокод до вашого облікового запису компанії.
                         </p>
-                        <a href="javascript:void(0);;" class="step-btn">Додати промокод</a>
+                        <a href="javascript:void(0);" class="step-btn" id="allow-promo">Додати промокод</a>
                     </div>
-                    <div class="settings-popup" id="promo-popup">
+                    <div class="settings-popup hidden hidden-popup" id="promo-popup">
                         <div class="popup-header">
                             <h5>Додати промокод</h5>
                             <a href="javascript:void(0);" id="close-popup-btn-promo">X</a>
                         </div>
                         <div class="popup-body">
-                            <form class="form-popup" id="add-promo-code-form" method="post">
+                            <form class="form-popup" id="add-promo-code-form"
+                                  method="post" action="{% url 'add_promo' owner.owner_id %}">
                                         {% csrf_token %}
                                         {% for field in add_promo_code_form %}
                                             <div class="field-container">
+                                                <label class="hidden-label">{{ field.label }}</label>
                                                 {{ field }}
                                                 <span class="field-icon" id="promo-form-cancel-icon">
                                                 <svg class="tw-icon-svg"
@@ -176,7 +179,7 @@
                                             </div>
                                         {% endfor %}
                                         <div class="errorlist"></div>
-                                        <button type="submit" class="popup-btn" disabled id="promo-form-submit">
+                                        <button type="submit" class="popup-btn" id="promo-form-submit">
                                             Застосувати
                                         </button>
                                     </form>

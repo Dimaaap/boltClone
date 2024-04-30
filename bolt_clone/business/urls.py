@@ -24,5 +24,7 @@ urlpatterns = [
     path("company/<str:owner_id>/add_receipt_email/", add_receipt_email_view, name="add_receipt_email"),
     path("company/<str:receipt_email>/<str:owner_id>/remove_receipt_email", remove_receipt_email_view,
          name="remove_receipt_email"),
-    path("company/<str:owner_id>/allow_api", allow_api_view, name="allow_api")
+    path("company/<str:owner_id>/allow_api", allow_api_view, name="allow_api"),
+    path("company/<str:owner_id>/add_promo", add_promo_view, name="add_promo"),
+    path("company/<str:owner_id>/policies", team_policies_view, name="policies")
 ]

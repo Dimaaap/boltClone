@@ -1,0 +1,89 @@
+#help-popup {
+    position: absolute;
+    left: 60%;
+    top: 0;
+    width: 38%;
+    border: 2px solid #F3F3F3;
+    border-radius: 20px;
+    padding: 3%;
+    z-index: 1000;
+    background: white;
+    overflow-y: scroll;
+    max-height: 670px;
+    display: none;
+}
+
+#help-popup .popup-header {
+    padding-bottom: 3%;
+    border-bottom: 1px solid black;
+}
+
+#help-popup .popup-header #close-popup-btn {
+    position: sticky;
+    top: 0;
+    display: inline-block;
+    margin-left: 90%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 0;
+    padding-top: 2%;
+    margin-top: -10%;
+    font-weight: 600;
+    margin-bottom: 10%;
+    z-index: 1002;
+}
+
+#help-popup .popup-header .header-text {
+    width: 90%;
+    font-weight: 500;
+}
+
+#help-popup .popup-header .header-text h4 {
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+
+#help-popup .popup-header .links-ul {
+    margin-top: -7%;
+}
+
+#help-popup .popup-header .links-ul li {
+    margin-bottom: -10%;
+}
+
+#help-popup .popup-header .links-ul li a {
+    background: transparent;
+    font-weight: 500;
+    color: #2eb875;
+    display: inline-block;
+    margin-left: -3%;
+}
+
+#help-popup .popup-body {
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+
+#help-popup .section-title {
+    font-weight: 700;
+    margin-top: 1%;
+}
+
+#help-popup .popup-rules {
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+
+#help-popup .popup-footer {
+    margin-top: 7%;
+    margin-bottom: -4%;
+}
+
+#help-popup .popup-footer a {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 5%;
+}

@@ -1,4 +1,6 @@
 import re
+import random
+from string import ascii_letters
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string

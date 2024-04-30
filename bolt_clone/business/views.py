@@ -261,6 +261,12 @@ def add_card_view(request, owner_id: str):
     return render(request, "business/add_card_page.html")
 
 
+def team_policies_view(request, owner_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    context = {"owner": owner}
+    return render(request, "business/team_policies.html", context)
+
+
 def remove_receipt_email_view(request, receipt_email: str, owner_id: str):
     company_settings = get_data_from_model(CompanySettingsInfo, "pdf_receipt_email", receipt_email)
     if not company_settings:
@@ -280,6 +286,28 @@ def allow_api_view(request, owner_id: str):
         company_settings.is_api_handle_allowed = True
         company_settings.save()
     return redirect(company_settings_view, owner_id)
+
+
+@csrf_exempt
+@require_POST
+def add_promo_view(request, owner_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    company = get_data_from_model(CompanyLegalInformation, "owner_id", owner)
+    company_settings = get_data_from_model(CompanySettingsInfo, "company_id", company)
+    if request.method == "POST":
+        promo_code = request.POST.get("promo_code")
+        if promo_code:
+            if promo_code not in data_storage.PROMO_CODES:
+                return JsonResponse({"form_error": "Неправильний промокод"})
+            else:
+                company_settings.promo_code = promo_code
+                company_settings.save()
+            return JsonResponse({"success": True, "owner_id": owner_id})
+        else:
+            return JsonResponse({"form_error": "Заповніть це поле"})
+
+    else:
+        return JsonResponse({"error": "WTF?"})
 
 
 @csrf_exempt
