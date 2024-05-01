@@ -45,10 +45,8 @@ def business_signup_page_view(request):
 
 def business_login_page_view(request):
     if request.method == "POST":
-        print("Here")
         form = BusinessOwnerLoginForm(request.POST)
         if form.is_valid():
-            print("form is valid")
             user_email, user_password = form.cleaned_data.values()
             user = authenticate(request, email=user_email, password=user_password)
             if user is not None:
