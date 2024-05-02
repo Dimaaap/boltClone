@@ -261,8 +261,33 @@ def add_card_view(request, owner_id: str):
 
 def team_policies_view(request, owner_id: str):
     owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
-    context = {"owner": owner}
+    company = get_data_from_model(CompanyLegalInformation, "owner_id", owner_id)
+    company_policies = get_data_from_model(CompanyPolicies, "company_id", company)
+    if not company_policies:
+        new_policy = CompanyPolicies(company_id=company, policy_title="Загальні",
+                                     policy_description="Загальні правила")
+        new_policy.save()
+    policies = CompanyPolicies.objects.all()
+    context = {"owner": owner, "policies": policies}
     return render(request, "business/team_policies.html", context)
+
+
+def edit_policy_view(request, owner_id: str, policy_id: str):
+    owner = get_data_from_model(BusinessOwnerData, "owner_id", owner_id)
+    policy = get_data_from_model(CompanyPolicies, "policy_id", policy_id)
+    if request.method == "POST":
+        form = EditPolicyForm(request.POST)
+        if form.is_valid():
+            pass
+        else:
+            pass
+    else:
+        form = EditPolicyForm(initial={
+            "policy_title": policy.policy_title,
+            "policy_description": policy.policy_description
+        })
+    context = {"owner": owner, "policy": policy, "form": form}
+    return render(request, "business/edit_policy.html", context)
 
 
 def remove_receipt_email_view(request, receipt_email: str, owner_id: str):

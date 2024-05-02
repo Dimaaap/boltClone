@@ -26,5 +26,6 @@ urlpatterns = [
          name="remove_receipt_email"),
     path("company/<str:owner_id>/allow_api", allow_api_view, name="allow_api"),
     path("company/<str:owner_id>/add_promo", add_promo_view, name="add_promo"),
-    path("company/<str:owner_id>/policies", team_policies_view, name="policies")
+    path("company/<str:owner_id>/policies", team_policies_view, name="policies"),
+    path("company/<str:owner_id>/policies/edit/<str:policy_id>/", edit_policy_view, name="edit_policy"),
 ]

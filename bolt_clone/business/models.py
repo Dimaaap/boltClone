@@ -99,6 +99,7 @@ class CompanyPolicies(models.Model):
                                           default=data_storage.DRIVE_AND_TIME_CHOICE[0])
     drive_places = models.CharField(max_length=25, choices=data_storage.DRIVE_PLACES,
                                     default=data_storage.DRIVE_PLACES[0])
+    kind_service = models.CharField(max_length=100, default="")
 
     def __str__(self):
         return f"{self.policy_title} {self.policy_description}"

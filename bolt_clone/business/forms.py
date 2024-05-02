@@ -24,7 +24,6 @@ class BusinessOwnerRegistrationForm(forms.Form):
                                          "placeholder": "Створити пароль"
                                      }))
 
-
     def clean_owner_email(self):
         owner_email = self.cleaned_data["owner_email"]
         if not owner_email:
@@ -32,7 +31,6 @@ class BusinessOwnerRegistrationForm(forms.Form):
         if get_data_from_model(BusinessOwnerData, "email", owner_email):
             raise forms.ValidationError("Підтвердіть email")
         return owner_email
-
 
     def clean_owner_password(self):
         owner_password = self.cleaned_data["owner_password"]
@@ -129,11 +127,11 @@ class CompanyLegalInformationForm(forms.Form):
                                        "placeholder": "Електронна скринька для рахунків"
                                    }))
     company_address = forms.CharField(label="Юридична адреса компанії", required=True,
-                                         widget=forms.TextInput(attrs={
-                                             "class": "form-control",
-                                             "id": "legal-company-name",
-                                             "placeholder": "Юридична адреса компанії"
-                                         }))
+                                      widget=forms.TextInput(attrs={
+                                          "class": "form-control",
+                                          "id": "legal-company-name",
+                                          "placeholder": "Юридична адреса компанії"
+                                      }))
     edrpou_data = forms.CharField(max_length=8, label="ЄДРПОУ", required=True,
                                   widget=forms.TextInput(attrs={
                                       "class": "form-control",
@@ -153,7 +151,6 @@ class CompanyLegalInformationForm(forms.Form):
             raise forms.ValidationError("Неправильний формат коду ЄДРПОУ")
         return edrpou_data
 
-
     def clean_company_ipn(self):
         company_ipn = self.cleaned_data["company_ipn"]
         if any(not i.isdigit() for i in company_ipn):
@@ -172,7 +169,6 @@ class ChangeUserPasswordForm(forms.Form):
                                        "class": "form-control",
                                        "placeholder": "Введіть новий пароль"
                                    }))
-
 
     def clean_new_password(self):
         new_password = self.cleaned_data["new_password"]
@@ -230,3 +226,55 @@ class AddPromoCodeForm(forms.Form):
                                      "id": "promo-code",
                                      "placeholder": "Промокод"
                                  }))
+
+
+class EditPolicyForm(forms.Form):
+    policy_title = forms.CharField(max_length=150, label="Назва збірки правил", required=True,
+                                   widget=forms.TextInput(attrs={
+                                       "class": "form-control required",
+                                       "id": "policy-title",
+                                       "placeholder": "Ввести назву"
+                                   }))
+    policy_description = forms.CharField(label="Опис збірки правил", required=False,
+                                         widget=forms.Textarea(attrs={
+                                             "class": "form-textarea",
+                                             "id": "policy-description",
+                                             "placeholder": "Ввести опис",
+                                             "rows": "4",
+                                         }))
+    track_costs = forms.BooleanField(label="Відстеження витрат", required=False, initial=False,
+                                     widget=forms.CheckboxInput({
+                                         "class": "form-check-input",
+                                         "id": "track-costs",
+                                         "type": "checkbox",
+                                         "role": "switch"
+                                     }))
+    cost_level_track = forms.BooleanField(label="Обмеження рівня витрат", required=False, initial=False,
+                                          widget=forms.CheckboxInput({
+                                              "class": "form-check-input",
+                                              "id": "cost_level_track",
+                                              "type": "checkbox",
+                                              "role": "switch"
+                                          }))
+    drive_day_and_time = forms.BooleanField(label="Час і день поїздки", required=False,
+                                            initial=False,
+                                            widget=forms.CheckboxInput({
+                                                "class": "form-check-input",
+                                                "id": "drive_day_and_time",
+                                                "type": "checkbox",
+                                                "role": "switch"
+                                            }))
+    kind_service = forms.BooleanField(label="Вид послуги", required=False, initial=False,
+                                      widget=forms.CheckboxInput({
+                                          "class": "form-check-input",
+                                          "id": "kind_service",
+                                          "type": "checkbox",
+                                          "role": "switch"
+                                      }))
+    drive_places = forms.BooleanField(label="Місця поїздок", required=False, initial=False,
+                                      widget=forms.CheckboxInput({
+                                          "class": "form-check-input",
+                                          "id": "drive_places",
+                                          "type": "checkbox",
+                                          "role": "switch"
+                                      }))

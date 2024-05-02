@@ -1,0 +1,109 @@
+* {
+    font-family: "Montserrat";
+}
+
+.content {
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    justify-content: center;
+}
+
+.cancel-btn {
+    display: inline-block;
+    margin-left: 95%;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    padding: 1%;
+    width: 5%;
+    text-align: center;
+    border-radius: 50px;
+    background: #F5F5F5;
+}
+
+.cancel-btn:hover {
+    background: #E9E9E9;
+}
+
+.policy-section {
+     margin-top: 4%;
+}
+
+.policy-section h2 {
+    font-weight: 700;
+}
+
+.policy-section p {
+    font-weight: 500;
+    color: gray;
+    margin-top: 2%;
+}
+
+.form-container {
+    margin-top: 3%;
+    width: 90%;
+}
+
+form label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1%;
+}
+
+form label span {
+    font-weight: 500;
+    color: gray;
+}
+
+form .field-group {
+    margin-bottom: 2%;
+}
+
+form .form-control {
+    height: 50px;
+    border: none;
+    background: #F5F5F5;
+    padding: 1%;
+    font-weight: 500;
+    outline: none;
+}
+
+.rules-header {
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.switch-field-group {
+    border: 2px solid #F5F5F5;
+    padding: 3%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+}
+
+.form-check label {
+    float: left;
+    margin-left: -5%;
+}
+
+.form-check input[type="checkbox"] {
+    float: right;
+    height: 30px;
+    width: 60px;
+    margin-top: -0.5%;
+}
+
+.form-check input[type="checkbox"],
+.form-check label {
+    display: inline-block;
+}
+
+.field-desc {
+    display: block;
+    width: 80%;
+    font-weight: 500;
+    color: gray;
+    float: clear;
+}

@@ -59,11 +59,13 @@ class DataStorage:
     ]
 
     DRIVE_AND_TIME_CHOICE = (
+        ("", ""),
         ("only_work_day", "Тільки будні"),
         ("user_settings", "Налаштування користувачів")
     )
 
     TRACK_COSTS = (
+        ("", ""),
         ("cost_notice", "Нотатка про витрати"),
         ("cost_code", "Код витрат")
     )
@@ -75,6 +77,7 @@ class DataStorage:
     )
 
     DRIVE_PLACES = (
+        ("", ""),
         ("to_from_certain_locations", "До або з певних локацій"),
         ("only_from_locations", "Тільки з певних локацій"),
         ("only_to_locations", "Тільки до певних локацій"),
