@@ -106,3 +106,24 @@ class DataStorage:
         ("90", "90км"),
         ("100", "100км")
     )
+
+    BOLT_SERVICES = (
+        ("https://business.bolt.eu/current/assets/img/policies/bolt-401b44b687c7d62e8d9793b13dcea9cb.png",
+         "Bolt", "Надійні та універсальні для повсякденних транспортних потреб"),
+        ("https://business.bolt.eu/current/assets/img/policies/xl-2417ecd9e197ae8cf1278d5faeb90f9e.png",
+         "XL", "Доступні поїздки до 6 осіб"),
+        ("https://business.bolt.eu/current/assets/img/policies/comfort-7a948795cb347ce8cf10563bf08153fd.png",
+         "Comfort", "Більш комфортні автомобілі з найкращими водіями"),
+        ("https://business.bolt.eu/current/assets/img/policies/business-0929a7c1acd5aabb7e61dc6543d27a41.png",
+         "Business", "Елегантні поїздки з нашими автомобілями бізнес-класу"),
+        ("https://business.bolt.eu/current/assets/img/policies/premium-84a4d0728cd5c221d7f6de7c39fcce07.png",
+         "Premium", "Найкращі у класі ТЗ"),
+        ("https://business.bolt.eu/current/assets/img/policies/two_three_wheelers-68a5cb4499453071dc7add410ad6e2f3.png",
+         "Дво- або триколісні автомобілі", "Ефектні та спритні автоматичні рікши/мотоцикли"),
+        ("https://business.bolt.eu/current/assets/img/policies/bolt_send-28509d9d90b89c379a8cc0c4b95cd10a.png",
+         "Delivery", "Швидка доставка"),
+        ("https://business.bolt.eu/current/assets/img/policies/scooters-c9f3730f05a657b947b01bf21cf9cb1f.png",
+         "Електросамокати", "Двоколісні, дружні до довкілля подорожі"),
+        ("https://business.bolt.eu/current/assets/img/policies/drive-ea4321ef40e746477768908e0997d00c.png",
+         "Bolt Drive", "Автопрокат для вашої команди")
+    )

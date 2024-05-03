@@ -86,6 +86,15 @@ class CompanySettingsInfo(models.Model):
         return f"{self.company_id} {self.pdf_receipt_email}"
 
 
+class BoltServices(models.Model):
+    service_id = models.UUIDField(primary_key=True, editable=False, default=uuid4)
+    service_img = models.URLField(default="")
+    service_title = models.CharField(max_length=35, default="")
+    service_description = models.CharField(max_length=255, default="")
+
+    def __str__(self):
+        return f"{self.service_title} {self.service_description}"
+
 class CompanyPolicies(models.Model):
     policy_id = models.UUIDField(primary_key=True, editable=False, default=uuid4)
     company_id = models.ForeignKey(CompanyLegalInformation, on_delete=models.CASCADE)
@@ -99,7 +108,7 @@ class CompanyPolicies(models.Model):
                                           default=data_storage.DRIVE_AND_TIME_CHOICE[0])
     drive_places = models.CharField(max_length=25, choices=data_storage.DRIVE_PLACES,
                                     default=data_storage.DRIVE_PLACES[0])
-    kind_service = models.CharField(max_length=100, default="")
+    kind_service = models.ManyToManyField(BoltServices)
 
     def __str__(self):
         return f"{self.policy_title} {self.policy_description}"

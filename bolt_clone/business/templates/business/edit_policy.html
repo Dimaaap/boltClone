@@ -48,41 +48,149 @@
                             {% if field.errors %}
                                 <div class="errorlist">{{ field.errors }}</div>
                             {% endif %}
+                        {% elif forloop.counter == 1 %}
+                            <label>{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="errorlist">{{ field.errors }}</div>
+                            {% endif %}
                         {% elif forloop.counter >= 3 %}
                             <div class="switch-field-group">
                                 <div class="form-check form-switch">
                                     {{ field }}
                                     <label class="form-check-label" for="{{ field.id }}">{{ field.label }}</label>
-                                    {% if forloop.counter == 3 %}
-                                        <p class="field-desc">
-                                            До підтвердження замовлення потрібно буде вказати причину замовлення
-                                            та/або код витрат.
-                                        </p>
-                                    {% elif forloop.counter == 4 %}
-                                        <p class="field-desc">
-                                            Встановіть максимальну суму грошей, яку може витратити користувач протягом
-                                            певного проміжку часу.
-                                        </p>
-                                    {% elif forloop.counter == 5 %}
-                                        <p class="field-desc">
-                                            Встановіть обмеження на замовлення поїздок у конкретні дні тижня
-                                            та/або час доби.
-                                        </p>
-                                    {% elif forloop.counter == 6 %}
-                                        <p class="field-desc">
-                                            Встановіть, які з сервісів Bolt можуть бути використані.
-                                        </p>
-                                    {% elif forloop.counter == 7 %}
-                                        <p class="field-desc">
-                                            Виберіть місця, куди ваша команда може подорожувати.
-                                            (Мова йде лише про поїздки на таксі)
-                                        </p>
-                                    {% endif %}
                                 </div>
+                                {% if forloop.counter == 3 %}
+                                    <p class="field-desc">
+                                        До підтвердження замовлення потрібно буде вказати причину замовлення
+                                        та/або код витрат.
+                                    </p>
+                                    <div class="hidden-select" id="sales-control">
+                                        <div class="select-widgets">
+                                            <div class="widget">
+                                                <div class="input-group">
+                                                    <input class="checkbox-btn" type="checkbox"
+                                                           id="sale-notice" name="sale-notice" />
+                                                    <label class="checkbox-label" for="sale-notice">
+                                                        Нотатка про витрати
+                                                    </label>
+                                                </div>
+                                                <div class="desc">
+                                                    <p>
+                                                        Користувачам потрібно додати нотатку та описати мету поїздки
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="widget">
+                                                <div class="input-group">
+                                                    <input class="checkbox-btn" type="checkbox" id="sales-code"
+                                                           name="sales-code" />
+                                                    <label class="checkbox-label" for="sales-code">Код витрат</label>
+                                                </div>
+                                                <div class="desc">
+                                                    Користувачі зможуть вибрати потрібний код витрат
+                                                    зі списку кодів витрат
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% elif forloop.counter == 4 %}
+                                    <p class="field-desc">
+                                        Встановіть максимальну суму грошей, яку може витратити користувач протягом
+                                        певного проміжку часу.
+                                    </p>
+                                    <div class="hidden-select" id="limit-select">
+                                        <div class="select-widgets">
+                                            <div class="widget">
+                                                <div class="input-group">
+                                                    <input class="checkbox-btn" type="checkbox" id="personal-limit"
+                                                           name="personal-limit" />
+                                                    <label class="checkbox-label" for="personal-limit">
+                                                        Індивідуальний ліміт
+                                                    </label>
+                                                </div>
+                                                <div class="desc">
+                                                    <p>
+                                                        Призначте кожній людині в групі ліміт витрат
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="widget">
+                                                <div class="input-group">
+                                                    <input class="checkbox-btn" type="checkbox" id="group-limit"
+                                                           name="group-limit" />
+                                                    <label class="checkbox-label" for="group-limit">
+                                                        Груповий ліміт
+                                                    </label>
+                                                </div>
+                                                <div class="desc">
+                                                    <p>
+                                                        Призначте ліміт для групи в цілому
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% elif forloop.counter == 5 %}
+                                    <p class="field-desc">
+                                        Встановіть обмеження на замовлення поїздок у конкретні дні тижня
+                                        та/або час доби.
+                                    </p>
+                                    <div class="hidden-select" id="trips-by-days">
+                                        <div class="select-widgets">
+                                            <div class="input-group">
+                                                    <input class="radio-btn" type="radio" id="work_days"
+                                                           name="options" value="work_days" />
+                                                    <label class="radio-label" for="work_days">Тільки в будні</label>
+                                                </div>
+                                                <div class="input-group">
+                                                    <input class="radio-btn" type="radio" id="user_settings"
+                                                           name="options" value="user_settings" />
+                                                    <label class="radio-label" for="user_settings">
+                                                        Налаштування користувачів
+                                                    </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                {% elif forloop.counter == 6 %}
+                                    <p class="field-desc">
+                                        Встановіть, які з сервісів Bolt можуть бути використані.
+                                    </p>
+                                {% elif forloop.counter == 7 %}
+                                    <p class="field-desc">
+                                        Виберіть місця, куди ваша команда може подорожувати.
+                                        (Мова йде лише про поїздки на таксі)
+                                    </p>
+                                {% endif %}
                             </div>
                         {% endif %}
                     </div>
                 {% endfor %}
+                <div class="row-btn">
+                    <div class="left-container">
+                        <a href="#" class="policy-btn" id="remove-btn">
+                            <span class="btn-icon">
+                                <svg class="tw-icon-svg"
+                                     viewBox="0 0 24 24"
+                                     fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 6h-5V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H3c-.6 0-1 .4-1 1s.4 1 1 1h1.1l.8 12.1c.1 1.1.9 1.9 2 1.9h10.3c1.1 0 1.9-.8 2-1.9L19.9 8H21c.6 0 1-.4 1-1s-.4-1-1-1zM10 4h4v2h-4V4zm1 13c0 .6-.4 1-1 1s-1-.4-1-1v-6c0-.6.4-1 1-1s1 .4 1 1v6zm4 0c0 .6-.4 1-1 1s-1-.4-1-1v-6c0-.6.4-1 1-1s1 .4 1 1v6z"
+                                          fill="currentColor">
+                                    </path>
+                                </svg>
+                            </span>
+                            Видалити набір правил
+                        </a>
+                        </div>
+                    <div class="right-container">
+                        <button type="reset" class="policy-btn" id="cancel-btn">
+                            Скасувати
+                        </button>
+                        <button type="submit" class="policy-btn" id="save-btn">
+                            Зберегти
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

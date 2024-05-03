@@ -14,7 +14,7 @@ from django.conf import settings
 
 from .filters import EqualFilter
 from .data_storage import DataStorage
-from .models import BusinessCountries, BusinessOwnerData
+from .models import BusinessCountries, BusinessOwnerData, BoltServices
 from driver.models import Driver
 from courier.models import CourierMainInfo
 
@@ -101,3 +101,11 @@ def check_user_email_service(user_email: str):
 
 def check_user_phone_number_service(phone_number: str):
     return re.match(settings.NUMBER_PATTERN, phone_number)
+
+
+def insert_bolt_service_in_db():
+    services_list = data_storage.BOLT_SERVICES
+    for image, title, description in services_list:
+        new_service = BoltServices(service_img=image, service_title=title, service_description=description)
+        new_service.save()
+

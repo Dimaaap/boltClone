@@ -56,6 +56,16 @@ form label span {
     color: gray;
 }
 
+.form-textarea {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #F5F5F5;
+    padding: 1%;
+    resize: none;
+    font-weight: 500;
+}
+
 form .field-group {
     margin-bottom: 2%;
 }
@@ -86,6 +96,7 @@ form .form-control {
 .form-check label {
     float: left;
     margin-left: -5%;
+    font-size: 1.1rem;
 }
 
 .form-check input[type="checkbox"] {
@@ -101,9 +112,112 @@ form .form-control {
 }
 
 .field-desc {
-    display: block;
-    width: 80%;
     font-weight: 500;
     color: gray;
-    float: clear;
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 90%;
+}
+
+.row-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#remove-btn:hover,
+#cancel-btn:hover{
+    background: #F5F5F5;
+}
+
+.row-btn .policy-btn {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    background: #F2F2F2;
+    border-radius: 25px;
+    padding: 3%;
+}
+
+.row-btn #cancel-btn,
+.row-btn #save-btn {
+    padding: 4%;
+    border: none;
+}
+
+.row-btn #cancel-btn {
+    margin-left: -3%;
+    padding: 3%;
+}
+
+.row-btn #save-btn {
+    margin-left: 3%;
+    padding: 3%;
+    color: white;
+    background: rgba(50, 187, 120, 0.8);
+}
+
+.row-btn #save-btn:hover {
+    background: rgba(50, 187, 120, 1);
+}
+
+.left-container {
+    flex: 1;
+}
+
+.right-container {
+    flex: 1;
+    margin-right: -38%;
+    margin-top: -2%;
+}
+
+.policy-btn span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.policy-btn path {
+    color: black;
+}
+
+.hidden-select .widget {
+    border: 2px solid #F5F5F5;
+    padding: 2%;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.hidden-select .checkbox-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e9eaee;
+    border-radius: 5px;
+    margin-right: 2%;
+}
+
+.hidden-select .checkbox-label {
+    font-size: 1.1rem;
+    margin-top: -0.5%;
+}
+
+.hidden-select .desc {
+    font-weight: 500;
+    color: gray;
+    margin-left: 5%;
+}
+
+.hidden-select .radio-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #F5F5F5;
+    margin-right: 2%;
+}
+
+.hidden-select .radio-label {
+    font-weight: 500;
+    margin-left: 2%;
+    font-size: 1rem;
 }
