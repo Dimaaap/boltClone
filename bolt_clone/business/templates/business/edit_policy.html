@@ -14,7 +14,9 @@
 {% endblock %}
 
 {% block js_additional %}
-
+    <script src="{% static 'business/js/edit_policies/sales_control_popup.js' %}"></script>
+    <script src="{% static 'business/js/edit_policies/sales_limit_popup.js' %}"></script>
+    <script src="{% static 'business/js/edit_policies/drive_day_and_time_popup.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -70,7 +72,7 @@
                                             <div class="widget">
                                                 <div class="input-group">
                                                     <input class="checkbox-btn" type="checkbox"
-                                                           id="sale-notice" name="sale-notice" />
+                                                           id="sale-notice" name="sale-notice" checked />
                                                     <label class="checkbox-label" for="sale-notice">
                                                         Нотатка про витрати
                                                     </label>
@@ -156,11 +158,103 @@
                                     <p class="field-desc">
                                         Встановіть, які з сервісів Bolt можуть бути використані.
                                     </p>
+                                    <div class="hidden-select" id="service-kind">
+                                        <div class="main-step-section section">
+                                            <div class="service">
+                                                <img class="service-img" width="90"
+                                                height="50"
+                                                src="https://business.bolt.eu/current/assets/img/policies/ridehailing-9ffaf6b3ab20e50da69ee0a2cbe2ec4b.png"/>
+                                                <div class="service-body">
+                                                    <div class="text-container">
+                                                        <label class="service-label" for="drive_only">
+                                                            Лише замовлення поїздок (таксі)
+                                                        </label>
+                                                        <small>Користувачі зможуть замовляти поїздки</small>
+                                                    </div>
+                                                    <div class="input-container">
+                                                        <input class="service-btn" type="checkbox" id="drive_only"
+                                                        name="drive_only" checked/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                {% for service in inner_bolt_services %}
+                                                <div class="service inner">
+                                                    <img class="service-img" width="90" height="50"
+                                                         src="{{ service.service_img }}" />
+                                                    <div class="service-body">
+                                                        <div class="text-container">
+                                                            <label class="service-label inner-label">
+                                                                {{ service.service_title }}
+                                                            </label>
+                                                            <small class="outer-small">{{ service.service_description }}</small>
+                                                        </div>
+                                                        <div class="input-container">
+                                                            <input class="service-btn" type="checkbox" checked/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                            {% for service in outer_bolt_services %}
+                                                <div class="service">
+                                                    <img class="service-img" width="90" height="50"
+                                                         src="{{ service.service_img }}" />
+                                                    <div class="service-body">
+                                                        <div class="text-container">
+                                                            <label class="service-label outer-label">
+                                                                {{ service.service_title }}
+                                                            </label>
+                                                            <small class="outer-small">{{ service.service_description }}</small>
+                                                        </div>
+                                                        <div class="input-container">
+                                                            <input class="service-btn" type="checkbox" checked />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
                                 {% elif forloop.counter == 7 %}
                                     <p class="field-desc">
                                         Виберіть місця, куди ваша команда може подорожувати.
                                         (Мова йде лише про поїздки на таксі)
                                     </p>
+                                    <div class="hidden-select" id="drive-locations">
+                                        <div class="choice-section">
+                                            <div class="choice">
+                                                <input type="radio" class="input-radio-field" name="to_or_from"
+                                                id="to_or_from" checked/>
+                                                <span class="input-choice">
+                                                    <label class="radio-label" for="to_or_from">До або з певних локацій</label>
+                                                </span>
+                                                <a href="#" class="add-location">Додати локацію</a>
+                                            </div>
+                                            <div class="choice">
+                                                <input type="radio" class="input-radio-field" name="only_from"
+                                                       id="only_from" />
+                                                <span class="input-choice">
+                                                    <label class="radio-label" for="only_from">Тільки з певних локацій</label>
+                                                </span>
+                                                <a href="#" class="add-location hidden">Додати локацію</a>
+                                            </div>
+                                            <div class="choice">
+                                                <input type="radio" class="input-radio-field" name="only_to"
+                                                id="only_to" />
+                                                <span class="input-choice">
+                                                    <label class="radio-label" for="only_to">Тільки до певних локацій</label>
+                                                </span>
+                                                <a href="#" class="add-location hidden">Додати локацію</a>
+                                            </div>
+                                            <div class="choice">
+                                                <input type="radio" class="input-radio-field" name="between"
+                                                       id="between" />
+                                                <span class="input-choice">
+                                                    <label class="radio-label" for="between">Між певними локаціями</label>
+                                                </span>
+                                                <a href="#" class="add-location hidden">Додати локацію</a>
+                                            </div>
+                                        </div>
+                                        <p class="location-count">Локації • 0</p>
+                                    </div>
                                 {% endif %}
                             </div>
                         {% endif %}

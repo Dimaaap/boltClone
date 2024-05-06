@@ -284,9 +284,14 @@ def edit_policy_view(request, owner_id: str, policy_id: str):
     else:
         form = EditPolicyForm(initial={
             "policy_title": policy.policy_title,
-            "policy_description": policy.policy_description
+            "policy_description": policy.policy_description,
         })
-    context = {"owner": owner, "policy": policy, "form": form}
+    kind_services = BoltServices.objects.all()
+    inner_bolt_services, outer_bolt_services = kind_services[:7], kind_services[7:]
+    context = {"owner": owner, "policy": policy, "form": form,
+                "bolt_services": kind_services, "inner_bolt_services": inner_bolt_services,
+                "outer_bolt_services": outer_bolt_services
+            }
     return render(request, "business/edit_policy.html", context)
 
 

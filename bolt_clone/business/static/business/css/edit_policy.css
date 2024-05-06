@@ -183,6 +183,10 @@ form .form-control {
     color: black;
 }
 
+.hidden-select {
+    display: none;
+}
+
 .hidden-select .widget {
     border: 2px solid #F5F5F5;
     padding: 2%;
@@ -220,4 +224,115 @@ form .form-control {
     font-weight: 500;
     margin-left: 2%;
     font-size: 1rem;
+}
+
+.main-step-section {
+    width: 100%;
+}
+
+.service-img {
+    margin-right: 1%;
+    flex-shrink: 0;
+}
+
+.service {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2px;
+    margin-top: 1%;
+}
+
+.inner {
+    padding-left: 5%;
+}
+
+.service label {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.service .service-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.service small {
+    font-weight: 500;
+    color: gray;
+    display: inline-block;
+}
+
+.service .outer-small {
+    margin-top: 5%;
+}
+
+.service .service-body {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.service .text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-label,
+small {
+    text-align: left;
+}
+
+.service .input-container {
+    display: flex;
+    align-items: center;
+}
+
+.inner-label {
+    margin-bottom: -5%;
+}
+
+.outer-label {
+    margin-bottom: -5%;
+}
+
+.add-location {
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    margin-left: 5%;
+    padding: 1%;
+    background: #F3F3F3;
+    width: 25%;
+    text-align: center;
+    border-radius: 25px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.add-location:hover {
+    background: #F5F5F5;
+}
+
+.input-radio-field {
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+}
+
+.radio-label {
+    font-weight: 500;
+    margin-top: -5%;
+}
+
+.hidden {
+    display: none;
+}
+
+.location-count {
+    font-weight: 700;
+    margin-top: 1%;
+    margin-bottom: -1%;
 }
