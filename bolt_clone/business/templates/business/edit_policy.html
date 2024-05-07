@@ -17,6 +17,9 @@
     <script src="{% static 'business/js/edit_policies/sales_control_popup.js' %}"></script>
     <script src="{% static 'business/js/edit_policies/sales_limit_popup.js' %}"></script>
     <script src="{% static 'business/js/edit_policies/drive_day_and_time_popup.js' %}"></script>
+    <script src="{% static 'business/js/edit_policies/service_type_popup.js' %}"></script>
+    <script src="{% static 'business/js/edit_policies/drive_locations_popup.js' %}"></script>
+    <script src="{% static 'business/js/edit_policies/show_hidden_buttons.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -221,15 +224,15 @@
                                     <div class="hidden-select" id="drive-locations">
                                         <div class="choice-section">
                                             <div class="choice">
-                                                <input type="radio" class="input-radio-field" name="to_or_from"
-                                                id="to_or_from" checked/>
+                                                <input type="radio" class="input-radio-field"
+                                                id="to_or_from" name="locations" checked/>
                                                 <span class="input-choice">
                                                     <label class="radio-label" for="to_or_from">До або з певних локацій</label>
                                                 </span>
                                                 <a href="#" class="add-location">Додати локацію</a>
                                             </div>
                                             <div class="choice">
-                                                <input type="radio" class="input-radio-field" name="only_from"
+                                                <input type="radio" class="input-radio-field" name="locations"
                                                        id="only_from" />
                                                 <span class="input-choice">
                                                     <label class="radio-label" for="only_from">Тільки з певних локацій</label>
@@ -237,7 +240,7 @@
                                                 <a href="#" class="add-location hidden">Додати локацію</a>
                                             </div>
                                             <div class="choice">
-                                                <input type="radio" class="input-radio-field" name="only_to"
+                                                <input type="radio" class="input-radio-field" name="locations"
                                                 id="only_to" />
                                                 <span class="input-choice">
                                                     <label class="radio-label" for="only_to">Тільки до певних локацій</label>
@@ -245,7 +248,7 @@
                                                 <a href="#" class="add-location hidden">Додати локацію</a>
                                             </div>
                                             <div class="choice">
-                                                <input type="radio" class="input-radio-field" name="between"
+                                                <input type="radio" class="input-radio-field" name="locations"
                                                        id="between" />
                                                 <span class="input-choice">
                                                     <label class="radio-label" for="between">Між певними локаціями</label>
@@ -260,6 +263,19 @@
                         {% endif %}
                     </div>
                 {% endfor %}
+                <div class="hidden-popup" id="add-location-popup">
+                    <div class="popup-wrapper"></div>
+                    <div class="popup-header">
+                        <h4 class="popup-title">Додати локацію</h4>
+                        <a href="#" class="close-popup">X</a>
+                    </div>
+                    <div class="popup-body">
+                        <form class="add-location-form" method="post">
+                            {% csrf_token %}
+
+                        </form>
+                    </div>
+                </div>
                 <div class="row-btn">
                     <div class="left-container">
                         <a href="#" class="policy-btn" id="remove-btn">

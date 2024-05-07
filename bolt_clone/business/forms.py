@@ -278,3 +278,22 @@ class EditPolicyForm(forms.Form):
                                           "type": "checkbox",
                                           "role": "switch"
                                       }))
+
+
+class AddLocationForm(forms.Form):
+    location_title = forms.CharField(max_length=255, label="Назва локації", required=False,
+                                     widget=forms.TextInput(attrs={
+                                         "class": "form-control",
+                                         "id": "location_title"
+                                     }))
+    location_address = forms.CharField(max_length=255, label="Адреса", required=False,
+                                       widget=forms.TextInput(attrs={
+                                           "class": "form-control",
+                                           "id": "location_title"
+                                       }))
+    radius = forms.CharField(label="Радіус", required=False
+                             widget=forms.RadioSelect(choices=data_storage.RADIUS,
+                                                      attrs={
+                                                          "id": "radius",
+                                                          "class": "form-control"
+                                                      }))

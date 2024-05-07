@@ -187,6 +187,15 @@ form .form-control {
     display: none;
 }
 
+
+#trips-by-days label {
+    margin-top: -0.5%;
+}
+
+#trips-by-days .input-group {
+    margin-bottom: 1%;
+}
+
 .hidden-select .widget {
     border: 2px solid #F5F5F5;
     padding: 2%;
